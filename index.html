@@ -42,23 +42,29 @@
       theme: {
         extend: {
           colors: {
-            /* ── Pretos / Obsidiana ── */
-            obsidian: '#0a0a0c',     /* fundo base */
-            night:    '#0f0f12',     /* alternativa */
-            coal:     '#141417',     /* superfícies elevadas */
-            graphite: '#1c1c21',     /* cartões */
-            line:     '#2b2b32',     /* bordas no escuro */
-            /* ── Dourados ── */
-            gold:      '#c2a05a',    /* dourado fosco (primário) */
-            'gold-soft':'#d8b978',   /* dourado claro */
-            champagne: '#e7d3a3',    /* champagne (destaques) */
-            'gold-deep':'#8f7238',   /* dourado profundo */
-            /* ── Marfim & Tinta ── */
-            ivory:     '#f4efe4',    /* marfim (seções claras) */
-            cream:     '#ece2cd',    /* creme */
-            'cream-dark':'#dccfb1',  /* borda no claro */
-            ink:       '#16130c',    /* tinta (texto no claro) */
-            'ink-soft':'#5b5340',    /* tinta suave */
+            /* ── Lápis-lazúli (pedra nobre) — azul primário ── */
+            lapis:        '#14386e',
+            'lapis-mid':  '#1f5196',
+            'lapis-deep': '#0c2552',
+            'lapis-night':'#071a3c',
+            /* ── Dourado / Champagne ── */
+            gold:        '#c2a05a',
+            'gold-soft': '#d8b978',
+            champagne:   '#e7d3a3',
+            'gold-deep': '#8f7238',
+            /* ── Verde joia (malaquita / esmeralda) — acento ── */
+            jade:        '#2a8a6c',
+            'jade-soft': '#6fb89c',
+            'jade-deep': '#0f4a39',
+            /* ── Off-white / Marfim ── */
+            ivory:       '#f5f1e8',
+            cream:       '#ece4d3',
+            'cream-dark':'#dccfb4',
+            /* ── Bordas sobre azul ── */
+            line:        '#2a4f8c',
+            /* ── Tinta (texto no claro) ── */
+            ink:         '#13233f',
+            'ink-soft':  '#46546e',
           },
           fontFamily: {
             serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
@@ -74,8 +80,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Manrope', sans-serif;
-      background-color: #0a0a0c;
-      color: #f4efe4;
+      background-color: #071a3c;
+      color: #f5f1e8;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       font-feature-settings: "kern" 1, "liga" 1;
@@ -87,27 +93,45 @@
       content:''; position:absolute; inset:0; pointer-events:none; opacity:0.05; z-index:0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
-    /* obsidiana com leve veio dourado */
-    .obsidian-rich{
-      background-color:#0a0a0c;
+    /* Lápis-lazúli: veios de ouro + de malaquita sobre azul profundo */
+    .lapis-rich{
+      background-color:#0c2552;
       background-image:
-        radial-gradient(120% 90% at 12% 4%, rgba(194,160,90,0.10) 0%, rgba(194,160,90,0) 46%),
-        radial-gradient(120% 100% at 92% 0%, rgba(143,114,56,0.12) 0%, rgba(143,114,56,0) 50%),
-        radial-gradient(120% 120% at 80% 104%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%),
-        linear-gradient(160deg, #101015 0%, #08080a 100%);
+        linear-gradient(118deg, transparent 31%, rgba(231,211,163,0.06) 34%, transparent 38%),
+        linear-gradient(124deg, transparent 57%, rgba(111,184,156,0.05) 60%, transparent 64%),
+        radial-gradient(130% 100% at 15% 6%, rgba(31,81,150,0.55) 0%, rgba(31,81,150,0) 50%),
+        radial-gradient(120% 95% at 90% 2%, rgba(20,56,110,0.5) 0%, rgba(20,56,110,0) 52%),
+        radial-gradient(120% 120% at 4% 100%, rgba(15,74,57,0.30) 0%, rgba(15,74,57,0) 55%),
+        radial-gradient(115% 120% at 82% 104%, rgba(5,18,42,0.85) 0%, rgba(5,18,42,0) 58%),
+        linear-gradient(140deg, #13386e 0%, #08193a 100%);
     }
-    .coal-rich{
-      background-color:#0f0f12;
+    .lapis-panel{
+      background-color:#0a2049;
       background-image:
-        radial-gradient(100% 90% at 85% 0%, rgba(194,160,90,0.07) 0%, rgba(194,160,90,0) 55%),
-        linear-gradient(165deg, #131318 0%, #0b0b0e 100%);
+        linear-gradient(120deg, transparent 40%, rgba(231,211,163,0.045) 43%, transparent 47%),
+        radial-gradient(120% 100% at 82% 0%, rgba(31,81,150,0.4) 0%, rgba(31,81,150,0) 55%),
+        radial-gradient(110% 100% at 6% 100%, rgba(15,74,57,0.25) 0%, rgba(15,74,57,0) 60%),
+        linear-gradient(150deg, #0c2552 0%, #06152f 100%);
     }
-    /* faixa marfim com textura sutil de "mármore" */
+    .lapis-night-rich{
+      background-color:#061634;
+      background-image:
+        radial-gradient(120% 100% at 85% 0%, rgba(31,81,150,0.28) 0%, rgba(31,81,150,0) 55%),
+        linear-gradient(160deg, #08193c 0%, #050f25 100%);
+    }
+    /* Off-white com leve sopro de ouro e jade */
     .ivory-rich{
-      background-color:#f4efe4;
+      background-color:#f5f1e8;
       background-image:
         radial-gradient(120% 90% at 90% 0%, rgba(194,160,90,0.08) 0%, rgba(194,160,90,0) 55%),
-        radial-gradient(90% 80% at 0% 100%, rgba(143,114,56,0.06) 0%, rgba(143,114,56,0) 60%);
+        radial-gradient(90% 80% at 0% 100%, rgba(42,138,108,0.06) 0%, rgba(42,138,108,0) 60%);
+    }
+    /* Faixa "pavão": azul → jade → azul, com brilho dourado */
+    .peacock-band{
+      background-color:#0c2552;
+      background-image:
+        radial-gradient(80% 120% at 50% 0%, rgba(231,211,163,0.10) 0%, rgba(231,211,163,0) 55%),
+        linear-gradient(135deg, #0c2552 0%, #0f4a39 52%, #0c2552 100%);
     }
     .text-gold-grad{
       background:linear-gradient(100deg,#e7d3a3 0%,#c2a05a 42%,#8f7238 72%,#e7d3a3 100%);
@@ -115,48 +139,50 @@
     }
 
     /* ════════ HERO ════════ */
-    .hero-bg{ position:absolute; inset:0; overflow:hidden; background:#08080a; z-index:0; }
+    .hero-bg{ position:absolute; inset:0; overflow:hidden; background:#08193a; z-index:0; }
     .hero-bg::before{
       content:''; position:absolute; inset:-25%;
       background:
-        radial-gradient(38% 48% at 22% 26%, rgba(216,185,120,0.22) 0%, transparent 60%),
-        radial-gradient(42% 52% at 84% 30%, rgba(143,114,56,0.20) 0%, transparent 62%),
-        radial-gradient(60% 60% at 60% 100%, rgba(44,36,16,0.55) 0%, transparent 70%);
-      filter: blur(14px);
-      animation: heroDrift 20s ease-in-out infinite alternate;
+        radial-gradient(38% 48% at 20% 24%, rgba(31,81,150,0.55) 0%, transparent 60%),
+        radial-gradient(42% 52% at 84% 30%, rgba(231,211,163,0.16) 0%, transparent 62%),
+        radial-gradient(46% 50% at 65% 96%, rgba(15,74,57,0.45) 0%, transparent 70%);
+      filter: blur(16px);
+      animation: heroDrift 22s ease-in-out infinite alternate;
     }
-    .hero-bg::after{ /* veios dourados sutis */
-      content:''; position:absolute; inset:0; opacity:.5;
+    .hero-bg::after{ /* veios dourados sutis na "pedra" */
+      content:''; position:absolute; inset:0; opacity:.6;
       background-image:
-        linear-gradient(116deg, transparent 30%, rgba(216,185,120,.07) 33%, transparent 37%),
-        linear-gradient(122deg, transparent 58%, rgba(216,185,120,.05) 61%, transparent 65%);
+        linear-gradient(116deg, transparent 30%, rgba(231,211,163,.07) 33%, transparent 37%),
+        linear-gradient(122deg, transparent 58%, rgba(111,184,156,.06) 61%, transparent 65%);
     }
     @keyframes heroDrift{ from{ transform:translate3d(-2%,-1%,0) scale(1.02);} to{ transform:translate3d(3%,2%,0) scale(1.09);} }
     .hero-glow{
       position:absolute; width:560px; height:560px; border-radius:50%;
-      background:radial-gradient(circle, rgba(216,185,120,0.16) 0%, transparent 62%);
+      background:radial-gradient(circle, rgba(231,211,163,0.16) 0%, transparent 62%);
       transform:translate(-50%,-50%); left:38%; top:42%; pointer-events:none;
       z-index:1; transition: left .5s ease-out, top .5s ease-out; will-change:left,top;
     }
-    .hero-hair{ position:absolute; top:0; bottom:0; width:1px; background:linear-gradient(180deg, transparent, rgba(216,185,120,.18), transparent); z-index:1; }
-    .hero-text{ text-shadow: 0 2px 40px rgba(0,0,0,.45); }
+    .hero-hair{ position:absolute; top:0; bottom:0; width:1px; background:linear-gradient(180deg, transparent, rgba(231,211,163,.20), transparent); z-index:1; }
+    .hero-text{ text-shadow: 0 2px 40px rgba(3,12,28,.45); }
     @keyframes lineGrow { from { width: 0; } to { width: 3.5rem; } }
     @media (prefers-reduced-motion: reduce){ .hero-bg::before{ animation:none; } .hero-glow{ display:none; } }
 
     /* ════════ Detalhes ════════ */
     .eyebrow{ display:inline-flex; align-items:center; gap:.7rem; }
     .eyebrow::before{ content:''; width:6px; height:6px; transform:rotate(45deg); background:#c2a05a; flex:none; }
+    .eyebrow.jade::before{ background:#2a8a6c; }
     .rule-diamond{ display:flex; align-items:center; gap:1rem; }
-    .rule-diamond::before, .rule-diamond::after{ content:''; height:1px; flex:1; background:linear-gradient(90deg, transparent, rgba(194,160,90,.5), transparent); }
+    .rule-diamond::before, .rule-diamond::after{ content:''; height:1px; flex:1; background:linear-gradient(90deg, transparent, rgba(231,211,163,.5), transparent); }
     .rule-diamond i{ width:7px; height:7px; transform:rotate(45deg); background:#c2a05a; flex:none; display:block; }
-    .btn-gold{ background-image:linear-gradient(180deg, rgba(255,255,255,.14), rgba(0,0,0,.06)); position:relative; overflow:hidden; }
-    .btn-gold::after{ content:''; position:absolute; top:0; left:-120%; width:60%; height:100%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform:skewX(-18deg); transition:left .7s ease; }
+    .rule-diamond i.jade{ background:#6fb89c; }
+    .btn-gold{ background-image:linear-gradient(180deg, rgba(255,255,255,.16), rgba(0,0,0,.05)); position:relative; overflow:hidden; }
+    .btn-gold::after{ content:''; position:absolute; top:0; left:-120%; width:60%; height:100%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.5), transparent); transform:skewX(-18deg); transition:left .7s ease; }
     .btn-gold:hover::after{ left:140%; }
 
     /* ════════ Top nav ════════ */
     #site-header{ background-color: transparent; transition: background-color .5s ease, backdrop-filter .5s ease, box-shadow .5s ease, border-color .5s ease; border-bottom:1px solid transparent; }
-    #site-header.scrolled{ background-color: rgba(8,8,10,.86); backdrop-filter: blur(12px); border-bottom-color: rgba(216,185,120,.14); box-shadow: 0 14px 40px -26px rgba(0,0,0,.9); }
-    .nav-link{ color: rgba(244,239,228,.72); transition: color .3s ease; }
+    #site-header.scrolled{ background-color: rgba(6,21,47,.88); backdrop-filter: blur(12px); border-bottom-color: rgba(231,211,163,.16); box-shadow: 0 14px 40px -26px rgba(3,12,28,.9); }
+    .nav-link{ color: rgba(245,241,232,.74); transition: color .3s ease; }
     .nav-link:hover{ color:#fff; }
     .nav-link.active-menu{ color:#e7d3a3; }
     .menu-item { position: relative; }
@@ -179,21 +205,24 @@
     /* ════════ Diferenciais (hover reveal) ════════ */
     .diff-card{ position:relative; overflow:hidden; transition: transform .55s cubic-bezier(.22,1,.36,1), background-color .45s ease, border-color .45s ease; }
     .diff-card::before{ content:''; position:absolute; left:0; top:0; height:2px; width:0; background:linear-gradient(90deg,#8f7238,#e7d3a3); transition:width .5s cubic-bezier(.22,1,.36,1); }
-    .diff-card:hover{ transform:translateY(-6px); background-color:rgba(216,185,120,.05); border-color:rgba(216,185,120,.4); }
+    .diff-card.jade::before{ background:linear-gradient(90deg,#0f4a39,#6fb89c); }
+    .diff-card:hover{ transform:translateY(-6px); background-color:rgba(231,211,163,.05); border-color:rgba(231,211,163,.42); }
+    .diff-card.jade:hover{ border-color:rgba(111,184,156,.5); }
     .diff-card:hover::before{ width:100%; }
     .diff-card:hover .diff-num{ color:rgba(231,211,163,.95); }
+    .diff-card.jade:hover .diff-num{ color:rgba(111,184,156,.95); }
     .diff-num{ transition: color .45s ease; }
 
     /* ════════ Processo interativo (stepper) ════════ */
-    .step{ text-align:left; position:relative; padding-top:1.6rem; border-top:1px solid rgba(216,185,120,.18); cursor:pointer; transition:opacity .4s ease; }
-    .step::before{ content:''; position:absolute; top:-1px; left:0; height:2px; width:0; background:linear-gradient(90deg,#8f7238,#e7d3a3); transition:width .55s cubic-bezier(.22,1,.36,1); }
+    .step{ text-align:left; position:relative; padding-top:1.6rem; border-top:1px solid rgba(42,138,108,.28); cursor:pointer; transition:opacity .4s ease; }
+    .step::before{ content:''; position:absolute; top:-1px; left:0; height:2px; width:0; background:linear-gradient(90deg,#0f4a39,#6fb89c 60%,#e7d3a3); transition:width .55s cubic-bezier(.22,1,.36,1); }
     .step.active::before{ width:100%; }
     .step:not(.active){ opacity:.5; }
     .step:hover{ opacity:.85; }
     .step.active{ opacity:1; }
     .step-desc{ max-height:0; opacity:0; overflow:hidden; transition: max-height .5s cubic-bezier(.22,1,.36,1), opacity .45s ease, margin-top .4s ease; margin-top:0; }
     .step.active .step-desc{ max-height:260px; opacity:1; margin-top:.85rem; }
-    .step.active .step-num{ color:#e7d3a3; }
+    .step.active .step-num{ color:#2a8a6c; }
     .step-num{ transition:color .4s ease; }
 
     /* ════════ Explorador de áreas ════════ */
@@ -202,9 +231,9 @@
     .area-tab.active .at-bar{ height:64%; }
     .area-tab.active{ padding-left:1.4rem; }
     .area-tab .at-title{ transition:color .35s ease; }
-    .area-tab:not(.active) .at-title{ color:rgba(244,239,228,.55); }
+    .area-tab:not(.active) .at-title{ color:rgba(245,241,232,.55); }
     .area-tab.active .at-title{ color:#fff; }
-    .area-tab:hover:not(.active) .at-title{ color:rgba(244,239,228,.8); }
+    .area-tab:hover:not(.active) .at-title{ color:rgba(245,241,232,.82); }
     .area-tab .at-num{ transition:color .35s ease; }
     .area-tab.active .at-num{ color:#e7d3a3; }
     .area-panel{ display:none; }
@@ -225,22 +254,21 @@
     .page-section { overflow-x: hidden; }
 
     /* ════════ Language Toggle ════════ */
-    .lang-toggle { display: none; align-items: center; gap: 1px; background: rgba(216,185,120,0.08); border: 1px solid rgba(216,185,120,0.22); border-radius: 6px; padding: 3px; flex-shrink: 0; }
+    .lang-toggle { display: none; align-items: center; gap: 1px; background: rgba(231,211,163,0.08); border: 1px solid rgba(231,211,163,0.22); border-radius: 6px; padding: 3px; flex-shrink: 0; }
     @media (min-width: 1024px) { .lang-toggle { display: flex; } }
-    .lang-opt { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 8px; border-radius: 4px; color: rgba(244,239,228,0.5); cursor: pointer; transition: all 0.22s ease; user-select: none; border: none; background: transparent; }
-    .lang-opt.active-lang { background: rgba(216,185,120,0.18); color: #fff; }
-    .mobile-lang-opt { font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; padding: 8px 20px; border: 1px solid rgba(216,185,120,0.25); border-radius: 6px; color: rgba(244,239,228,0.5); cursor: pointer; background: transparent; transition: all 0.22s ease; }
-    .mobile-lang-opt.active-lang { background: rgba(216,185,120,0.16); color: #fff; border-color: rgba(216,185,120,0.5); }
+    .lang-opt { font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 8px; border-radius: 4px; color: rgba(245,241,232,0.5); cursor: pointer; transition: all 0.22s ease; user-select: none; border: none; background: transparent; }
+    .lang-opt.active-lang { background: rgba(231,211,163,0.18); color: #fff; }
+    .mobile-lang-opt { font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; padding: 8px 20px; border: 1px solid rgba(231,211,163,0.25); border-radius: 6px; color: rgba(245,241,232,0.5); cursor: pointer; background: transparent; transition: all 0.22s ease; }
+    .mobile-lang-opt.active-lang { background: rgba(231,211,163,0.16); color: #fff; border-color: rgba(231,211,163,0.5); }
 
     /* ════════ WhatsApp float ════════ */
-    #wa-float::after{content:"";position:absolute;inset:0;border-radius:9999px;box-shadow:0 0 0 0 rgba(194,160,90,.55);animation:waPulse 2.6s ease-out infinite;pointer-events:none;}
-    @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(194,160,90,.55)}70%{box-shadow:0 0 0 14px rgba(194,160,90,0)}100%{box-shadow:0 0 0 0 rgba(194,160,90,0)}}
+    #wa-float::after{content:"";position:absolute;inset:0;border-radius:9999px;box-shadow:0 0 0 0 rgba(42,138,108,.5);animation:waPulse 2.6s ease-out infinite;pointer-events:none;}
+    @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(42,138,108,.5)}70%{box-shadow:0 0 0 14px rgba(42,138,108,0)}100%{box-shadow:0 0 0 0 rgba(42,138,108,0)}}
 
-    /* monograma fallback */
-    .monogram{ background-image:radial-gradient(120% 100% at 30% 0%, rgba(194,160,90,.16), transparent 60%); }
+    .monogram{ background-image:radial-gradient(120% 100% at 30% 0%, rgba(231,211,163,.16), transparent 60%); }
   </style>
 </head>
-<body class="flex flex-col min-h-screen overflow-x-hidden bg-obsidian">
+<body class="flex flex-col min-h-screen overflow-x-hidden bg-lapis-night">
 
   <!-- ============ TOP NAV ============ -->
   <header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-[72px] sm:h-[88px] flex items-center">
@@ -261,7 +289,7 @@
           <button onclick="changePage('areas', event)" id="nav-areas" data-t="nav.areas" class="menu-item nav-link text-xs uppercase tracking-[0.22em] font-semibold">Áreas de Atuação</button>
           <button onclick="changePage('contato', event)" id="nav-contato" data-t="nav.contact" class="menu-item nav-link text-xs uppercase tracking-[0.22em] font-semibold">Contato</button>
         </nav>
-        <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="hidden lg:inline-flex btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[10px] uppercase tracking-[0.18em] font-bold px-6 py-3 transition-colors">WhatsApp</a>
+        <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="hidden lg:inline-flex btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[10px] uppercase tracking-[0.18em] font-bold px-6 py-3 transition-colors">WhatsApp</a>
         <div class="lang-toggle" role="group" aria-label="Idioma / Language">
           <button class="lang-opt active-lang" data-lang="pt" onclick="setLang('pt')">PT</button>
           <button class="lang-opt" data-lang="en" onclick="setLang('en')">EN</button>
@@ -276,20 +304,20 @@
   </header>
 
   <!-- ============ MOBILE MENU ============ -->
-  <div id="mobile-menu-box" class="fixed inset-0 obsidian-rich grain z-40 flex flex-col justify-center px-8 translate-x-full transition-transform duration-500 lg:hidden">
+  <div id="mobile-menu-box" class="fixed inset-0 lapis-rich grain z-40 flex flex-col justify-center px-8 translate-x-full transition-transform duration-500 lg:hidden">
     <nav class="flex flex-col gap-7 text-left relative z-10">
       <button onclick="changePage('home'); toggleMobileMenu()" data-t="nav.home" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Início</button>
       <button onclick="changePage('sobre'); toggleMobileMenu()" data-t="nav.about" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Sobre</button>
       <button onclick="changePage('areas'); toggleMobileMenu()" data-t="nav.areas" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Áreas de Atuação</button>
       <button onclick="changePage('contato'); toggleMobileMenu()" data-t="nav.contact" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Contato</button>
     </nav>
-    <div class="mt-12 pt-7 border-t border-gold/15 relative z-10">
-      <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="inline-flex btn-gold bg-gold text-obsidian text-[11px] uppercase tracking-[0.18em] font-bold px-7 py-3.5">Falar no WhatsApp</a>
+    <div class="mt-12 pt-7 border-t border-champagne/15 relative z-10">
+      <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="inline-flex btn-gold bg-gold text-lapis-night text-[11px] uppercase tracking-[0.18em] font-bold px-7 py-3.5">Falar no WhatsApp</a>
       <div class="flex items-center gap-3 mt-6">
         <button class="mobile-lang-opt active-lang" data-lang="pt" onclick="setLang('pt'); toggleMobileMenu()">PT</button>
         <button class="mobile-lang-opt" data-lang="en" onclick="setLang('en'); toggleMobileMenu()">EN</button>
       </div>
-      <p class="text-champagne/40 text-xs mt-6 tracking-wide">São José dos Campos — Vale do Paraíba · SP</p>
+      <p class="text-champagne/45 text-xs mt-6 tracking-wide">São José dos Campos — Vale do Paraíba · SP</p>
     </div>
   </div>
 
@@ -324,10 +352,10 @@
             </p>
 
             <div class="flex flex-wrap gap-4">
-              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="home.hero.wa" class="btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">
+              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="home.hero.wa" class="btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">
                 Falar no WhatsApp →
               </a>
-              <button onclick="changePage('areas')" data-t="home.hero.cta" class="border border-champagne/40 text-ivory text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 hover:bg-champagne hover:text-obsidian transition-all bg-transparent">
+              <button onclick="changePage('areas')" data-t="home.hero.cta" class="border border-champagne/45 text-ivory text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 hover:bg-champagne hover:text-lapis-night transition-all bg-transparent">
                 Áreas de atuação →
               </button>
             </div>
@@ -339,7 +367,7 @@
         </div>
       </div>
 
-      <!-- INTRO / FILOSOFIA (marfim — contraste) -->
+      <!-- INTRO / FILOSOFIA (off-white) -->
       <div class="ivory-rich py-24 lg:py-36 px-6 lg:px-10">
         <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div class="lg:col-span-4 reveal">
@@ -348,7 +376,7 @@
           </div>
           <div class="lg:col-span-8 reveal reveal-delay-1">
             <h2 data-t-html="home.intro.h2" class="font-serif text-ink text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.18] mb-8">
-              Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-gold-deep">com linguagem clara</span> e a honestidade de dizer o que é possível.
+              Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-jade">com linguagem clara</span> e a honestidade de dizer o que é possível.
             </h2>
             <p data-t="home.intro.p" class="text-ink-soft text-lg font-light leading-relaxed max-w-2xl">
               A Xavier Ribeiro &amp; Ribeiro é uma sociedade de advogados dedicada a defender pessoas — não números de processo. Atuamos com análise cuidadosa de cada caso, informação transparente sobre prazos e possibilidades, e acompanhamento próximo, do primeiro contato à decisão final.
@@ -357,18 +385,18 @@
         </div>
       </div>
 
-      <!-- MANIFESTO (obsidiana + dourado) -->
-      <div class="obsidian-rich grain py-24 lg:py-36 px-6 lg:px-10">
+      <!-- MANIFESTO (lápis-lazúli) -->
+      <div class="lapis-rich grain py-24 lg:py-36 px-6 lg:px-10">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-          <span data-t="home.manifesto.eyebrow" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold">O nosso compromisso</span>
+          <span data-t="home.manifesto.eyebrow" class="eyebrow jade text-jade-soft text-[11px] uppercase tracking-[0.28em] font-bold">O nosso compromisso</span>
           <blockquote data-t="home.manifesto.quote" class="font-serif text-white text-[1.7rem] sm:text-4xl lg:text-[2.95rem] font-light leading-[1.3] mt-8 reveal">Defendemos pessoas, não números de processo. Cada história merece ser ouvida com atenção, conduzida com técnica e respeitada com a verdade.</blockquote>
-          <div class="rule-diamond max-w-[180px] mx-auto mt-10"><i></i></div>
+          <div class="rule-diamond max-w-[180px] mx-auto mt-10"><i class="jade"></i></div>
           <p data-t="home.manifesto.cite" class="text-champagne/80 text-[11px] uppercase tracking-[0.3em] font-semibold mt-6">Xavier Ribeiro &amp; Ribeiro</p>
         </div>
       </div>
 
-      <!-- DIFERENCIAIS (coal escuro, cartões interativos) -->
-      <div class="coal-rich grain py-24 lg:py-32 px-6 lg:px-10">
+      <!-- DIFERENCIAIS (lápis-panel, cartões interativos) -->
+      <div class="lapis-panel grain py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <div class="max-w-2xl mb-16 lg:mb-20 reveal">
             <span data-t="home.diff.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Por que a Xavier Ribeiro &amp; Ribeiro</span>
@@ -376,57 +404,57 @@
           </div>
 
           <div class="grid sm:grid-cols-2 gap-5 lg:gap-6">
-            <div class="diff-card bg-white/[0.025] border border-line p-8 lg:p-10 reveal">
-              <span class="diff-num font-serif text-gold/55 text-5xl font-light leading-none">01</span>
+            <div class="diff-card bg-white/[0.03] border border-line p-8 lg:p-10 reveal">
+              <span class="diff-num font-serif text-champagne/55 text-5xl font-light leading-none">01</span>
               <h3 data-t="home.diff.c1h" class="font-serif text-white text-2xl lg:text-[1.75rem] font-normal leading-snug mt-6 mb-3">Atendimento humano, sem juridiquês</h3>
-              <p data-t="home.diff.c1p" class="text-ivory/60 font-light leading-relaxed">Explicamos cada etapa em linguagem simples. Você entende o que acontece no seu caso, sem termos complicados e sem se sentir perdido.</p>
+              <p data-t="home.diff.c1p" class="text-ivory/65 font-light leading-relaxed">Explicamos cada etapa em linguagem simples. Você entende o que acontece no seu caso, sem termos complicados e sem se sentir perdido.</p>
             </div>
-            <div class="diff-card bg-white/[0.025] border border-line p-8 lg:p-10 reveal reveal-delay-1">
-              <span class="diff-num font-serif text-gold/55 text-5xl font-light leading-none">02</span>
+            <div class="diff-card jade bg-white/[0.03] border border-line p-8 lg:p-10 reveal reveal-delay-1">
+              <span class="diff-num font-serif text-jade-soft/60 text-5xl font-light leading-none">02</span>
               <h3 data-t="home.diff.c2h" class="font-serif text-white text-2xl lg:text-[1.75rem] font-normal leading-snug mt-6 mb-3">Análise honesta do seu caso</h3>
-              <p data-t="home.diff.c2p" class="text-ivory/60 font-light leading-relaxed">Avaliamos a viabilidade antes de qualquer passo. Se houver um caminho, mostramos com clareza; se não houver, dizemos com franqueza.</p>
+              <p data-t="home.diff.c2p" class="text-ivory/65 font-light leading-relaxed">Avaliamos a viabilidade antes de qualquer passo. Se houver um caminho, mostramos com clareza; se não houver, dizemos com franqueza.</p>
             </div>
-            <div class="diff-card bg-white/[0.025] border border-line p-8 lg:p-10 reveal reveal-delay-2">
-              <span class="diff-num font-serif text-gold/55 text-5xl font-light leading-none">03</span>
+            <div class="diff-card jade bg-white/[0.03] border border-line p-8 lg:p-10 reveal reveal-delay-2">
+              <span class="diff-num font-serif text-jade-soft/60 text-5xl font-light leading-none">03</span>
               <h3 data-t="home.diff.c3h" class="font-serif text-white text-2xl lg:text-[1.75rem] font-normal leading-snug mt-6 mb-3">Acompanhamento próximo</h3>
-              <p data-t="home.diff.c3p" class="text-ivory/60 font-light leading-relaxed">Você fala diretamente com quem cuida do seu caso e recebe atualizações ao longo do processo. Proximidade do início ao fim.</p>
+              <p data-t="home.diff.c3p" class="text-ivory/65 font-light leading-relaxed">Você fala diretamente com quem cuida do seu caso e recebe atualizações ao longo do processo. Proximidade do início ao fim.</p>
             </div>
-            <div class="diff-card bg-white/[0.025] border border-line p-8 lg:p-10 reveal reveal-delay-3">
-              <span class="diff-num font-serif text-gold/55 text-5xl font-light leading-none">04</span>
+            <div class="diff-card bg-white/[0.03] border border-line p-8 lg:p-10 reveal reveal-delay-3">
+              <span class="diff-num font-serif text-champagne/55 text-5xl font-light leading-none">04</span>
               <h3 data-t="home.diff.c4h" class="font-serif text-white text-2xl lg:text-[1.75rem] font-normal leading-snug mt-6 mb-3">Atuação nas áreas certas</h3>
-              <p data-t="home.diff.c4p" class="text-ivory/60 font-light leading-relaxed">Foco em Previdenciário, Trabalhista, Inventário e Indenizações — as causas que mais afetam a vida e o patrimônio de quem nos procura.</p>
+              <p data-t="home.diff.c4p" class="text-ivory/65 font-light leading-relaxed">Foco em Previdenciário, Trabalhista, Inventário e Indenizações — as causas que mais afetam a vida e o patrimônio de quem nos procura.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- PROCESSO INTERATIVO (marfim) -->
+      <!-- PROCESSO INTERATIVO (off-white, acento verde) -->
       <div class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto">
           <div class="max-w-2xl mb-14 reveal">
-            <span data-t="home.process.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Como conduzimos o seu caso</span>
+            <span data-t="home.process.overline" class="eyebrow jade text-jade text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Como conduzimos o seu caso</span>
             <h2 data-t="home.process.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">Um caminho claro, do primeiro contato à decisão.</h2>
             <p data-t="home.process.p" class="text-ink-soft font-light leading-relaxed mt-5 text-lg">Toque em cada etapa para entender como funciona.</p>
           </div>
 
           <div class="grid md:grid-cols-4 gap-7 lg:gap-10 reveal reveal-delay-1">
             <div class="step active" data-step="0" onclick="switchStep(0)">
-              <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">01</span>
+              <span class="step-num font-serif text-jade text-4xl font-light leading-none">01</span>
               <h3 data-t="home.process.s1h" class="font-serif text-ink text-2xl font-normal mt-3">Conversa inicial</h3>
               <p data-t="home.process.s1p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Uma conversa para entender a sua situação e as suas dúvidas, sem compromisso e em linguagem simples.</p>
             </div>
             <div class="step" data-step="1" onclick="switchStep(1)">
-              <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">02</span>
+              <span class="step-num font-serif text-jade text-4xl font-light leading-none">02</span>
               <h3 data-t="home.process.s2h" class="font-serif text-ink text-2xl font-normal mt-3">Análise do caso</h3>
               <p data-t="home.process.s2p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Estudamos os seus documentos (como o CNIS) e avaliamos com franqueza o que é viável dentro da lei.</p>
             </div>
             <div class="step" data-step="2" onclick="switchStep(2)">
-              <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">03</span>
+              <span class="step-num font-serif text-jade text-4xl font-light leading-none">03</span>
               <h3 data-t="home.process.s3h" class="font-serif text-ink text-2xl font-normal mt-3">Estratégia clara</h3>
               <p data-t="home.process.s3p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Apresentamos os caminhos possíveis, prazos e honorários com transparência, para você decidir com segurança.</p>
             </div>
             <div class="step" data-step="3" onclick="switchStep(3)">
-              <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">04</span>
+              <span class="step-num font-serif text-jade text-4xl font-light leading-none">04</span>
               <h3 data-t="home.process.s4h" class="font-serif text-ink text-2xl font-normal mt-3">Acompanhamento</h3>
               <p data-t="home.process.s4p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Conduzimos o caso com atenção a cada prazo e mantemos você informado, do início à decisão final.</p>
             </div>
@@ -434,8 +462,8 @@
         </div>
       </div>
 
-      <!-- ÁREAS PREVIEW (obsidiana) -->
-      <div class="obsidian-rich grain py-24 lg:py-32 px-6 lg:px-10">
+      <!-- ÁREAS PREVIEW (lápis-lazúli) -->
+      <div class="lapis-rich grain py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 reveal">
             <div class="max-w-2xl">
@@ -448,48 +476,48 @@
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
-            <div class="diff-card bg-white/[0.03] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(0)">
+            <div class="diff-card bg-white/[0.04] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(0)">
               <div class="flex items-start justify-between mb-8">
                 <span class="diff-num font-serif text-white/25 text-5xl font-light leading-none">01</span>
                 <span class="text-champagne mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
               </div>
               <h3 data-t="home.areas.a1h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Previdenciário</h3>
-              <p data-t="home.areas.a1p" class="text-ivory/60 font-light leading-relaxed text-[15px]">Aposentadorias, revisões de benefício, auxílios e BPC/LOAS. O foco de quem está perto de se aposentar.</p>
+              <p data-t="home.areas.a1p" class="text-ivory/65 font-light leading-relaxed text-[15px]">Aposentadorias, revisões de benefício, auxílios e BPC/LOAS. O foco de quem está perto de se aposentar.</p>
               <span class="inline-flex items-center gap-2 mt-7 text-champagne text-[11px] uppercase tracking-[0.2em] font-bold">Ver área →</span>
             </div>
-            <div class="diff-card bg-white/[0.03] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(1)">
+            <div class="diff-card jade bg-white/[0.04] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(1)">
               <div class="flex items-start justify-between mb-8">
                 <span class="diff-num font-serif text-white/25 text-5xl font-light leading-none">02</span>
-                <span class="text-champagne mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                <span class="text-jade-soft mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
               </div>
               <h3 data-t="home.areas.a2h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Trabalhista</h3>
-              <p data-t="home.areas.a2p" class="text-ivory/60 font-light leading-relaxed text-[15px]">Verbas rescisórias, horas extras, reconhecimento de vínculo e assédio. Seus direitos no trabalho.</p>
-              <span class="inline-flex items-center gap-2 mt-7 text-champagne text-[11px] uppercase tracking-[0.2em] font-bold">Ver área →</span>
+              <p data-t="home.areas.a2p" class="text-ivory/65 font-light leading-relaxed text-[15px]">Verbas rescisórias, horas extras, reconhecimento de vínculo e assédio. Seus direitos no trabalho.</p>
+              <span class="inline-flex items-center gap-2 mt-7 text-jade-soft text-[11px] uppercase tracking-[0.2em] font-bold">Ver área →</span>
             </div>
-            <div class="diff-card bg-white/[0.03] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(2)">
+            <div class="diff-card bg-white/[0.04] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(2)">
               <div class="flex items-start justify-between mb-8">
                 <span class="diff-num font-serif text-white/25 text-5xl font-light leading-none">03</span>
                 <span class="text-champagne mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
               </div>
               <h3 data-t="home.areas.a3h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Inventário</h3>
-              <p data-t="home.areas.a3p" class="text-ivory/60 font-light leading-relaxed text-[15px]">Inventário, partilha de bens e regularização de heranças, com cuidado no momento difícil.</p>
+              <p data-t="home.areas.a3p" class="text-ivory/65 font-light leading-relaxed text-[15px]">Inventário, partilha de bens e regularização de heranças, com cuidado no momento difícil.</p>
               <span class="inline-flex items-center gap-2 mt-7 text-champagne text-[11px] uppercase tracking-[0.2em] font-bold">Ver área →</span>
             </div>
-            <div class="diff-card bg-white/[0.03] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(3)">
+            <div class="diff-card jade bg-white/[0.04] border border-line p-8 lg:p-9 cursor-pointer" onclick="goToArea(3)">
               <div class="flex items-start justify-between mb-8">
                 <span class="diff-num font-serif text-white/25 text-5xl font-light leading-none">04</span>
-                <span class="text-champagne mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
+                <span class="text-jade-soft mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
               </div>
               <h3 data-t="home.areas.a4h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Indenizações</h3>
-              <p data-t="home.areas.a4p" class="text-ivory/60 font-light leading-relaxed text-[15px]">Danos morais e materiais, acidentes e relações de consumo. Reparação quando algo dá errado.</p>
-              <span class="inline-flex items-center gap-2 mt-7 text-champagne text-[11px] uppercase tracking-[0.2em] font-bold">Ver área →</span>
+              <p data-t="home.areas.a4p" class="text-ivory/65 font-light leading-relaxed text-[15px]">Danos morais e materiais, acidentes e relações de consumo. Reparação quando algo dá errado.</p>
+              <span class="inline-flex items-center gap-2 mt-7 text-jade-soft text-[11px] uppercase tracking-[0.2em] font-bold">Ver área →</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CTA FINAL (faixa dourada) -->
-      <div class="relative px-6 lg:px-10 py-24 lg:py-32 overflow-hidden" style="background:linear-gradient(135deg,#0e0e12 0%,#1a1710 55%,#0e0e12 100%);">
+      <!-- CTA FINAL (faixa pavão azul→verde) -->
+      <div class="relative px-6 lg:px-10 py-24 lg:py-32 overflow-hidden peacock-band">
         <div class="absolute inset-0 grain"></div>
         <div class="max-w-site mx-auto text-center reveal relative z-10">
           <span data-t="home.cta.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6">Vamos conversar</span>
@@ -497,7 +525,7 @@
             O primeiro passo é simples: uma conversa para entender o seu caso.
           </h2>
           <div class="flex flex-wrap gap-4 justify-center">
-            <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="home.cta.btn" class="btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[11px] uppercase tracking-[0.18em] font-bold px-10 py-4 transition-colors">Falar no WhatsApp</a>
+            <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="home.cta.btn" class="btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[11px] uppercase tracking-[0.18em] font-bold px-10 py-4 transition-colors">Falar no WhatsApp</a>
           </div>
         </div>
       </div>
@@ -505,7 +533,7 @@
 
     <!-- ====================== SOBRE ====================== -->
     <section id="sec-sobre" class="page-section">
-      <div class="obsidian-rich grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+      <div class="lapis-rich grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <span data-t="about.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">Quem Somos</span>
           <h1 data-t-html="about.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-3xl reveal reveal-delay-1">Advocacia feita de <span class="italic text-gold-grad">escuta e cuidado.</span></h1>
@@ -527,18 +555,18 @@
         </div>
       </div>
 
-      <div class="coal-rich grain py-20 lg:py-28 px-6 lg:px-10">
+      <div class="lapis-panel grain py-20 lg:py-28 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <div class="grid md:grid-cols-3 gap-5 lg:gap-6">
-            <div class="diff-card bg-white/[0.025] border border-line p-9 lg:p-10 reveal"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c1h" class="font-serif text-white text-2xl font-normal mb-3">Escuta antes de tudo</h3><p data-t="about.pillars.c1p" class="text-ivory/60 font-light leading-relaxed">Entender a sua história é o que orienta a melhor estratégia. Cada caso é único e merece atenção individual.</p></div>
-            <div class="diff-card bg-white/[0.025] border border-line p-9 lg:p-10 reveal reveal-delay-1"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c2h" class="font-serif text-white text-2xl font-normal mb-3">Clareza em cada etapa</h3><p data-t="about.pillars.c2p" class="text-ivory/60 font-light leading-relaxed">Nada de juridiquês. Explicamos prazos, possibilidades e honorários com transparência, para você decidir com segurança.</p></div>
-            <div class="diff-card bg-white/[0.025] border border-line p-9 lg:p-10 reveal reveal-delay-2"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c3h" class="font-serif text-white text-2xl font-normal mb-3">Compromisso ético</h3><p data-t="about.pillars.c3p" class="text-ivory/60 font-light leading-relaxed">Atuação pautada pela ética e pelo Estatuto da Advocacia. Sem promessas de resultado — apenas trabalho sério e dedicado.</p></div>
+            <div class="diff-card bg-white/[0.03] border border-line p-9 lg:p-10 reveal"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c1h" class="font-serif text-white text-2xl font-normal mb-3">Escuta antes de tudo</h3><p data-t="about.pillars.c1p" class="text-ivory/65 font-light leading-relaxed">Entender a sua história é o que orienta a melhor estratégia. Cada caso é único e merece atenção individual.</p></div>
+            <div class="diff-card jade bg-white/[0.03] border border-line p-9 lg:p-10 reveal reveal-delay-1"><span class="block w-10 h-0.5 bg-jade-soft/80 mb-6"></span><h3 data-t="about.pillars.c2h" class="font-serif text-white text-2xl font-normal mb-3">Clareza em cada etapa</h3><p data-t="about.pillars.c2p" class="text-ivory/65 font-light leading-relaxed">Nada de juridiquês. Explicamos prazos, possibilidades e honorários com transparência, para você decidir com segurança.</p></div>
+            <div class="diff-card bg-white/[0.03] border border-line p-9 lg:p-10 reveal reveal-delay-2"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c3h" class="font-serif text-white text-2xl font-normal mb-3">Compromisso ético</h3><p data-t="about.pillars.c3p" class="text-ivory/65 font-light leading-relaxed">Atuação pautada pela ética e pelo Estatuto da Advocacia. Sem promessas de resultado — apenas trabalho sério e dedicado.</p></div>
           </div>
         </div>
       </div>
 
       <!-- PERFIL DA ADVOGADA -->
-      <div class="obsidian-rich grain py-20 lg:py-28 px-6 lg:px-10">
+      <div class="lapis-rich grain py-20 lg:py-28 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <div class="max-w-2xl mb-12 reveal">
             <span data-t="about.team.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Quem conduz</span>
@@ -558,7 +586,7 @@
             <div class="lg:col-span-7 reveal reveal-delay-1">
               <p class="font-serif text-white text-3xl lg:text-4xl font-normal">Dra. Andrea Xavier</p>
               <p data-t="about.profile.role" class="text-champagne text-[11px] uppercase tracking-[0.18em] font-bold mt-2">Advogada · OAB/SP 000.000</p>
-              <p data-t="about.profile.bio" class="text-ivory/70 font-light leading-relaxed mt-6 text-lg">Advogada dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atua com atendimento próximo e linguagem acessível, acompanhando pessoalmente cada cliente do escritório em São José dos Campos e região.</p>
+              <p data-t="about.profile.bio" class="text-ivory/72 font-light leading-relaxed mt-6 text-lg">Advogada dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atua com atendimento próximo e linguagem acessível, acompanhando pessoalmente cada cliente do escritório em São José dos Campos e região.</p>
               <p data-t="about.profile.bio2" class="text-ivory/55 font-normal leading-relaxed mt-4">Para uma orientação inicial sobre o seu caso, fale diretamente pelo WhatsApp.</p>
               <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20a%20advogada." target="_blank" rel="noopener" class="inline-block mt-6 text-champagne font-semibold text-sm border-b border-champagne/30 hover:border-champagne transition-colors pb-0.5">(12) 99743-4181 →</a>
             </div>
@@ -566,18 +594,18 @@
         </div>
       </div>
 
-      <div class="relative px-6 lg:px-10 py-16 lg:py-24 overflow-hidden" style="background:linear-gradient(135deg,#0e0e12 0%,#1a1710 55%,#0e0e12 100%);">
+      <div class="relative px-6 lg:px-10 py-16 lg:py-24 overflow-hidden peacock-band">
         <div class="absolute inset-0 grain"></div>
         <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal relative z-10">
           <h2 data-t="about.cta_h2" class="font-serif text-white text-3xl lg:text-4xl font-light text-center md:text-left">Vamos conversar sobre o seu caso?</h2>
-          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" data-t="about.cta_btn" class="shrink-0 btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
+          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" data-t="about.cta_btn" class="shrink-0 btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
 
     <!-- ====================== ÁREAS DE ATUAÇÃO ====================== -->
     <section id="sec-areas" class="page-section">
-      <div class="obsidian-rich grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+      <div class="lapis-rich grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <span data-t="areas.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">O que fazemos por você</span>
           <h1 data-t-html="areas.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-4xl reveal reveal-delay-1">
@@ -590,93 +618,87 @@
       </div>
 
       <!-- EXPLORADOR INTERATIVO -->
-      <div class="coal-rich grain py-16 lg:py-24 px-6 lg:px-10">
+      <div class="lapis-panel grain py-16 lg:py-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
 
-          <!-- TABS (lista de áreas) -->
           <div class="lg:col-span-4">
-            <span data-t="areas.explorer.label" class="text-champagne text-[11px] uppercase tracking-[0.28em] font-bold block mb-7">Selecione uma área</span>
+            <span data-t="areas.explorer.label" class="eyebrow jade text-jade-soft text-[11px] uppercase tracking-[0.28em] font-bold block mb-7">Selecione uma área</span>
             <div class="flex flex-col">
               <button class="area-tab active py-5 border-b border-line" data-area="0" onclick="switchArea(0)">
                 <span class="at-bar"></span>
-                <span class="at-num font-serif text-gold/50 text-sm font-medium">01</span>
+                <span class="at-num font-serif text-champagne/50 text-sm font-medium">01</span>
                 <span class="at-title font-serif text-2xl lg:text-[1.7rem] font-normal block mt-1">Previdenciário</span>
               </button>
               <button class="area-tab py-5 border-b border-line" data-area="1" onclick="switchArea(1)">
                 <span class="at-bar"></span>
-                <span class="at-num font-serif text-gold/50 text-sm font-medium">02</span>
+                <span class="at-num font-serif text-champagne/50 text-sm font-medium">02</span>
                 <span class="at-title font-serif text-2xl lg:text-[1.7rem] font-normal block mt-1">Trabalhista</span>
               </button>
               <button class="area-tab py-5 border-b border-line" data-area="2" onclick="switchArea(2)">
                 <span class="at-bar"></span>
-                <span class="at-num font-serif text-gold/50 text-sm font-medium">03</span>
+                <span class="at-num font-serif text-champagne/50 text-sm font-medium">03</span>
                 <span class="at-title font-serif text-2xl lg:text-[1.7rem] font-normal block mt-1">Inventário e Sucessões</span>
               </button>
               <button class="area-tab py-5 border-b border-line" data-area="3" onclick="switchArea(3)">
                 <span class="at-bar"></span>
-                <span class="at-num font-serif text-gold/50 text-sm font-medium">04</span>
+                <span class="at-num font-serif text-champagne/50 text-sm font-medium">04</span>
                 <span class="at-title font-serif text-2xl lg:text-[1.7rem] font-normal block mt-1">Indenizações</span>
               </button>
             </div>
           </div>
 
-          <!-- PAINÉIS (detalhe) -->
           <div class="lg:col-span-8">
 
-            <!-- Previdenciário -->
             <div class="area-panel active" data-area="0">
               <span data-t="areas.a1.over" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Nosso foco principal</span>
               <h2 data-t="areas.a1.h2" class="font-serif text-gold-grad text-4xl lg:text-5xl font-light leading-tight mb-5">Direito Previdenciário</h2>
-              <p data-t="areas.a1.p" class="text-ivory/70 font-light leading-relaxed max-w-2xl">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.</p>
+              <p data-t="areas.a1.p" class="text-ivory/72 font-light leading-relaxed max-w-2xl">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.</p>
               <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-10">
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i1h" class="font-bold text-white mb-1.5">Aposentadorias</h3><p data-t="areas.a1.i1p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Por idade, por tempo de contribuição, especial ou por invalidez. Analisamos o seu histórico (CNIS) e orientamos o melhor caminho.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i2h" class="font-bold text-white mb-1.5">Revisão de Benefício</h3><p data-t="areas.a1.i2p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Quem já se aposentou pode ter direito a um valor maior. Avaliamos se a revisão é viável dentro dos prazos legais — sem prometer resultado.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i3h" class="font-bold text-white mb-1.5">Auxílios e BPC/LOAS</h3><p data-t="areas.a1.i3p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para idosos e pessoas com deficiência em situação de necessidade.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i4h" class="font-bold text-white mb-1.5">Planejamento da Aposentadoria</h3><p data-t="areas.a1.i4p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo com segurança.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i1h" class="font-bold text-white mb-1.5">Aposentadorias</h3><p data-t="areas.a1.i1p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Por idade, por tempo de contribuição, especial ou por invalidez. Analisamos o seu histórico (CNIS) e orientamos o melhor caminho.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i2h" class="font-bold text-white mb-1.5">Revisão de Benefício</h3><p data-t="areas.a1.i2p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Quem já se aposentou pode ter direito a um valor maior. Avaliamos se a revisão é viável dentro dos prazos legais — sem prometer resultado.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i3h" class="font-bold text-white mb-1.5">Auxílios e BPC/LOAS</h3><p data-t="areas.a1.i3p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para idosos e pessoas com deficiência em situação de necessidade.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a1.i4h" class="font-bold text-white mb-1.5">Planejamento da Aposentadoria</h3><p data-t="areas.a1.i4p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo com segurança.</p></div>
               </div>
             </div>
 
-            <!-- Trabalhista -->
             <div class="area-panel" data-area="1">
               <span data-t="areas.a2.over" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Seus direitos no trabalho</span>
               <h2 data-t="areas.a2.h2" class="font-serif text-gold-grad text-4xl lg:text-5xl font-light leading-tight mb-5">Direito do Trabalho</h2>
-              <p data-t="areas.a2.p" class="text-ivory/70 font-light leading-relaxed max-w-2xl">Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.</p>
+              <p data-t="areas.a2.p" class="text-ivory/72 font-light leading-relaxed max-w-2xl">Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.</p>
               <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-10">
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i1h" class="font-bold text-white mb-1.5">Verbas Rescisórias</h3><p data-t="areas.a2.i1p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Conferência da rescisão: aviso prévio, férias, 13º, FGTS e multa. Verificamos se você recebeu tudo o que era devido.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i2h" class="font-bold text-white mb-1.5">Horas Extras e Jornada</h3><p data-t="areas.a2.i2p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Horas extras não pagas, intervalos suprimidos e jornada irregular. Levantamos o que pode ser cobrado.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i3h" class="font-bold text-white mb-1.5">Reconhecimento de Vínculo</h3><p data-t="areas.a2.i3p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Trabalho sem registro, pejotização indevida ou função diferente da anotada na carteira. Buscamos o reconhecimento dos seus direitos.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i4h" class="font-bold text-white mb-1.5">Assédio e Rescisão Indireta</h3><p data-t="areas.a2.i4p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador. Orientamos com cuidado e discrição.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i1h" class="font-bold text-white mb-1.5">Verbas Rescisórias</h3><p data-t="areas.a2.i1p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Conferência da rescisão: aviso prévio, férias, 13º, FGTS e multa. Verificamos se você recebeu tudo o que era devido.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i2h" class="font-bold text-white mb-1.5">Horas Extras e Jornada</h3><p data-t="areas.a2.i2p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Horas extras não pagas, intervalos suprimidos e jornada irregular. Levantamos o que pode ser cobrado.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i3h" class="font-bold text-white mb-1.5">Reconhecimento de Vínculo</h3><p data-t="areas.a2.i3p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Trabalho sem registro, pejotização indevida ou função diferente da anotada na carteira. Buscamos o reconhecimento dos seus direitos.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a2.i4h" class="font-bold text-white mb-1.5">Assédio e Rescisão Indireta</h3><p data-t="areas.a2.i4p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador. Orientamos com cuidado e discrição.</p></div>
               </div>
             </div>
 
-            <!-- Inventário -->
             <div class="area-panel" data-area="2">
               <span data-t="areas.a3.over" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Patrimônio e família</span>
               <h2 data-t="areas.a3.h2" class="font-serif text-gold-grad text-4xl lg:text-5xl font-light leading-tight mb-5">Inventário e Sucessões</h2>
-              <p data-t="areas.a3.p" class="text-ivory/70 font-light leading-relaxed max-w-2xl">O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.</p>
+              <p data-t="areas.a3.p" class="text-ivory/72 font-light leading-relaxed max-w-2xl">O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.</p>
               <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-10">
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i1h" class="font-bold text-white mb-1.5">Inventário Judicial e Extrajudicial</h3><p data-t="areas.a3.i1p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Quando há consenso entre os herdeiros, o inventário pode ser feito em cartório, de forma mais rápida. Avaliamos a via possível.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i2h" class="font-bold text-white mb-1.5">Partilha de Bens</h3><p data-t="areas.a3.i2p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei e o entendimento da família.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i3h" class="font-bold text-white mb-1.5">Testamento e Planejamento Sucessório</h3><p data-t="areas.a3.i3p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Organizar em vida a destinação do patrimônio, dentro dos limites legais, para evitar conflitos e proteger quem você ama.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i4h" class="font-bold text-white mb-1.5">Regularização de Heranças</h3><p data-t="areas.a3.i4p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Bens em nome de quem já faleceu, imóveis não transferidos e inventários parados. Colocamos a documentação em ordem.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i1h" class="font-bold text-white mb-1.5">Inventário Judicial e Extrajudicial</h3><p data-t="areas.a3.i1p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Quando há consenso entre os herdeiros, o inventário pode ser feito em cartório, de forma mais rápida. Avaliamos a via possível.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i2h" class="font-bold text-white mb-1.5">Partilha de Bens</h3><p data-t="areas.a3.i2p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei e o entendimento da família.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i3h" class="font-bold text-white mb-1.5">Testamento e Planejamento Sucessório</h3><p data-t="areas.a3.i3p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Organizar em vida a destinação do patrimônio, dentro dos limites legais, para evitar conflitos e proteger quem você ama.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a3.i4h" class="font-bold text-white mb-1.5">Regularização de Heranças</h3><p data-t="areas.a3.i4p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Bens em nome de quem já faleceu, imóveis não transferidos e inventários parados. Colocamos a documentação em ordem.</p></div>
               </div>
             </div>
 
-            <!-- Indenizações -->
             <div class="area-panel" data-area="3">
               <span data-t="areas.a4.over" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Quando algo dá errado</span>
               <h2 data-t="areas.a4.h2" class="font-serif text-gold-grad text-4xl lg:text-5xl font-light leading-tight mb-5">Indenizações</h2>
-              <p data-t="areas.a4.p" class="text-ivory/70 font-light leading-relaxed max-w-2xl">Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.</p>
+              <p data-t="areas.a4.p" class="text-ivory/72 font-light leading-relaxed max-w-2xl">Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.</p>
               <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8 mt-10">
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i1h" class="font-bold text-white mb-1.5">Danos Morais e Materiais</h3><p data-t="areas.a4.i1p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Situações que causaram dor, constrangimento ou prejuízo financeiro. Analisamos se há direito à reparação.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i2h" class="font-bold text-white mb-1.5">Acidentes</h3><p data-t="areas.a4.i2p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Acidentes de trânsito, no trabalho ou por falha de terceiros. Orientação sobre responsabilidades e reparação dos danos.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i3h" class="font-bold text-white mb-1.5">Direito do Consumidor</h3><p data-t="areas.a4.i3p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas. Defesa dos seus direitos.</p></div>
-                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i4h" class="font-bold text-white mb-1.5">Negativação Indevida</h3><p data-t="areas.a4.i4p" class="text-ivory/55 font-normal text-[15px] leading-relaxed">Nome inscrito sem motivo, dívida já paga ou registro irregular. Buscamos a correção e a reparação.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i1h" class="font-bold text-white mb-1.5">Danos Morais e Materiais</h3><p data-t="areas.a4.i1p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Situações que causaram dor, constrangimento ou prejuízo financeiro. Analisamos se há direito à reparação.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i2h" class="font-bold text-white mb-1.5">Acidentes</h3><p data-t="areas.a4.i2p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Acidentes de trânsito, no trabalho ou por falha de terceiros. Orientação sobre responsabilidades e reparação dos danos.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i3h" class="font-bold text-white mb-1.5">Direito do Consumidor</h3><p data-t="areas.a4.i3p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas. Defesa dos seus direitos.</p></div>
+                <div class="border-t border-line pt-5"><h3 data-t="areas.a4.i4h" class="font-bold text-white mb-1.5">Negativação Indevida</h3><p data-t="areas.a4.i4p" class="text-ivory/60 font-normal text-[15px] leading-relaxed">Nome inscrito sem motivo, dívida já paga ou registro irregular. Buscamos a correção e a reparação.</p></div>
               </div>
             </div>
 
             <div class="mt-12 pt-8 border-t border-line">
-              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="areas.explorer.cta" class="btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors inline-flex">Falar sobre essa área no WhatsApp</a>
+              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="areas.explorer.cta" class="btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors inline-flex">Falar sobre essa área no WhatsApp</a>
             </div>
           </div>
         </div>
@@ -692,52 +714,52 @@
           </div>
 
           <div class="max-w-3xl mx-auto mt-10 space-y-3 reveal reveal-delay-1">
-            <div class="accordion-item border border-cream-dark bg-white/50">
+            <div class="accordion-item border border-cream-dark bg-white/60">
               <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
                 <span data-t="areas.faq.q1" class="font-serif text-ink text-xl sm:text-2xl font-normal">Quando eu posso me aposentar?</span>
-                <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
+                <span class="accordion-icon text-jade text-3xl font-light leading-none shrink-0">+</span>
               </button>
               <div class="accordion-body px-6"><p data-t="areas.faq.a1" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Depende do seu tempo de contribuição, da sua idade e das regras de transição em vigor. O caminho certo varia para cada pessoa. Com uma análise do seu histórico (CNIS), conseguimos mostrar quais são as suas opções.</p></div>
             </div>
-            <div class="accordion-item border border-cream-dark bg-white/50">
+            <div class="accordion-item border border-cream-dark bg-white/60">
               <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
                 <span data-t="areas.faq.q2" class="font-serif text-ink text-xl sm:text-2xl font-normal">Preciso ir até o escritório?</span>
-                <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
+                <span class="accordion-icon text-jade text-3xl font-light leading-none shrink-0">+</span>
               </button>
               <div class="accordion-body px-6"><p data-t="areas.faq.a2" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Não necessariamente. Muitos atendimentos podem começar pelo WhatsApp ou por telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.</p></div>
             </div>
-            <div class="accordion-item border border-cream-dark bg-white/50">
+            <div class="accordion-item border border-cream-dark bg-white/60">
               <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
                 <span data-t="areas.faq.q3" class="font-serif text-ink text-xl sm:text-2xl font-normal">Quanto custa um processo?</span>
-                <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
+                <span class="accordion-icon text-jade text-3xl font-light leading-none shrink-0">+</span>
               </button>
               <div class="accordion-body px-6"><p data-t="areas.faq.a3" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Os honorários variam conforme o tipo de causa e a sua complexidade, e são combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo com clareza na primeira conversa, sem surpresas.</p></div>
             </div>
-            <div class="accordion-item border border-cream-dark bg-white/50">
+            <div class="accordion-item border border-cream-dark bg-white/60">
               <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
                 <span data-t="areas.faq.q4" class="font-serif text-ink text-xl sm:text-2xl font-normal">O escritório garante que eu vou ganhar?</span>
-                <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
+                <span class="accordion-icon text-jade text-3xl font-light leading-none shrink-0">+</span>
               </button>
               <div class="accordion-body px-6"><p data-t="areas.faq.a4" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Não. Nenhum advogado sério pode garantir resultado — isso é, inclusive, vedado pela OAB. O que oferecemos é uma análise honesta da viabilidade do seu caso e trabalho dedicado para buscar o melhor desfecho possível dentro da lei.</p></div>
             </div>
-            <div class="accordion-item border border-cream-dark bg-white/50">
+            <div class="accordion-item border border-cream-dark bg-white/60">
               <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
                 <span data-t="areas.faq.q5" class="font-serif text-ink text-xl sm:text-2xl font-normal">Já recebo aposentadoria. Posso revisar o valor?</span>
-                <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
+                <span class="accordion-icon text-jade text-3xl font-light leading-none shrink-0">+</span>
               </button>
               <div class="accordion-body px-6"><p data-t="areas.faq.a5" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Talvez. Existem prazos legais para pedir revisão (em regra, até dez anos do início do benefício). Avaliamos os seus documentos para verificar se a revisão é viável no seu caso, sem qualquer promessa de aumento.</p></div>
             </div>
-            <div class="accordion-item border border-cream-dark bg-white/50">
+            <div class="accordion-item border border-cream-dark bg-white/60">
               <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
                 <span data-t="areas.faq.q6" class="font-serif text-ink text-xl sm:text-2xl font-normal">Como funciona a primeira conversa?</span>
-                <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
+                <span class="accordion-icon text-jade text-3xl font-light leading-none shrink-0">+</span>
               </button>
               <div class="accordion-body px-6"><p data-t="areas.faq.a6" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">É uma conversa para entender a sua situação, tirar as suas dúvidas e explicar os caminhos possíveis. Você sai com mais clareza sobre o seu caso, em linguagem simples e sem compromisso de fechar nada na hora.</p></div>
             </div>
           </div>
 
           <div class="text-center mt-12 reveal">
-            <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="areas.faq.cta" class="inline-block bg-ink hover:bg-black text-ivory text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Tirar minha dúvida no WhatsApp</a>
+            <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="areas.faq.cta" class="inline-block bg-lapis hover:bg-lapis-mid text-ivory text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Tirar minha dúvida no WhatsApp</a>
           </div>
         </div>
       </div>
@@ -745,7 +767,7 @@
 
     <!-- ====================== CONTATO ====================== -->
     <section id="sec-contato" class="page-section">
-      <div class="obsidian-rich grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+      <div class="lapis-rich grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10">
           <span data-t="contact.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">Canal direto</span>
           <h1 data-t="contact.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-4xl reveal reveal-delay-1">Fale com o escritório.</h1>
@@ -753,20 +775,20 @@
         </div>
       </div>
 
-      <div class="coal-rich grain py-20 lg:py-28 px-6 lg:px-10">
+      <div class="lapis-panel grain py-20 lg:py-28 px-6 lg:px-10">
         <div class="max-w-site mx-auto relative z-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
 
           <div class="lg:col-span-5 space-y-12">
             <div class="reveal">
               <h2 data-t="contact.direct" class="text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Atendimento Direto</h2>
-              <div class="bg-white/[0.025] border border-line p-8 lg:p-9">
+              <div class="bg-white/[0.03] border border-line p-8 lg:p-9">
                 <p class="font-serif text-white text-2xl font-normal">Xavier Ribeiro &amp; Ribeiro</p>
-                <p data-t="contact.wa_role" class="text-ivory/55 text-base font-normal mt-1">Sociedade de Advogados</p>
-                <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="inline-flex items-center gap-3 mt-5 btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[11px] uppercase tracking-[0.16em] font-bold px-7 py-3.5 transition-colors">
+                <p data-t="contact.wa_role" class="text-ivory/60 text-base font-normal mt-1">Sociedade de Advogados</p>
+                <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="inline-flex items-center gap-3 mt-5 btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[11px] uppercase tracking-[0.16em] font-bold px-7 py-3.5 transition-colors">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>
                   Falar no WhatsApp
                 </a>
-                <p data-t="contact.wa_number" class="text-ivory/60 text-sm font-medium mt-4">(12) 99743-4181</p>
+                <p data-t="contact.wa_number" class="text-ivory/65 text-sm font-medium mt-4">(12) 99743-4181</p>
               </div>
             </div>
 
@@ -774,13 +796,13 @@
               <h2 data-t="contact.channels" class="text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Canais</h2>
               <div class="space-y-5">
                 <a href="mailto:contato@xavierribeiroribeiro.adv.br" class="flex items-center gap-4 group">
-                  <span class="w-11 h-11 rounded-full bg-gold/10 group-hover:bg-gold group-hover:text-obsidian text-champagne flex items-center justify-center transition-colors">
+                  <span class="w-11 h-11 rounded-full bg-gold/10 group-hover:bg-gold group-hover:text-lapis-night text-champagne flex items-center justify-center transition-colors">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
                   </span>
                   <div><p class="text-ivory/45 text-xs uppercase tracking-wider">E-mail</p><p class="text-ivory font-medium break-all">contato@xavierribeiroribeiro.adv.br</p></div>
                 </a>
                 <div class="flex items-center gap-4">
-                  <span class="w-11 h-11 rounded-full bg-gold/10 text-champagne flex items-center justify-center">
+                  <span class="w-11 h-11 rounded-full bg-jade/15 text-jade-soft flex items-center justify-center">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
                   </span>
                   <div><p class="text-ivory/45 text-xs uppercase tracking-wider" data-t="contact.hours_label">Horário</p><p class="text-ivory font-medium" data-t="contact.hours">Segunda a sexta, das 9h às 18h</p></div>
@@ -791,7 +813,7 @@
 
           <div class="lg:col-span-7 reveal reveal-delay-2">
             <h2 data-t="contact.address_title" class="text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Onde atuamos</h2>
-            <div class="bg-white/[0.025] border border-line p-8 lg:p-10 mb-6">
+            <div class="bg-white/[0.03] border border-line p-8 lg:p-10 mb-6">
               <p data-t="contact.address_building" class="font-serif text-white text-2xl font-normal mb-2">São José dos Campos · SP</p>
               <p data-t="contact.address_area" class="text-ivory/65 font-light leading-relaxed">Atendemos São José dos Campos e toda a região do Vale do Paraíba. Atendimento presencial mediante agendamento.</p>
               <a href="https://www.google.com/maps/search/?api=1&query=S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP" target="_blank" rel="noopener" data-t="contact.maps" class="inline-flex items-center gap-2 mt-6 text-champagne font-semibold text-sm border-b border-champagne/30 pb-1 hover:border-champagne transition-colors">
@@ -801,17 +823,17 @@
             <div class="aspect-[16/10] w-full overflow-hidden border border-line">
               <iframe
                 src="https://www.google.com/maps?q=S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed"
-                width="100%" height="100%" style="border:0; filter: grayscale(1) invert(0.92) contrast(0.95) sepia(0.35) hue-rotate(2deg) saturate(1.3) brightness(0.92);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Atuação — São José dos Campos e Vale do Paraíba"></iframe>
+                width="100%" height="100%" style="border:0; filter: grayscale(1) sepia(0.5) hue-rotate(178deg) saturate(1.35) brightness(0.95) contrast(1.04);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Atuação — São José dos Campos e Vale do Paraíba"></iframe>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="relative px-6 lg:px-10 py-16 lg:py-24 overflow-hidden" style="background:linear-gradient(135deg,#0e0e12 0%,#1a1710 55%,#0e0e12 100%);">
+      <div class="relative px-6 lg:px-10 py-16 lg:py-24 overflow-hidden peacock-band">
         <div class="absolute inset-0 grain"></div>
         <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal relative z-10">
           <h2 data-t="contact.cta_h2" class="font-serif text-white text-3xl lg:text-4xl font-light text-center md:text-left">Toda boa orientação começa com uma conversa.</h2>
-          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="contact.cta_btn" class="shrink-0 btn-gold bg-gold hover:bg-gold-soft text-obsidian text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
+          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="contact.cta_btn" class="shrink-0 btn-gold bg-gold hover:bg-gold-soft text-lapis-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -819,9 +841,9 @@
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="obsidian-rich grain pt-16 pb-10 px-6 lg:px-10 border-t border-gold/10">
+  <footer class="lapis-night-rich grain pt-16 pb-10 px-6 lg:px-10 border-t border-champagne/10">
     <div class="max-w-site mx-auto relative z-10">
-      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-gold/10">
+      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-champagne/10">
         <div class="md:col-span-5">
           <a href="#home" onclick="changePage('home', event)" class="flex items-center gap-3 mb-5 w-fit">
             <span class="text-champagne shrink-0">
@@ -864,7 +886,7 @@
 
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8">
         <div class="flex items-center gap-2.5 text-[11px] font-medium tracking-[0.06em] text-ivory/40 text-center md:text-left">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="shrink-0 text-champagne/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="shrink-0 text-jade-soft/80"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           <span data-t="footer.area">Atendemos São José dos Campos e todo o Vale do Paraíba — SP</span>
         </div>
         <div data-t="footer.copyright" class="text-[10px] font-medium uppercase tracking-[0.15em] text-ivory/30 text-center md:text-right shrink-0">© 2026 Xavier Ribeiro &amp; Ribeiro – Sociedade de Advogados.</div>
@@ -875,7 +897,7 @@
   </footer>
 
   <!-- ============ WHATSAPP FLOAT ============ -->
-  <a id="wa-float" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold hover:bg-gold-soft text-obsidian flex items-center justify-center shadow-lg transition-colors">
+  <a id="wa-float" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold hover:bg-gold-soft text-lapis-night flex items-center justify-center shadow-lg transition-colors">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
   </a>
 
@@ -900,21 +922,19 @@
       if (event) event.preventDefault();
       document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
       document.querySelectorAll('.menu-item').forEach(l => l.classList.remove('active-menu'));
-
-      const targetSec = document.getElementById(`sec-${pageId}`);
+      const targetSec = document.getElementById('sec-' + pageId);
       if (targetSec) { targetSec.classList.add('active'); window.scrollTo({ top: 0, behavior: 'instant' }); }
-      const targetNav = document.getElementById(`nav-${pageId}`);
+      const targetNav = document.getElementById('nav-' + pageId);
       if (targetNav) targetNav.classList.add('active-menu');
-
-      history.pushState(null, null, `#${pageId}`);
+      history.pushState(null, null, '#' + pageId);
       updateHeaderTheme();
-      requestAnimationFrame(() => { resetReveals(); observeReveals(); });
+      requestAnimationFrame(function(){ resetReveals(); observeReveals(); });
     }
 
     /* ============ MOBILE MENU ============ */
     function toggleMobileMenu() {
       const box = document.getElementById('mobile-menu-box');
-      const [l1,l2,l3] = ['m-line1','m-line2','m-line3'].map(id => document.getElementById(id));
+      const l1 = document.getElementById('m-line1'), l2 = document.getElementById('m-line2'), l3 = document.getElementById('m-line3');
       const waf = document.getElementById('wa-float');
       if (box.classList.contains('translate-x-full')) {
         box.classList.remove('translate-x-full');
@@ -941,9 +961,9 @@
       if(!hero || !glow) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       let raf = null;
-      hero.addEventListener('mousemove', (e) => {
+      hero.addEventListener('mousemove', function(e){
         if (raf) return;
-        raf = requestAnimationFrame(() => {
+        raf = requestAnimationFrame(function(){
           const r = hero.getBoundingClientRect();
           glow.style.left = (e.clientX - r.left) + 'px';
           glow.style.top  = (e.clientY - r.top) + 'px';
@@ -956,46 +976,46 @@
     let revealObserver;
     function observeReveals() {
       if (!revealObserver) {
-        revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
+        revealObserver = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       }
-      document.querySelectorAll('.page-section.active .reveal:not(.in)').forEach(el => revealObserver.observe(el));
+      document.querySelectorAll('.page-section.active .reveal:not(.in)').forEach(function(el){ revealObserver.observe(el); });
     }
     function resetReveals() {
-      document.querySelectorAll('.page-section:not(.active) .reveal').forEach(el => el.classList.remove('in'));
+      document.querySelectorAll('.page-section:not(.active) .reveal').forEach(function(el){ el.classList.remove('in'); });
     }
 
     /* ============ INIT ============ */
     const PAGES = ['home','sobre','areas','contato'];
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', function(){
       const hash = window.location.hash.replace('#','');
-      changePage(PAGES.includes(hash) ? hash : 'home');
+      changePage(PAGES.indexOf(hash) !== -1 ? hash : 'home');
       updateHeaderTheme();
       observeReveals();
       setLang(currentLang);
     });
-    window.addEventListener('popstate', () => {
+    window.addEventListener('popstate', function(){
       const hash = window.location.hash.replace('#','') || 'home';
-      changePage(PAGES.includes(hash) ? hash : 'home');
+      changePage(PAGES.indexOf(hash) !== -1 ? hash : 'home');
     });
 
     /* =================== TRANSLATIONS =================== */
     let currentLang = 'pt';
-    function deep(obj, path){ return path.split('.').reduce((o,k)=> (o==null?undefined:o[k]), obj); }
+    function deep(obj, path){ return path.split('.').reduce(function(o,k){ return (o==null?undefined:o[k]); }, obj); }
     function setLang(lang){
       currentLang = lang;
       document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
       const dict = LANG[lang] || {};
-      document.querySelectorAll('[data-t]').forEach(el => {
+      document.querySelectorAll('[data-t]').forEach(function(el){
         const v = deep(dict, el.getAttribute('data-t'));
         if (typeof v === 'string') el.textContent = v;
       });
-      document.querySelectorAll('[data-t-html]').forEach(el => {
+      document.querySelectorAll('[data-t-html]').forEach(function(el){
         const v = deep(dict, el.getAttribute('data-t-html'));
         if (typeof v === 'string') el.innerHTML = v;
       });
-      document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('active-lang', b.getAttribute('data-lang') === lang));
+      document.querySelectorAll('[data-lang]').forEach(function(b){ b.classList.toggle('active-lang', b.getAttribute('data-lang') === lang); });
     }
 
     const LANG = {
@@ -1011,7 +1031,7 @@
           },
           intro: {
             overline: 'O Escritório',
-            h2: 'Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-gold-deep">com linguagem clara</span> e a honestidade de dizer o que é possível.',
+            h2: 'Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-jade">com linguagem clara</span> e a honestidade de dizer o que é possível.',
             p: 'A Xavier Ribeiro & Ribeiro é uma sociedade de advogados dedicada a defender pessoas — não números de processo. Atuamos com análise cuidadosa de cada caso, informação transparente sobre prazos e possibilidades, e acompanhamento próximo, do primeiro contato à decisão final.'
           },
           manifesto: {
@@ -1141,3 +1161,149 @@
           legal: 'OAB/SP 000.000 · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento nº 205/2021 da OAB. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.'
         }
       },
+      en: {
+        nav: { home: 'Home', about: 'About', areas: 'Practice Areas', contact: 'Contact' },
+        company: { tagline: 'ATTORNEYS AT LAW' },
+        home: {
+          hero: {
+            h1: 'Your retirement deserves<br><span class="italic text-gold-grad font-normal">careful attention</span><br>and guidance you can trust.',
+            p: 'A clear review of your case, plain-language explanations, and close support at every step. Social security, labor, probate, and damages law in São José dos Campos and the surrounding region.',
+            wa: 'Message us on WhatsApp →',
+            cta: 'Practice areas →'
+          },
+          intro: {
+            overline: 'The Firm',
+            h2: 'Before talking about lawsuits, we listen. Every case begins by understanding your story, <span class="italic text-jade">in clear language</span> and with the honesty to tell you what is possible.',
+            p: 'Xavier Ribeiro & Ribeiro is a law firm devoted to defending people — not case numbers. We work with a careful review of every case, transparent information about deadlines and possibilities, and close support from the first contact to the final decision.'
+          },
+          manifesto: {
+            eyebrow: 'Our commitment',
+            quote: 'We defend people, not case numbers. Every story deserves to be heard with attention, handled with skill, and honored with the truth.',
+            cite: 'Xavier Ribeiro & Ribeiro'
+          },
+          diff: {
+            overline: 'Why Xavier Ribeiro & Ribeiro',
+            h2: 'Four commitments to those who trust the firm.',
+            c1h: 'Human service, no legal jargon',
+            c1p: 'We explain each step in simple language. You understand what is happening in your case, with no complicated terms and without feeling lost.',
+            c2h: 'An honest review of your case',
+            c2p: 'We assess whether it is viable before taking any step. If there is a path, we show it clearly; if there is not, we say so frankly.',
+            c3h: 'Close, personal support',
+            c3p: 'You speak directly with the person handling your case and receive updates throughout the process. Proximity from start to finish.',
+            c4h: 'Focus on the right areas',
+            c4p: 'Social security, labor, probate, and damages — the matters that most affect the life and assets of those who come to us.'
+          },
+          process: {
+            overline: 'How we handle your case',
+            h2: 'A clear path, from the first contact to the decision.',
+            p: 'Tap each step to see how it works.',
+            s1h: 'Initial conversation', s1p: 'A conversation to understand your situation and your questions — no obligation, in plain language.',
+            s2h: 'Case review', s2p: 'We study your documents (such as the CNIS) and frankly assess what is viable under the law.',
+            s3h: 'A clear strategy', s3p: 'We lay out the possible paths, deadlines, and fees transparently, so you can decide with confidence.',
+            s4h: 'Ongoing support', s4p: 'We handle the case with attention to every deadline and keep you informed, from start to final decision.'
+          },
+          areas: {
+            overline: 'Practice areas',
+            h2: 'Where we can help you.',
+            cta: 'See all areas →',
+            a1h: 'Social Security', a1p: 'Retirement, benefit reviews, allowances, and BPC/LOAS. The focus for those close to retiring.',
+            a2h: 'Labor Law', a2p: 'Severance pay, overtime, recognition of employment, and harassment. Your rights at work.',
+            a3h: 'Probate', a3p: 'Probate, division of assets, and settling inheritances, with care in a difficult moment.',
+            a4h: 'Damages', a4p: 'Moral and material damages, accidents, and consumer matters. Compensation when something goes wrong.'
+          },
+          cta: {
+            overline: 'Talk to us',
+            h2: 'The first step is simple: a conversation to understand your case.',
+            btn: 'Message us on WhatsApp'
+          }
+        },
+        about: {
+          overline: 'Who We Are',
+          h1: 'Law built on <span class="italic text-gold-grad">listening and care.</span>',
+          p: 'Xavier Ribeiro & Ribeiro was founded to defend people with technical rigor and human closeness — in São José dos Campos and across the Vale do Paraíba.',
+          work: {
+            overline: 'How we work',
+            h2: 'Before talking about lawsuits, we listen.',
+            p1: 'We are a law firm devoted mainly to Social Security law — the right of those who worked their whole lives and want to retire with peace of mind — as well as Labor, Probate, and Damages law. Every case begins with a careful review and an honest conversation about what is possible.',
+            p2: 'We believe real advocacy is built on clear information and close support. You understand each step, know the deadlines, and speak directly with the person handling your case, from the first contact to the final decision.'
+          },
+          pillars: {
+            c1h: 'Listening first', c1p: 'Understanding your story is what guides the best strategy. Every case is unique and deserves individual attention.',
+            c2h: 'Clarity at every step', c2p: 'No legal jargon. We explain deadlines, possibilities, and fees transparently, so you can decide with confidence.',
+            c3h: 'Ethical commitment', c3p: 'Our work is guided by ethics and the Bar statute. No promises of results — only serious, dedicated work.'
+          },
+          team: { overline: 'Who leads', h2: 'At the head of the firm.' },
+          profile: {
+            role: 'Attorney · OAB/SP 000.000',
+            bio: 'An attorney dedicated to Social Security law and to defending those seeking to retire with dignity. She works with close, accessible service, personally following each client of the firm in São José dos Campos and the region.',
+            bio2: 'For initial guidance on your case, message us directly on WhatsApp.'
+          },
+          cta_h2: 'Shall we talk about your case?',
+          cta_btn: 'Message us on WhatsApp'
+        },
+        areas: {
+          overline: 'What we do for you',
+          h1: 'Practice areas<br><span class="italic text-gold-grad">focused on those who need them.</span>',
+          p: 'Our work is concentrated on the matters that most affect your life and your assets. Our main focus is Social Security law — helping you retire with peace of mind.',
+          explorer: { label: 'Select a practice area', cta: 'Discuss this area on WhatsApp' },
+          a1: {
+            over: 'Our main focus', h2: 'Social Security Law',
+            p: 'The right of those who contributed their whole lives. We help you understand whether you can already retire, the best option, and how to seek reviews and benefits with the INSS — with a review of your case and language you understand.',
+            i1h: 'Retirement', i1p: 'By age, by contribution time, special, or by disability. We review your history (CNIS) and advise the best path.',
+            i2h: 'Benefit Review', i2p: 'Those already retired may be entitled to a higher amount. We assess whether a review is viable within the legal deadlines — without promising results.',
+            i3h: 'Allowances and BPC/LOAS', i3p: 'Sickness and accident allowances and the Continuous Cash Benefit for the elderly and people with disabilities in need.',
+            i4h: 'Retirement Planning', i4p: 'Before filing, we study what is most worthwhile, so you can decide the right moment with confidence.'
+          },
+          a2: {
+            over: 'Your rights at work', h2: 'Labor Law',
+            p: 'Your rights during and after the employment contract. Guidance and action for workers whose rights were breached, with a review of your situation and your documents.',
+            i1h: 'Severance Pay', i1p: 'Review of the termination: notice, vacation, 13th salary, FGTS, and penalty. We check whether you received everything you were owed.',
+            i2h: 'Overtime and Working Hours', i2p: 'Unpaid overtime, suppressed breaks, and irregular hours. We assess what can be claimed.',
+            i3h: 'Recognition of Employment', i3p: 'Unregistered work, improper contracting, or a role different from the one recorded. We seek recognition of your rights.',
+            i4h: 'Harassment and Constructive Dismissal', i4p: 'Moral harassment, abusive conditions, or breach of contract by the employer. We advise with care and discretion.'
+          },
+          a3: {
+            over: 'Assets and family', h2: 'Probate and Succession',
+            p: 'The moment to organize the assets of those who have passed, with care and respect. We handle probate and the division of assets to settle the family estate, clearly and humanely.',
+            i1h: 'Judicial and Extrajudicial Probate', i1p: 'When the heirs agree, probate can be done at a notary, more quickly. We assess which route is possible.',
+            i2h: 'Division of Assets', i2p: 'Division of property, accounts, and other assets among the heirs, according to the law and the family understanding.',
+            i3h: 'Wills and Estate Planning', i3p: 'Organizing the destination of your assets during your lifetime, within legal limits, to avoid conflicts and protect those you love.',
+            i4h: 'Settling Inheritances', i4p: 'Assets in the name of the deceased, untransferred property, and stalled probates. We put the documentation in order.'
+          },
+          a4: {
+            over: 'When something goes wrong', h2: 'Damages',
+            p: 'When a situation causes harm, the law provides for compensation. We assess your case frankly and seek the appropriate compensation, explaining the possible paths.',
+            i1h: 'Moral and Material Damages', i1p: 'Situations that caused pain, embarrassment, or financial loss. We analyze whether there is a right to compensation.',
+            i2h: 'Accidents', i2p: 'Traffic accidents, workplace accidents, or third-party fault. Guidance on responsibilities and compensation for the harm suffered.',
+            i3h: 'Consumer Law', i3p: 'Improper charges, defective products or services, and problems with companies. Defense of your consumer rights.',
+            i4h: 'Improper Credit Listing', i4p: 'A name listed without cause, a debt already paid, or an irregular record. We seek correction and compensation.'
+          },
+          faq: {
+            overline: 'Frequently asked questions', h2: 'Common questions from those who reach out.',
+            p: 'We gathered answers to the questions we hear most. For your specific case, a conversation is best.',
+            q1: 'When can I retire?', a1: 'It depends on your contribution time, your age, and the transition rules in force. The right path varies for each person. With a review of your history (CNIS), we can show you your options.',
+            q2: 'Do I need to come to the office?', a2: 'Not necessarily. Many matters can begin via WhatsApp or phone, and much of the documentation is sent digitally. We serve São José dos Campos and the entire Vale do Paraíba region.',
+            q3: 'How much does a case cost?', a3: 'Fees vary according to the type of case and its complexity, and are agreed transparently before any step, following the Bar fee schedule. We explain everything clearly in the first conversation, with no surprises.',
+            q4: 'Does the firm guarantee I will win?', a4: 'No. No serious lawyer can guarantee a result — it is, in fact, prohibited by the Bar. What we offer is an honest assessment of your case and dedicated work to seek the best possible outcome within the law.',
+            q5: 'I already receive a pension. Can I review the amount?', a5: 'Perhaps. There are legal deadlines to request a review (as a rule, up to ten years from the start of the benefit). We review your documents to verify whether a review is viable in your case, with no promise of an increase.',
+            q6: 'How does the first conversation work?', a6: 'It is a conversation to understand your situation, answer your questions, and explain the possible paths. You leave with more clarity about your case, in simple language and with no obligation to commit on the spot.',
+            cta: 'Ask my question on WhatsApp'
+          }
+        },
+        contact: {
+          overline: 'Direct channel', h1: 'Get in touch with the firm.', p: 'Tell us what is happening and we will show you the next steps. Close, jargon-free service in São José dos Campos and the region.',
+          direct: 'Direct Service', wa_role: 'Attorneys at Law', wa_number: '(12) 99743-4181', channels: 'Channels', hours_label: 'Hours', hours: 'Monday to Friday, 9am to 6pm',
+          address_title: 'Where we work', address_building: 'São José dos Campos · SP', address_area: 'We serve São José dos Campos and the entire Vale do Paraíba region. In-person meetings by appointment.', maps: 'View on Google Maps →',
+          cta_h2: 'Every good guidance starts with a conversation.', cta_btn: 'Message us on WhatsApp'
+        },
+        footer: {
+          desc: 'Law with listening and care in Social Security, Labor, Probate, and Damages. São José dos Campos and the Vale do Paraíba.',
+          nav: 'Navigation', contact: 'Contact', area: 'We serve São José dos Campos and the entire Vale do Paraíba — SP',
+          copyright: '© 2026 Xavier Ribeiro & Ribeiro – Attorneys at Law.',
+          legal: 'OAB/SP 000.000 · Informational content only, without client solicitation, in accordance with the Code of Ethics and Discipline and Provision No. 205/2021 of the Brazilian Bar (OAB). Each case is unique; results depend on specific circumstances, and no outcome is guaranteed.'
+        }
+      }
+    };
+  </script>
+</body>
+</html>

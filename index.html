@@ -79,11 +79,35 @@
     }
 
     /* ════════ HERO com vídeo de fundo (SJC) ════════ */
+    /* ════════ TEXTURA "PEDRA AZUL" (lápis-lazúli) ════════
+       Camadas: veios dourados sutis + mosqueado de profundidade + base.
+       Tudo em background-image (fica SEMPRE atrás do texto → legível).      */
+    .lapis{
+      background-color:#0b2a52;
+      background-image:
+        linear-gradient(118deg, transparent 31%, rgba(203,176,130,0.055) 34%, transparent 38%),
+        linear-gradient(124deg, transparent 57%, rgba(203,176,130,0.05) 60%, transparent 64%),
+        radial-gradient(130% 100% at 15% 6%, rgba(47,94,170,0.55) 0%, rgba(47,94,170,0) 50%),
+        radial-gradient(120% 95% at 90% 2%, rgba(27,68,134,0.42) 0%, rgba(27,68,134,0) 52%),
+        radial-gradient(115% 120% at 80% 102%, rgba(4,16,34,0.80) 0%, rgba(4,16,34,0) 58%),
+        radial-gradient(105% 110% at 2% 98%, rgba(6,22,46,0.70) 0%, rgba(6,22,46,0) 55%),
+        linear-gradient(140deg, #0e2f59 0%, #06162d 100%);
+    }
+    .lapis-deep{
+      background-color:#06182f;
+      background-image:
+        linear-gradient(120deg, transparent 40%, rgba(203,176,130,0.04) 43%, transparent 47%),
+        radial-gradient(120% 100% at 82% 0%, rgba(27,68,134,0.34) 0%, rgba(27,68,134,0) 55%),
+        radial-gradient(120% 100% at 8% 100%, rgba(3,12,28,0.85) 0%, rgba(3,12,28,0) 60%),
+        linear-gradient(140deg, #0a254b 0%, #04101f 100%);
+    }
+    /* o Hero usa a mesma pedra como base do vídeo (fallback elegante) */
     .hero-wrap{
-      /* gradiente "lápis-lazúli" = fallback caso o vídeo não carregue */
-      background:
-        radial-gradient(120% 85% at 12% 10%, #1b4a86 0%, rgba(27,74,134,0) 55%),
-        linear-gradient(150deg, #0c2a52 0%, #06182f 100%);
+      background-color:#0b2a52;
+      background-image:
+        radial-gradient(130% 100% at 15% 8%, rgba(47,94,170,0.50) 0%, rgba(47,94,170,0) 52%),
+        radial-gradient(115% 120% at 82% 102%, rgba(4,16,34,0.80) 0%, rgba(4,16,34,0) 58%),
+        linear-gradient(140deg, #0e2f59 0%, #06162d 100%);
     }
     .hero-video{
       position:absolute; inset:0; z-index:0;
@@ -100,6 +124,24 @@
     .hero-text{ text-shadow: 0 1px 30px rgba(3,12,28,0.35); }
     /* respeita quem prefere menos movimento: mostra só o gradiente */
     @media (prefers-reduced-motion: reduce){ .hero-video{ display:none; } }
+
+    /* ════════ Detalhes de sofisticação ════════ */
+    /* eyebrow com losango dourado */
+    .eyebrow{ display:inline-flex; align-items:center; gap:.7rem; }
+    .eyebrow::before{ content:''; width:6px; height:6px; transform:rotate(45deg); background:#cbb082; flex:none; }
+    /* divisor com losango central */
+    .rule-diamond{ display:flex; align-items:center; gap:1rem; }
+    .rule-diamond::before, .rule-diamond::after{ content:''; height:1px; flex:1; background:linear-gradient(90deg, transparent, rgba(203,176,130,.45), transparent); }
+    .rule-diamond i{ width:7px; height:7px; transform:rotate(45deg); background:#cbb082; flex:none; display:block; }
+    /* cartões de área: vidro sutil sobre a pedra azul */
+    .area-card{ transition:transform .55s cubic-bezier(.22,1,.36,1), background-color .45s ease, border-color .45s ease; }
+    .area-card:hover{ transform:translateY(-7px); background-color:rgba(255,255,255,.06); border-color:rgba(203,176,130,.5); }
+    .area-card:hover .area-arrow{ transform:translateX(5px); }
+    .area-arrow{ transition:transform .4s ease; }
+    .area-card:hover .area-num{ color:rgba(203,176,130,.9); }
+    .area-num{ transition:color .45s ease; }
+    /* brilho sutil no botão dourado (sheen) */
+    .btn-gold{ background-image:linear-gradient(180deg, rgba(255,255,255,.12), rgba(0,0,0,.04)); }
 
     /* ---- Page (SPA) switching ---- */
     .page-section { display: none; }
@@ -263,7 +305,7 @@
   </header>
 
   <!-- ============ MOBILE MENU ============ -->
-  <div id="mobile-menu-box" class="fixed inset-0 bg-forest grain z-40 flex flex-col justify-center px-8 translate-x-full transition-transform duration-500 lg:hidden">
+  <div id="mobile-menu-box" class="fixed inset-0 lapis grain z-40 flex flex-col justify-center px-8 translate-x-full transition-transform duration-500 lg:hidden">
     <nav class="flex flex-col gap-7 text-left relative z-10">
       <button onclick="changePage('home'); toggleMobileMenu()" data-t="nav.home" class="font-serif text-white text-4xl text-left hover:text-gold-light transition-colors">Início</button>
       <button onclick="changePage('sobre'); toggleMobileMenu()" data-t="nav.about" class="font-serif text-white text-4xl text-left hover:text-gold-light transition-colors">Sobre</button>
@@ -301,8 +343,6 @@
 
         <div class="hero-scrim"></div>
 
-        <span class="hidden md:block absolute -right-10 bottom-0 font-serif text-[26vw] leading-none text-white/[0.05] select-none pointer-events-none z-[2]">XR</span>
-
         <div class="max-w-site mx-auto w-full relative z-10">
           <div class="max-w-4xl hero-text">
             <span class="inline-flex items-center gap-3 mb-7">
@@ -331,12 +371,6 @@
           </div>
         </div>
 
-        <!-- rótulo do local (estilo Vela Wood) -->
-        <div class="hidden md:flex absolute bottom-7 right-8 lg:right-10 items-center gap-2.5 z-10">
-          <span class="block w-1.5 h-1.5 rounded-full bg-gold-light"></span>
-          <span class="text-white/75 text-[11px] uppercase tracking-[0.26em] font-medium">Arco da Inovação · SJC</span>
-        </div>
-
         <!-- indicador de rolagem -->
         <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex-col items-center gap-2 hidden md:flex z-10">
           <span class="block w-px h-12 bg-gradient-to-b from-gold-light/60 to-transparent"></span>
@@ -347,7 +381,7 @@
       <div class="bg-stone py-24 lg:py-36 px-6 lg:px-10">
         <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div class="lg:col-span-4 reveal">
-            <span data-t="home.intro.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">O Escritório</span>
+            <span data-t="home.intro.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">O Escritório</span>
             <div class="w-12 h-px bg-gold/50"></div>
           </div>
           <div class="lg:col-span-8 reveal reveal-delay-1">
@@ -361,11 +395,21 @@
         </div>
       </div>
 
+      <!-- MANIFESTO (citação editorial sobre a pedra azul) -->
+      <div class="lapis grain py-24 lg:py-36 px-6 lg:px-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <span data-t="home.manifesto.eyebrow" class="eyebrow text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold">O nosso compromisso</span>
+          <blockquote data-t="home.manifesto.quote" class="font-serif text-white text-[1.7rem] sm:text-4xl lg:text-[2.9rem] font-light leading-[1.32] mt-8 reveal">Defendemos pessoas, não números de processo. Cada história merece ser ouvida com atenção, conduzida com técnica e respeitada com a verdade.</blockquote>
+          <div class="rule-diamond max-w-[170px] mx-auto mt-10"><i></i></div>
+          <p data-t="home.manifesto.cite" class="text-gold-pale/80 text-[11px] uppercase tracking-[0.3em] font-semibold mt-6">Xavier Ribeiro &amp; Ribeiro</p>
+        </div>
+      </div>
+
       <!-- DIFERENCIAIS -->
       <div class="bg-white py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto">
           <div class="max-w-2xl mb-16 lg:mb-20 reveal">
-            <span data-t="home.diff.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Por que a Xavier Ribeiro &amp; Ribeiro</span>
+            <span data-t="home.diff.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Por que a Xavier Ribeiro &amp; Ribeiro</span>
             <h2 class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight" data-t="home.diff.h2">Quatro compromissos com quem confia no escritório.</h2>
           </div>
 
@@ -395,11 +439,11 @@
       </div>
 
       <!-- ÁREAS PREVIEW -->
-      <div class="bg-forest grain py-24 lg:py-32 px-6 lg:px-10">
+      <div class="lapis grain py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto">
           <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 reveal">
             <div class="max-w-2xl">
-              <span data-t="home.areas.overline" class="text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Áreas de atuação</span>
+              <span data-t="home.areas.overline" class="eyebrow text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Áreas de atuação</span>
               <h2 data-t="home.areas.h2" class="font-serif text-white text-4xl lg:text-5xl font-light leading-tight">Onde podemos ajudar você.</h2>
             </div>
             <button onclick="changePage('areas')" data-t="home.areas.cta" class="shrink-0 text-gold-light text-xs uppercase tracking-[0.18em] font-bold border-b border-gold-light/40 pb-1 hover:border-gold-light transition-colors self-start">
@@ -407,30 +451,42 @@
             </button>
           </div>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="reveal bg-forest-mid/40 border border-white/10 border-t-2 border-t-gold/70 p-8 hover:border-gold/40 transition-colors cursor-pointer" onclick="goToArea('area-previdenciario')">
-              <div class="text-gold-light mb-6"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-              <h3 data-t="home.areas.a1h" class="font-serif text-white text-2xl font-normal mb-3">Previdenciário</h3>
-              <p data-t="home.areas.a1p" class="text-stone/85 font-light leading-relaxed text-base">Aposentadorias, revisões de benefício, auxílios e BPC/LOAS. O foco de quem está perto de se aposentar.</p>
-              <span class="inline-block mt-5 text-gold-light text-xs uppercase tracking-[0.16em] font-bold">Ver →</span>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            <div class="area-card reveal relative overflow-hidden bg-white/[0.04] border border-white/15 p-8 lg:p-9 cursor-pointer" onclick="goToArea('area-previdenciario')">
+              <div class="flex items-start justify-between mb-8">
+                <span class="area-num font-serif text-white/25 text-5xl font-light leading-none">01</span>
+                <span class="text-gold-light mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              </div>
+              <h3 data-t="home.areas.a1h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Previdenciário</h3>
+              <p data-t="home.areas.a1p" class="text-stone/80 font-light leading-relaxed text-[15px]">Aposentadorias, revisões de benefício, auxílios e BPC/LOAS. O foco de quem está perto de se aposentar.</p>
+              <span class="inline-flex items-center gap-2 mt-7 text-gold-light text-[11px] uppercase tracking-[0.2em] font-bold">Ver área <span class="area-arrow">→</span></span>
             </div>
-            <div class="reveal reveal-delay-1 bg-forest-mid/40 border border-white/10 border-t-2 border-t-gold/70 p-8 hover:border-gold/40 transition-colors cursor-pointer" onclick="goToArea('area-trabalhista')">
-              <div class="text-gold-light mb-6"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
-              <h3 data-t="home.areas.a2h" class="font-serif text-white text-2xl font-normal mb-3">Trabalhista</h3>
-              <p data-t="home.areas.a2p" class="text-stone/85 font-light leading-relaxed text-base">Verbas rescisórias, horas extras, reconhecimento de vínculo e assédio. Seus direitos no trabalho.</p>
-              <span class="inline-block mt-5 text-gold-light text-xs uppercase tracking-[0.16em] font-bold">Ver →</span>
+            <div class="area-card reveal reveal-delay-1 relative overflow-hidden bg-white/[0.04] border border-white/15 p-8 lg:p-9 cursor-pointer" onclick="goToArea('area-trabalhista')">
+              <div class="flex items-start justify-between mb-8">
+                <span class="area-num font-serif text-white/25 text-5xl font-light leading-none">02</span>
+                <span class="text-gold-light mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+              </div>
+              <h3 data-t="home.areas.a2h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Trabalhista</h3>
+              <p data-t="home.areas.a2p" class="text-stone/80 font-light leading-relaxed text-[15px]">Verbas rescisórias, horas extras, reconhecimento de vínculo e assédio. Seus direitos no trabalho.</p>
+              <span class="inline-flex items-center gap-2 mt-7 text-gold-light text-[11px] uppercase tracking-[0.2em] font-bold">Ver área <span class="area-arrow">→</span></span>
             </div>
-            <div class="reveal reveal-delay-2 bg-forest-mid/40 border border-white/10 border-t-2 border-t-gold/70 p-8 hover:border-gold/40 transition-colors cursor-pointer" onclick="goToArea('area-inventario')">
-              <div class="text-gold-light mb-6"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
-              <h3 data-t="home.areas.a3h" class="font-serif text-white text-2xl font-normal mb-3">Inventário</h3>
-              <p data-t="home.areas.a3p" class="text-stone/85 font-light leading-relaxed text-base">Inventário, partilha de bens e regularização de heranças, com cuidado no momento difícil.</p>
-              <span class="inline-block mt-5 text-gold-light text-xs uppercase tracking-[0.16em] font-bold">Ver →</span>
+            <div class="area-card reveal reveal-delay-2 relative overflow-hidden bg-white/[0.04] border border-white/15 p-8 lg:p-9 cursor-pointer" onclick="goToArea('area-inventario')">
+              <div class="flex items-start justify-between mb-8">
+                <span class="area-num font-serif text-white/25 text-5xl font-light leading-none">03</span>
+                <span class="text-gold-light mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+              </div>
+              <h3 data-t="home.areas.a3h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Inventário</h3>
+              <p data-t="home.areas.a3p" class="text-stone/80 font-light leading-relaxed text-[15px]">Inventário, partilha de bens e regularização de heranças, com cuidado no momento difícil.</p>
+              <span class="inline-flex items-center gap-2 mt-7 text-gold-light text-[11px] uppercase tracking-[0.2em] font-bold">Ver área <span class="area-arrow">→</span></span>
             </div>
-            <div class="reveal reveal-delay-3 bg-forest-mid/40 border border-white/10 border-t-2 border-t-gold/70 p-8 hover:border-gold/40 transition-colors cursor-pointer" onclick="goToArea('area-indenizacoes')">
-              <div class="text-gold-light mb-6"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></div>
-              <h3 data-t="home.areas.a4h" class="font-serif text-white text-2xl font-normal mb-3">Indenizações</h3>
-              <p data-t="home.areas.a4p" class="text-stone/85 font-light leading-relaxed text-base">Danos morais e materiais, acidentes e relações de consumo. Reparação quando algo dá errado.</p>
-              <span class="inline-block mt-5 text-gold-light text-xs uppercase tracking-[0.16em] font-bold">Ver →</span>
+            <div class="area-card reveal reveal-delay-3 relative overflow-hidden bg-white/[0.04] border border-white/15 p-8 lg:p-9 cursor-pointer" onclick="goToArea('area-indenizacoes')">
+              <div class="flex items-start justify-between mb-8">
+                <span class="area-num font-serif text-white/25 text-5xl font-light leading-none">04</span>
+                <span class="text-gold-light mt-1"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
+              </div>
+              <h3 data-t="home.areas.a4h" class="font-serif text-white text-[1.6rem] font-normal mb-3">Indenizações</h3>
+              <p data-t="home.areas.a4p" class="text-stone/80 font-light leading-relaxed text-[15px]">Danos morais e materiais, acidentes e relações de consumo. Reparação quando algo dá errado.</p>
+              <span class="inline-flex items-center gap-2 mt-7 text-gold-light text-[11px] uppercase tracking-[0.2em] font-bold">Ver área <span class="area-arrow">→</span></span>
             </div>
           </div>
         </div>
@@ -439,7 +495,7 @@
       <!-- CTA FINAL -->
       <div class="bg-stone py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto text-center reveal">
-          <span data-t="home.cta.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-6">Vamos conversar</span>
+          <span data-t="home.cta.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-6">Vamos conversar</span>
           <h2 data-t="home.cta.h2" class="font-serif text-ink text-4xl sm:text-5xl lg:text-6xl font-light leading-tight max-w-3xl mx-auto mb-10">
             O primeiro passo é simples: uma conversa para entender o seu caso.
           </h2>
@@ -452,9 +508,9 @@
 
     <!-- ====================== SOBRE ====================== -->
     <section id="sec-sobre" class="page-section">
-      <div class="bg-forest grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+      <div class="lapis grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto">
-          <span data-t="about.overline" class="text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold block mb-6 reveal">Quem Somos</span>
+          <span data-t="about.overline" class="eyebrow text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">Quem Somos</span>
           <h1 data-t-html="about.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-3xl reveal reveal-delay-1">Advocacia feita de <span class="italic text-gold-light">escuta e cuidado.</span></h1>
           <p data-t="about.p" class="text-stone/85 text-lg font-light max-w-2xl mt-8 reveal reveal-delay-2">A Xavier Ribeiro &amp; Ribeiro nasceu para defender pessoas com seriedade técnica e proximidade humana — em São José dos Campos e em todo o Vale do Paraíba.</p>
         </div>
@@ -463,7 +519,7 @@
       <div class="bg-stone py-24 lg:py-32 px-6 lg:px-10">
         <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div class="lg:col-span-4 reveal">
-            <span data-t="about.work.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">A nossa forma de trabalhar</span>
+            <span data-t="about.work.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">A nossa forma de trabalhar</span>
             <div class="w-12 h-px bg-gold/50"></div>
           </div>
           <div class="lg:col-span-8 reveal reveal-delay-1">
@@ -487,7 +543,7 @@
       <div class="bg-stone py-20 lg:py-28 px-6 lg:px-10 border-t border-stone-dark">
         <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div class="lg:col-span-4 reveal">
-            <span data-t="about.resp.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Dedicação em cada caso</span>
+            <span data-t="about.resp.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Dedicação em cada caso</span>
             <div class="w-12 h-px bg-gold/50"></div>
           </div>
           <div class="lg:col-span-8 reveal reveal-delay-1">
@@ -501,12 +557,12 @@
       <div class="bg-white py-20 lg:py-28 px-6 lg:px-10 border-t border-stone-dark">
         <div class="max-w-site mx-auto">
           <div class="max-w-2xl mb-12 reveal">
-            <span data-t="about.team.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Quem conduz</span>
+            <span data-t="about.team.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Quem conduz</span>
             <h2 data-t="about.team.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">À frente do escritório.</h2>
           </div>
           <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div class="lg:col-span-5 reveal">
-              <div class="aspect-[4/5] w-full max-w-md overflow-hidden border border-stone-dark bg-forest grain relative">
+              <div class="aspect-[4/5] w-full max-w-md overflow-hidden border border-stone-dark lapis grain relative">
                 <img src="sobre-advogada.jpg" alt="Dra. [Nome] Ribeiro — advogada em São José dos Campos" class="w-full h-full object-cover relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
                 <div class="absolute inset-0 z-0 flex flex-col items-center justify-center text-center px-6" style="display:none;">
                   <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#cbb082" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg>
@@ -525,7 +581,7 @@
         </div>
       </div>
 
-      <div class="bg-forest grain py-16 lg:py-24 px-6 lg:px-10">
+      <div class="lapis grain py-16 lg:py-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal">
           <h2 data-t="about.cta_h2" class="font-serif text-white text-3xl lg:text-4xl font-light text-center md:text-left">Vamos conversar sobre o seu caso?</h2>
           <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" data-t="about.cta_btn" class="shrink-0 bg-gold hover:bg-gold-light text-forest-dark text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
@@ -536,9 +592,9 @@
     <!-- ====================== ÁREAS DE ATUAÇÃO ====================== -->
     <section id="sec-areas" class="page-section">
       <!-- hero -->
-      <div class="bg-forest grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-28 px-6 lg:px-10">
+      <div class="lapis grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-28 px-6 lg:px-10">
         <div class="max-w-site mx-auto">
-          <span data-t="areas.overline" class="text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold block mb-6 reveal">O que fazemos por você</span>
+          <span data-t="areas.overline" class="eyebrow text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">O que fazemos por você</span>
           <h1 data-t-html="areas.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-4xl reveal reveal-delay-1">
             Áreas de atuação<br><span class="italic text-gold-light">com foco em quem precisa.</span>
           </h1>
@@ -587,7 +643,7 @@
         <div id="area-previdenciario" style="scroll-margin-top:96px;" class="border-b border-stone-dark px-6 lg:px-10 py-20 lg:py-28">
           <div class="max-w-3xl mx-auto text-center">
             <div class="reveal">
-              <span data-t="areas.a1.over" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Nosso foco principal</span>
+              <span data-t="areas.a1.over" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Nosso foco principal</span>
               <h2 data-t="areas.a1.h2" class="font-serif text-gold text-4xl lg:text-5xl font-light leading-tight mb-5">Direito Previdenciário</h2>
               <p data-t="areas.a1.p" class="text-ink-light font-light leading-relaxed max-w-2xl mx-auto">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.</p>
             </div>
@@ -604,7 +660,7 @@
         <div id="area-trabalhista" style="scroll-margin-top:96px;" class="border-b border-stone-dark px-6 lg:px-10 py-20 lg:py-28">
           <div class="max-w-3xl mx-auto text-center">
             <div class="reveal">
-              <span data-t="areas.a2.over" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Seus direitos no trabalho</span>
+              <span data-t="areas.a2.over" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Seus direitos no trabalho</span>
               <h2 data-t="areas.a2.h2" class="font-serif text-gold text-4xl lg:text-5xl font-light leading-tight mb-5">Direito do Trabalho</h2>
               <p data-t="areas.a2.p" class="text-ink-light font-light leading-relaxed max-w-2xl mx-auto">Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.</p>
             </div>
@@ -621,7 +677,7 @@
         <div id="area-inventario" style="scroll-margin-top:96px;" class="border-b border-stone-dark px-6 lg:px-10 py-20 lg:py-28">
           <div class="max-w-3xl mx-auto text-center">
             <div class="reveal">
-              <span data-t="areas.a3.over" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Patrimônio e família</span>
+              <span data-t="areas.a3.over" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Patrimônio e família</span>
               <h2 data-t="areas.a3.h2" class="font-serif text-gold text-4xl lg:text-5xl font-light leading-tight mb-5">Inventário e Sucessões</h2>
               <p data-t="areas.a3.p" class="text-ink-light font-light leading-relaxed max-w-2xl mx-auto">O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.</p>
             </div>
@@ -638,7 +694,7 @@
         <div id="area-indenizacoes" style="scroll-margin-top:96px;" class="px-6 lg:px-10 py-20 lg:py-28">
           <div class="max-w-3xl mx-auto text-center">
             <div class="reveal">
-              <span data-t="areas.a4.over" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-5">Quando algo dá errado</span>
+              <span data-t="areas.a4.over" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Quando algo dá errado</span>
               <h2 data-t="areas.a4.h2" class="font-serif text-gold text-4xl lg:text-5xl font-light leading-tight mb-5">Indenizações</h2>
               <p data-t="areas.a4.p" class="text-ink-light font-light leading-relaxed max-w-2xl mx-auto">Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.</p>
             </div>
@@ -657,7 +713,7 @@
       <div class="bg-white px-6 lg:px-10 py-20 lg:py-28 border-t border-stone-dark">
         <div class="max-w-site mx-auto">
           <div class="max-w-3xl mx-auto text-center reveal">
-            <span data-t="areas.faq.overline" class="text-gold text-[11px] uppercase tracking-[0.28em] font-bold block mb-4">Perguntas frequentes</span>
+            <span data-t="areas.faq.overline" class="eyebrow text-gold text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Perguntas frequentes</span>
             <h2 data-t="areas.faq.h2" class="font-serif text-ink text-3xl lg:text-4xl font-light leading-tight mb-4">Dúvidas comuns de quem procura o escritório.</h2>
             <p data-t="areas.faq.p" class="text-ink-soft font-normal leading-relaxed max-w-2xl mx-auto text-base">Reunimos respostas para as perguntas que mais ouvimos. Para o seu caso específico, o ideal é uma conversa.</p>
           </div>
@@ -716,9 +772,9 @@
 
     <!-- ====================== CONTATO ====================== -->
     <section id="sec-contato" class="page-section">
-      <div class="bg-forest grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+      <div class="lapis grain pt-[100px] sm:pt-[140px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto">
-          <span data-t="contact.overline" class="text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold block mb-6 reveal">Canal direto</span>
+          <span data-t="contact.overline" class="eyebrow text-gold-light text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">Canal direto</span>
           <h1 data-t="contact.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-4xl reveal reveal-delay-1">Fale com o escritório.</h1>
           <p data-t="contact.p" class="text-stone/85 text-lg font-light max-w-2xl mt-8 reveal reveal-delay-2">Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês em São José dos Campos e região.</p>
         </div>
@@ -780,7 +836,7 @@
         </div>
       </div>
 
-      <div class="bg-forest grain py-16 lg:py-24 px-6 lg:px-10">
+      <div class="lapis grain py-16 lg:py-24 px-6 lg:px-10">
         <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal">
           <h2 data-t="contact.cta_h2" class="font-serif text-white text-3xl lg:text-4xl font-light text-center md:text-left">Toda boa orientação começa com uma conversa.</h2>
           <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="contact.cta_btn" class="shrink-0 bg-gold hover:bg-gold-light text-forest-dark text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
@@ -791,7 +847,7 @@
   </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="bg-forest-dark grain pt-16 pb-10 px-6 lg:px-10 border-t border-white/5">
+  <footer class="lapis-deep grain pt-16 pb-10 px-6 lg:px-10 border-t border-white/5">
     <div class="max-w-site mx-auto relative z-10">
       <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
         <div class="md:col-span-5">
@@ -983,6 +1039,11 @@
             overline: 'Vamos conversar',
             h2: 'O primeiro passo é simples: uma conversa para entender o seu caso.',
             btn: 'Falar no WhatsApp'
+          },
+          manifesto: {
+            eyebrow: 'O nosso compromisso',
+            quote: 'Defendemos pessoas, não números de processo. Cada história merece ser ouvida com atenção, conduzida com técnica e respeitada com a verdade.',
+            cite: 'Xavier Ribeiro & Ribeiro'
           }
         },
         about: {
@@ -1083,6 +1144,11 @@
             overline: 'Talk to us',
             h2: 'The first step is simple: a conversation to understand your case.',
             btn: 'Message us on WhatsApp'
+          },
+          manifesto: {
+            eyebrow: 'Our commitment',
+            quote: 'We defend people, not case numbers. Every story deserves to be heard with attention, handled with skill, and honored with the truth.',
+            cite: 'Xavier Ribeiro & Ribeiro'
           }
         },
         about: {

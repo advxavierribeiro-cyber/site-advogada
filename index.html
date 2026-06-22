@@ -143,27 +143,12 @@
     /* brilho sutil no botão dourado (sheen) */
     .btn-gold{ background-image:linear-gradient(180deg, rgba(255,255,255,.12), rgba(0,0,0,.04)); }
 
-    /* ════════ BARRA LATERAL VERTICAL (rail institucional) ════════ */
-    :root{ --rail: 290px; }
-    @media (min-width:1024px){ body{ padding-left: var(--rail); } }
-    .sidebar{
-      position:fixed; top:0; left:0; bottom:0; width:var(--rail); z-index:50;
-      display:none; flex-direction:column;
-      border-right:1px solid rgba(203,176,130,.20);
-      padding:2.6rem 2.2rem 2.2rem;
-    }
-    @media (min-width:1024px){ .sidebar{ display:flex; } }
-    .sidebar-link{ position:relative; display:flex; align-items:baseline; gap:.95rem; padding:.62rem 0; color:rgba(255,255,255,.66); transition:color .35s ease; }
-    .sidebar-link:hover{ color:#ffffff; }
-    .sidebar-link.active-menu{ color:#cbb082; }
-    .sidebar-link.menu-item::after{ display:none; } /* sem sublinhado horizontal aqui */
-    .sidebar-link .s-num{ font-family:'Cormorant Garamond',serif; font-size:1rem; line-height:1; color:rgba(203,176,130,.5); transition:color .35s ease; width:1.5rem; flex:none; }
-    .sidebar-link.active-menu .s-num{ color:#cbb082; }
-    .sidebar-link .s-label{ font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; font-weight:600; }
-    .sidebar-link::before{ content:''; position:absolute; left:-2.2rem; top:50%; width:2px; height:62%; background:#cbb082; transform:translateY(-50%) scaleY(0); transform-origin:center; transition:transform .42s cubic-bezier(.22,1,.36,1); }
-    .sidebar-link.active-menu::before, .sidebar-link:hover::before{ transform:translateY(-50%) scaleY(1); }
-    /* texto vertical do local, na quina da rail */
-    .rail-vert{ writing-mode:vertical-rl; transform:rotate(180deg); letter-spacing:.34em; }
+    /* ════════ Top nav (limpo, estilo Vela Wood) ════════ */
+    #site-header{ background-color: transparent; transition: background-color .5s ease, backdrop-filter .5s ease, box-shadow .5s ease, border-color .5s ease; border-bottom:1px solid transparent; }
+    #site-header.scrolled{ background-color: rgba(6,24,47,.92); backdrop-filter: blur(10px); border-bottom-color: rgba(255,255,255,.10); box-shadow: 0 12px 34px -22px rgba(3,12,28,.7); }
+    .nav-link{ color: rgba(255,255,255,.74); transition: color .3s ease; }
+    .nav-link:hover{ color:#ffffff; }
+    .nav-link.active-menu{ color:#cbb082; }
 
     /* ---- Page (SPA) switching ---- */
     .page-section { display: none; }
@@ -291,54 +276,36 @@
 </head>
 <body class="flex flex-col min-h-screen overflow-x-hidden">
 
-  <!-- ============ BARRA LATERAL (desktop) ============ -->
-  <aside class="sidebar lapis grain">
-    <a href="#home" onclick="changePage('home', event)" class="focus:outline-none flex items-center gap-3 shrink-0 relative z-10">
-      <span class="text-gold-light shrink-0">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg>
-      </span>
-      <span class="flex flex-col leading-none">
-        <span class="font-serif text-white text-[1.45rem] font-medium tracking-[0.02em] leading-[1.06]">Xavier Ribeiro <span class="text-gold-light">&amp;</span> Ribeiro</span>
-        <span class="font-sans text-gold-light text-[9px] font-semibold tracking-[0.34em] mt-2" data-t="company.tagline">SOCIEDADE DE ADVOGADOS</span>
-      </span>
-    </a>
-
-    <div class="flex-1 flex items-center relative z-10">
-      <nav class="flex flex-col gap-1.5 w-full">
-        <button onclick="changePage('home', event)" id="nav-home" class="sidebar-link menu-item active-menu text-left"><span class="s-num">01</span><span class="s-label" data-t="nav.home">Início</span></button>
-        <button onclick="changePage('sobre', event)" id="nav-sobre" class="sidebar-link menu-item text-left"><span class="s-num">02</span><span class="s-label" data-t="nav.about">Sobre</span></button>
-        <button onclick="changePage('areas', event)" id="nav-areas" class="sidebar-link menu-item text-left"><span class="s-num">03</span><span class="s-label" data-t="nav.areas">Áreas de Atuação</span></button>
-        <button onclick="changePage('contato', event)" id="nav-contato" class="sidebar-link menu-item text-left"><span class="s-num">04</span><span class="s-label" data-t="nav.contact">Contato</span></button>
-      </nav>
-    </div>
-
-    <div class="relative z-10 flex flex-col gap-5">
-      <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="btn-gold bg-gold hover:bg-gold-light text-forest-dark text-[10px] uppercase tracking-[0.18em] font-bold px-5 py-3.5 transition-colors flex items-center justify-center gap-2">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>
-        Falar no WhatsApp
+  <!-- ============ TOP NAV (estilo Vela Wood) ============ -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-[72px] sm:h-[88px] flex items-center">
+    <div class="max-w-site mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
+      <a href="#home" onclick="changePage('home', event)" class="focus:outline-none flex items-center gap-3 shrink-0">
+        <span class="text-gold-light shrink-0">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="sm:w-9 sm:h-9"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg>
+        </span>
+        <span class="flex flex-col leading-none">
+          <span class="font-serif text-white text-lg sm:text-2xl font-medium tracking-[0.02em] leading-none whitespace-nowrap">Xavier Ribeiro <span class="text-gold-light">&amp;</span> Ribeiro</span>
+          <span class="font-sans text-gold-light text-[8px] sm:text-[10px] font-semibold tracking-[0.34em] mt-1.5" data-t="company.tagline">SOCIEDADE DE ADVOGADOS</span>
+        </span>
       </a>
-      <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3 lg:gap-9">
+        <nav class="hidden lg:flex items-center gap-9">
+          <button onclick="changePage('home', event)" id="nav-home" data-t="nav.home" class="menu-item nav-link active-menu text-xs uppercase tracking-[0.22em] font-semibold">Início</button>
+          <button onclick="changePage('sobre', event)" id="nav-sobre" data-t="nav.about" class="menu-item nav-link text-xs uppercase tracking-[0.22em] font-semibold">Sobre</button>
+          <button onclick="changePage('areas', event)" id="nav-areas" data-t="nav.areas" class="menu-item nav-link text-xs uppercase tracking-[0.22em] font-semibold">Áreas de Atuação</button>
+          <button onclick="changePage('contato', event)" id="nav-contato" data-t="nav.contact" class="menu-item nav-link text-xs uppercase tracking-[0.22em] font-semibold">Contato</button>
+        </nav>
+        <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="hidden lg:inline-flex btn-gold bg-gold hover:bg-gold-light text-forest-dark text-[10px] uppercase tracking-[0.18em] font-bold px-6 py-3 transition-colors">WhatsApp</a>
         <div class="lang-toggle" role="group" aria-label="Idioma / Language">
           <button class="lang-opt active-lang" data-lang="pt" onclick="setLang('pt')">PT</button>
           <button class="lang-opt" data-lang="en" onclick="setLang('en')">EN</button>
         </div>
-        <p class="text-white/40 text-[9px] tracking-[0.22em] uppercase text-right leading-relaxed">São José<br>dos Campos</p>
+        <button onclick="toggleMobileMenu()" class="lg:hidden flex flex-col gap-1.5 p-2 focus:outline-none z-50" aria-label="Menu">
+          <span id="m-line1" class="block w-6 h-0.5 bg-white transition-all duration-300 nav-burger"></span>
+          <span id="m-line2" class="block w-6 h-0.5 bg-white transition-all duration-300 nav-burger"></span>
+          <span id="m-line3" class="block w-6 h-0.5 bg-white transition-all duration-300 nav-burger"></span>
+        </button>
       </div>
-    </div>
-  </aside>
-
-  <!-- ============ BARRA SUPERIOR (mobile) ============ -->
-  <header id="site-header" class="lg:hidden fixed top-0 left-0 right-0 z-50 h-16 flex items-center lapis border-b border-white/10">
-    <div class="px-6 w-full flex items-center justify-between relative z-10">
-      <a href="#home" onclick="changePage('home', event)" class="focus:outline-none flex items-center gap-2.5 shrink-0">
-        <span class="text-gold-light shrink-0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg></span>
-        <span class="font-serif text-white text-lg font-medium tracking-[0.02em] whitespace-nowrap">Xavier Ribeiro <span class="text-gold-light">&amp;</span> Ribeiro</span>
-      </a>
-      <button onclick="toggleMobileMenu()" class="flex flex-col gap-1.5 p-2 focus:outline-none z-50" aria-label="Menu">
-        <span id="m-line1" class="block w-6 h-0.5 bg-white transition-all duration-300 nav-burger"></span>
-        <span id="m-line2" class="block w-6 h-0.5 bg-white transition-all duration-300 nav-burger"></span>
-        <span id="m-line3" class="block w-6 h-0.5 bg-white transition-all duration-300 nav-burger"></span>
-      </button>
     </div>
   </header>
 
@@ -365,7 +332,7 @@
     <section id="sec-home" class="page-section active">
 
       <!-- HERO (vídeo de fundo de São José dos Campos) -->
-      <div class="hero-wrap relative min-h-[100svh] grain flex items-center px-6 lg:px-12 pt-16 lg:pt-0 overflow-hidden">
+      <div class="hero-wrap relative min-h-[100svh] grain flex items-center px-6 lg:px-12 pt-24 lg:pt-16 overflow-hidden">
 
         <!-- ╔═══ VÍDEO DE FUNDO ═══╗
              Clipe de TESTE (cidade ao entardecer). Para usar o vídeo da Ponte
@@ -380,7 +347,6 @@
         <!-- ╚═══ fim do vídeo ═══╝ -->
 
         <div class="hero-scrim"></div>
-        <div class="hidden lg:block pointer-events-none absolute inset-7 border border-white/12 z-[2]"></div>
 
         <div class="max-w-site mx-auto w-full relative z-10">
           <div class="max-w-4xl hero-text">
@@ -983,8 +949,10 @@
       }
     }
 
-    /* ============ HEADER (rail + barra mobile sempre sólidas) ============ */
-    function updateHeaderTheme() { /* sem alternância de tema: navegação é fixa */ }
+    /* ============ HEADER (transparente → sólido no scroll) ============ */
+    const siteHeader = document.getElementById('site-header');
+    function updateHeaderTheme() { if (siteHeader) siteHeader.classList.toggle('scrolled', window.scrollY > 40); }
+    window.addEventListener('scroll', updateHeaderTheme, { passive: true });
 
     /* ============ SCROLL REVEAL ============ */
     let revealObserver;

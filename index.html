@@ -7,21 +7,9 @@
   <link rel="canonical" href="https://www.xavierribeiroribeiro.adv.br/"/>
   <link rel="icon" href="/favicon.ico" sizes="any"/>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "name": "Xavier Ribeiro & Ribeiro – Sociedade de Advogados",
-  "url": "https://www.xavierribeiroribeiro.adv.br/",
-  "telephone": "+5512997434181",
-  "areaServed": [
-    { "@type": "City", "name": "São José dos Campos" },
-    { "@type": "AdministrativeArea", "name": "Vale do Paraíba" }
-  ],
-  "knowsAbout": ["Direito Previdenciário","Aposentadoria e revisão de benefícios do INSS","Direito do Trabalho","Inventário e Sucessões","Indenizações"],
-  "description": "Sociedade de advogados em São José dos Campos com foco em Direito Previdenciário (aposentadorias e revisões do INSS), Trabalhista, Inventário e Indenizações."
-}
+{"@context":"https://schema.org","@type":"LegalService","name":"Xavier Ribeiro & Ribeiro – Sociedade de Advogados","url":"https://www.xavierribeiroribeiro.adv.br/","telephone":"+5512997434181","areaServed":[{"@type":"City","name":"São José dos Campos"},{"@type":"AdministrativeArea","name":"Vale do Paraíba"}],"knowsAbout":["Direito Previdenciário","Aposentadoria e revisão de benefícios do INSS","Direito do Trabalho","Inventário e Sucessões","Indenizações"],"description":"Sociedade de advogados em São José dos Campos com foco em Direito Previdenciário, Trabalhista, Inventário e Indenizações."}
   </script>
-  <meta name="description" content="Advocacia de alto padrão em São José dos Campos com foco em aposentadoria e Direito Previdenciário (INSS), além de Trabalhista, Inventário e Indenizações. Atendimento humano e sem juridiquês. Fale pelo WhatsApp."/>
+  <meta name="description" content="Advocacia de alto padrão em São José dos Campos com foco em aposentadoria e Direito Previdenciário (INSS), além de Trabalhista, Inventário e Indenizações. Atendimento humano e sem juridiquês."/>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -29,152 +17,166 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <script>
-    tailwind.config = {
-      theme: { extend: {
-        colors: {
-          blue:'#173a6b','blue-mid':'#2b5a96','blue-deep':'#102a4f','blue-night':'#0a1b39',
-          gold:'#c2a05a','gold-soft':'#d8b978',champagne:'#e7d3a3','gold-deep':'#9a7d44',
-          brown:'#6f5847','brown-soft':'#a98e76','brown-deep':'#46372b',
-          ivory:'#f6f2ea',cream:'#efe7d8','cream-dark':'#e1d7c3',
-          line:'#28456f',ink:'#16243d','ink-soft':'#51607a',
-        },
-        fontFamily: { serif:['"Cormorant Garamond"','Georgia','serif'], sans:['Manrope','system-ui','sans-serif'] },
-        maxWidth: { site:'1340px' },
-      } }
-    }
+    tailwind.config = { theme: { extend: {
+      colors: {
+        /* Azul Petróleo */
+        blue:'#1a2b3c','blue-mid':'#2b4a5e','blue-deep':'#13212e','blue-night':'#0e1822',
+        /* Ouro Fosco */
+        gold:'#c5a059','gold-soft':'#d8bd82','champagne:':'#e7d3a3',champagne:'#e7d3a3','gold-deep':'#9c7d40',
+        /* Marrom nobre (acento discreto) */
+        brown:'#6f5847','brown-soft':'#a98e76','brown-deep':'#46372b',
+        /* Off-white */
+        ivory:'#f9f8f6',cream:'#f0ece4','cream-dark':'#e2dccf',
+        line:'#2c4253',ink:'#1a2b3c','ink-soft':'#516170',
+      },
+      fontFamily: { serif:['"Cormorant Garamond"','Georgia','serif'], sans:['Manrope','system-ui','sans-serif'] },
+      maxWidth: { site:'1340px' },
+    } } }
   </script>
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family:'Manrope',sans-serif; background:#f6f2ea; color:#16243d; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-    section[id], header[id] { scroll-margin-top: 84px; }
+    body { font-family:'Manrope',sans-serif; background:#0e1822; color:#1a2b3c; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
 
     .grain{ position:relative; }
     .grain::before{ content:''; position:absolute; inset:0; pointer-events:none; opacity:.035; z-index:0;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
-    .blue-rich{ background-color:#143257; background-image:radial-gradient(115% 90% at 82% 2%, rgba(43,90,150,.30),transparent 55%),radial-gradient(120% 100% at 4% 100%, rgba(7,20,42,.55),transparent 60%),linear-gradient(160deg,#173a6b,#0d2547); }
-    .blue-panel{ background-color:#102a4f; background-image:linear-gradient(170deg,#15345d,#0b2143); }
-    .blue-night-rich{ background-color:#0a1b33; background-image:linear-gradient(160deg,#0c2042,#07142a); }
-    .ivory-rich{ background-color:#f6f2ea; background-image:radial-gradient(120% 90% at 92% 0%, rgba(194,160,90,.06),transparent 55%); }
-    .warm-rich{ background-color:#f3ece0; background-image:radial-gradient(110% 90% at 6% 0%, rgba(111,88,71,.07),transparent 55%); }
-    .cta-band{ background-color:#102a4f; background-image:radial-gradient(80% 130% at 50% 0%, rgba(231,211,163,.10),transparent 55%),linear-gradient(135deg,#163a68,#0c2244); }
-    .text-gold-grad{ background:linear-gradient(100deg,#e7d3a3,#c2a05a 42%,#9a7d44 72%,#e7d3a3);-webkit-background-clip:text;background-clip:text;color:transparent; }
+    .blue-rich{ background-color:#16293a; background-image:radial-gradient(115% 90% at 82% 2%, rgba(43,74,94,.40),transparent 55%),radial-gradient(120% 100% at 4% 100%, rgba(8,16,24,.55),transparent 60%),linear-gradient(160deg,#1d3245,#101d28); }
+    .blue-panel{ background-color:#13212e; background-image:linear-gradient(170deg,#1a2d3e,#0e1822); }
+    .blue-night-rich{ background-color:#0e1822; background-image:linear-gradient(160deg,#12222e,#0a141c); }
+    .ivory-rich{ background-color:#f9f8f6; background-image:radial-gradient(120% 90% at 92% 0%, rgba(197,160,89,.06),transparent 55%); }
+    .warm-rich{ background-color:#f5f1ea; background-image:radial-gradient(110% 90% at 6% 0%, rgba(111,88,71,.06),transparent 55%); }
+    .cta-band{ background-color:#13212e; background-image:radial-gradient(80% 130% at 50% 0%, rgba(197,160,89,.12),transparent 55%),linear-gradient(135deg,#1c3346,#0f1c27); }
+    .text-gold-grad{ background:linear-gradient(100deg,#e7d3a3,#c5a059 42%,#9c7d40 72%,#e7d3a3);-webkit-background-clip:text;background-clip:text;color:transparent; }
 
     /* HERO */
-    .hero-scene{ position:absolute; inset:0; z-index:0; width:100%; height:100%; }
-    .hero-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:1; }
-    .hero-scrim{ position:absolute; inset:0; z-index:2; pointer-events:none;
-      background:linear-gradient(90deg, rgba(8,20,44,.92) 0%, rgba(9,24,52,.66) 46%, rgba(10,27,57,.34) 100%), linear-gradient(180deg, rgba(8,20,44,.4) 0%, rgba(8,20,44,0) 26%, rgba(8,20,44,.2) 64%, rgba(8,20,44,.86) 100%); }
-    .hero-text{ text-shadow:0 2px 40px rgba(4,12,30,.55); }
-    .cbl{ stroke:#e7d3a3; stroke-width:1; opacity:.45; }
+    .hero-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; }
+    .hero-veil{ position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:linear-gradient(90deg, rgba(249,248,246,.95) 0%, rgba(249,248,246,.78) 26%, rgba(249,248,246,.32) 50%, rgba(249,248,246,0) 72%), linear-gradient(180deg, rgba(249,248,246,0) 72%, rgba(249,248,246,.85) 100%); }
+    .hero-frame{ background:rgba(249,248,246,.55); backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); border:1px solid rgba(26,43,60,.10); box-shadow:0 30px 70px -40px rgba(26,43,60,.4); }
     @keyframes lineGrow{ from{width:0} to{width:3.5rem} }
-    @keyframes floatY{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
 
     .eyebrow{ display:inline-flex; align-items:center; gap:.7rem; }
-    .eyebrow::before{ content:''; width:6px; height:6px; transform:rotate(45deg); background:#c2a05a; flex:none; }
+    .eyebrow::before{ content:''; width:6px; height:6px; transform:rotate(45deg); background:#c5a059; flex:none; }
     .rule-diamond{ display:flex; align-items:center; gap:1rem; }
-    .rule-diamond::before,.rule-diamond::after{ content:''; height:1px; flex:1; background:linear-gradient(90deg,transparent,rgba(194,160,90,.5),transparent); }
-    .rule-diamond i{ width:7px; height:7px; transform:rotate(45deg); background:#c2a05a; flex:none; display:block; }
+    .rule-diamond::before,.rule-diamond::after{ content:''; height:1px; flex:1; background:linear-gradient(90deg,transparent,rgba(197,160,89,.5),transparent); }
+    .rule-diamond i{ width:7px; height:7px; transform:rotate(45deg); background:#c5a059; flex:none; display:block; }
     .btn-gold{ background-image:linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.05)); position:relative; overflow:hidden; }
     .btn-gold::after{ content:''; position:absolute; top:0; left:-120%; width:60%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent); transform:skewX(-18deg); transition:left .7s ease; }
     .btn-gold:hover::after{ left:140%; }
+    .btn-outline-gold{ border:1px solid #c5a059; color:#c5a059; transition:background-color .3s,color .3s; }
+    .btn-outline-gold:hover{ background:#c5a059; color:#0e1822; }
 
-    /* NAV */
+    /* NAV / abas — texto adapta ao fundo (claro/escuro/rolado) */
     #site-header{ background:transparent; transition:background-color .5s,backdrop-filter .5s,box-shadow .5s,border-color .5s; border-bottom:1px solid transparent; }
-    #site-header.scrolled{ background:rgba(8,21,48,.9); backdrop-filter:blur(12px); border-bottom-color:rgba(231,211,163,.16); box-shadow:0 14px 40px -26px rgba(4,14,32,.9); }
-    .nav-link{ color:rgba(245,241,232,.74); transition:color .3s; position:relative; }
-    .nav-link:hover{ color:#fff; }
-    .nav-link.active-menu{ color:#e7d3a3; }
-    .nav-link::after{ content:''; position:absolute; bottom:-6px; left:0; width:0; height:1.5px; background:linear-gradient(90deg,#9a7d44,#e7d3a3); transition:width .35s cubic-bezier(.22,1,.36,1); }
+    #site-header.scrolled{ background:rgba(249,248,246,.88); backdrop-filter:blur(12px); border-bottom-color:rgba(26,43,60,.1); box-shadow:0 14px 40px -28px rgba(26,43,60,.5); }
+    .htext{ color:#1a2b3c; transition:color .4s; }
+    .hsub{ color:#1a2b3c; transition:color .4s; }
+    #site-header.on-dark .htext{ color:#f9f8f6; }
+    #site-header.on-dark .hsub{ color:#e7d3a3; }
+    #site-header.scrolled .htext{ color:#1a2b3c; }
+    #site-header.scrolled .hsub{ color:#1a2b3c; }
+    .nav-link{ color:rgba(26,43,60,.78); transition:color .3s; position:relative; }
+    #site-header.on-dark .nav-link{ color:rgba(249,248,246,.82); }
+    #site-header.scrolled .nav-link{ color:rgba(26,43,60,.78); }
+    .nav-link:hover{ color:#c5a059; } .nav-link.active-menu{ color:#c5a059; }
+    .nav-link::after{ content:''; position:absolute; bottom:-6px; left:0; width:0; height:1.5px; background:linear-gradient(90deg,#9c7d40,#c5a059); transition:width .35s cubic-bezier(.22,1,.36,1); }
     .nav-link.active-menu::after,.nav-link:hover::after{ width:100%; }
+
+    .page{ display:none; }
+    .page.active{ display:block; animation:pageFade .5s cubic-bezier(.22,1,.36,1) both; }
+    @keyframes pageFade{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
 
     .reveal{ opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1); }
     .reveal.in{ opacity:1; transform:translateY(0); }
     .reveal-delay-1{ transition-delay:.09s } .reveal-delay-2{ transition-delay:.18s } .reveal-delay-3{ transition-delay:.27s } .reveal-delay-4{ transition-delay:.36s }
 
     .soft-card{ position:relative; overflow:hidden; transition:transform .55s cubic-bezier(.22,1,.36,1),border-color .45s,box-shadow .45s; }
-    .soft-card::before{ content:''; position:absolute; left:0; top:0; height:2px; width:0; background:linear-gradient(90deg,#9a7d44,#e7d3a3); transition:width .5s cubic-bezier(.22,1,.36,1); }
-    .soft-card.warm::before{ background:linear-gradient(90deg,#46372b,#a98e76); }
-    .soft-card:hover{ transform:translateY(-5px); box-shadow:0 30px 60px -34px rgba(8,23,52,.5); }
+    .soft-card::before{ content:''; position:absolute; left:0; top:0; height:2px; width:0; background:linear-gradient(90deg,#9c7d40,#c5a059); transition:width .5s cubic-bezier(.22,1,.36,1); }
+    .soft-card:hover{ transform:translateY(-5px); box-shadow:0 30px 60px -34px rgba(14,24,34,.5); }
     .soft-card:hover::before{ width:100%; }
 
-    /* Áreas — cards verticais */
-    .tall-card{ position:relative; display:block; width:100%; text-align:left; overflow:hidden; aspect-ratio:3/4; border:1px solid rgba(231,211,163,.16); cursor:pointer; transition:transform .6s cubic-bezier(.22,1,.36,1),border-color .5s,box-shadow .5s; }
-    .tall-card:hover{ transform:translateY(-6px); border-color:rgba(231,211,163,.45); box-shadow:0 36px 70px -34px rgba(8,23,52,.6); }
+    .tall-card{ position:relative; display:block; width:100%; text-align:left; overflow:hidden; aspect-ratio:3/4; border:1px solid rgba(197,160,89,.18); cursor:pointer; transition:transform .6s cubic-bezier(.22,1,.36,1),border-color .5s,box-shadow .5s; }
+    .tall-card:hover{ transform:translateY(-6px); border-color:rgba(197,160,89,.5); box-shadow:0 36px 70px -34px rgba(14,24,34,.6); }
     .tc-bg{ position:absolute; inset:0; z-index:0; transition:transform .9s cubic-bezier(.22,1,.36,1); }
     .tall-card:hover .tc-bg{ transform:scale(1.06); }
-    .tc-scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(8,23,52,.10) 0%,rgba(8,23,52,.05) 32%,rgba(8,23,52,.78) 100%); }
+    .tc-scrim{ position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(14,24,34,.10) 0%,rgba(14,24,34,.05) 32%,rgba(14,24,34,.8) 100%); }
     .tc-content{ position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; }
     .tc-num{ position:absolute; top:1.2rem; left:1.5rem; font-family:'Cormorant Garamond',serif; font-weight:300; color:rgba(231,211,163,.55); }
     .tc-ico{ position:absolute; top:1.15rem; right:1.4rem; color:rgba(231,211,163,.8); }
-    .tc-rule{ width:0; height:1px; background:linear-gradient(90deg,#9a7d44,#e7d3a3); transition:width .55s cubic-bezier(.22,1,.36,1); margin:.7rem 0; }
+    .tc-rule{ width:0; height:1px; background:linear-gradient(90deg,#9c7d40,#c5a059); transition:width .55s cubic-bezier(.22,1,.36,1); margin:.7rem 0; }
     .tall-card:hover .tc-rule{ width:2.6rem; }
     .tc-arrow{ color:#e7d3a3; font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; opacity:0; transform:translateX(-6px); transition:opacity .4s,transform .4s; }
     .tall-card:hover .tc-arrow{ opacity:1; transform:none; }
 
-    /* Detalhe das áreas */
     .area-block{ scroll-margin-top:100px; }
 
-    /* Processo */
-    .step{ text-align:left; position:relative; padding-top:1.6rem; border-top:1px solid rgba(194,160,90,.3); cursor:pointer; transition:opacity .4s; }
-    .step::before{ content:''; position:absolute; top:-1px; left:0; height:2px; width:0; background:linear-gradient(90deg,#9a7d44,#e7d3a3); transition:width .55s cubic-bezier(.22,1,.36,1); }
+    .step{ text-align:left; position:relative; padding-top:1.6rem; border-top:1px solid rgba(197,160,89,.3); cursor:pointer; transition:opacity .4s; }
+    .step::before{ content:''; position:absolute; top:-1px; left:0; height:2px; width:0; background:linear-gradient(90deg,#9c7d40,#c5a059); transition:width .55s cubic-bezier(.22,1,.36,1); }
     .step.active::before{ width:100% } .step:not(.active){ opacity:.5 } .step:hover{ opacity:.85 } .step.active{ opacity:1 }
     .step-desc{ max-height:0; opacity:0; overflow:hidden; transition:max-height .5s cubic-bezier(.22,1,.36,1),opacity .45s,margin-top .4s; margin-top:0; }
     .step.active .step-desc{ max-height:260px; opacity:1; margin-top:.85rem; }
-    .step.active .step-num{ color:#9a7d44 } .step-num{ transition:color .4s }
+    .step.active .step-num{ color:#9c7d40 } .step-num{ transition:color .4s }
 
-    /* Accordion */
     .accordion-body{ max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.22,1,.36,1); }
     .accordion-item.open .accordion-body{ max-height:1600px; }
-    .accordion-item.open .accordion-icon{ transform:rotate(45deg); }
-    .accordion-icon{ transition:transform .4s; }
+    .accordion-item.open .accordion-icon{ transform:rotate(45deg); } .accordion-icon{ transition:transform .4s; }
 
     *,*::before,*::after{ box-sizing:border-box; }
     html{ overflow-x:hidden; } body{ max-width:100vw; overflow-x:hidden; }
     img,video,svg{ max-width:100%; }
 
-    .lang-toggle{ display:none; align-items:center; gap:1px; background:rgba(231,211,163,.08); border:1px solid rgba(231,211,163,.22); border-radius:6px; padding:3px; flex-shrink:0; }
+    .lang-toggle{ display:none; align-items:center; gap:1px; border:1px solid rgba(26,43,60,.2); border-radius:6px; padding:3px; }
+    #site-header.on-dark .lang-toggle{ border-color:rgba(249,248,246,.25); }
     @media (min-width:1024px){ .lang-toggle{ display:flex; } }
-    .lang-opt{ font-size:10px; font-weight:700; letter-spacing:.12em; padding:4px 8px; border-radius:4px; color:rgba(245,241,232,.5); cursor:pointer; transition:all .22s; border:none; background:transparent; }
-    .lang-opt.active-lang{ background:rgba(231,211,163,.18); color:#fff; }
-    .mobile-lang-opt{ font-size:12px; font-weight:700; letter-spacing:.1em; padding:8px 20px; border:1px solid rgba(231,211,163,.25); border-radius:6px; color:rgba(245,241,232,.5); cursor:pointer; background:transparent; }
+    .lang-opt{ font-size:10px; font-weight:700; letter-spacing:.12em; padding:4px 8px; border-radius:4px; color:rgba(26,43,60,.55); cursor:pointer; border:none; background:transparent; transition:all .22s; }
+    #site-header.on-dark .lang-opt{ color:rgba(249,248,246,.55); }
+    .lang-opt.active-lang{ background:rgba(197,160,89,.18); color:#c5a059; }
+    .mobile-lang-opt{ font-size:12px; font-weight:700; letter-spacing:.1em; padding:8px 20px; border:1px solid rgba(231,211,163,.25); border-radius:6px; color:rgba(249,248,246,.6); cursor:pointer; background:transparent; }
     .mobile-lang-opt.active-lang{ background:rgba(231,211,163,.16); color:#fff; border-color:rgba(231,211,163,.5); }
 
-    #wa-float::after{ content:""; position:absolute; inset:0; border-radius:9999px; box-shadow:0 0 0 0 rgba(194,160,90,.5); animation:waPulse 2.8s ease-out infinite; pointer-events:none; }
-    @keyframes waPulse{ 0%{box-shadow:0 0 0 0 rgba(194,160,90,.5)} 70%{box-shadow:0 0 0 14px rgba(194,160,90,0)} 100%{box-shadow:0 0 0 0 rgba(194,160,90,0)} }
-    .monogram{ background-color:#102a4f; background-image:radial-gradient(120% 100% at 30% 0%, rgba(231,211,163,.16),transparent 60%); }
+    .burger-line{ background:#1a2b3c; transition:all .3s; }
+    #site-header.on-dark .burger-line{ background:#f9f8f6; }
+    #site-header.scrolled .burger-line{ background:#1a2b3c; }
+
+    #wa-float::after{ content:""; position:absolute; inset:0; border-radius:9999px; box-shadow:0 0 0 0 rgba(197,160,89,.5); animation:waPulse 2.8s ease-out infinite; pointer-events:none; }
+    @keyframes waPulse{ 0%{box-shadow:0 0 0 0 rgba(197,160,89,.5)} 70%{box-shadow:0 0 0 14px rgba(197,160,89,0)} 100%{box-shadow:0 0 0 0 rgba(197,160,89,0)} }
+    .monogram{ background-color:#13212e; background-image:radial-gradient(120% 100% at 30% 0%, rgba(231,211,163,.16),transparent 60%); }
   </style>
 </head>
-<body class="bg-ivory">
-  <!-- ============ NAV ============ -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-[72px] sm:h-[84px] flex items-center">
-    <div class="max-w-site mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
-      <a href="#inicio" onclick="scrollToId('inicio', event)" class="flex items-center gap-3 shrink-0">
-        <span class="text-champagne shrink-0">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="sm:w-9 sm:h-9"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg>
-        </span>
-        <span class="flex flex-col leading-none">
-          <span class="font-serif text-white text-lg sm:text-2xl font-medium tracking-[0.02em] whitespace-nowrap">Xavier Ribeiro <span class="text-gold-grad">&amp;</span> Ribeiro</span>
-          <span class="font-sans text-champagne text-[8px] sm:text-[10px] font-semibold tracking-[0.34em] mt-1.5" data-t="company.tagline">SOCIEDADE DE ADVOGADOS</span>
+<body class="flex flex-col min-h-screen bg-blue-night">
+
+  <!-- ============ HEADER (transparente, monograma XR) ============ -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-[78px] sm:h-[92px] flex items-center">
+    <div class="max-w-site mx-auto px-6 lg:px-12 w-full flex items-center justify-between gap-4">
+      <a href="#home" onclick="changePage('home', event)" class="flex items-center gap-3 shrink-0" aria-label="Xavier Ribeiro &amp; Ribeiro">
+        <!-- Monograma XR com o arco da inovação -->
+        <svg width="46" height="40" viewBox="0 0 64 52" fill="none" class="shrink-0 sm:w-[54px] sm:h-[46px]">
+          <path d="M5 40 Q32 6 59 36" stroke="#c5a059" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <text x="32" y="42" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="34" font-weight="500" letter-spacing="1" fill="#c5a059">XR</text>
+        </svg>
+        <span class="hidden sm:flex flex-col leading-none">
+          <span class="htext font-serif text-lg lg:text-[1.55rem] font-medium tracking-[0.14em] whitespace-nowrap">XAVIER RIBEIRO <span class="text-gold">&amp;</span> RIBEIRO</span>
+          <span class="hsub font-sans text-[8px] lg:text-[10px] font-semibold tracking-[0.34em] mt-1.5" data-t="company.tagline">SOCIEDADE DE ADVOGADOS</span>
         </span>
       </a>
-      <div class="flex items-center gap-3 lg:gap-9">
-        <nav class="hidden lg:flex items-center gap-9">
-          <a href="#inicio" onclick="scrollToId('inicio', event)" id="nav-inicio" data-t="nav.home" class="nav-link active-menu text-xs uppercase tracking-[0.22em] font-semibold">Início</a>
-          <a href="#sobre" onclick="scrollToId('sobre', event)" id="nav-sobre" data-t="nav.about" class="nav-link text-xs uppercase tracking-[0.22em] font-semibold">Sobre</a>
-          <a href="#areas" onclick="scrollToId('areas', event)" id="nav-areas" data-t="nav.areas" class="nav-link text-xs uppercase tracking-[0.22em] font-semibold">Áreas de Atuação</a>
-          <a href="#contato" onclick="scrollToId('contato', event)" id="nav-contato" data-t="nav.contact" class="nav-link text-xs uppercase tracking-[0.22em] font-semibold">Contato</a>
+      <div class="flex items-center gap-3 lg:gap-8">
+        <nav class="hidden lg:flex items-center gap-8">
+          <button onclick="changePage('home', event)" id="nav-home" data-t="nav.home" class="nav-link active-menu text-[13px] tracking-[0.05em] font-medium">Início</button>
+          <button onclick="changePage('sobre', event)" id="nav-sobre" data-t="nav.about" class="nav-link text-[13px] tracking-[0.05em] font-medium">Sobre Nós</button>
+          <button onclick="changePage('areas', event)" id="nav-areas" data-t="nav.areas" class="nav-link text-[13px] tracking-[0.05em] font-medium">Áreas de Atuação</button>
+          <button onclick="changePage('contato', event)" id="nav-contato" data-t="nav.contact" class="nav-link text-[13px] tracking-[0.05em] font-medium">Contato</button>
         </nav>
-        <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="hidden lg:inline-flex btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[10px] uppercase tracking-[0.18em] font-bold px-6 py-3 transition-colors">WhatsApp</a>
+        <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-t="nav.cta" class="hidden lg:inline-flex btn-outline-gold text-[10px] uppercase tracking-[0.18em] font-bold px-6 py-3 rounded-sm">Reserve sua consulta</a>
         <div class="lang-toggle" role="group" aria-label="Idioma / Language">
           <button class="lang-opt active-lang" data-lang="pt" onclick="setLang('pt')">PT</button>
           <button class="lang-opt" data-lang="en" onclick="setLang('en')">EN</button>
         </div>
         <button onclick="toggleMobileMenu()" class="lg:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
-          <span id="m-line1" class="block w-6 h-0.5 bg-champagne transition-all duration-300"></span>
-          <span id="m-line2" class="block w-6 h-0.5 bg-champagne transition-all duration-300"></span>
-          <span id="m-line3" class="block w-6 h-0.5 bg-champagne transition-all duration-300"></span>
+          <span id="m-line1" class="burger-line block w-6 h-0.5"></span>
+          <span id="m-line2" class="burger-line block w-6 h-0.5"></span>
+          <span id="m-line3" class="burger-line block w-6 h-0.5"></span>
         </button>
       </div>
     </div>
@@ -183,513 +185,377 @@
   <!-- ============ MOBILE MENU ============ -->
   <div id="mobile-menu-box" class="fixed inset-0 blue-rich grain z-40 flex flex-col justify-center px-8 translate-x-full transition-transform duration-500 lg:hidden">
     <nav class="flex flex-col gap-7 text-left relative z-10">
-      <a href="#inicio" onclick="scrollToId('inicio', event); toggleMobileMenu()" data-t="nav.home" class="font-serif text-white text-4xl hover:text-champagne transition-colors">Início</a>
-      <a href="#sobre" onclick="scrollToId('sobre', event); toggleMobileMenu()" data-t="nav.about" class="font-serif text-white text-4xl hover:text-champagne transition-colors">Sobre</a>
-      <a href="#areas" onclick="scrollToId('areas', event); toggleMobileMenu()" data-t="nav.areas" class="font-serif text-white text-4xl hover:text-champagne transition-colors">Áreas de Atuação</a>
-      <a href="#contato" onclick="scrollToId('contato', event); toggleMobileMenu()" data-t="nav.contact" class="font-serif text-white text-4xl hover:text-champagne transition-colors">Contato</a>
+      <button onclick="changePage('home'); toggleMobileMenu()" data-t="nav.home" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Início</button>
+      <button onclick="changePage('sobre'); toggleMobileMenu()" data-t="nav.about" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Sobre Nós</button>
+      <button onclick="changePage('areas'); toggleMobileMenu()" data-t="nav.areas" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Áreas de Atuação</button>
+      <button onclick="changePage('contato'); toggleMobileMenu()" data-t="nav.contact" class="font-serif text-white text-4xl text-left hover:text-champagne transition-colors">Contato</button>
     </nav>
     <div class="mt-12 pt-7 border-t border-champagne/15 relative z-10">
-      <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="inline-flex btn-gold bg-gold text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-7 py-3.5">Falar no WhatsApp</a>
+      <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-t="nav.cta" class="inline-flex btn-outline-gold text-[11px] uppercase tracking-[0.18em] font-bold px-7 py-3.5 rounded-sm">Reserve sua consulta</a>
       <div class="flex items-center gap-3 mt-6">
         <button class="mobile-lang-opt active-lang" data-lang="pt" onclick="setLang('pt'); toggleMobileMenu()">PT</button>
         <button class="mobile-lang-opt" data-lang="en" onclick="setLang('en'); toggleMobileMenu()">EN</button>
       </div>
-      <p class="text-champagne/45 text-xs mt-6 tracking-wide">São José dos Campos — Vale do Paraíba · SP</p>
     </div>
   </div>
 
-  <!-- ============ HERO (Ponte Estaiada de SJC) ============ -->
-  <header id="inicio" class="relative min-h-[100svh] flex items-center px-6 lg:px-12 pt-24 lg:pt-16 overflow-hidden bg-blue-night">
-    <!-- Cena vetorial da Ponte Estaiada Octávio de Almeida Gama (Colinas/SJC) ao entardecer -->
-    <svg class="hero-scene" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#081634"/>
-          <stop offset="55%" stop-color="#102a52"/>
-          <stop offset="100%" stop-color="#1c3e64"/>
-        </linearGradient>
-        <radialGradient id="glow" cx="68%" cy="78%" r="55%">
-          <stop offset="0%" stop-color="#e7d3a3" stop-opacity="0.5"/>
-          <stop offset="45%" stop-color="#c2a05a" stop-opacity="0.16"/>
-          <stop offset="100%" stop-color="#c2a05a" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <rect width="1440" height="820" fill="url(#sky)"/>
-      <rect width="1440" height="820" fill="url(#glow)"/>
-      <!-- estrelas -->
-      <g fill="#e7d3a3" opacity="0.5">
-        <circle cx="180" cy="120" r="1.4"/><circle cx="320" cy="80" r="1"/><circle cx="520" cy="150" r="1.2"/><circle cx="1180" cy="110" r="1.3"/><circle cx="1300" cy="180" r="1"/><circle cx="980" cy="90" r="1.1"/><circle cx="720" cy="70" r="1"/>
-      </g>
-      <!-- skyline ao fundo -->
-      <g fill="#0a1f40" opacity="0.85">
-        <rect x="120" y="520" width="46" height="80"/><rect x="176" y="548" width="34" height="52"/><rect x="220" y="500" width="40" height="100"/><rect x="270" y="540" width="28" height="60"/>
-        <rect x="1140" y="512" width="42" height="88"/><rect x="1190" y="540" width="30" height="60"/><rect x="1230" y="496" width="44" height="104"/><rect x="1286" y="538" width="30" height="62"/>
-        <rect x="1040" y="544" width="26" height="56"/><rect x="1078" y="556" width="22" height="44"/>
-      </g>
-      <!-- água/reflexo da base -->
-      <rect x="0" y="600" width="1440" height="220" fill="#0a1b3a" opacity="0.55"/>
-      <!-- reflexo na água -->
-      <g opacity="0.12"><path d="M640 595 Q862 771 860 1050 Q642 875 640 595 Z" fill="none" stroke="#cfe0f5" stroke-width="5"/></g>
-      <!-- cabos (estais) -->
-      <g class="cbl">
-        <line x1="860" y1="150" x2="220" y2="600"/><line x1="860" y1="150" x2="300" y2="600"/><line x1="860" y1="150" x2="380" y2="600"/><line x1="860" y1="150" x2="460" y2="600"/><line x1="860" y1="150" x2="540" y2="600"/><line x1="860" y1="150" x2="620" y2="600"/>
-        <line x1="860" y1="150" x2="940" y2="600"/><line x1="860" y1="150" x2="1020" y2="600"/><line x1="860" y1="150" x2="1100" y2="600"/><line x1="860" y1="150" x2="1180" y2="600"/><line x1="860" y1="150" x2="1260" y2="600"/>
-        <line x1="820" y1="290" x2="660" y2="600"/><line x1="820" y1="290" x2="700" y2="600"/><line x1="820" y1="290" x2="740" y2="600"/><line x1="820" y1="290" x2="780" y2="600"/><line x1="820" y1="290" x2="880" y2="600"/><line x1="820" y1="290" x2="900" y2="600"/>
-      </g>
-      <!-- arco (folha/amêndoa, inclinado) com profundidade -->
-      <path d="M640 605 Q862 429 860 150 Q642 325 640 605 Z" fill="none" stroke="#f3ead2" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M652 600 Q852 432 858 168" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
-      <path d="M640 605 Q872 420 860 150" fill="none" stroke="#9a7d44" stroke-width="2" opacity="0.5"/>
-      <!-- deck / pista -->
-      <rect x="120" y="600" width="1200" height="14" fill="#0a1b33"/>
-      <line x1="120" y1="600" x2="1320" y2="600" stroke="#e7d3a3" stroke-width="2" opacity="0.6"/>
-      <g stroke="#d8b978" stroke-width="2" opacity="0.5"><line x1="200" y1="607" x2="270" y2="607"/><line x1="340" y1="607" x2="410" y2="607"/><line x1="900" y1="607" x2="970" y2="607"/><line x1="1060" y1="607" x2="1130" y2="607"/></g>
-    </svg>
-    <!-- Foto real (opcional): salve como home-sjc.jpeg que ela substitui o desenho -->
-    <img class="hero-photo" alt="Ponte Estaiada de São José dos Campos" aria-hidden="true"
-         src="home-sjc.jpeg"
-         onerror="if(this.dataset.s!=='2'){this.dataset.s='2';this.src='home-sjc.jpg';}else{this.style.display='none';}"/>
-    <div class="hero-scrim"></div>
+  <main class="flex-1">
 
-    <div class="max-w-site mx-auto w-full relative z-10">
-      <div class="max-w-3xl hero-text">
-        <span class="inline-flex items-center gap-3 mb-7">
-          <span class="block h-px bg-champagne" style="animation:lineGrow 1.2s cubic-bezier(.22,1,.36,1) .2s both"></span>
-          <span class="text-champagne text-[10px] sm:text-[11px] uppercase tracking-[0.32em] font-semibold">São José dos Campos · Vale do Paraíba</span>
-        </span>
-        <h1 data-t-html="home.hero.h1" class="font-serif text-white text-4xl sm:text-6xl lg:text-[5.4rem] font-light leading-[1.05] mb-6 sm:mb-8 tracking-tight">
-          A sua aposentadoria merece<br><span class="italic text-gold-grad font-normal">um olhar cuidadoso</span><br>e orientação de confiança.
-        </h1>
-        <p data-t="home.hero.p" class="text-ivory/80 text-base sm:text-lg max-w-xl mb-11 leading-relaxed font-light">
-          Análise do seu caso, explicação sem juridiquês e acompanhamento em cada etapa. Direito Previdenciário, Trabalhista, Inventário e Indenizações em São José dos Campos e região.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="home.hero.wa" class="btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp →</a>
-          <a href="#areas" onclick="scrollToId('areas', event)" data-t="home.hero.cta" class="border border-champagne/45 text-ivory text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 hover:bg-ivory hover:text-blue-night transition-all">Áreas de atuação →</a>
-        </div>
-      </div>
-    </div>
-    <a href="#destaques" onclick="scrollToId('destaques', event)" class="absolute bottom-7 left-1/2 -translate-x-1/2 flex-col items-center gap-2 hidden md:flex z-10" style="animation:floatY 2.4s ease-in-out infinite" aria-label="Rolar">
-      <span class="block w-px h-12 bg-gradient-to-b from-champagne/60 to-transparent"></span>
-    </a>
-  </header>
+    <!-- ====================== INÍCIO ====================== -->
+    <section id="sec-home" class="page active">
 
-  <!-- ============ FAIXA DE DESTAQUES ============ -->
-  <section id="destaques" class="blue-panel grain py-10 lg:py-12 px-6 lg:px-10">
-    <div class="max-w-site mx-auto relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 divide-line">
-      <div class="lg:border-r border-line lg:pr-6">
-        <p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s1n">Foco</p>
-        <p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s1t">no Direito Previdenciário</p>
-      </div>
-      <div class="lg:border-r border-line lg:px-6">
-        <p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s2n">04</p>
-        <p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s2t">áreas de atuação</p>
-      </div>
-      <div class="lg:border-r border-line lg:px-6">
-        <p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s3n">Vale do Paraíba</p>
-        <p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s3t">São José dos Campos e região</p>
-      </div>
-      <div class="lg:pl-6">
-        <p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s4n">Sem juridiquês</p>
-        <p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s4t">atendimento humano e claro</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ O ESCRITÓRIO ============ -->
-  <section id="sobre" class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
-    <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-      <div class="lg:col-span-4 reveal">
-        <span data-t="home.intro.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">O Escritório</span>
-        <div class="w-12 h-px bg-gold/60 mt-2"></div>
-      </div>
-      <div class="lg:col-span-8 reveal reveal-delay-1">
-        <h2 data-t-html="home.intro.h2" class="font-serif text-ink text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.18] mb-8">
-          Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-gold-deep">com linguagem clara</span> e a honestidade de dizer o que é possível.
-        </h2>
-        <p data-t="home.intro.p" class="text-ink-soft text-lg font-light leading-relaxed max-w-2xl">
-          A Xavier Ribeiro &amp; Ribeiro é uma sociedade de advogados dedicada a defender pessoas — não números de processo. Atuamos com análise cuidadosa de cada caso, informação transparente sobre prazos e possibilidades, e acompanhamento próximo, do primeiro contato à decisão final.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ A ADVOGADA ============ -->
-  <section class="bg-white py-24 lg:py-32 px-6 lg:px-10 border-t border-cream-dark">
-    <div class="max-w-site mx-auto">
-      <div class="max-w-2xl mb-12 reveal">
-        <span data-t="about.team.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Quem conduz</span>
-        <h2 data-t="about.team.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">À frente do escritório.</h2>
-      </div>
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        <div class="lg:col-span-5 reveal">
-          <div class="aspect-[4/5] w-full max-w-md overflow-hidden border border-cream-dark monogram relative">
-            <!-- Salve a foto profissional como sobre-advogada.jpeg nesta pasta -->
-            <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier — advogada em São José dos Campos" class="w-full h-full object-cover relative z-10" onerror="if(this.dataset.s!=='2'){this.dataset.s='2';this.src='sobre-advogada.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}"/>
-            <div class="absolute inset-0 z-0 flex flex-col items-center justify-center text-center px-6" style="display:none;">
-              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e7d3a3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg>
-              <p class="text-champagne/80 text-sm font-light mt-4 leading-relaxed">Salve a foto da advogada<br>como <span class="font-medium">sobre-advogada.jpeg</span></p>
+      <!-- HERO -->
+      <div class="relative min-h-[100svh] flex items-center px-6 lg:px-12 pt-28 lg:pt-20 overflow-hidden" style="background:linear-gradient(160deg,#1d3245,#0e1822)">
+        <!-- Foto oficial da Ponte Estaiada (Arco da Inovação). Para usar uma foto sua: salve como home-sjc.jpeg. -->
+        <img class="hero-photo" alt="Ponte Estaiada — Arco da Inovação, São José dos Campos" aria-hidden="true"
+             src="https://www.sjc.sp.gov.br/media/168341/arco_inovacao_01.jpg"
+             onerror="var n=(+(this.dataset.s||0))+1; this.dataset.s=n; if(n===1){this.src='home-sjc.jpeg';} else if(n===2){this.src='home-sjc.jpg';} else {this.style.display='none';}"/>
+        <div class="hero-veil"></div>
+        <div class="max-w-site mx-auto w-full relative z-10">
+          <div class="hero-frame max-w-xl p-8 sm:p-10 lg:p-12 rounded-sm reveal in">
+            <span class="inline-flex items-center gap-3 mb-6">
+              <span class="block h-px bg-gold" style="animation:lineGrow 1.2s cubic-bezier(.22,1,.36,1) .2s both"></span>
+              <span class="text-gold-deep text-[10px] sm:text-[11px] uppercase tracking-[0.32em] font-bold">São José dos Campos · Vale do Paraíba</span>
+            </span>
+            <h1 data-t="home.hero.h1" class="font-serif text-blue text-4xl sm:text-5xl lg:text-[4.2rem] font-light leading-[1.08] tracking-tight">O cuidado que a sua história merece.</h1>
+            <p data-t="home.hero.sub" class="border-l-2 border-gold pl-4 mt-7 text-ink-soft text-base sm:text-lg font-light leading-relaxed max-w-md">Especialistas em Direito Previdenciário em São José dos Campos.</p>
+            <div class="flex flex-wrap gap-4 mt-9">
+              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-t="home.hero.wa" class="btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-8 py-4 transition-colors">Falar no WhatsApp →</a>
+              <button onclick="changePage('areas')" data-t="home.hero.cta" class="border border-blue/30 text-blue text-[11px] uppercase tracking-[0.18em] font-bold px-8 py-4 hover:bg-blue hover:text-ivory transition-all">Áreas de atuação →</button>
             </div>
           </div>
         </div>
-        <div class="lg:col-span-7 reveal reveal-delay-1">
-          <p class="font-serif text-ink text-3xl lg:text-4xl font-normal">Dra. Andrea Xavier</p>
-          <p data-t="about.profile.role" class="text-gold-deep text-[11px] uppercase tracking-[0.18em] font-bold mt-2">Advogada · OAB/SP 000.000</p>
-          <p data-t="about.profile.bio" class="text-ink-soft font-light leading-relaxed mt-6 text-lg">Advogada dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atua com atendimento próximo e linguagem acessível, acompanhando pessoalmente cada cliente do escritório em São José dos Campos e região.</p>
-          <p data-t="about.profile.bio2" class="text-ink-soft/85 font-normal leading-relaxed mt-4">Para uma orientação inicial sobre o seu caso, fale diretamente pelo WhatsApp.</p>
-          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20a%20advogada." target="_blank" rel="noopener" class="inline-block mt-6 text-blue font-semibold text-sm border-b border-gold/40 hover:border-gold transition-colors pb-0.5">(12) 99743-4181 →</a>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ DIFERENCIAIS ============ -->
-  <section class="blue-rich grain py-24 lg:py-32 px-6 lg:px-10">
-    <div class="max-w-site mx-auto relative z-10">
-      <div class="max-w-2xl mb-16 reveal">
-        <span data-t="home.diff.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Por que a Xavier Ribeiro &amp; Ribeiro</span>
-        <h2 class="font-serif text-white text-4xl lg:text-5xl font-light leading-tight" data-t="home.diff.h2">Quatro compromissos com quem confia no escritório.</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-5 lg:gap-6">
-        <div class="soft-card bg-white/[0.04] border border-line p-8 lg:p-10 reveal">
-          <span class="font-serif text-champagne/60 text-5xl font-light leading-none">01</span>
-          <h3 data-t="home.diff.c1h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Atendimento humano, sem juridiquês</h3>
-          <p data-t="home.diff.c1p" class="text-ivory/65 font-light leading-relaxed">Explicamos cada etapa em linguagem simples. Você entende o que acontece no seu caso, sem termos complicados e sem se sentir perdido.</p>
-        </div>
-        <div class="soft-card warm bg-white/[0.04] border border-line p-8 lg:p-10 reveal reveal-delay-1">
-          <span class="font-serif text-brown-soft/70 text-5xl font-light leading-none">02</span>
-          <h3 data-t="home.diff.c2h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Análise honesta do seu caso</h3>
-          <p data-t="home.diff.c2p" class="text-ivory/65 font-light leading-relaxed">Avaliamos a viabilidade antes de qualquer passo. Se houver um caminho, mostramos com clareza; se não houver, dizemos com franqueza.</p>
-        </div>
-        <div class="soft-card warm bg-white/[0.04] border border-line p-8 lg:p-10 reveal reveal-delay-2">
-          <span class="font-serif text-brown-soft/70 text-5xl font-light leading-none">03</span>
-          <h3 data-t="home.diff.c3h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Acompanhamento próximo</h3>
-          <p data-t="home.diff.c3p" class="text-ivory/65 font-light leading-relaxed">Você fala diretamente com quem cuida do seu caso e recebe atualizações ao longo do processo. Proximidade do início ao fim.</p>
-        </div>
-        <div class="soft-card bg-white/[0.04] border border-line p-8 lg:p-10 reveal reveal-delay-3">
-          <span class="font-serif text-champagne/60 text-5xl font-light leading-none">04</span>
-          <h3 data-t="home.diff.c4h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Atuação nas áreas certas</h3>
-          <p data-t="home.diff.c4p" class="text-ivory/65 font-light leading-relaxed">Foco em Previdenciário, Trabalhista, Inventário e Indenizações — as causas que mais afetam a vida e o patrimônio de quem nos procura.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ÁREAS DE ATUAÇÃO ============ -->
-  <section id="areas" class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
-    <div class="max-w-site mx-auto">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 reveal">
-        <div class="max-w-2xl">
-          <span data-t="areas.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">O que fazemos por você</span>
-          <h2 data-t="areas.h2plain" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">Áreas de atuação com foco em quem precisa.</h2>
-          <p data-t="areas.p" class="text-ink-soft font-light leading-relaxed mt-5 text-lg max-w-2xl">Atuação concentrada nas causas que mais afetam a sua vida e o seu patrimônio. O nosso foco principal é o Direito Previdenciário — ajudar você a se aposentar com tranquilidade.</p>
+      <!-- DESTAQUES -->
+      <div class="blue-panel grain py-10 lg:py-12 px-6 lg:px-10">
+        <div class="max-w-site mx-auto relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6">
+          <div class="lg:border-r border-line lg:pr-6"><p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s1n">Foco</p><p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s1t">no Direito Previdenciário</p></div>
+          <div class="lg:border-r border-line lg:px-6"><p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s2n">04</p><p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s2t">áreas de atuação</p></div>
+          <div class="lg:border-r border-line lg:px-6"><p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s3n">Vale do Paraíba</p><p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s3t">São José dos Campos e região</p></div>
+          <div class="lg:pl-6"><p class="font-serif text-champagne text-3xl lg:text-4xl font-light" data-t="home.stats.s4n">Sem juridiquês</p><p class="text-ivory/70 text-sm mt-1 font-light" data-t="home.stats.s4t">atendimento humano e claro</p></div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-        <button onclick="scrollToId('area-0', event)" class="tall-card reveal">
-          <span class="tc-bg" style="background:linear-gradient(160deg,#1a3f6e,#0d2646)"></span><span class="tc-scrim"></span>
-          <span class="tc-num text-3xl">01</span>
-          <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a1h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Previdenciário</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
-        </button>
-        <button onclick="scrollToId('area-1', event)" class="tall-card reveal reveal-delay-1">
-          <span class="tc-bg" style="background:radial-gradient(120% 80% at 72% 14%, rgba(111,88,71,.5),transparent 60%),linear-gradient(160deg,#173a66,#0e2747)"></span><span class="tc-scrim"></span>
-          <span class="tc-num text-3xl">02</span>
-          <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
-          <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a2h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Trabalhista</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
-        </button>
-        <button onclick="scrollToId('area-2', event)" class="tall-card reveal reveal-delay-2">
-          <span class="tc-bg" style="background:linear-gradient(160deg,#21497c,#112c4f)"></span><span class="tc-scrim"></span>
-          <span class="tc-num text-3xl">03</span>
-          <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
-          <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a3h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Inventário</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
-        </button>
-        <button onclick="scrollToId('area-3', event)" class="tall-card reveal reveal-delay-3">
-          <span class="tc-bg" style="background:radial-gradient(120% 80% at 72% 12%, rgba(194,160,90,.22),transparent 58%),linear-gradient(160deg,#183b67,#0e2747)"></span><span class="tc-scrim"></span>
-          <span class="tc-num text-3xl">04</span>
-          <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
-          <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a4h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Indenizações</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
-        </button>
+      <!-- O ESCRITÓRIO -->
+      <div class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div class="lg:col-span-4 reveal"><span data-t="home.intro.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">O Escritório</span><div class="w-12 h-px bg-gold/60 mt-2"></div></div>
+          <div class="lg:col-span-8 reveal reveal-delay-1">
+            <h2 data-t-html="home.intro.h2" class="font-serif text-ink text-3xl sm:text-4xl lg:text-5xl font-light leading-[1.18] mb-8">Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-gold-deep">com linguagem clara</span> e a honestidade de dizer o que é possível.</h2>
+            <p data-t="home.intro.p" class="text-ink-soft text-lg font-light leading-relaxed max-w-2xl">A Xavier Ribeiro &amp; Ribeiro é uma sociedade de advogados dedicada a defender pessoas — não números de processo. Atuamos com análise cuidadosa de cada caso, informação transparente sobre prazos e possibilidades, e acompanhamento próximo, do primeiro contato à decisão final.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Detalhes das áreas (empilhados, cheios de informação) -->
-  <section id="area-0" class="area-block bg-white py-20 lg:py-28 px-6 lg:px-10 border-t border-cream-dark">
-    <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
-      <div class="lg:col-span-4 reveal">
-        <span data-t="areas.a1.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Nosso foco principal</span>
-        <h3 data-t="areas.a1.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Direito Previdenciário</h3>
-        <p data-t="areas.a1.p" class="text-ink-soft font-light leading-relaxed">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.</p>
+      <!-- ÁREAS (cards verticais) -->
+      <div class="bg-white py-24 lg:py-32 px-6 lg:px-10 border-t border-cream-dark">
+        <div class="max-w-site mx-auto">
+          <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 reveal">
+            <div class="max-w-2xl">
+              <span data-t="home.areas.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Áreas de atuação</span>
+              <h2 data-t="home.areas.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">Onde podemos ajudar você.</h2>
+              <p data-t="home.areas.p" class="text-ink-soft font-light leading-relaxed mt-5 text-lg">Atuação concentrada nas causas que mais afetam a sua vida e o seu patrimônio — com foco principal no Direito Previdenciário.</p>
+            </div>
+            <button onclick="changePage('areas')" data-t="home.areas.cta" class="shrink-0 text-gold-deep text-xs uppercase tracking-[0.18em] font-bold border-b border-gold/40 pb-1 hover:border-gold-deep transition-colors self-start">Ver todas as áreas →</button>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <button onclick="goToArea(0)" class="tall-card reveal">
+              <span class="tc-bg" style="background:linear-gradient(160deg,#1d3548,#0e1c28)"></span><span class="tc-scrim"></span>
+              <span class="tc-num text-3xl">01</span>
+              <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a1h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Previdenciário</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
+            </button>
+            <button onclick="goToArea(1)" class="tall-card reveal reveal-delay-1">
+              <span class="tc-bg" style="background:linear-gradient(160deg,#22455a,#10222e)"></span><span class="tc-scrim"></span>
+              <span class="tc-num text-3xl">02</span>
+              <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+              <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a2h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Trabalhista</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
+            </button>
+            <button onclick="goToArea(2)" class="tall-card reveal reveal-delay-2">
+              <span class="tc-bg" style="background:linear-gradient(160deg,#1d3548,#0e1c28)"></span><span class="tc-scrim"></span>
+              <span class="tc-num text-3xl">03</span>
+              <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+              <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a3h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Inventário</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
+            </button>
+            <button onclick="goToArea(3)" class="tall-card reveal reveal-delay-3">
+              <span class="tc-bg" style="background:radial-gradient(120% 80% at 72% 12%, rgba(197,160,89,.20),transparent 58%),linear-gradient(160deg,#22455a,#10222e)"></span><span class="tc-scrim"></span>
+              <span class="tc-num text-3xl">04</span>
+              <span class="tc-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
+              <span class="tc-content"><span class="tc-rule"></span><span data-t="home.areas.a4h" class="font-serif text-white text-[1.45rem] lg:text-[1.6rem] leading-tight">Indenizações</span><span data-t="home.areas.see" class="tc-arrow mt-3">Ver área →</span></span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i1h" class="font-bold text-ink mb-1.5">Aposentadorias</h4><p data-t="areas.a1.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Por idade, por tempo de contribuição, especial ou por invalidez. Analisamos o seu histórico (CNIS) e orientamos o melhor caminho.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i2h" class="font-bold text-ink mb-1.5">Revisão de Benefício</h4><p data-t="areas.a1.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Quem já se aposentou pode ter direito a um valor maior. Avaliamos se a revisão é viável dentro dos prazos legais — sem prometer resultado.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i3h" class="font-bold text-ink mb-1.5">Auxílios e BPC/LOAS</h4><p data-t="areas.a1.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para idosos e pessoas com deficiência em situação de necessidade.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i4h" class="font-bold text-ink mb-1.5">Planejamento da Aposentadoria</h4><p data-t="areas.a1.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo com segurança.</p></div>
-      </div>
-    </div>
-  </section>
 
-  <section id="area-1" class="area-block ivory-rich py-20 lg:py-28 px-6 lg:px-10">
-    <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
-      <div class="lg:col-span-4 reveal">
-        <span data-t="areas.a2.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Seus direitos no trabalho</span>
-        <h3 data-t="areas.a2.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Direito do Trabalho</h3>
-        <p data-t="areas.a2.p" class="text-ink-soft font-light leading-relaxed">Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.</p>
+      <!-- PROCESSO -->
+      <div class="warm-rich py-24 lg:py-32 px-6 lg:px-10">
+        <div class="max-w-site mx-auto">
+          <div class="max-w-2xl mb-14 reveal"><span data-t="home.process.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Como conduzimos o seu caso</span><h2 data-t="home.process.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">Um caminho claro, do primeiro contato à decisão.</h2><p data-t="home.process.p" class="text-ink-soft font-light leading-relaxed mt-5 text-lg">Toque em cada etapa para entender como funciona.</p></div>
+          <div class="grid md:grid-cols-4 gap-7 lg:gap-10 reveal reveal-delay-1">
+            <div class="step active" data-step="0" onclick="switchStep(0)"><span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">01</span><h3 data-t="home.process.s1h" class="font-serif text-ink text-2xl font-normal mt-3">Conversa inicial</h3><p data-t="home.process.s1p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Uma conversa para entender a sua situação e as suas dúvidas, sem compromisso e em linguagem simples.</p></div>
+            <div class="step" data-step="1" onclick="switchStep(1)"><span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">02</span><h3 data-t="home.process.s2h" class="font-serif text-ink text-2xl font-normal mt-3">Análise do caso</h3><p data-t="home.process.s2p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Estudamos os seus documentos (como o CNIS) e avaliamos com franqueza o que é viável dentro da lei.</p></div>
+            <div class="step" data-step="2" onclick="switchStep(2)"><span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">03</span><h3 data-t="home.process.s3h" class="font-serif text-ink text-2xl font-normal mt-3">Estratégia clara</h3><p data-t="home.process.s3p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Apresentamos os caminhos possíveis, prazos e honorários com transparência, para você decidir com segurança.</p></div>
+            <div class="step" data-step="3" onclick="switchStep(3)"><span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">04</span><h3 data-t="home.process.s4h" class="font-serif text-ink text-2xl font-normal mt-3">Acompanhamento</h3><p data-t="home.process.s4p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Conduzimos o caso com atenção a cada prazo e mantemos você informado, do início à decisão final.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i1h" class="font-bold text-ink mb-1.5">Verbas Rescisórias</h4><p data-t="areas.a2.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Conferência da rescisão: aviso prévio, férias, 13º, FGTS e multa. Verificamos se você recebeu tudo o que era devido.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i2h" class="font-bold text-ink mb-1.5">Horas Extras e Jornada</h4><p data-t="areas.a2.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Horas extras não pagas, intervalos suprimidos e jornada irregular. Levantamos o que pode ser cobrado.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i3h" class="font-bold text-ink mb-1.5">Reconhecimento de Vínculo</h4><p data-t="areas.a2.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Trabalho sem registro, pejotização indevida ou função diferente da anotada na carteira. Buscamos o reconhecimento dos seus direitos.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i4h" class="font-bold text-ink mb-1.5">Assédio e Rescisão Indireta</h4><p data-t="areas.a2.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador. Orientamos com cuidado e discrição.</p></div>
-      </div>
-    </div>
-  </section>
 
-  <section id="area-2" class="area-block bg-white py-20 lg:py-28 px-6 lg:px-10 border-t border-cream-dark">
-    <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
-      <div class="lg:col-span-4 reveal">
-        <span data-t="areas.a3.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Patrimônio e família</span>
-        <h3 data-t="areas.a3.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Inventário e Sucessões</h3>
-        <p data-t="areas.a3.p" class="text-ink-soft font-light leading-relaxed">O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.</p>
+      <!-- DIFERENCIAIS -->
+      <div class="blue-rich grain py-24 lg:py-32 px-6 lg:px-10">
+        <div class="max-w-site mx-auto relative z-10">
+          <div class="max-w-2xl mb-16 reveal"><span data-t="home.diff.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Por que a Xavier Ribeiro &amp; Ribeiro</span><h2 class="font-serif text-white text-4xl lg:text-5xl font-light leading-tight" data-t="home.diff.h2">Quatro compromissos com quem confia no escritório.</h2></div>
+          <div class="grid sm:grid-cols-2 gap-5 lg:gap-6">
+            <div class="soft-card bg-white/[0.04] border border-line p-8 lg:p-10 reveal"><span class="font-serif text-champagne/60 text-5xl font-light leading-none">01</span><h3 data-t="home.diff.c1h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Atendimento humano, sem juridiquês</h3><p data-t="home.diff.c1p" class="text-ivory/65 font-light leading-relaxed">Explicamos cada etapa em linguagem simples. Você entende o que acontece no seu caso, sem termos complicados e sem se sentir perdido.</p></div>
+            <div class="soft-card bg-white/[0.04] border border-line p-8 lg:p-10 reveal reveal-delay-1"><span class="font-serif text-champagne/60 text-5xl font-light leading-none">02</span><h3 data-t="home.diff.c2h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Análise honesta do seu caso</h3><p data-t="home.diff.c2p" class="text-ivory/65 font-light leading-relaxed">Avaliamos a viabilidade antes de qualquer passo. Se houver um caminho, mostramos com clareza; se não houver, dizemos com franqueza.</p></div>
+            <div class="soft-card bg-white/[0.04] border border-line p-8 lg:p-10 reveal reveal-delay-2"><span class="font-serif text-champagne/60 text-5xl font-light leading-none">03</span><h3 data-t="home.diff.c3h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Acompanhamento próximo</h3><p data-t="home.diff.c3p" class="text-ivory/65 font-light leading-relaxed">Você fala diretamente com quem cuida do seu caso e recebe atualizações ao longo do processo. Proximidade do início ao fim.</p></div>
+            <div class="soft-card bg-white/[0.04] border border-line p-8 lg:p-10 reveal reveal-delay-3"><span class="font-serif text-champagne/60 text-5xl font-light leading-none">04</span><h3 data-t="home.diff.c4h" class="font-serif text-white text-2xl lg:text-[1.7rem] font-normal leading-snug mt-6 mb-3">Atuação nas áreas certas</h3><p data-t="home.diff.c4p" class="text-ivory/65 font-light leading-relaxed">Foco em Previdenciário, Trabalhista, Inventário e Indenizações — as causas que mais afetam a vida e o patrimônio de quem nos procura.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i1h" class="font-bold text-ink mb-1.5">Inventário Judicial e Extrajudicial</h4><p data-t="areas.a3.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Quando há consenso entre os herdeiros, o inventário pode ser feito em cartório, de forma mais rápida. Avaliamos a via possível.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i2h" class="font-bold text-ink mb-1.5">Partilha de Bens</h4><p data-t="areas.a3.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei e o entendimento da família.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i3h" class="font-bold text-ink mb-1.5">Testamento e Planejamento Sucessório</h4><p data-t="areas.a3.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Organizar em vida a destinação do patrimônio, dentro dos limites legais, para evitar conflitos e proteger quem você ama.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i4h" class="font-bold text-ink mb-1.5">Regularização de Heranças</h4><p data-t="areas.a3.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Bens em nome de quem já faleceu, imóveis não transferidos e inventários parados. Colocamos a documentação em ordem.</p></div>
-      </div>
-    </div>
-  </section>
 
-  <section id="area-3" class="area-block ivory-rich py-20 lg:py-28 px-6 lg:px-10">
-    <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
-      <div class="lg:col-span-4 reveal">
-        <span data-t="areas.a4.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Quando algo dá errado</span>
-        <h3 data-t="areas.a4.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Indenizações</h3>
-        <p data-t="areas.a4.p" class="text-ink-soft font-light leading-relaxed">Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.</p>
+      <!-- MANIFESTO -->
+      <div class="warm-rich py-24 lg:py-36 px-6 lg:px-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <span data-t="home.manifesto.eyebrow" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold">O nosso compromisso</span>
+          <blockquote data-t="home.manifesto.quote" class="font-serif text-ink text-[1.7rem] sm:text-4xl lg:text-[2.85rem] font-light leading-[1.32] mt-8 reveal">Defendemos pessoas, não números de processo. Cada história merece ser ouvida com atenção, conduzida com técnica e respeitada com a verdade.</blockquote>
+          <div class="rule-diamond max-w-[180px] mx-auto mt-10"><i></i></div>
+          <p data-t="home.manifesto.cite" class="text-gold-deep text-[11px] uppercase tracking-[0.3em] font-semibold mt-6">Xavier Ribeiro &amp; Ribeiro</p>
+        </div>
       </div>
-      <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i1h" class="font-bold text-ink mb-1.5">Danos Morais e Materiais</h4><p data-t="areas.a4.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Situações que causaram dor, constrangimento ou prejuízo financeiro. Analisamos se há direito à reparação.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i2h" class="font-bold text-ink mb-1.5">Acidentes</h4><p data-t="areas.a4.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Acidentes de trânsito, no trabalho ou por falha de terceiros. Orientação sobre responsabilidades e reparação dos danos.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i3h" class="font-bold text-ink mb-1.5">Direito do Consumidor</h4><p data-t="areas.a4.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas. Defesa dos seus direitos.</p></div>
-        <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i4h" class="font-bold text-ink mb-1.5">Negativação Indevida</h4><p data-t="areas.a4.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Nome inscrito sem motivo, dívida já paga ou registro irregular. Buscamos a correção e a reparação.</p></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ PROCESSO ============ -->
-  <section class="warm-rich py-24 lg:py-32 px-6 lg:px-10">
-    <div class="max-w-site mx-auto">
-      <div class="max-w-2xl mb-14 reveal">
-        <span data-t="home.process.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Como conduzimos o seu caso</span>
-        <h2 data-t="home.process.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">Um caminho claro, do primeiro contato à decisão.</h2>
-        <p data-t="home.process.p" class="text-ink-soft font-light leading-relaxed mt-5 text-lg">Toque em cada etapa para entender como funciona.</p>
-      </div>
-      <div class="grid md:grid-cols-4 gap-7 lg:gap-10 reveal reveal-delay-1">
-        <div class="step active" data-step="0" onclick="switchStep(0)">
-          <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">01</span>
-          <h3 data-t="home.process.s1h" class="font-serif text-ink text-2xl font-normal mt-3">Conversa inicial</h3>
-          <p data-t="home.process.s1p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Uma conversa para entender a sua situação e as suas dúvidas, sem compromisso e em linguagem simples.</p>
-        </div>
-        <div class="step" data-step="1" onclick="switchStep(1)">
-          <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">02</span>
-          <h3 data-t="home.process.s2h" class="font-serif text-ink text-2xl font-normal mt-3">Análise do caso</h3>
-          <p data-t="home.process.s2p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Estudamos os seus documentos (como o CNIS) e avaliamos com franqueza o que é viável dentro da lei.</p>
-        </div>
-        <div class="step" data-step="2" onclick="switchStep(2)">
-          <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">03</span>
-          <h3 data-t="home.process.s3h" class="font-serif text-ink text-2xl font-normal mt-3">Estratégia clara</h3>
-          <p data-t="home.process.s3p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Apresentamos os caminhos possíveis, prazos e honorários com transparência, para você decidir com segurança.</p>
-        </div>
-        <div class="step" data-step="3" onclick="switchStep(3)">
-          <span class="step-num font-serif text-gold-deep text-4xl font-light leading-none">04</span>
-          <h3 data-t="home.process.s4h" class="font-serif text-ink text-2xl font-normal mt-3">Acompanhamento</h3>
-          <p data-t="home.process.s4p" class="step-desc text-ink-soft font-normal leading-relaxed text-[15px]">Conduzimos o caso com atenção a cada prazo e mantemos você informado, do início à decisão final.</p>
+      <!-- CTA -->
+      <div class="relative px-6 lg:px-10 py-24 lg:py-28 overflow-hidden cta-band">
+        <div class="absolute inset-0 grain"></div>
+        <div class="max-w-site mx-auto text-center reveal relative z-10">
+          <span data-t="home.cta.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6">Vamos conversar</span>
+          <h2 data-t="home.cta.h2" class="font-serif text-white text-4xl sm:text-5xl lg:text-6xl font-light leading-tight max-w-3xl mx-auto mb-10">O primeiro passo é simples: uma conversa para entender o seu caso.</h2>
+          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-t="home.cta.btn" class="btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-10 py-4 transition-colors inline-flex">Falar no WhatsApp</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ MANIFESTO ============ -->
-  <section class="blue-rich grain py-24 lg:py-36 px-6 lg:px-10">
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <span data-t="home.manifesto.eyebrow" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold">O nosso compromisso</span>
-      <blockquote data-t="home.manifesto.quote" class="font-serif text-white text-[1.7rem] sm:text-4xl lg:text-[2.85rem] font-light leading-[1.32] mt-8 reveal">Defendemos pessoas, não números de processo. Cada história merece ser ouvida com atenção, conduzida com técnica e respeitada com a verdade.</blockquote>
-      <div class="rule-diamond max-w-[180px] mx-auto mt-10"><i></i></div>
-      <p data-t="home.manifesto.cite" class="text-champagne/80 text-[11px] uppercase tracking-[0.3em] font-semibold mt-6">Xavier Ribeiro &amp; Ribeiro</p>
-    </div>
-  </section>
+    <!-- ====================== SOBRE ====================== -->
+    <section id="sec-sobre" class="page">
+      <div class="blue-rich grain pt-[120px] sm:pt-[160px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+        <div class="max-w-site mx-auto relative z-10">
+          <span data-t="about.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">Quem Somos</span>
+          <h1 data-t-html="about.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-3xl reveal reveal-delay-1">Advocacia feita de <span class="italic text-gold-grad">escuta e cuidado.</span></h1>
+          <p data-t="about.p" class="text-ivory/80 text-lg font-light max-w-2xl mt-8 reveal reveal-delay-2">A Xavier Ribeiro &amp; Ribeiro nasceu para defender pessoas com seriedade técnica e proximidade humana — em São José dos Campos e em todo o Vale do Paraíba.</p>
+        </div>
+      </div>
 
-  <!-- ============ FAQ ============ -->
-  <section class="bg-white py-24 lg:py-32 px-6 lg:px-10 border-t border-cream-dark">
-    <div class="max-w-site mx-auto">
-      <div class="max-w-3xl mx-auto text-center reveal">
-        <span data-t="areas.faq.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Perguntas frequentes</span>
-        <h2 data-t="areas.faq.h2" class="font-serif text-ink text-3xl lg:text-4xl font-light leading-tight mb-4">Dúvidas comuns de quem procura o escritório.</h2>
-        <p data-t="areas.faq.p" class="text-ink-soft font-normal leading-relaxed max-w-2xl mx-auto">Reunimos respostas para as perguntas que mais ouvimos. Para o seu caso específico, o ideal é uma conversa.</p>
-      </div>
-      <div class="max-w-3xl mx-auto mt-10 space-y-3 reveal reveal-delay-1">
-        <div class="accordion-item border border-cream-dark bg-ivory">
-          <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
-            <span data-t="areas.faq.q1" class="font-serif text-ink text-xl sm:text-2xl font-normal">Quando eu posso me aposentar?</span>
-            <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
-          </button>
-          <div class="accordion-body px-6"><p data-t="areas.faq.a1" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Depende do seu tempo de contribuição, da sua idade e das regras de transição em vigor. O caminho certo varia para cada pessoa. Com uma análise do seu histórico (CNIS), conseguimos mostrar quais são as suas opções.</p></div>
-        </div>
-        <div class="accordion-item border border-cream-dark bg-ivory">
-          <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
-            <span data-t="areas.faq.q2" class="font-serif text-ink text-xl sm:text-2xl font-normal">Preciso ir até o escritório?</span>
-            <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
-          </button>
-          <div class="accordion-body px-6"><p data-t="areas.faq.a2" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Não necessariamente. Muitos atendimentos podem começar pelo WhatsApp ou por telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.</p></div>
-        </div>
-        <div class="accordion-item border border-cream-dark bg-ivory">
-          <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
-            <span data-t="areas.faq.q3" class="font-serif text-ink text-xl sm:text-2xl font-normal">Quanto custa um processo?</span>
-            <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
-          </button>
-          <div class="accordion-body px-6"><p data-t="areas.faq.a3" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Os honorários variam conforme o tipo de causa e a sua complexidade, e são combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo com clareza na primeira conversa, sem surpresas.</p></div>
-        </div>
-        <div class="accordion-item border border-cream-dark bg-ivory">
-          <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
-            <span data-t="areas.faq.q4" class="font-serif text-ink text-xl sm:text-2xl font-normal">O escritório garante que eu vou ganhar?</span>
-            <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
-          </button>
-          <div class="accordion-body px-6"><p data-t="areas.faq.a4" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Não. Nenhum advogado sério pode garantir resultado — isso é, inclusive, vedado pela OAB. O que oferecemos é uma análise honesta da viabilidade do seu caso e trabalho dedicado para buscar o melhor desfecho possível dentro da lei.</p></div>
-        </div>
-        <div class="accordion-item border border-cream-dark bg-ivory">
-          <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
-            <span data-t="areas.faq.q5" class="font-serif text-ink text-xl sm:text-2xl font-normal">Já recebo aposentadoria. Posso revisar o valor?</span>
-            <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
-          </button>
-          <div class="accordion-body px-6"><p data-t="areas.faq.a5" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Talvez. Existem prazos legais para pedir revisão (em regra, até dez anos do início do benefício). Avaliamos os seus documentos para verificar se a revisão é viável no seu caso, sem qualquer promessa de aumento.</p></div>
-        </div>
-        <div class="accordion-item border border-cream-dark bg-ivory">
-          <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4">
-            <span data-t="areas.faq.q6" class="font-serif text-ink text-xl sm:text-2xl font-normal">Como funciona a primeira conversa?</span>
-            <span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span>
-          </button>
-          <div class="accordion-body px-6"><p data-t="areas.faq.a6" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">É uma conversa para entender a sua situação, tirar as suas dúvidas e explicar os caminhos possíveis. Você sai com mais clareza sobre o seu caso, em linguagem simples e sem compromisso de fechar nada na hora.</p></div>
+      <div class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div class="lg:col-span-4 reveal"><span data-t="about.work.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">A nossa forma de trabalhar</span><div class="w-12 h-px bg-gold/60 mt-2"></div></div>
+          <div class="lg:col-span-8 reveal reveal-delay-1">
+            <h2 data-t="about.work.h2" class="font-serif text-ink text-3xl sm:text-4xl font-light leading-[1.2] mb-8">Antes de falar em processo, a gente escuta.</h2>
+            <p data-t="about.work.p1" class="text-ink-soft text-lg font-light leading-relaxed">Somos uma sociedade de advogados dedicada principalmente ao Direito Previdenciário — o direito de quem trabalhou a vida toda e quer se aposentar com tranquilidade —, além de Direito do Trabalho, Inventário e Indenizações. Cada caso começa com uma análise cuidadosa e uma conversa honesta sobre o que é possível.</p>
+            <p data-t="about.work.p2" class="text-ink-soft/85 font-normal leading-relaxed mt-4">Acreditamos que advocacia de verdade se faz com informação clara e acompanhamento próximo. Você entende cada etapa, conhece os prazos e fala diretamente com quem cuida do seu caso, do primeiro contato à decisão final.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ CONTATO ============ -->
-  <section id="contato" class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
-    <div class="max-w-site mx-auto">
-      <div class="max-w-2xl mb-12 reveal">
-        <span data-t="contact.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Canal direto</span>
-        <h2 data-t="contact.h1" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">Fale com o escritório.</h2>
-        <p data-t="contact.p" class="text-ink-soft font-light leading-relaxed mt-5 text-lg">Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês em São José dos Campos e região.</p>
+      <div class="warm-rich py-20 lg:py-28 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid md:grid-cols-3 gap-5 lg:gap-6">
+          <div class="soft-card bg-white border border-cream-dark p-9 lg:p-10 reveal"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c1h" class="font-serif text-ink text-2xl font-normal mb-3">Escuta antes de tudo</h3><p data-t="about.pillars.c1p" class="text-ink-soft font-normal leading-relaxed">Entender a sua história é o que orienta a melhor estratégia. Cada caso é único e merece atenção individual.</p></div>
+          <div class="soft-card bg-white border border-cream-dark p-9 lg:p-10 reveal reveal-delay-1"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c2h" class="font-serif text-ink text-2xl font-normal mb-3">Clareza em cada etapa</h3><p data-t="about.pillars.c2p" class="text-ink-soft font-normal leading-relaxed">Nada de juridiquês. Explicamos prazos, possibilidades e honorários com transparência, para você decidir com segurança.</p></div>
+          <div class="soft-card bg-white border border-cream-dark p-9 lg:p-10 reveal reveal-delay-2"><span class="block w-10 h-0.5 bg-gold/70 mb-6"></span><h3 data-t="about.pillars.c3h" class="font-serif text-ink text-2xl font-normal mb-3">Compromisso ético</h3><p data-t="about.pillars.c3p" class="text-ink-soft font-normal leading-relaxed">Atuação pautada pela ética e pelo Estatuto da Advocacia. Sem promessas de resultado — apenas trabalho sério e dedicado.</p></div>
+        </div>
       </div>
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
-        <div class="lg:col-span-5 space-y-12">
-          <div class="reveal">
-            <h3 data-t="contact.direct" class="text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Atendimento Direto</h3>
-            <div class="soft-card bg-white border border-cream-dark p-8 lg:p-9">
-              <p class="font-serif text-ink text-2xl font-normal">Xavier Ribeiro &amp; Ribeiro</p>
-              <p data-t="contact.wa_role" class="text-ink-soft text-base font-normal mt-1">Sociedade de Advogados</p>
-              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="inline-flex items-center gap-3 mt-5 btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.16em] font-bold px-7 py-3.5 transition-colors">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>
-                Falar no WhatsApp
-              </a>
-              <p data-t="contact.wa_number" class="text-ink-soft text-sm font-medium mt-4">(12) 99743-4181</p>
+
+      <div class="bg-white py-24 lg:py-32 px-6 lg:px-10 border-t border-cream-dark">
+        <div class="max-w-site mx-auto">
+          <div class="max-w-2xl mb-12 reveal"><span data-t="about.team.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-5">Quem conduz</span><h2 data-t="about.team.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight">À frente do escritório.</h2></div>
+          <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div class="lg:col-span-5 reveal">
+              <div class="aspect-[4/5] w-full max-w-md overflow-hidden border border-cream-dark monogram relative">
+                <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier — advogada em São José dos Campos" class="w-full h-full object-cover relative z-10" onerror="if(this.dataset.s!=='2'){this.dataset.s='2';this.src='sobre-advogada.jpg';}else{this.style.display='none';this.nextElementSibling.style.display='flex';}"/>
+                <div class="absolute inset-0 z-0 flex flex-col items-center justify-center text-center px-6" style="display:none;"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#e7d3a3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg><p class="text-champagne/80 text-sm font-light mt-4">Salve como <span class="font-medium">sobre-advogada.jpeg</span></p></div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 reveal reveal-delay-1">
+              <p class="font-serif text-ink text-3xl lg:text-4xl font-normal">Dra. Andrea Xavier</p>
+              <p data-t="about.profile.role" class="text-gold-deep text-[11px] uppercase tracking-[0.18em] font-bold mt-2">Advogada · OAB/SP 000.000</p>
+              <p data-t="about.profile.bio" class="text-ink-soft font-light leading-relaxed mt-6 text-lg">Advogada dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atua com atendimento próximo e linguagem acessível, acompanhando pessoalmente cada cliente do escritório em São José dos Campos e região.</p>
+              <p data-t="about.profile.bio2" class="text-ink-soft/85 font-normal leading-relaxed mt-4">Para uma orientação inicial sobre o seu caso, fale diretamente pelo WhatsApp.</p>
+              <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20a%20advogada." target="_blank" rel="noopener" class="inline-block mt-6 text-blue font-semibold text-sm border-b border-gold/40 hover:border-gold transition-colors pb-0.5">(12) 99743-4181 →</a>
             </div>
           </div>
-          <div class="reveal reveal-delay-1">
-            <h3 data-t="contact.channels" class="text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Canais</h3>
-            <div class="space-y-5">
-              <a href="mailto:contato@xavierribeiroribeiro.adv.br" class="flex items-center gap-4 group">
-                <span class="w-11 h-11 rounded-full bg-gold/10 group-hover:bg-gold group-hover:text-blue-night text-gold-deep flex items-center justify-center transition-colors">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-                </span>
-                <div><p class="text-ink-soft text-xs uppercase tracking-wider">E-mail</p><p class="text-ink font-medium break-all">contato@xavierribeiroribeiro.adv.br</p></div>
-              </a>
-              <div class="flex items-center gap-4">
-                <span class="w-11 h-11 rounded-full bg-brown/10 text-brown flex items-center justify-center">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-                </span>
-                <div><p class="text-ink-soft text-xs uppercase tracking-wider" data-t="contact.hours_label">Horário</p><p class="text-ink font-medium" data-t="contact.hours">Segunda a sexta, das 9h às 18h</p></div>
+        </div>
+      </div>
+
+      <div class="relative px-6 lg:px-10 py-16 lg:py-24 overflow-hidden cta-band">
+        <div class="absolute inset-0 grain"></div>
+        <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal relative z-10">
+          <h2 data-t="about.cta_h2" class="font-serif text-white text-3xl lg:text-4xl font-light text-center md:text-left">Vamos conversar sobre o seu caso?</h2>
+          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener" data-t="about.cta_btn" class="shrink-0 btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== ÁREAS DE ATUAÇÃO ====================== -->
+    <section id="sec-areas" class="page">
+      <div class="blue-rich grain pt-[120px] sm:pt-[160px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+        <div class="max-w-site mx-auto relative z-10">
+          <span data-t="areas.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">O que fazemos por você</span>
+          <h1 data-t-html="areas.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-4xl reveal reveal-delay-1">Áreas de atuação<br><span class="italic text-gold-grad">com foco em quem precisa.</span></h1>
+          <p data-t="areas.p" class="text-ivory/80 text-lg font-light max-w-2xl mt-8 reveal reveal-delay-2">Atuação concentrada nas causas que mais afetam a sua vida e o seu patrimônio. O nosso foco principal é o Direito Previdenciário — ajudar você a se aposentar com tranquilidade.</p>
+        </div>
+      </div>
+
+      <div id="area-0" class="area-block bg-white py-20 lg:py-28 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="lg:col-span-4 reveal"><span data-t="areas.a1.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Nosso foco principal</span><h3 data-t="areas.a1.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Direito Previdenciário</h3><p data-t="areas.a1.p" class="text-ink-soft font-light leading-relaxed">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.</p></div>
+          <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i1h" class="font-bold text-ink mb-1.5">Aposentadorias</h4><p data-t="areas.a1.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Por idade, por tempo de contribuição, especial ou por invalidez. Analisamos o seu histórico (CNIS) e orientamos o melhor caminho.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i2h" class="font-bold text-ink mb-1.5">Revisão de Benefício</h4><p data-t="areas.a1.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Quem já se aposentou pode ter direito a um valor maior. Avaliamos se a revisão é viável dentro dos prazos legais — sem prometer resultado.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i3h" class="font-bold text-ink mb-1.5">Auxílios e BPC/LOAS</h4><p data-t="areas.a1.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para idosos e pessoas com deficiência em situação de necessidade.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a1.i4h" class="font-bold text-ink mb-1.5">Planejamento da Aposentadoria</h4><p data-t="areas.a1.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo com segurança.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="area-1" class="area-block ivory-rich py-20 lg:py-28 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="lg:col-span-4 reveal"><span data-t="areas.a2.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Seus direitos no trabalho</span><h3 data-t="areas.a2.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Direito do Trabalho</h3><p data-t="areas.a2.p" class="text-ink-soft font-light leading-relaxed">Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.</p></div>
+          <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i1h" class="font-bold text-ink mb-1.5">Verbas Rescisórias</h4><p data-t="areas.a2.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Conferência da rescisão: aviso prévio, férias, 13º, FGTS e multa. Verificamos se você recebeu tudo o que era devido.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i2h" class="font-bold text-ink mb-1.5">Horas Extras e Jornada</h4><p data-t="areas.a2.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Horas extras não pagas, intervalos suprimidos e jornada irregular. Levantamos o que pode ser cobrado.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i3h" class="font-bold text-ink mb-1.5">Reconhecimento de Vínculo</h4><p data-t="areas.a2.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Trabalho sem registro, pejotização indevida ou função diferente da anotada na carteira. Buscamos o reconhecimento dos seus direitos.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a2.i4h" class="font-bold text-ink mb-1.5">Assédio e Rescisão Indireta</h4><p data-t="areas.a2.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador. Orientamos com cuidado e discrição.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="area-2" class="area-block bg-white py-20 lg:py-28 px-6 lg:px-10 border-t border-cream-dark">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="lg:col-span-4 reveal"><span data-t="areas.a3.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Patrimônio e família</span><h3 data-t="areas.a3.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Inventário e Sucessões</h3><p data-t="areas.a3.p" class="text-ink-soft font-light leading-relaxed">O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.</p></div>
+          <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i1h" class="font-bold text-ink mb-1.5">Inventário Judicial e Extrajudicial</h4><p data-t="areas.a3.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Quando há consenso entre os herdeiros, o inventário pode ser feito em cartório, de forma mais rápida. Avaliamos a via possível.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i2h" class="font-bold text-ink mb-1.5">Partilha de Bens</h4><p data-t="areas.a3.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei e o entendimento da família.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i3h" class="font-bold text-ink mb-1.5">Testamento e Planejamento Sucessório</h4><p data-t="areas.a3.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Organizar em vida a destinação do patrimônio, dentro dos limites legais, para evitar conflitos e proteger quem você ama.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a3.i4h" class="font-bold text-ink mb-1.5">Regularização de Heranças</h4><p data-t="areas.a3.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Bens em nome de quem já faleceu, imóveis não transferidos e inventários parados. Colocamos a documentação em ordem.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="area-3" class="area-block ivory-rich py-20 lg:py-28 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="lg:col-span-4 reveal"><span data-t="areas.a4.over" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Quando algo dá errado</span><h3 data-t="areas.a4.h2" class="font-serif text-ink text-4xl lg:text-5xl font-light leading-tight mb-5">Indenizações</h3><p data-t="areas.a4.p" class="text-ink-soft font-light leading-relaxed">Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.</p></div>
+          <div class="lg:col-span-8 reveal reveal-delay-1 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i1h" class="font-bold text-ink mb-1.5">Danos Morais e Materiais</h4><p data-t="areas.a4.i1p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Situações que causaram dor, constrangimento ou prejuízo financeiro. Analisamos se há direito à reparação.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i2h" class="font-bold text-ink mb-1.5">Acidentes</h4><p data-t="areas.a4.i2p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Acidentes de trânsito, no trabalho ou por falha de terceiros. Orientação sobre responsabilidades e reparação dos danos.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i3h" class="font-bold text-ink mb-1.5">Direito do Consumidor</h4><p data-t="areas.a4.i3p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas. Defesa dos seus direitos.</p></div>
+            <div class="border-t border-cream-dark pt-5"><h4 data-t="areas.a4.i4h" class="font-bold text-ink mb-1.5">Negativação Indevida</h4><p data-t="areas.a4.i4p" class="text-ink-soft font-normal text-[15px] leading-relaxed">Nome inscrito sem motivo, dívida já paga ou registro irregular. Buscamos a correção e a reparação.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warm-rich py-24 lg:py-32 px-6 lg:px-10">
+        <div class="max-w-site mx-auto">
+          <div class="max-w-3xl mx-auto text-center reveal"><span data-t="areas.faq.overline" class="eyebrow text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-4">Perguntas frequentes</span><h2 data-t="areas.faq.h2" class="font-serif text-ink text-3xl lg:text-4xl font-light leading-tight mb-4">Dúvidas comuns de quem procura o escritório.</h2><p data-t="areas.faq.p" class="text-ink-soft font-normal leading-relaxed max-w-2xl mx-auto">Reunimos respostas para as perguntas que mais ouvimos. Para o seu caso específico, o ideal é uma conversa.</p></div>
+          <div class="max-w-3xl mx-auto mt-10 space-y-3 reveal reveal-delay-1">
+            <div class="accordion-item border border-cream-dark bg-white"><button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4"><span data-t="areas.faq.q1" class="font-serif text-ink text-xl sm:text-2xl font-normal">Quando eu posso me aposentar?</span><span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span></button><div class="accordion-body px-6"><p data-t="areas.faq.a1" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Depende do seu tempo de contribuição, da sua idade e das regras de transição em vigor. O caminho certo varia para cada pessoa. Com uma análise do seu histórico (CNIS), conseguimos mostrar quais são as suas opções.</p></div></div>
+            <div class="accordion-item border border-cream-dark bg-white"><button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4"><span data-t="areas.faq.q2" class="font-serif text-ink text-xl sm:text-2xl font-normal">Preciso ir até o escritório?</span><span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span></button><div class="accordion-body px-6"><p data-t="areas.faq.a2" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Não necessariamente. Muitos atendimentos podem começar pelo WhatsApp ou por telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.</p></div></div>
+            <div class="accordion-item border border-cream-dark bg-white"><button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4"><span data-t="areas.faq.q3" class="font-serif text-ink text-xl sm:text-2xl font-normal">Quanto custa um processo?</span><span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span></button><div class="accordion-body px-6"><p data-t="areas.faq.a3" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Os honorários variam conforme o tipo de causa e a sua complexidade, e são combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo com clareza na primeira conversa, sem surpresas.</p></div></div>
+            <div class="accordion-item border border-cream-dark bg-white"><button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4"><span data-t="areas.faq.q4" class="font-serif text-ink text-xl sm:text-2xl font-normal">O escritório garante que eu vou ganhar?</span><span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span></button><div class="accordion-body px-6"><p data-t="areas.faq.a4" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Não. Nenhum advogado sério pode garantir resultado — isso é, inclusive, vedado pela OAB. O que oferecemos é uma análise honesta da viabilidade do seu caso e trabalho dedicado para buscar o melhor desfecho possível dentro da lei.</p></div></div>
+            <div class="accordion-item border border-cream-dark bg-white"><button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4"><span data-t="areas.faq.q5" class="font-serif text-ink text-xl sm:text-2xl font-normal">Já recebo aposentadoria. Posso revisar o valor?</span><span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span></button><div class="accordion-body px-6"><p data-t="areas.faq.a5" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">Talvez. Existem prazos legais para pedir revisão (em regra, até dez anos do início do benefício). Avaliamos os seus documentos para verificar se a revisão é viável no seu caso, sem qualquer promessa de aumento.</p></div></div>
+            <div class="accordion-item border border-cream-dark bg-white"><button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left px-6 py-5 gap-4"><span data-t="areas.faq.q6" class="font-serif text-ink text-xl sm:text-2xl font-normal">Como funciona a primeira conversa?</span><span class="accordion-icon text-gold-deep text-3xl font-light leading-none shrink-0">+</span></button><div class="accordion-body px-6"><p data-t="areas.faq.a6" class="text-ink-soft font-normal text-base leading-relaxed pb-6 max-w-2xl">É uma conversa para entender a sua situação, tirar as suas dúvidas e explicar os caminhos possíveis. Você sai com mais clareza sobre o seu caso, em linguagem simples e sem compromisso de fechar nada na hora.</p></div></div>
+          </div>
+          <div class="text-center mt-12 reveal"><a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="areas.faq.cta" class="inline-block btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Tirar minha dúvida no WhatsApp</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CONTATO ====================== -->
+    <section id="sec-contato" class="page">
+      <div class="blue-rich grain pt-[120px] sm:pt-[160px] pb-16 sm:pb-20 lg:pb-24 px-6 lg:px-10">
+        <div class="max-w-site mx-auto relative z-10">
+          <span data-t="contact.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6 reveal">Canal direto</span>
+          <h1 data-t="contact.h1" class="font-serif text-white text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.08] max-w-4xl reveal reveal-delay-1">Fale com o escritório.</h1>
+          <p data-t="contact.p" class="text-ivory/80 text-lg font-light max-w-2xl mt-8 reveal reveal-delay-2">Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês em São José dos Campos e região.</p>
+        </div>
+      </div>
+      <div class="ivory-rich py-24 lg:py-32 px-6 lg:px-10">
+        <div class="max-w-site mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div class="lg:col-span-5 space-y-12">
+            <div class="reveal">
+              <h2 data-t="contact.direct" class="text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Atendimento Direto</h2>
+              <div class="soft-card bg-white border border-cream-dark p-8 lg:p-9">
+                <p class="font-serif text-ink text-2xl font-normal">Xavier Ribeiro &amp; Ribeiro</p>
+                <p data-t="contact.wa_role" class="text-ink-soft text-base font-normal mt-1">Sociedade de Advogados</p>
+                <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="inline-flex items-center gap-3 mt-5 btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.16em] font-bold px-7 py-3.5 transition-colors"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>Falar no WhatsApp</a>
+                <p data-t="contact.wa_number" class="text-ink-soft text-sm font-medium mt-4">(12) 99743-4181</p>
+              </div>
+            </div>
+            <div class="reveal reveal-delay-1">
+              <h2 data-t="contact.channels" class="text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Canais</h2>
+              <div class="space-y-5">
+                <a href="mailto:contato@xavierribeiroribeiro.adv.br" class="flex items-center gap-4 group"><span class="w-11 h-11 rounded-full bg-gold/10 group-hover:bg-gold group-hover:text-blue-night text-gold-deep flex items-center justify-center transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span><div><p class="text-ink-soft text-xs uppercase tracking-wider">E-mail</p><p class="text-ink font-medium break-all">contato@xavierribeiroribeiro.adv.br</p></div></a>
+                <div class="flex items-center gap-4"><span class="w-11 h-11 rounded-full bg-blue/10 text-blue flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><p class="text-ink-soft text-xs uppercase tracking-wider" data-t="contact.hours_label">Horário</p><p class="text-ink font-medium" data-t="contact.hours">Segunda a sexta, das 9h às 18h</p></div></div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="lg:col-span-7 reveal reveal-delay-2">
-          <h3 data-t="contact.address_title" class="text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Onde atuamos</h3>
-          <div class="soft-card bg-white border border-cream-dark p-8 lg:p-10 mb-6">
-            <p data-t="contact.address_building" class="font-serif text-ink text-2xl font-normal mb-2">São José dos Campos · SP</p>
-            <p data-t="contact.address_area" class="text-ink-soft font-light leading-relaxed">Atendemos São José dos Campos e toda a região do Vale do Paraíba. Atendimento presencial mediante agendamento.</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP" target="_blank" rel="noopener" data-t="contact.maps" class="inline-flex items-center gap-2 mt-6 text-blue font-semibold text-sm border-b border-gold/40 pb-1 hover:border-gold transition-colors">Ver no Google Maps →</a>
-          </div>
-          <div class="aspect-[16/10] w-full overflow-hidden border border-cream-dark">
-            <iframe src="https://www.google.com/maps?q=S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="São José dos Campos e Vale do Paraíba"></iframe>
+          <div class="lg:col-span-7 reveal reveal-delay-2">
+            <h2 data-t="contact.address_title" class="text-gold-deep text-[11px] uppercase tracking-[0.28em] font-bold mb-7">Onde atuamos</h2>
+            <div class="soft-card bg-white border border-cream-dark p-8 lg:p-10 mb-6">
+              <p data-t="contact.address_building" class="font-serif text-ink text-2xl font-normal mb-2">São José dos Campos · SP</p>
+              <p data-t="contact.address_area" class="text-ink-soft font-light leading-relaxed">Atendemos São José dos Campos e toda a região do Vale do Paraíba. Atendimento presencial mediante agendamento.</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP" target="_blank" rel="noopener" data-t="contact.maps" class="inline-flex items-center gap-2 mt-6 text-blue font-semibold text-sm border-b border-gold/40 pb-1 hover:border-gold transition-colors">Ver no Google Maps →</a>
+            </div>
+            <div class="aspect-[16/10] w-full overflow-hidden border border-cream-dark"><iframe src="https://www.google.com/maps?q=S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="São José dos Campos e Vale do Paraíba"></iframe></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="relative px-6 lg:px-10 py-16 lg:py-24 overflow-hidden cta-band">
+        <div class="absolute inset-0 grain"></div>
+        <div class="max-w-site mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal relative z-10">
+          <h2 data-t="contact.cta_h2" class="font-serif text-white text-3xl lg:text-4xl font-light text-center md:text-left">Toda boa orientação começa com uma conversa.</h2>
+          <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" data-t="contact.cta_btn" class="shrink-0 btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-9 py-4 transition-colors">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- ============ FAIXA FINAL ============ -->
-  <section class="relative px-6 lg:px-10 py-24 lg:py-28 overflow-hidden cta-band">
-    <div class="absolute inset-0 grain"></div>
-    <div class="max-w-site mx-auto text-center reveal relative z-10">
-      <span data-t="home.cta.overline" class="eyebrow text-champagne text-[11px] uppercase tracking-[0.28em] font-bold mb-6">Vamos conversar</span>
-      <h2 data-t="home.cta.h2" class="font-serif text-white text-4xl sm:text-5xl lg:text-6xl font-light leading-tight max-w-3xl mx-auto mb-10">O primeiro passo é simples: uma conversa para entender o seu caso.</h2>
-      <a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" data-t="home.cta.btn" class="btn-gold bg-gold hover:bg-gold-soft text-blue-night text-[11px] uppercase tracking-[0.18em] font-bold px-10 py-4 transition-colors inline-flex">Falar no WhatsApp</a>
-    </div>
-  </section>
+  </main>
 
   <!-- ============ FOOTER (azul) ============ -->
   <footer class="blue-night-rich grain pt-16 pb-10 px-6 lg:px-10 border-t border-champagne/10">
     <div class="max-w-site mx-auto relative z-10">
       <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-champagne/10">
         <div class="md:col-span-5">
-          <a href="#inicio" onclick="scrollToId('inicio', event)" class="flex items-center gap-3 mb-5 w-fit">
-            <span class="text-champagne shrink-0"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2v17.3"/><path d="M7.5 20.5h9"/><path d="M5 6.4h14"/><circle cx="12" cy="3.2" r="0.9"/><path d="M5 6.4 2.4 12.6a3 3 0 0 0 5.2 0L5 6.4Z"/><path d="M19 6.4l-2.6 6.2a3 3 0 0 0 5.2 0L19 6.4Z"/></svg></span>
-            <span class="flex flex-col leading-none">
-              <span class="font-serif text-white text-xl font-medium tracking-[0.02em]">Xavier Ribeiro <span class="text-gold-grad">&amp;</span> Ribeiro</span>
-              <span class="font-sans text-champagne text-[10px] font-semibold tracking-[0.34em] mt-1.5" data-t="company.tagline">SOCIEDADE DE ADVOGADOS</span>
-            </span>
+          <a href="#home" onclick="changePage('home', event)" class="flex items-center gap-3 mb-5 w-fit">
+            <svg width="46" height="40" viewBox="0 0 64 52" fill="none" class="shrink-0"><path d="M5 40 Q32 6 59 36" stroke="#c5a059" stroke-width="1.4" fill="none" stroke-linecap="round"/><text x="32" y="42" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="34" font-weight="500" letter-spacing="1" fill="#c5a059">XR</text></svg>
+            <span class="flex flex-col leading-none"><span class="font-serif text-white text-xl font-medium tracking-[0.12em]">XAVIER RIBEIRO <span class="text-gold">&amp;</span> RIBEIRO</span><span class="font-sans text-champagne text-[10px] font-semibold tracking-[0.34em] mt-1.5" data-t="company.tagline">SOCIEDADE DE ADVOGADOS</span></span>
           </a>
           <p data-t="footer.desc" class="text-ivory/45 font-normal leading-relaxed max-w-xs text-base">Advocacia com escuta e cuidado em Direito Previdenciário, Trabalhista, Inventário e Indenizações. São José dos Campos e Vale do Paraíba.</p>
         </div>
         <div class="md:col-span-3">
           <h3 data-t="footer.nav" class="text-champagne/50 text-[10px] uppercase tracking-[0.22em] font-bold mb-5">Navegação</h3>
           <ul class="space-y-3">
-            <li><a href="#inicio" onclick="scrollToId('inicio', event)" data-t="nav.home" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Início</a></li>
-            <li><a href="#sobre" onclick="scrollToId('sobre', event)" data-t="nav.about" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Sobre</a></li>
-            <li><a href="#areas" onclick="scrollToId('areas', event)" data-t="nav.areas" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Áreas de Atuação</a></li>
-            <li><a href="#contato" onclick="scrollToId('contato', event)" data-t="nav.contact" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Contato</a></li>
+            <li><button onclick="changePage('home')" data-t="nav.home" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Início</button></li>
+            <li><button onclick="changePage('sobre')" data-t="nav.about" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Sobre Nós</button></li>
+            <li><button onclick="changePage('areas')" data-t="nav.areas" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Áreas de Atuação</button></li>
+            <li><button onclick="changePage('contato')" data-t="nav.contact" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Contato</button></li>
           </ul>
         </div>
         <div class="md:col-span-4">
           <h3 data-t="footer.contact" class="text-champagne/50 text-[10px] uppercase tracking-[0.22em] font-bold mb-5">Contato</h3>
           <ul class="space-y-3.5 text-sm">
-            <li><a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" class="flex items-center gap-3 text-ivory/70 hover:text-champagne transition-colors">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 opacity-70"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
-              <span>WhatsApp — (12) 99743-4181</span></a></li>
-            <li><a href="mailto:contato@xavierribeiroribeiro.adv.br" class="flex items-center gap-3 text-ivory/70 hover:text-champagne transition-colors">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="shrink-0 opacity-70"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-              <span class="break-all">contato@xavierribeiroribeiro.adv.br</span></a></li>
+            <li><a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="flex items-center gap-3 text-ivory/70 hover:text-champagne transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="shrink-0 opacity-70"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg><span>WhatsApp — (12) 99743-4181</span></a></li>
+            <li><a href="mailto:contato@xavierribeiroribeiro.adv.br" class="flex items-center gap-3 text-ivory/70 hover:text-champagne transition-colors"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="shrink-0 opacity-70"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><span class="break-all">contato@xavierribeiroribeiro.adv.br</span></a></li>
           </ul>
         </div>
       </div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8">
-        <div class="flex items-center gap-2.5 text-[11px] font-medium tracking-[0.06em] text-ivory/40 text-center md:text-left">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="shrink-0 text-champagne/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-t="footer.area">Atendemos São José dos Campos e todo o Vale do Paraíba — SP</span>
-        </div>
+        <div class="flex items-center gap-2.5 text-[11px] font-medium tracking-[0.06em] text-ivory/40 text-center md:text-left"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="shrink-0 text-champagne/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-t="footer.area">Atendemos São José dos Campos e todo o Vale do Paraíba — SP</span></div>
         <div data-t="footer.copyright" class="text-[10px] font-medium uppercase tracking-[0.15em] text-ivory/30 text-center md:text-right shrink-0">© 2026 Xavier Ribeiro &amp; Ribeiro – Sociedade de Advogados.</div>
       </div>
       <p data-t="footer.legal" class="text-ivory/40 text-[11px] leading-relaxed mt-6 max-w-3xl">OAB/SP 000.000 · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento nº 205/2021 da OAB. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.</p>
     </div>
   </footer>
 
-  <a id="wa-float" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20com%20o%20escrit%C3%B3rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold hover:bg-gold-soft text-blue-night flex items-center justify-center shadow-lg transition-colors">
+  <a id="wa-float" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold hover:bg-gold-soft text-blue-night flex items-center justify-center shadow-lg transition-colors">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>
   </a>
 
@@ -697,16 +563,25 @@
     function toggleAccordion(btn){ btn.closest('.accordion-item').classList.toggle('open'); }
     function switchStep(i){ document.querySelectorAll('.step').forEach(function(s){ s.classList.toggle('active', +s.dataset.step === i); }); }
 
-    function scrollToId(id, event){
+    var PAGES = ['home','sobre','areas','contato'];
+    var siteHeader = document.getElementById('site-header');
+    function changePage(pageId, event){
       if(event) event.preventDefault();
-      var el = document.getElementById(id);
-      if(!el) return;
-      var y = el.getBoundingClientRect().top + window.pageYOffset - 72;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      if(PAGES.indexOf(pageId) === -1) pageId = 'home';
+      document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+      document.querySelectorAll('.nav-link').forEach(function(l){ l.classList.remove('active-menu'); });
+      var sec = document.getElementById('sec-'+pageId); if(sec) sec.classList.add('active');
+      var nav = document.getElementById('nav-'+pageId); if(nav) nav.classList.add('active-menu');
+      /* Home tem hero claro (texto petróleo); páginas internas têm hero escuro (texto claro). */
+      if(siteHeader) siteHeader.classList.toggle('on-dark', pageId !== 'home');
+      window.scrollTo({ top:0, behavior:'instant' });
+      history.replaceState(null, null, '#'+pageId);
+      requestAnimationFrame(function(){ resetReveals(); observeReveals(); updateHeaderTheme(); });
     }
+    function goToArea(i){ changePage('areas'); setTimeout(function(){ var el=document.getElementById('area-'+i); if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-72; window.scrollTo({top:y,behavior:'smooth'});} }, 200); }
 
     function toggleMobileMenu(){
-      var box = document.getElementById('mobile-menu-box');
+      var box=document.getElementById('mobile-menu-box');
       var l1=document.getElementById('m-line1'), l2=document.getElementById('m-line2'), l3=document.getElementById('m-line3');
       var waf=document.getElementById('wa-float');
       if(box.classList.contains('translate-x-full')){
@@ -720,41 +595,27 @@
       }
     }
 
-    var siteHeader = document.getElementById('site-header');
-    function updateHeaderTheme(){ if(siteHeader) siteHeader.classList.toggle('scrolled', window.scrollY > 40); }
-    window.addEventListener('scroll', updateHeaderTheme, { passive:true });
+    function updateHeaderTheme(){ if(siteHeader) siteHeader.classList.toggle('scrolled', window.scrollY>40); }
+    window.addEventListener('scroll', updateHeaderTheme, {passive:true});
 
-    /* reveal */
-    var revealObserver = new IntersectionObserver(function(entries){
+    var revealObserver=new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
     }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
-    function observeReveals(){ document.querySelectorAll('.reveal:not(.in)').forEach(function(el){ revealObserver.observe(el); }); }
-
-    /* menu ativo conforme a seção visível */
-    var NAV_IDS = ['inicio','sobre','areas','contato'];
-    var navObserver = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          NAV_IDS.forEach(function(id){
-            var link = document.getElementById('nav-'+id);
-            if(link) link.classList.toggle('active-menu', id === e.target.id);
-          });
-        }
-      });
-    }, { rootMargin:'-45% 0px -50% 0px' });
-    function observeNav(){ NAV_IDS.forEach(function(id){ var s=document.getElementById(id); if(s) navObserver.observe(s); }); }
+    function observeReveals(){ document.querySelectorAll('.page.active .reveal:not(.in)').forEach(function(el){ revealObserver.observe(el); }); }
+    function resetReveals(){ document.querySelectorAll('.page:not(.active) .reveal').forEach(function(el){ el.classList.remove('in'); }); }
 
     window.addEventListener('DOMContentLoaded', function(){
-      updateHeaderTheme(); observeReveals(); observeNav(); setLang(currentLang);
-      if(window.location.hash){ var id=window.location.hash.replace('#',''); setTimeout(function(){ scrollToId(id); }, 200); }
+      var hash=(window.location.hash||'').replace('#','');
+      changePage(PAGES.indexOf(hash)!==-1 ? hash : 'home');
+      updateHeaderTheme(); observeReveals(); setLang(currentLang);
     });
 
-    var currentLang = 'pt';
+    var currentLang='pt';
     function deep(obj, path){ return path.split('.').reduce(function(o,k){ return (o==null?undefined:o[k]); }, obj); }
     function setLang(lang){
-      currentLang = lang;
-      document.documentElement.lang = (lang==='pt') ? 'pt-BR' : 'en';
-      var dict = LANG[lang] || {};
+      currentLang=lang;
+      document.documentElement.lang=(lang==='pt')?'pt-BR':'en';
+      var dict=LANG[lang]||{};
       document.querySelectorAll('[data-t]').forEach(function(el){ var v=deep(dict, el.getAttribute('data-t')); if(typeof v==='string') el.textContent=v; });
       document.querySelectorAll('[data-t-html]').forEach(function(el){ var v=deep(dict, el.getAttribute('data-t-html')); if(typeof v==='string') el.innerHTML=v; });
       document.querySelectorAll('[data-lang]').forEach(function(b){ b.classList.toggle('active-lang', b.getAttribute('data-lang')===lang); });
@@ -762,184 +623,72 @@
 
     var LANG = {
       pt: {
-        nav: { home:'Início', about:'Sobre', areas:'Áreas de Atuação', contact:'Contato' },
+        nav: { home:'Início', about:'Sobre Nós', areas:'Áreas de Atuação', contact:'Contato', cta:'Reserve sua consulta' },
         company: { tagline:'SOCIEDADE DE ADVOGADOS' },
         home: {
           hero: {
-            h1:'A sua aposentadoria merece<br><span class="italic text-gold-grad font-normal">um olhar cuidadoso</span><br>e orientação de confiança.',
-            p:'Análise do seu caso, explicação sem juridiquês e acompanhamento em cada etapa. Direito Previdenciário, Trabalhista, Inventário e Indenizações em São José dos Campos e região.',
+            h1:'O cuidado que a sua história merece.',
+            sub:'Especialistas em Direito Previdenciário em São José dos Campos.',
             wa:'Falar no WhatsApp →', cta:'Áreas de atuação →'
           },
-          stats: {
-            s1n:'Foco', s1t:'no Direito Previdenciário',
-            s2n:'04', s2t:'áreas de atuação',
-            s3n:'Vale do Paraíba', s3t:'São José dos Campos e região',
-            s4n:'Sem juridiquês', s4t:'atendimento humano e claro'
-          },
-          intro: {
-            overline:'O Escritório',
-            h2:'Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-gold-deep">com linguagem clara</span> e a honestidade de dizer o que é possível.',
-            p:'A Xavier Ribeiro & Ribeiro é uma sociedade de advogados dedicada a defender pessoas — não números de processo. Atuamos com análise cuidadosa de cada caso, informação transparente sobre prazos e possibilidades, e acompanhamento próximo, do primeiro contato à decisão final.'
-          },
-          diff: {
-            overline:'Por que a Xavier Ribeiro & Ribeiro', h2:'Quatro compromissos com quem confia no escritório.',
-            c1h:'Atendimento humano, sem juridiquês', c1p:'Explicamos cada etapa em linguagem simples. Você entende o que acontece no seu caso, sem termos complicados e sem se sentir perdido.',
-            c2h:'Análise honesta do seu caso', c2p:'Avaliamos a viabilidade antes de qualquer passo. Se houver um caminho, mostramos com clareza; se não houver, dizemos com franqueza.',
-            c3h:'Acompanhamento próximo', c3p:'Você fala diretamente com quem cuida do seu caso e recebe atualizações ao longo do processo. Proximidade do início ao fim.',
-            c4h:'Atuação nas áreas certas', c4p:'Foco em Previdenciário, Trabalhista, Inventário e Indenizações — as causas que mais afetam a vida e o patrimônio de quem nos procura.'
-          },
-          process: {
-            overline:'Como conduzimos o seu caso', h2:'Um caminho claro, do primeiro contato à decisão.', p:'Toque em cada etapa para entender como funciona.',
-            s1h:'Conversa inicial', s1p:'Uma conversa para entender a sua situação e as suas dúvidas, sem compromisso e em linguagem simples.',
-            s2h:'Análise do caso', s2p:'Estudamos os seus documentos (como o CNIS) e avaliamos com franqueza o que é viável dentro da lei.',
-            s3h:'Estratégia clara', s3p:'Apresentamos os caminhos possíveis, prazos e honorários com transparência, para você decidir com segurança.',
-            s4h:'Acompanhamento', s4p:'Conduzimos o caso com atenção a cada prazo e mantemos você informado, do início à decisão final.'
-          },
-          areas: { a1h:'Previdenciário', a2h:'Trabalhista', a3h:'Inventário', a4h:'Indenizações', see:'Ver área →' },
+          stats: { s1n:'Foco', s1t:'no Direito Previdenciário', s2n:'04', s2t:'áreas de atuação', s3n:'Vale do Paraíba', s3t:'São José dos Campos e região', s4n:'Sem juridiquês', s4t:'atendimento humano e claro' },
+          intro: { overline:'O Escritório', h2:'Antes de falar em processo, a gente escuta. Cada atendimento começa entendendo a sua história, <span class="italic text-gold-deep">com linguagem clara</span> e a honestidade de dizer o que é possível.', p:'A Xavier Ribeiro & Ribeiro é uma sociedade de advogados dedicada a defender pessoas — não números de processo. Atuamos com análise cuidadosa de cada caso, informação transparente sobre prazos e possibilidades, e acompanhamento próximo, do primeiro contato à decisão final.' },
+          diff: { overline:'Por que a Xavier Ribeiro & Ribeiro', h2:'Quatro compromissos com quem confia no escritório.', c1h:'Atendimento humano, sem juridiquês', c1p:'Explicamos cada etapa em linguagem simples. Você entende o que acontece no seu caso, sem termos complicados e sem se sentir perdido.', c2h:'Análise honesta do seu caso', c2p:'Avaliamos a viabilidade antes de qualquer passo. Se houver um caminho, mostramos com clareza; se não houver, dizemos com franqueza.', c3h:'Acompanhamento próximo', c3p:'Você fala diretamente com quem cuida do seu caso e recebe atualizações ao longo do processo. Proximidade do início ao fim.', c4h:'Atuação nas áreas certas', c4p:'Foco em Previdenciário, Trabalhista, Inventário e Indenizações — as causas que mais afetam a vida e o patrimônio de quem nos procura.' },
+          process: { overline:'Como conduzimos o seu caso', h2:'Um caminho claro, do primeiro contato à decisão.', p:'Toque em cada etapa para entender como funciona.', s1h:'Conversa inicial', s1p:'Uma conversa para entender a sua situação e as suas dúvidas, sem compromisso e em linguagem simples.', s2h:'Análise do caso', s2p:'Estudamos os seus documentos (como o CNIS) e avaliamos com franqueza o que é viável dentro da lei.', s3h:'Estratégia clara', s3p:'Apresentamos os caminhos possíveis, prazos e honorários com transparência, para você decidir com segurança.', s4h:'Acompanhamento', s4p:'Conduzimos o caso com atenção a cada prazo e mantemos você informado, do início à decisão final.' },
+          areas: { overline:'Áreas de atuação', h2:'Onde podemos ajudar você.', p:'Atuação concentrada nas causas que mais afetam a sua vida e o seu patrimônio — com foco principal no Direito Previdenciário.', cta:'Ver todas as áreas →', see:'Ver área →', a1h:'Previdenciário', a2h:'Trabalhista', a3h:'Inventário', a4h:'Indenizações' },
           manifesto: { eyebrow:'O nosso compromisso', quote:'Defendemos pessoas, não números de processo. Cada história merece ser ouvida com atenção, conduzida com técnica e respeitada com a verdade.', cite:'Xavier Ribeiro & Ribeiro' },
           cta: { overline:'Vamos conversar', h2:'O primeiro passo é simples: uma conversa para entender o seu caso.', btn:'Falar no WhatsApp' }
         },
         about: {
+          overline:'Quem Somos', h1:'Advocacia feita de <span class="italic text-gold-grad">escuta e cuidado.</span>', p:'A Xavier Ribeiro & Ribeiro nasceu para defender pessoas com seriedade técnica e proximidade humana — em São José dos Campos e em todo o Vale do Paraíba.',
+          work: { overline:'A nossa forma de trabalhar', h2:'Antes de falar em processo, a gente escuta.', p1:'Somos uma sociedade de advogados dedicada principalmente ao Direito Previdenciário — o direito de quem trabalhou a vida toda e quer se aposentar com tranquilidade —, além de Direito do Trabalho, Inventário e Indenizações. Cada caso começa com uma análise cuidadosa e uma conversa honesta sobre o que é possível.', p2:'Acreditamos que advocacia de verdade se faz com informação clara e acompanhamento próximo. Você entende cada etapa, conhece os prazos e fala diretamente com quem cuida do seu caso, do primeiro contato à decisão final.' },
+          pillars: { c1h:'Escuta antes de tudo', c1p:'Entender a sua história é o que orienta a melhor estratégia. Cada caso é único e merece atenção individual.', c2h:'Clareza em cada etapa', c2p:'Nada de juridiquês. Explicamos prazos, possibilidades e honorários com transparência, para você decidir com segurança.', c3h:'Compromisso ético', c3p:'Atuação pautada pela ética e pelo Estatuto da Advocacia. Sem promessas de resultado — apenas trabalho sério e dedicado.' },
           team: { overline:'Quem conduz', h2:'À frente do escritório.' },
-          profile: {
-            role:'Advogada · OAB/SP 000.000',
-            bio:'Advogada dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atua com atendimento próximo e linguagem acessível, acompanhando pessoalmente cada cliente do escritório em São José dos Campos e região.',
-            bio2:'Para uma orientação inicial sobre o seu caso, fale diretamente pelo WhatsApp.'
-          }
+          profile: { role:'Advogada · OAB/SP 000.000', bio:'Advogada dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atua com atendimento próximo e linguagem acessível, acompanhando pessoalmente cada cliente do escritório em São José dos Campos e região.', bio2:'Para uma orientação inicial sobre o seu caso, fale diretamente pelo WhatsApp.' },
+          cta_h2:'Vamos conversar sobre o seu caso?', cta_btn:'Falar no WhatsApp'
         },
         areas: {
-          overline:'O que fazemos por você',
-          h2plain:'Áreas de atuação com foco em quem precisa.',
-          p:'Atuação concentrada nas causas que mais afetam a sua vida e o seu patrimônio. O nosso foco principal é o Direito Previdenciário — ajudar você a se aposentar com tranquilidade.',
-          a1: { over:'Nosso foco principal', h2:'Direito Previdenciário', p:'O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.',
-            i1h:'Aposentadorias', i1p:'Por idade, por tempo de contribuição, especial ou por invalidez. Analisamos o seu histórico (CNIS) e orientamos o melhor caminho.',
-            i2h:'Revisão de Benefício', i2p:'Quem já se aposentou pode ter direito a um valor maior. Avaliamos se a revisão é viável dentro dos prazos legais — sem prometer resultado.',
-            i3h:'Auxílios e BPC/LOAS', i3p:'Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para idosos e pessoas com deficiência em situação de necessidade.',
-            i4h:'Planejamento da Aposentadoria', i4p:'Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo com segurança.' },
-          a2: { over:'Seus direitos no trabalho', h2:'Direito do Trabalho', p:'Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.',
-            i1h:'Verbas Rescisórias', i1p:'Conferência da rescisão: aviso prévio, férias, 13º, FGTS e multa. Verificamos se você recebeu tudo o que era devido.',
-            i2h:'Horas Extras e Jornada', i2p:'Horas extras não pagas, intervalos suprimidos e jornada irregular. Levantamos o que pode ser cobrado.',
-            i3h:'Reconhecimento de Vínculo', i3p:'Trabalho sem registro, pejotização indevida ou função diferente da anotada na carteira. Buscamos o reconhecimento dos seus direitos.',
-            i4h:'Assédio e Rescisão Indireta', i4p:'Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador. Orientamos com cuidado e discrição.' },
-          a3: { over:'Patrimônio e família', h2:'Inventário e Sucessões', p:'O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.',
-            i1h:'Inventário Judicial e Extrajudicial', i1p:'Quando há consenso entre os herdeiros, o inventário pode ser feito em cartório, de forma mais rápida. Avaliamos a via possível.',
-            i2h:'Partilha de Bens', i2p:'Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei e o entendimento da família.',
-            i3h:'Testamento e Planejamento Sucessório', i3p:'Organizar em vida a destinação do patrimônio, dentro dos limites legais, para evitar conflitos e proteger quem você ama.',
-            i4h:'Regularização de Heranças', i4p:'Bens em nome de quem já faleceu, imóveis não transferidos e inventários parados. Colocamos a documentação em ordem.' },
-          a4: { over:'Quando algo dá errado', h2:'Indenizações', p:'Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.',
-            i1h:'Danos Morais e Materiais', i1p:'Situações que causaram dor, constrangimento ou prejuízo financeiro. Analisamos se há direito à reparação.',
-            i2h:'Acidentes', i2p:'Acidentes de trânsito, no trabalho ou por falha de terceiros. Orientação sobre responsabilidades e reparação dos danos.',
-            i3h:'Direito do Consumidor', i3p:'Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas. Defesa dos seus direitos.',
-            i4h:'Negativação Indevida', i4p:'Nome inscrito sem motivo, dívida já paga ou registro irregular. Buscamos a correção e a reparação.' },
-          faq: { overline:'Perguntas frequentes', h2:'Dúvidas comuns de quem procura o escritório.', p:'Reunimos respostas para as perguntas que mais ouvimos. Para o seu caso específico, o ideal é uma conversa.',
-            q1:'Quando eu posso me aposentar?', a1:'Depende do seu tempo de contribuição, da sua idade e das regras de transição em vigor. O caminho certo varia para cada pessoa. Com uma análise do seu histórico (CNIS), conseguimos mostrar quais são as suas opções.',
-            q2:'Preciso ir até o escritório?', a2:'Não necessariamente. Muitos atendimentos podem começar pelo WhatsApp ou por telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.',
-            q3:'Quanto custa um processo?', a3:'Os honorários variam conforme o tipo de causa e a sua complexidade, e são combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo com clareza na primeira conversa, sem surpresas.',
-            q4:'O escritório garante que eu vou ganhar?', a4:'Não. Nenhum advogado sério pode garantir resultado — isso é, inclusive, vedado pela OAB. O que oferecemos é uma análise honesta da viabilidade do seu caso e trabalho dedicado para buscar o melhor desfecho possível dentro da lei.',
-            q5:'Já recebo aposentadoria. Posso revisar o valor?', a5:'Talvez. Existem prazos legais para pedir revisão (em regra, até dez anos do início do benefício). Avaliamos os seus documentos para verificar se a revisão é viável no seu caso, sem qualquer promessa de aumento.',
-            q6:'Como funciona a primeira conversa?', a6:'É uma conversa para entender a sua situação, tirar as suas dúvidas e explicar os caminhos possíveis. Você sai com mais clareza sobre o seu caso, em linguagem simples e sem compromisso de fechar nada na hora.' }
+          overline:'O que fazemos por você', h1:'Áreas de atuação<br><span class="italic text-gold-grad">com foco em quem precisa.</span>', p:'Atuação concentrada nas causas que mais afetam a sua vida e o seu patrimônio. O nosso foco principal é o Direito Previdenciário — ajudar você a se aposentar com tranquilidade.',
+          a1: { over:'Nosso foco principal', h2:'Direito Previdenciário', p:'O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS — com análise do seu caso e linguagem que você entende.', i1h:'Aposentadorias', i1p:'Por idade, por tempo de contribuição, especial ou por invalidez. Analisamos o seu histórico (CNIS) e orientamos o melhor caminho.', i2h:'Revisão de Benefício', i2p:'Quem já se aposentou pode ter direito a um valor maior. Avaliamos se a revisão é viável dentro dos prazos legais — sem prometer resultado.', i3h:'Auxílios e BPC/LOAS', i3p:'Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para idosos e pessoas com deficiência em situação de necessidade.', i4h:'Planejamento da Aposentadoria', i4p:'Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo com segurança.' },
+          a2: { over:'Seus direitos no trabalho', h2:'Direito do Trabalho', p:'Seus direitos durante e depois do contrato de trabalho. Orientação e atuação para trabalhadores que tiveram direitos descumpridos, com análise da sua situação e dos seus documentos.', i1h:'Verbas Rescisórias', i1p:'Conferência da rescisão: aviso prévio, férias, 13º, FGTS e multa. Verificamos se você recebeu tudo o que era devido.', i2h:'Horas Extras e Jornada', i2p:'Horas extras não pagas, intervalos suprimidos e jornada irregular. Levantamos o que pode ser cobrado.', i3h:'Reconhecimento de Vínculo', i3p:'Trabalho sem registro, pejotização indevida ou função diferente da anotada na carteira. Buscamos o reconhecimento dos seus direitos.', i4h:'Assédio e Rescisão Indireta', i4p:'Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador. Orientamos com cuidado e discrição.' },
+          a3: { over:'Patrimônio e família', h2:'Inventário e Sucessões', p:'O momento de organizar o patrimônio de quem partiu, com cuidado e respeito. Conduzimos o inventário e a partilha para regularizar os bens da família, de forma clara e humana.', i1h:'Inventário Judicial e Extrajudicial', i1p:'Quando há consenso entre os herdeiros, o inventário pode ser feito em cartório, de forma mais rápida. Avaliamos a via possível.', i2h:'Partilha de Bens', i2p:'Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei e o entendimento da família.', i3h:'Testamento e Planejamento Sucessório', i3p:'Organizar em vida a destinação do patrimônio, dentro dos limites legais, para evitar conflitos e proteger quem você ama.', i4h:'Regularização de Heranças', i4p:'Bens em nome de quem já faleceu, imóveis não transferidos e inventários parados. Colocamos a documentação em ordem.' },
+          a4: { over:'Quando algo dá errado', h2:'Indenizações', p:'Quando uma situação causa prejuízo, a lei prevê reparação. Avaliamos o seu caso com franqueza e buscamos a indenização cabível, explicando os caminhos possíveis.', i1h:'Danos Morais e Materiais', i1p:'Situações que causaram dor, constrangimento ou prejuízo financeiro. Analisamos se há direito à reparação.', i2h:'Acidentes', i2p:'Acidentes de trânsito, no trabalho ou por falha de terceiros. Orientação sobre responsabilidades e reparação dos danos.', i3h:'Direito do Consumidor', i3p:'Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas. Defesa dos seus direitos.', i4h:'Negativação Indevida', i4p:'Nome inscrito sem motivo, dívida já paga ou registro irregular. Buscamos a correção e a reparação.' },
+          faq: { overline:'Perguntas frequentes', h2:'Dúvidas comuns de quem procura o escritório.', p:'Reunimos respostas para as perguntas que mais ouvimos. Para o seu caso específico, o ideal é uma conversa.', q1:'Quando eu posso me aposentar?', a1:'Depende do seu tempo de contribuição, da sua idade e das regras de transição em vigor. O caminho certo varia para cada pessoa. Com uma análise do seu histórico (CNIS), conseguimos mostrar quais são as suas opções.', q2:'Preciso ir até o escritório?', a2:'Não necessariamente. Muitos atendimentos podem começar pelo WhatsApp ou por telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.', q3:'Quanto custa um processo?', a3:'Os honorários variam conforme o tipo de causa e a sua complexidade, e são combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo com clareza na primeira conversa, sem surpresas.', q4:'O escritório garante que eu vou ganhar?', a4:'Não. Nenhum advogado sério pode garantir resultado — isso é, inclusive, vedado pela OAB. O que oferecemos é uma análise honesta da viabilidade do seu caso e trabalho dedicado para buscar o melhor desfecho possível dentro da lei.', q5:'Já recebo aposentadoria. Posso revisar o valor?', a5:'Talvez. Existem prazos legais para pedir revisão (em regra, até dez anos do início do benefício). Avaliamos os seus documentos para verificar se a revisão é viável no seu caso, sem qualquer promessa de aumento.', q6:'Como funciona a primeira conversa?', a6:'É uma conversa para entender a sua situação, tirar as suas dúvidas e explicar os caminhos possíveis. Você sai com mais clareza sobre o seu caso, em linguagem simples e sem compromisso de fechar nada na hora.', cta:'Tirar minha dúvida no WhatsApp' }
         },
-        contact: {
-          overline:'Canal direto', h1:'Fale com o escritório.', p:'Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês em São José dos Campos e região.',
-          direct:'Atendimento Direto', wa_role:'Sociedade de Advogados', wa_number:'(12) 99743-4181', channels:'Canais', hours_label:'Horário', hours:'Segunda a sexta, das 9h às 18h',
-          address_title:'Onde atuamos', address_building:'São José dos Campos · SP', address_area:'Atendemos São José dos Campos e toda a região do Vale do Paraíba. Atendimento presencial mediante agendamento.', maps:'Ver no Google Maps →'
-        },
-        footer: {
-          desc:'Advocacia com escuta e cuidado em Direito Previdenciário, Trabalhista, Inventário e Indenizações. São José dos Campos e Vale do Paraíba.',
-          nav:'Navegação', contact:'Contato', area:'Atendemos São José dos Campos e todo o Vale do Paraíba — SP',
-          copyright:'© 2026 Xavier Ribeiro & Ribeiro – Sociedade de Advogados.',
-          legal:'OAB/SP 000.000 · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento nº 205/2021 da OAB. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.'
-        }
+        contact: { overline:'Canal direto', h1:'Fale com o escritório.', p:'Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês em São José dos Campos e região.', direct:'Atendimento Direto', wa_role:'Sociedade de Advogados', wa_number:'(12) 99743-4181', channels:'Canais', hours_label:'Horário', hours:'Segunda a sexta, das 9h às 18h', address_title:'Onde atuamos', address_building:'São José dos Campos · SP', address_area:'Atendemos São José dos Campos e toda a região do Vale do Paraíba. Atendimento presencial mediante agendamento.', maps:'Ver no Google Maps →', cta_h2:'Toda boa orientação começa com uma conversa.', cta_btn:'Falar no WhatsApp' },
+        footer: { desc:'Advocacia com escuta e cuidado em Direito Previdenciário, Trabalhista, Inventário e Indenizações. São José dos Campos e Vale do Paraíba.', nav:'Navegação', contact:'Contato', area:'Atendemos São José dos Campos e todo o Vale do Paraíba — SP', copyright:'© 2026 Xavier Ribeiro & Ribeiro – Sociedade de Advogados.', legal:'OAB/SP 000.000 · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento nº 205/2021 da OAB. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.' }
       },
       en: {
-        nav: { home:'Home', about:'About', areas:'Practice Areas', contact:'Contact' },
+        nav: { home:'Home', about:'About Us', areas:'Practice Areas', contact:'Contact', cta:'Book a consultation' },
         company: { tagline:'ATTORNEYS AT LAW' },
         home: {
-          hero: {
-            h1:'Your retirement deserves<br><span class="italic text-gold-grad font-normal">careful attention</span><br>and guidance you can trust.',
-            p:'A clear review of your case, plain-language explanations, and close support at every step. Social security, labor, probate, and damages law in São José dos Campos and the region.',
-            wa:'Message us on WhatsApp →', cta:'Practice areas →'
-          },
-          stats: {
-            s1n:'Focus', s1t:'on Social Security law',
-            s2n:'04', s2t:'practice areas',
-            s3n:'Vale do Paraíba', s3t:'São José dos Campos & region',
-            s4n:'Plain language', s4t:'human, clear service'
-          },
-          intro: {
-            overline:'The Firm',
-            h2:'Before talking about lawsuits, we listen. Every case begins by understanding your story, <span class="italic text-gold-deep">in clear language</span> and with the honesty to tell you what is possible.',
-            p:'Xavier Ribeiro & Ribeiro is a law firm devoted to defending people — not case numbers. We work with a careful review of every case, transparent information about deadlines and possibilities, and close support from the first contact to the final decision.'
-          },
-          diff: {
-            overline:'Why Xavier Ribeiro & Ribeiro', h2:'Four commitments to those who trust the firm.',
-            c1h:'Human service, no legal jargon', c1p:'We explain each step in simple language. You understand what is happening in your case, with no complicated terms and without feeling lost.',
-            c2h:'An honest review of your case', c2p:'We assess whether it is viable before taking any step. If there is a path, we show it clearly; if there is not, we say so frankly.',
-            c3h:'Close, personal support', c3p:'You speak directly with the person handling your case and receive updates throughout the process. Proximity from start to finish.',
-            c4h:'Focus on the right areas', c4p:'Social security, labor, probate, and damages — the matters that most affect the life and assets of those who come to us.'
-          },
-          process: {
-            overline:'How we handle your case', h2:'A clear path, from the first contact to the decision.', p:'Tap each step to see how it works.',
-            s1h:'Initial conversation', s1p:'A conversation to understand your situation and your questions — no obligation, in plain language.',
-            s2h:'Case review', s2p:'We study your documents (such as the CNIS) and frankly assess what is viable under the law.',
-            s3h:'A clear strategy', s3p:'We lay out the possible paths, deadlines, and fees transparently, so you can decide with confidence.',
-            s4h:'Ongoing support', s4p:'We handle the case with attention to every deadline and keep you informed, from start to final decision.'
-          },
-          areas: { a1h:'Social Security', a2h:'Labor Law', a3h:'Probate', a4h:'Damages', see:'View area →' },
+          hero: { h1:'The care your story deserves.', sub:'Social Security law specialists in São José dos Campos.', wa:'Message us on WhatsApp →', cta:'Practice areas →' },
+          stats: { s1n:'Focus', s1t:'on Social Security law', s2n:'04', s2t:'practice areas', s3n:'Vale do Paraíba', s3t:'São José dos Campos & region', s4n:'Plain language', s4t:'human, clear service' },
+          intro: { overline:'The Firm', h2:'Before talking about lawsuits, we listen. Every case begins by understanding your story, <span class="italic text-gold-deep">in clear language</span> and with the honesty to tell you what is possible.', p:'Xavier Ribeiro & Ribeiro is a law firm devoted to defending people — not case numbers. We work with a careful review of every case, transparent information about deadlines and possibilities, and close support from the first contact to the final decision.' },
+          diff: { overline:'Why Xavier Ribeiro & Ribeiro', h2:'Four commitments to those who trust the firm.', c1h:'Human service, no legal jargon', c1p:'We explain each step in simple language. You understand what is happening in your case, with no complicated terms and without feeling lost.', c2h:'An honest review of your case', c2p:'We assess whether it is viable before taking any step. If there is a path, we show it clearly; if there is not, we say so frankly.', c3h:'Close, personal support', c3p:'You speak directly with the person handling your case and receive updates throughout the process. Proximity from start to finish.', c4h:'Focus on the right areas', c4p:'Social security, labor, probate, and damages — the matters that most affect the life and assets of those who come to us.' },
+          process: { overline:'How we handle your case', h2:'A clear path, from the first contact to the decision.', p:'Tap each step to see how it works.', s1h:'Initial conversation', s1p:'A conversation to understand your situation and your questions — no obligation, in plain language.', s2h:'Case review', s2p:'We study your documents (such as the CNIS) and frankly assess what is viable under the law.', s3h:'A clear strategy', s3p:'We lay out the possible paths, deadlines, and fees transparently, so you can decide with confidence.', s4h:'Ongoing support', s4p:'We handle the case with attention to every deadline and keep you informed, from start to final decision.' },
+          areas: { overline:'Practice areas', h2:'Where we can help you.', p:'Our work is concentrated on the matters that most affect your life and your assets — with a main focus on Social Security law.', cta:'See all areas →', see:'View area →', a1h:'Social Security', a2h:'Labor Law', a3h:'Probate', a4h:'Damages' },
           manifesto: { eyebrow:'Our commitment', quote:'We defend people, not case numbers. Every story deserves to be heard with attention, handled with skill, and honored with the truth.', cite:'Xavier Ribeiro & Ribeiro' },
           cta: { overline:'Talk to us', h2:'The first step is simple: a conversation to understand your case.', btn:'Message us on WhatsApp' }
         },
         about: {
+          overline:'Who We Are', h1:'Law built on <span class="italic text-gold-grad">listening and care.</span>', p:'Xavier Ribeiro & Ribeiro was founded to defend people with technical rigor and human closeness — in São José dos Campos and across the Vale do Paraíba.',
+          work: { overline:'How we work', h2:'Before talking about lawsuits, we listen.', p1:'We are a law firm devoted mainly to Social Security law — the right of those who worked their whole lives and want to retire with peace of mind — as well as Labor, Probate, and Damages law. Every case begins with a careful review and an honest conversation about what is possible.', p2:'We believe real advocacy is built on clear information and close support. You understand each step, know the deadlines, and speak directly with the person handling your case, from the first contact to the final decision.' },
+          pillars: { c1h:'Listening first', c1p:'Understanding your story is what guides the best strategy. Every case is unique and deserves individual attention.', c2h:'Clarity at every step', c2p:'No legal jargon. We explain deadlines, possibilities, and fees transparently, so you can decide with confidence.', c3h:'Ethical commitment', c3p:'Our work is guided by ethics and the Bar statute. No promises of results — only serious, dedicated work.' },
           team: { overline:'Who leads', h2:'At the head of the firm.' },
-          profile: {
-            role:'Attorney · OAB/SP 000.000',
-            bio:'An attorney dedicated to Social Security law and to defending those seeking to retire with dignity. She works with close, accessible service, personally following each client of the firm in São José dos Campos and the region.',
-            bio2:'For initial guidance on your case, message us directly on WhatsApp.'
-          }
+          profile: { role:'Attorney · OAB/SP 000.000', bio:'An attorney dedicated to Social Security law and to defending those seeking to retire with dignity. She works with close, accessible service, personally following each client of the firm in São José dos Campos and the region.', bio2:'For initial guidance on your case, message us directly on WhatsApp.' },
+          cta_h2:'Shall we talk about your case?', cta_btn:'Message us on WhatsApp'
         },
         areas: {
-          overline:'What we do for you',
-          h2plain:'Practice areas focused on those who need them.',
-          p:'Our work is concentrated on the matters that most affect your life and your assets. Our main focus is Social Security law — helping you retire with peace of mind.',
-          a1: { over:'Our main focus', h2:'Social Security Law', p:'The right of those who contributed their whole lives. We help you understand whether you can already retire, the best option, and how to seek reviews and benefits with the INSS — with a review of your case and language you understand.',
-            i1h:'Retirement', i1p:'By age, by contribution time, special, or by disability. We review your history (CNIS) and advise the best path.',
-            i2h:'Benefit Review', i2p:'Those already retired may be entitled to a higher amount. We assess whether a review is viable within the legal deadlines — without promising results.',
-            i3h:'Allowances and BPC/LOAS', i3p:'Sickness and accident allowances and the Continuous Cash Benefit for the elderly and people with disabilities in need.',
-            i4h:'Retirement Planning', i4p:'Before filing, we study what is most worthwhile, so you can decide the right moment with confidence.' },
-          a2: { over:'Your rights at work', h2:'Labor Law', p:'Your rights during and after the employment contract. Guidance and action for workers whose rights were breached, with a review of your situation and your documents.',
-            i1h:'Severance Pay', i1p:'Review of the termination: notice, vacation, 13th salary, FGTS, and penalty. We check whether you received everything you were owed.',
-            i2h:'Overtime and Working Hours', i2p:'Unpaid overtime, suppressed breaks, and irregular hours. We assess what can be claimed.',
-            i3h:'Recognition of Employment', i3p:'Unregistered work, improper contracting, or a role different from the one recorded. We seek recognition of your rights.',
-            i4h:'Harassment and Constructive Dismissal', i4p:'Moral harassment, abusive conditions, or breach of contract by the employer. We advise with care and discretion.' },
-          a3: { over:'Assets and family', h2:'Probate and Succession', p:'The moment to organize the assets of those who have passed, with care and respect. We handle probate and the division of assets to settle the family estate, clearly and humanely.',
-            i1h:'Judicial and Extrajudicial Probate', i1p:'When the heirs agree, probate can be done at a notary, more quickly. We assess which route is possible.',
-            i2h:'Division of Assets', i2p:'Division of property, accounts, and other assets among the heirs, according to the law and the family understanding.',
-            i3h:'Wills and Estate Planning', i3p:'Organizing the destination of your assets during your lifetime, within legal limits, to avoid conflicts and protect those you love.',
-            i4h:'Settling Inheritances', i4p:'Assets in the name of the deceased, untransferred property, and stalled probates. We put the documentation in order.' },
-          a4: { over:'When something goes wrong', h2:'Damages', p:'When a situation causes harm, the law provides for compensation. We assess your case frankly and seek the appropriate compensation, explaining the possible paths.',
-            i1h:'Moral and Material Damages', i1p:'Situations that caused pain, embarrassment, or financial loss. We analyze whether there is a right to compensation.',
-            i2h:'Accidents', i2p:'Traffic accidents, workplace accidents, or third-party fault. Guidance on responsibilities and compensation for the harm suffered.',
-            i3h:'Consumer Law', i3p:'Improper charges, defective products or services, and problems with companies. Defense of your consumer rights.',
-            i4h:'Improper Credit Listing', i4p:'A name listed without cause, a debt already paid, or an irregular record. We seek correction and compensation.' },
-          faq: { overline:'Frequently asked questions', h2:'Common questions from those who reach out.', p:'We gathered answers to the questions we hear most. For your specific case, a conversation is best.',
-            q1:'When can I retire?', a1:'It depends on your contribution time, your age, and the transition rules in force. The right path varies for each person. With a review of your history (CNIS), we can show you your options.',
-            q2:'Do I need to come to the office?', a2:'Not necessarily. Many matters can begin via WhatsApp or phone, and much of the documentation is sent digitally. We serve São José dos Campos and the entire Vale do Paraíba region.',
-            q3:'How much does a case cost?', a3:'Fees vary according to the type of case and its complexity, and are agreed transparently before any step, following the Bar fee schedule. We explain everything clearly in the first conversation, with no surprises.',
-            q4:'Does the firm guarantee I will win?', a4:'No. No serious lawyer can guarantee a result — it is, in fact, prohibited by the Bar. What we offer is an honest assessment of your case and dedicated work to seek the best possible outcome within the law.',
-            q5:'I already receive a pension. Can I review the amount?', a5:'Perhaps. There are legal deadlines to request a review (as a rule, up to ten years from the start of the benefit). We review your documents to verify whether a review is viable in your case, with no promise of an increase.',
-            q6:'How does the first conversation work?', a6:'It is a conversation to understand your situation, answer your questions, and explain the possible paths. You leave with more clarity about your case, in simple language and with no obligation to commit on the spot.' }
+          overline:'What we do for you', h1:'Practice areas<br><span class="italic text-gold-grad">focused on those who need them.</span>', p:'Our work is concentrated on the matters that most affect your life and your assets. Our main focus is Social Security law — helping you retire with peace of mind.',
+          a1: { over:'Our main focus', h2:'Social Security Law', p:'The right of those who contributed their whole lives. We help you understand whether you can already retire, the best option, and how to seek reviews and benefits with the INSS — with a review of your case and language you understand.', i1h:'Retirement', i1p:'By age, by contribution time, special, or by disability. We review your history (CNIS) and advise the best path.', i2h:'Benefit Review', i2p:'Those already retired may be entitled to a higher amount. We assess whether a review is viable within the legal deadlines — without promising results.', i3h:'Allowances and BPC/LOAS', i3p:'Sickness and accident allowances and the Continuous Cash Benefit for the elderly and people with disabilities in need.', i4h:'Retirement Planning', i4p:'Before filing, we study what is most worthwhile, so you can decide the right moment with confidence.' },
+          a2: { over:'Your rights at work', h2:'Labor Law', p:'Your rights during and after the employment contract. Guidance and action for workers whose rights were breached, with a review of your situation and your documents.', i1h:'Severance Pay', i1p:'Review of the termination: notice, vacation, 13th salary, FGTS, and penalty. We check whether you received everything you were owed.', i2h:'Overtime and Working Hours', i2p:'Unpaid overtime, suppressed breaks, and irregular hours. We assess what can be claimed.', i3h:'Recognition of Employment', i3p:'Unregistered work, improper contracting, or a role different from the one recorded. We seek recognition of your rights.', i4h:'Harassment and Constructive Dismissal', i4p:'Moral harassment, abusive conditions, or breach of contract by the employer. We advise with care and discretion.' },
+          a3: { over:'Assets and family', h2:'Probate and Succession', p:'The moment to organize the assets of those who have passed, with care and respect. We handle probate and the division of assets to settle the family estate, clearly and humanely.', i1h:'Judicial and Extrajudicial Probate', i1p:'When the heirs agree, probate can be done at a notary, more quickly. We assess which route is possible.', i2h:'Division of Assets', i2p:'Division of property, accounts, and other assets among the heirs, according to the law and the family understanding.', i3h:'Wills and Estate Planning', i3p:'Organizing the destination of your assets during your lifetime, within legal limits, to avoid conflicts and protect those you love.', i4h:'Settling Inheritances', i4p:'Assets in the name of the deceased, untransferred property, and stalled probates. We put the documentation in order.' },
+          a4: { over:'When something goes wrong', h2:'Damages', p:'When a situation causes harm, the law provides for compensation. We assess your case frankly and seek the appropriate compensation, explaining the possible paths.', i1h:'Moral and Material Damages', i1p:'Situations that caused pain, embarrassment, or financial loss. We analyze whether there is a right to compensation.', i2h:'Accidents', i2p:'Traffic accidents, workplace accidents, or third-party fault. Guidance on responsibilities and compensation for the harm suffered.', i3h:'Consumer Law', i3p:'Improper charges, defective products or services, and problems with companies. Defense of your consumer rights.', i4h:'Improper Credit Listing', i4p:'A name listed without cause, a debt already paid, or an irregular record. We seek correction and compensation.' },
+          faq: { overline:'Frequently asked questions', h2:'Common questions from those who reach out.', p:'We gathered answers to the questions we hear most. For your specific case, a conversation is best.', q1:'When can I retire?', a1:'It depends on your contribution time, your age, and the transition rules in force. The right path varies for each person. With a review of your history (CNIS), we can show you your options.', q2:'Do I need to come to the office?', a2:'Not necessarily. Many matters can begin via WhatsApp or phone, and much of the documentation is sent digitally. We serve São José dos Campos and the entire Vale do Paraíba region.', q3:'How much does a case cost?', a3:'Fees vary according to the type of case and its complexity, and are agreed transparently before any step, following the Bar fee schedule. We explain everything clearly in the first conversation, with no surprises.', q4:'Does the firm guarantee I will win?', a4:'No. No serious lawyer can guarantee a result — it is, in fact, prohibited by the Bar. What we offer is an honest assessment of your case and dedicated work to seek the best possible outcome within the law.', q5:'I already receive a pension. Can I review the amount?', a5:'Perhaps. There are legal deadlines to request a review (as a rule, up to ten years from the start of the benefit). We review your documents to verify whether a review is viable in your case, with no promise of an increase.', q6:'How does the first conversation work?', a6:'It is a conversation to understand your situation, answer your questions, and explain the possible paths. You leave with more clarity about your case, in simple language and with no obligation to commit on the spot.', cta:'Ask my question on WhatsApp' }
         },
-        contact: {
-          overline:'Direct channel', h1:'Get in touch with the firm.', p:'Tell us what is happening and we will show you the next steps. Close, jargon-free service in São José dos Campos and the region.',
-          direct:'Direct Service', wa_role:'Attorneys at Law', wa_number:'(12) 99743-4181', channels:'Channels', hours_label:'Hours', hours:'Monday to Friday, 9am to 6pm',
-          address_title:'Where we work', address_building:'São José dos Campos · SP', address_area:'We serve São José dos Campos and the entire Vale do Paraíba region. In-person meetings by appointment.', maps:'View on Google Maps →'
-        },
-        footer: {
-          desc:'Law with listening and care in Social Security, Labor, Probate, and Damages. São José dos Campos and the Vale do Paraíba.',
-          nav:'Navigation', contact:'Contact', area:'We serve São José dos Campos and the entire Vale do Paraíba — SP',
-          copyright:'© 2026 Xavier Ribeiro & Ribeiro – Attorneys at Law.',
-          legal:'OAB/SP 000.000 · Informational content only, without client solicitation, in accordance with the Code of Ethics and Discipline and Provision No. 205/2021 of the Brazilian Bar (OAB). Each case is unique; results depend on specific circumstances, and no outcome is guaranteed.'
-        }
+        contact: { overline:'Direct channel', h1:'Get in touch with the firm.', p:'Tell us what is happening and we will show you the next steps. Close, jargon-free service in São José dos Campos and the region.', direct:'Direct Service', wa_role:'Attorneys at Law', wa_number:'(12) 99743-4181', channels:'Channels', hours_label:'Hours', hours:'Monday to Friday, 9am to 6pm', address_title:'Where we work', address_building:'São José dos Campos · SP', address_area:'We serve São José dos Campos and the entire Vale do Paraíba region. In-person meetings by appointment.', maps:'View on Google Maps →', cta_h2:'Every good guidance starts with a conversation.', cta_btn:'Message us on WhatsApp' },
+        footer: { desc:'Law with listening and care in Social Security, Labor, Probate, and Damages. São José dos Campos and the Vale do Paraíba.', nav:'Navigation', contact:'Contact', area:'We serve São José dos Campos and the entire Vale do Paraíba — SP', copyright:'© 2026 Xavier Ribeiro & Ribeiro – Attorneys at Law.', legal:'OAB/SP 000.000 · Informational content only, without client solicitation, in accordance with the Code of Ethics and Discipline and Provision No. 205/2021 of the Brazilian Bar (OAB). Each case is unique; results depend on specific circumstances, and no outcome is guaranteed.' }
       }
     };
   </script>

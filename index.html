@@ -4,14 +4,14 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Xavier Ribeiro &amp; Ribeiro — Advocacia Estratégica em São José dos Campos | Previdenciário, INSS, Trabalhista e Sucessões</title>
-<meta name="description" content="Sociedade de advogados em São José dos Campos. Advocacia estratégica e sob medida em Direito Previdenciário (aposentadoria e INSS), Trabalhista, Inventário e Indenizações. Atendimento exclusivo, rigor técnico e transparência."/>
+<meta name="description" content="Sociedade de advogados em São José dos Campos e Vale do Paraíba. Advocacia estratégica em Direito Previdenciário (aposentadoria e INSS), Trabalhista, Inventário e Indenizações. Atendimento exclusivo, rigor técnico e transparência."/>
 <link rel="canonical" href="https://www.xavierribeiroribeiro.adv.br/"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314252e'/%3E%3Ctext x='38' y='72' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23c2a05a'%3EX%3C/text%3E%3Ctext x='52' y='72' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23e7d8b5'%3ER%3C/text%3E%3C/svg%3E"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Xavier Ribeiro &amp; Ribeiro — Advocacia Estratégica em São José dos Campos"/>
 <meta property="og:description" content="Advocacia estratégica e sob medida em São José dos Campos. Previdenciário, Trabalhista, Sucessões e Indenizações."/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LegalService","name":"Xavier Ribeiro & Ribeiro – Sociedade de Advogados","url":"https://www.xavierribeiroribeiro.adv.br/","telephone":"+5512997434181","areaServed":[{"@type":"City","name":"São José dos Campos"}],"knowsAbout":["Direito Previdenciário","Aposentadoria e revisão de benefícios do INSS","Direito do Trabalho","Inventário e Sucessões","Indenizações"],"description":"Sociedade de advogados em São José dos Campos com foco em Direito Previdenciário, Trabalhista, Inventário e Indenizações."}
+{"@context":"https://schema.org","@type":"LegalService","name":"Xavier Ribeiro & Ribeiro – Sociedade de Advogados","url":"https://www.xavierribeiroribeiro.adv.br/","telephone":"+5512997434181","areaServed":[{"@type":"City","name":"São José dos Campos"},{"@type":"Place","name":"Vale do Paraíba"}],"knowsAbout":["Direito Previdenciário","Aposentadoria e revisão de benefícios do INSS","Direito do Trabalho","Inventário e Sucessões","Indenizações"],"description":"Sociedade de advogados em São José dos Campos com foco em Direito Previdenciário, Trabalhista, Inventário e Indenizações."}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -20,20 +20,17 @@
 /* ============================================================
    XAVIER RIBEIRO & RIBEIRO — design autoral ultra-premium
    Petróleo + ouro fosco + off-white · Cinzel / Playfair / Inter
-   Cabeçalho azul translúcido + corpo claro · fluido 320–2560px
+   Cabeçalho azul · corpo claro · fluido 320–2560px · sem framework
    ============================================================ */
 :root{
-  /* paleta autoral */
   --ink:#14252e;--petrol:#1c3a47;--petrol-2:#274c5b;--petrol-deep:#0f1c24;
   --gold:#c2a05a;--gold-soft:#d9c089;--gold-deep:#9a7c3e;--champagne:#e7d8b5;
   --paper:#faf8f4;--paper-2:#f2efe8;--line:#e7e1d3;--line-dark:#2c4654;
   --text:#23323b;--text-soft:#5a6770;
-  /* engenharia fluida */
   --maxw:min(1280px,100%);
   --ease:cubic-bezier(.22,1,.36,1);
   --gutter:clamp(22px,5vw,64px);
   --section:clamp(72px,9vw,148px);
-  /* tipografia líquida */
   --fs-eyebrow:clamp(10px,.62vw,12px);
   --fs-h1:clamp(2.45rem,1.7rem + 4.4vw,5.1rem);
   --fs-h2:clamp(1.9rem,1.4rem + 2.3vw,3.2rem);
@@ -74,17 +71,13 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .btn-ghost:hover{background:var(--gold);color:var(--ink)}
 .btn-ghost.on-dark{color:var(--champagne);border-color:rgba(231,216,181,.5)}
 .btn-ghost.on-dark:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-/* CTA magnético com brilho que atravessa */
-.btn-cta{background:var(--gold);color:var(--ink);will-change:transform;
-  box-shadow:0 12px 34px -14px rgba(194,160,90,.6)}
+.btn-cta{background:var(--gold);color:var(--ink);will-change:transform;box-shadow:0 12px 34px -14px rgba(194,160,90,.6)}
 .btn-cta::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;pointer-events:none;
-  background:linear-gradient(110deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-18deg);
-  transition:left .75s var(--ease)}
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-18deg);transition:left .75s var(--ease)}
 .btn-cta:hover{background:var(--gold-soft);box-shadow:0 24px 58px -14px rgba(194,160,90,.85)}
 .btn-cta:hover::after{left:135%}
 .link-gold{position:relative;display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;
-  font-weight:600;font-size:clamp(11px,.7vw,12.5px);letter-spacing:.13em;text-transform:uppercase;
-  color:var(--gold-deep);padding-bottom:4px}
+  font-weight:600;font-size:clamp(11px,.7vw,12.5px);letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep);padding-bottom:4px}
 .link-gold::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
   background:linear-gradient(90deg,var(--gold-deep),transparent);transform-origin:left;transition:transform .4s var(--ease)}
 .link-gold:hover::after{transform:scaleX(.55)}
@@ -93,14 +86,14 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 
 .mono .x{fill:var(--gold)}.mono .r{fill:var(--champagne)}
 
-/* ============ HEADER — azul translúcido (somente abas) ============ */
+/* ============ HEADER — azul (somente abas) ============ */
 .hdr{position:sticky;top:0;z-index:60;background:transparent;border-bottom:1px solid transparent;
   transition:background .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease)}
 .hdr::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(11,24,32,.62),rgba(11,24,32,0));transition:opacity .45s var(--ease)}
-.hdr.scrolled{background:rgba(15,28,36,.94);backdrop-filter:blur(12px);
+.hdr.scrolled,.hdr.solid{background:rgba(15,28,36,.94);backdrop-filter:blur(12px);
   border-bottom-color:rgba(231,216,181,.14);box-shadow:0 16px 44px -30px rgba(0,0,0,.85)}
-.hdr.scrolled::before{opacity:0}
+.hdr.scrolled::before,.hdr.solid::before{opacity:0}
 .hdr-inner{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(12px,2vw,28px);min-height:78px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:13px;flex:none}
 .brand .mono{width:42px;height:36px;flex:none}
@@ -108,7 +101,6 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .brand-name{font-family:'Cinzel',serif;font-weight:600;font-size:clamp(12px,1vw,15px);letter-spacing:.11em;color:var(--champagne);white-space:nowrap}
 .brand-name b{color:var(--gold-soft)}
 .brand-sub{font-size:clamp(7px,.5vw,8.5px);font-weight:500;letter-spacing:.32em;color:rgba(231,216,181,.6);text-transform:uppercase;margin-top:6px}
-/* navegação por abas — visível em todas as larguras, rolagem horizontal no mobile */
 .nav{flex:1 1 100%;order:3;display:flex;align-items:center;gap:clamp(18px,2vw,34px);
   overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);
@@ -137,43 +129,34 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .rv{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-/* grupos com entrada escalonada (staggered fade-in-up) */
 .stagger>*{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .stagger.in>*{opacity:1;transform:none}
-.stagger.in>*:nth-child(1){transition-delay:.04s}
-.stagger.in>*:nth-child(2){transition-delay:.13s}
-.stagger.in>*:nth-child(3){transition-delay:.22s}
-.stagger.in>*:nth-child(4){transition-delay:.31s}
-.stagger.in>*:nth-child(5){transition-delay:.40s}
-.stagger.in>*:nth-child(6){transition-delay:.49s}
+.stagger.in>*:nth-child(1){transition-delay:.04s}.stagger.in>*:nth-child(2){transition-delay:.12s}
+.stagger.in>*:nth-child(3){transition-delay:.20s}.stagger.in>*:nth-child(4){transition-delay:.28s}
+.stagger.in>*:nth-child(5){transition-delay:.36s}.stagger.in>*:nth-child(6){transition-delay:.44s}
 
 /* ============ HERO HIGH-IMPACT ============ */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;
   background:var(--petrol-deep);color:var(--paper);overflow:hidden;isolation:isolate;margin-top:-78px;padding-top:78px}
 .hero-skyline{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 .hero-photo,.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-/* overlay cinematográfico — funciona sobre o vídeo, a foto ou o skyline */
 .hero-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;
   background:
    linear-gradient(180deg,rgba(15,28,36,.55) 0%,rgba(15,28,36,.28) 32%,rgba(15,28,36,.58) 78%,rgba(11,24,32,.94) 100%),
    linear-gradient(100deg,rgba(15,28,36,.85) 0%,rgba(15,28,36,.4) 52%,rgba(15,28,36,.12) 100%),
    radial-gradient(120% 80% at 80% 12%,rgba(194,160,90,.18),transparent 55%)}
-.hero .wrap{position:relative;z-index:3;width:var(--maxw);
-  padding-top:clamp(40px,7vh,72px);padding-bottom:clamp(72px,12vh,120px)}
+.hero .wrap{position:relative;z-index:3;width:var(--maxw);padding-top:clamp(40px,7vh,72px);padding-bottom:clamp(72px,12vh,120px)}
 .hero-inner{max-width:50rem}
-.hero h1{color:var(--paper);font-size:var(--fs-h1);font-weight:500;line-height:1.04;margin:clamp(18px,2vw,28px) 0 0;
-  text-shadow:0 2px 30px rgba(0,0,0,.4)}
+.hero h1{color:var(--paper);font-size:var(--fs-h1);font-weight:500;line-height:1.04;margin:clamp(18px,2vw,28px) 0 0;text-shadow:0 2px 30px rgba(0,0,0,.4)}
 .hero h1 .it{font-style:italic;color:var(--gold-soft)}
 .hero-sub{margin-top:clamp(20px,2.4vw,30px);max-width:38rem;font-weight:300;
-  font-size:clamp(1rem,.95rem + .35vw,1.22rem);color:rgba(246,243,236,.88);
-  border-left:1px solid var(--gold);padding-left:22px;line-height:1.72}
+  font-size:clamp(1rem,.95rem + .35vw,1.22rem);color:rgba(246,243,236,.88);border-left:1px solid var(--gold);padding-left:22px;line-height:1.72}
 .hero-cta{display:flex;flex-wrap:wrap;gap:clamp(14px,1.4vw,20px);margin-top:clamp(30px,3.6vw,46px);align-items:center}
 .hero-tag{position:absolute;left:var(--gutter);bottom:clamp(22px,3.6vh,40px);z-index:3;display:flex;align-items:center;gap:12px;
   font-family:'Cinzel',serif;font-size:clamp(9px,.62vw,11px);letter-spacing:.22em;text-transform:uppercase;color:var(--champagne)}
 .hero-tag::before{content:"";width:30px;height:1px;background:var(--gold)}
-.scroll-cue{position:absolute;right:var(--gutter);bottom:clamp(22px,3.6vh,40px);z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;
-  font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(231,216,181,.6)}
-.scroll-cue .bar{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
+.scroll-cue{position:absolute;right:var(--gutter);bottom:clamp(22px,3.6vh,40px);z-index:3}
+.scroll-cue .bar{display:block;width:1px;height:54px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
 .scroll-cue .bar::after{content:"";position:absolute;top:-50%;left:0;width:100%;height:50%;background:var(--gold-soft);animation:drop 2.4s var(--ease) infinite}
 @keyframes drop{0%{top:-50%}60%,100%{top:120%}}
 @media(max-width:600px){.scroll-cue{display:none}}
@@ -187,7 +170,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 @media(min-width:820px){.sec-head{grid-template-columns:.36fr .64fr;gap:48px;align-items:end}
   .sec-head.solo{grid-template-columns:1fr;max-width:48rem}}
 
-/* ============ DECLARAÇÃO INSTITUCIONAL + retrato emoldurado ============ */
+/* ============ DECLARAÇÃO INSTITUCIONAL + retrato ============ */
 .statement{display:grid;gap:clamp(40px,5vw,72px);align-items:center}
 @media(min-width:920px){.statement{grid-template-columns:1.06fr .94fr}}
 .statement .st-copy .eyebrow{margin-bottom:24px}
@@ -198,8 +181,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .portrait{position:relative;justify-self:center;width:100%;max-width:440px}
 .portrait .frame{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;
   background:linear-gradient(160deg,#1b3743,#0f1c24);box-shadow:0 50px 90px -50px rgba(15,28,36,.7)}
-.portrait .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04) brightness(.99) sepia(.06);
-  transition:transform 1.1s var(--ease),filter .6s var(--ease)}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04) brightness(.99) sepia(.06);transition:transform 1.1s var(--ease),filter .6s var(--ease)}
 .portrait:hover .frame img{transform:scale(1.04);filter:saturate(1) contrast(1.05) brightness(1.01) sepia(0)}
 .portrait .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(15,28,36,.42))}
 .portrait .edge{position:absolute;inset:11px;border:1px solid rgba(231,216,181,.32);border-radius:4px;pointer-events:none;z-index:3}
@@ -211,24 +193,22 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .portrait .cap .rl{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-top:5px}
 .portrait::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(194,160,90,.34);border-radius:10px;pointer-events:none}
 
-/* ============ ÁREAS — cards modernos (home) ============ */
-.cards{display:grid;gap:clamp(14px,1.4vw,20px)}
-@media(min-width:560px){.cards{grid-template-columns:1fr 1fr}}
-@media(min-width:1000px){.cards{grid-template-columns:repeat(4,1fr)}}
-.card{position:relative;display:flex;flex-direction:column;min-height:clamp(220px,24vw,280px);
-  padding:clamp(24px,2vw,32px);background:#fff;border:1px solid var(--line);border-radius:6px;
-  text-align:left;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);overflow:hidden}
-.card::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));transition:width .55s var(--ease)}
-.card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -40px rgba(20,37,46,.4);border-color:rgba(194,160,90,.55)}
-.card:hover::before{width:100%}
-.card .ci{width:42px;height:42px;color:var(--gold-deep);margin-bottom:18px}
-.card .ci svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4}
-.card h3{font-size:var(--fs-h3);margin-bottom:10px}
-.card p{font-size:var(--fs-body);color:var(--text-soft);font-weight:300;line-height:1.6;flex:1}
-.card .go{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;
-  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);
-  opacity:0;transform:translateX(-8px);transition:.4s var(--ease)}
-.card:hover .go{opacity:1;transform:none}
+/* ============ SITUAÇÕES — "em que podemos ajudar" (home) ============ */
+.situations{display:grid;gap:clamp(14px,1.4vw,20px)}
+@media(min-width:600px){.situations{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.situations{grid-template-columns:repeat(3,1fr)}}
+.sit{position:relative;display:flex;flex-direction:column;padding:clamp(24px,2vw,32px);
+  background:#fff;border:1px solid var(--line);border-radius:6px;text-align:left;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);overflow:hidden}
+.sit::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));transition:width .55s var(--ease)}
+.sit:hover{transform:translateY(-7px);box-shadow:0 38px 66px -42px rgba(20,37,46,.42);border-color:rgba(194,160,90,.55)}
+.sit:hover::before{width:100%}
+.sit-ic{width:38px;height:38px;color:var(--gold-deep);margin-bottom:16px}
+.sit-ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.4}
+.sit h3{font-size:clamp(1.08rem,1rem + .45vw,1.3rem);margin-bottom:9px;line-height:1.22}
+.sit p{font-size:var(--fs-body);color:var(--text-soft);font-weight:300;line-height:1.6;flex:1}
+.sit-go{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);opacity:0;transform:translateX(-8px);transition:.4s var(--ease)}
+.sit:hover .sit-go{opacity:1;transform:none}
 
 /* ============ DIFERENCIAIS ESTRATÉGICOS ============ */
 .pillars{display:grid;gap:0;border-top:1px solid rgba(231,216,181,.16)}
@@ -248,7 +228,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .pillar::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--gold);transition:width .5s var(--ease)}
 .pillar:hover::after{width:64px}
 
-/* ============ MÉTODO — infográfico "por que conduzir conosco" ============ */
+/* ============ MÉTODO — infográfico ============ */
 .flow{position:relative;display:grid;gap:clamp(8px,1vw,14px)}
 @media(min-width:860px){.flow{grid-template-columns:repeat(4,1fr);gap:0}}
 .step{position:relative;padding:clamp(24px,2vw,30px) clamp(14px,1.4vw,22px)}
@@ -259,15 +239,25 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .step h3{font-size:var(--fs-h3);margin-bottom:10px}
 .step p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body);line-height:1.6;max-width:24rem}
 @media(min-width:860px){.step:not(:last-child)::after{content:"";position:absolute;top:calc(clamp(24px,2vw,30px) + 32px);
-  left:calc(clamp(14px,1.4vw,22px) + 74px);right:10px;height:1px;
-  background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 12px);opacity:.5}}
+  left:calc(clamp(14px,1.4vw,22px) + 74px);right:10px;height:1px;background:repeating-linear-gradient(90deg,var(--gold) 0 6px,transparent 6px 12px);opacity:.5}}
 @media(max-width:859px){.step{padding-left:84px}
   .step .dot{position:absolute;left:14px;top:clamp(24px,2vw,30px);margin:0}
   .step:not(:last-child)::after{content:"";position:absolute;left:calc(14px + 32px);top:calc(clamp(24px,2vw,30px) + 64px);
   bottom:-2px;width:1px;background:repeating-linear-gradient(180deg,var(--gold) 0 6px,transparent 6px 12px);opacity:.5}}
 .flow-cta{margin-top:clamp(36px,4vw,56px);text-align:center}
 
-/* ============ FAQ — sanfona minimalista fluida ============ */
+/* ============ CHECKLIST — documentos úteis (página Áreas) ============ */
+.checklist{display:grid;gap:0;border-top:1px solid var(--line)}
+@media(min-width:680px){.checklist{grid-template-columns:1fr 1fr}}
+.chk{display:flex;gap:16px;padding:clamp(22px,2vw,28px) 0;border-bottom:1px solid var(--line)}
+@media(min-width:680px){.chk:nth-child(odd){padding-right:clamp(24px,2.4vw,40px);border-right:1px solid var(--line)}
+  .chk:nth-child(even){padding-left:clamp(24px,2.4vw,40px)}}
+.chk-ic{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid rgba(194,160,90,.4);display:flex;align-items:center;justify-content:center;color:var(--gold-deep)}
+.chk-ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6}
+.chk h4{font-family:'Playfair Display',serif;font-size:1.16rem;color:var(--ink);margin-bottom:6px}
+.chk p{font-size:var(--fs-body);color:var(--text-soft);font-weight:300;line-height:1.6}
+
+/* ============ FAQ ============ */
 .faq{max-width:50rem;margin:0 auto;display:grid;gap:clamp(10px,1vw,14px)}
 .acc{border:1px solid var(--line);border-radius:6px;background:#fff;transition:border-color .35s var(--ease),box-shadow .35s var(--ease)}
 .acc.open{border-color:rgba(194,160,90,.5);box-shadow:0 26px 50px -38px rgba(20,37,46,.5)}
@@ -292,12 +282,9 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .cta .eyebrow{color:var(--gold-soft)}
 
 /* ============ CABEÇALHO DE PÁGINA INTERNA ============ */
-.phead{position:relative;background:var(--ink);color:var(--paper);overflow:hidden;
-  padding:clamp(104px,12vw,168px) 0 clamp(48px,6vw,84px)}
-.phead-bg{position:absolute;inset:0;background:
-  radial-gradient(110% 90% at 88% 0%,rgba(39,76,91,.55),transparent 55%),linear-gradient(160deg,#1b3743,#0f1c24)}
-.phead-bg::after{content:"";position:absolute;inset:0;opacity:.5;
-  background:repeating-linear-gradient(90deg,rgba(231,216,181,.05) 0 1px,transparent 1px 64px)}
+.phead{position:relative;background:var(--ink);color:var(--paper);overflow:hidden;padding:clamp(104px,12vw,168px) 0 clamp(48px,6vw,84px)}
+.phead-bg{position:absolute;inset:0;background:radial-gradient(110% 90% at 88% 0%,rgba(39,76,91,.55),transparent 55%),linear-gradient(160deg,#1b3743,#0f1c24)}
+.phead-bg::after{content:"";position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(90deg,rgba(231,216,181,.05) 0 1px,transparent 1px 64px)}
 .phead .wrap{position:relative;z-index:2}
 .phead .rule{margin-top:22px}
 .phead h1{color:var(--paper);font-size:clamp(2.2rem,1.6rem + 3vw,4rem);margin-top:20px;max-width:20ch}
@@ -320,7 +307,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .value h3{font-size:var(--fs-h3);margin:0 0 12px}
 .value p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body)}
 
-/* ============ ÁREAS — dossiê por abas (página Áreas) ============ */
+/* ============ ÁREAS — dossiê por abas ============ */
 .areas-shell{display:grid;gap:0;border-top:1px solid var(--line)}
 @media(min-width:880px){.areas-shell{grid-template-columns:.42fr .58fr}}
 .areas-list{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
@@ -412,20 +399,18 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 
 /* ============ WHATSAPP flutuante ============ */
 .wa{position:fixed;right:clamp(16px,2vw,24px);bottom:clamp(16px,2vw,24px);z-index:70;width:56px;height:56px;border-radius:50%;
-  background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;
-  box-shadow:0 16px 36px -12px rgba(20,37,46,.6);transition:.3s}
+  background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 36px -12px rgba(20,37,46,.6);transition:.3s}
 .wa:hover{background:var(--gold-soft);transform:translateY(-3px)}
 .wa svg{width:27px;height:27px;fill:currentColor}
 .wa::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(194,160,90,.5);animation:pulse 2.8s var(--ease) infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(194,160,90,.5)}70%{box-shadow:0 0 0 18px rgba(194,160,90,0)}100%{box-shadow:0 0 0 0 rgba(194,160,90,0)}}
 
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}
-  .rv,.stagger>*{opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.rv,.stagger>*{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
 
-<!-- ====== HEADER (azul translúcido · somente abas) ====== -->
+<!-- ====== HEADER (azul · somente abas) ====== -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
     <a class="brand" href="#inicio" onclick="go('inicio',event)" aria-label="Xavier Ribeiro &amp; Ribeiro">
@@ -454,20 +439,13 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ============================== INÍCIO ============================== -->
 <section class="page active" id="page-inicio">
 
-  <!-- ===== HERO HIGH-IMPACT ===== -->
+  <!-- ===== HERO ===== -->
   <div class="hero">
-    <!-- Skyline de São José dos Campos (fallback elegante se o vídeo não carregar). -->
     <svg class="hero-skyline" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#173039"/><stop offset=".5" stop-color="#0f242e"/><stop offset="1" stop-color="#0a1620"/>
-        </linearGradient>
-        <radialGradient id="glow" cx="78%" cy="24%" r="46%">
-          <stop offset="0" stop-color="#c2a05a" stop-opacity=".26"/><stop offset="1" stop-color="#c2a05a" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#183440"/><stop offset="1" stop-color="#0b1922"/>
-        </linearGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#173039"/><stop offset=".5" stop-color="#0f242e"/><stop offset="1" stop-color="#0a1620"/></linearGradient>
+        <radialGradient id="glow" cx="78%" cy="24%" r="46%"><stop offset="0" stop-color="#c2a05a" stop-opacity=".26"/><stop offset="1" stop-color="#c2a05a" stop-opacity="0"/></radialGradient>
+        <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#183440"/><stop offset="1" stop-color="#0b1922"/></linearGradient>
       </defs>
       <rect width="1440" height="900" fill="url(#sky)"/>
       <rect width="1440" height="900" fill="url(#glow)"/>
@@ -485,9 +463,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         <rect x="1172" y="582" width="92" height="318"/><rect x="1268" y="640" width="70" height="260"/>
         <rect x="1342" y="608" width="98" height="292"/>
       </g>
-      <g stroke="#c2a05a" stroke-width="1.3" opacity=".5">
-        <line x1="711" y1="516" x2="711" y2="470"/><line x1="953" y1="556" x2="953" y2="520"/><line x1="558" y1="558" x2="558" y2="528"/>
-      </g>
+      <g stroke="#c2a05a" stroke-width="1.3" opacity=".5"><line x1="711" y1="516" x2="711" y2="470"/><line x1="953" y1="556" x2="953" y2="520"/><line x1="558" y1="558" x2="558" y2="528"/></g>
       <g fill="#c2a05a" opacity=".14">
         <rect x="350" y="624" width="6" height="9"/><rect x="368" y="624" width="6" height="9"/><rect x="350" y="648" width="6" height="9"/><rect x="368" y="648" width="6" height="9"/>
         <rect x="690" y="540" width="6" height="9"/><rect x="708" y="540" width="6" height="9"/><rect x="726" y="540" width="6" height="9"/><rect x="690" y="566" width="6" height="9"/><rect x="708" y="566" width="6" height="9"/>
@@ -497,7 +473,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </g>
       <rect x="0" y="608" width="1440" height="1" fill="#c2a05a" opacity=".18"/>
     </svg>
-    <!-- Vídeo de fundo · Pexels (Sora Shimazaki) · uso livre. O skyline acima é fallback automático se o vídeo não carregar. -->
+    <!-- Vídeo de fundo · Pexels (Sora Shimazaki) · uso livre. O skyline acima é fallback automático. -->
     <video class="hero-video" autoplay muted loop playsinline preload="metadata"
       poster="https://images.pexels.com/videos/5636977/pexels-photo-5636977.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920">
       <source src="https://videos.pexels.com/video-files/5636977/5636977-uhd_2560_1440_24fps.mp4" type="video/mp4"/>
@@ -516,7 +492,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </div>
     </div>
     <span class="hero-tag">São José dos Campos · SP</span>
-    <span class="scroll-cue"><span class="bar"></span>Role</span>
+    <span class="scroll-cue"><span class="bar"></span></span>
   </div>
 
   <!-- ===== DECLARAÇÃO INSTITUCIONAL + RETRATO ===== -->
@@ -534,50 +510,62 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       <div class="portrait rv d2">
         <span class="corner tl"></span><span class="corner br"></span>
         <div class="frame">
-          <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier — sócia fundadora" onerror="this.style.display='none'"/>
+          <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier — sócia" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="edge"></span>
-          <span class="cap"><span class="nm">Dra. Andrea Xavier</span><span class="rl">Sócia fundadora · Previdenciário</span></span>
+          <span class="cap"><span class="nm">Dra. Andrea Xavier</span><span class="rl">Advogada · Sócia</span></span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ===== ÁREAS DE ATUAÇÃO — cards modernos ===== -->
+  <!-- ===== SITUAÇÕES — em que podemos ajudar ===== -->
   <div class="section bg-paper2">
     <div class="wrap">
       <div class="sec-head rv">
-        <div><span class="eyebrow">Áreas de Atuação</span></div>
-        <div><h2>Frentes para proteger a sua vida e o seu patrimônio.</h2>
-          <p class="lead" style="margin-top:16px">Atuação concentrada nas causas que mais afetam as pessoas — com foco principal no Direito Previdenciário.</p></div>
+        <div><span class="eyebrow">Em que podemos ajudar</span></div>
+        <div><h2>Reconhece a sua situação?</h2>
+          <p class="lead" style="margin-top:16px">Se algum desses momentos é o seu, podemos orientar com clareza o melhor caminho. A primeira conversa é sem compromisso.</p></div>
       </div>
-      <div class="cards stagger rv">
-        <button class="card" onclick="go('areas')">
-          <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <h3>Previdenciário</h3>
-          <p>Aposentadorias, revisões e benefícios do INSS, com análise criteriosa do seu histórico.</p>
-          <span class="go">Ver área →</span>
-        </button>
-        <button class="card" onclick="go('areas')">
-          <span class="ci"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
-          <h3>Trabalhista</h3>
-          <p>Verbas, horas extras e direitos durante e depois do contrato de trabalho.</p>
-          <span class="go">Ver área →</span>
-        </button>
-        <button class="card" onclick="go('areas')">
-          <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></span>
-          <h3>Inventário &amp; Sucessões</h3>
-          <p>Inventário, partilha e planejamento para organizar o patrimônio da família.</p>
-          <span class="go">Ver área →</span>
-        </button>
-        <button class="card" onclick="go('areas')">
-          <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 3v3"/><path d="m6 7 12 0"/><path d="M7 7 5 19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2L17 7"/><path d="M10 12h4"/></svg></span>
-          <h3>Indenizações</h3>
-          <p>Danos morais e materiais, acidentes e direitos do consumidor.</p>
-          <span class="go">Ver área →</span>
-        </button>
+      <div class="situations stagger rv">
+        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Estou%20perto%20de%20me%20aposentar%20e%20gostaria%20de%20entender%20as%20minhas%20op%C3%A7%C3%B5es." target="_blank" rel="noopener">
+          <span class="sit-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg></span>
+          <h3>Está perto de se aposentar</h3>
+          <p>e quer entender qual a melhor opção e o momento certo de dar entrada no INSS.</p>
+          <span class="sit-go">Conversar →</span>
+        </a>
+        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Tive%20um%20benef%C3%ADcio%20do%20INSS%20negado%20e%20gostaria%20de%20avaliar%20o%20que%20fazer." target="_blank" rel="noopener">
+          <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="m12 3 7 4v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V7l7-4Z"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></span>
+          <h3>Teve um benefício negado pelo INSS</h3>
+          <p>e quer saber o que ainda pode ser feito para reverter a decisão.</p>
+          <span class="sit-go">Conversar →</span>
+        </a>
+        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20J%C3%A1%20sou%20aposentado%20e%20gostaria%20de%20saber%20se%20posso%20revisar%20o%20valor." target="_blank" rel="noopener">
+          <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
+          <h3>Já é aposentado</h3>
+          <p>e quer saber se o valor do seu benefício pode ser revisado dentro do prazo.</p>
+          <span class="sit-go">Conversar →</span>
+        </a>
+        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Sa%C3%AD%20de%20um%20emprego%20e%20tenho%20d%C3%BAvidas%20sobre%20as%20minhas%20verbas." target="_blank" rel="noopener">
+          <span class="sit-ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
+          <h3>Saiu de um emprego</h3>
+          <p>com dúvidas se recebeu corretamente todas as verbas a que tinha direito.</p>
+          <span class="sit-go">Conversar →</span>
+        </a>
+        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Preciso%20abrir%20um%20invent%C3%A1rio%20e%20organizar%20a%20partilha." target="_blank" rel="noopener">
+          <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></span>
+          <h3>Precisa abrir um inventário</h3>
+          <p>e organizar a partilha do patrimônio entre a família, com cuidado e respeito.</p>
+          <span class="sit-go">Conversar →</span>
+        </a>
+        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Sofri%20um%20preju%C3%ADzo%20e%20gostaria%20de%20saber%20se%20cabe%20indeniza%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></span>
+          <h3>Sofreu um prejuízo ou cobrança indevida</h3>
+          <p>e quer saber, com franqueza, se o seu caso cabe um pedido de indenização.</p>
+          <span class="sit-go">Conversar →</span>
+        </a>
       </div>
-      <div style="margin-top:clamp(32px,3vw,44px)" class="rv"><button class="link-gold" onclick="go('areas')">Ver todas as áreas em detalhe →</button></div>
+      <div style="margin-top:clamp(32px,3vw,44px)" class="rv"><button class="link-gold" onclick="go('areas')">Ver todas as áreas de atuação em detalhe →</button></div>
     </div>
   </div>
 
@@ -613,7 +601,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     </div>
   </div>
 
-  <!-- ===== POR QUE CONDUZIR SEU CASO CONOSCO — infográfico de método ===== -->
+  <!-- ===== POR QUE CONDUZIR SEU CASO CONOSCO — infográfico ===== -->
   <div class="section bg-paper">
     <div class="wrap">
       <div class="sec-head solo rv" style="text-align:center;justify-items:center">
@@ -657,10 +645,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </div>
       <div class="faq rv">
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Quando eu posso me aposentar?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Depende do seu tempo de contribuição, da idade e das regras de transição em vigor. Com uma análise do seu histórico (CNIS), conseguimos mostrar as suas opções com clareza.</p></div></div></div>
-        <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Preciso ir até o escritório?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Não necessariamente. Muitos atendimentos começam pelo WhatsApp ou telefone, e boa parte da documentação é enviada de forma digital.</p></div></div></div>
+        <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Preciso ir até o escritório?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Não necessariamente. Muitos atendimentos começam pelo WhatsApp ou telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Quanto custa um processo?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Os honorários variam conforme a causa e a complexidade, combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo na primeira conversa, sem surpresas.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>O escritório garante que eu vou ganhar?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Não. Nenhum advogado sério pode garantir resultado — isso é vedado pela OAB. Oferecemos uma análise honesta da viabilidade e trabalho dedicado para o melhor desfecho possível dentro da lei.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Já recebo aposentadoria. Posso revisar o valor?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Talvez. Existem prazos legais para pedir revisão. Avaliamos os seus documentos para verificar se a revisão é viável, sem promessa de aumento.</p></div></div></div>
+        <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Em quanto tempo o meu caso é resolvido?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>O prazo depende do tipo de causa, da via escolhida (administrativa ou judicial) e do andamento dos órgãos envolvidos. Na análise inicial, explicamos o caminho esperado para o seu caso e mantemos você informado a cada etapa.</p></div></div></div>
       </div>
       <div style="text-align:center;margin-top:clamp(34px,4vw,48px)" class="rv"><a class="btn btn-solid" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Tirar minha dúvida no WhatsApp</a></div>
     </div>
@@ -680,7 +669,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="phead"><div class="phead-bg"></div><div class="wrap">
     <span class="eyebrow on-dark rv">Quem somos</span>
     <h1 class="rv d1">A Xavier Ribeiro <span class="it">&amp; Ribeiro</span></h1>
-    <p class="rv d2">Sociedade de advogados formada por mãe e filha, dedicada ao Direito Previdenciário, Trabalhista, Sucessões e Indenizações em São José dos Campos.</p>
+    <p class="rv d2">Sociedade de advogados formada por mãe e filha, dedicada ao Direito Previdenciário, Trabalhista, Sucessões e Indenizações em São José dos Campos e região do Vale do Paraíba.</p>
   </div></div>
 
   <div class="section bg-paper">
@@ -740,12 +729,12 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         <div class="areas-detail" id="areas-detail">
           <div class="area-panel active">
             <span class="eyebrow">Nosso foco principal</span><h3>Direito Previdenciário</h3>
-            <p class="desc">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS.</p>
+            <p class="desc">O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS, na via administrativa ou judicial.</p>
             <div class="area-items">
               <div class="ai"><h4>Aposentadorias</h4><p>Por idade, tempo de contribuição, especial ou por invalidez. Analisamos o seu CNIS e orientamos o melhor caminho.</p></div>
               <div class="ai"><h4>Revisão de Benefício</h4><p>Quem já se aposentou pode ter direito a um valor maior. Avaliamos a viabilidade dentro dos prazos legais.</p></div>
               <div class="ai"><h4>Auxílios e BPC/LOAS</h4><p>Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para quem tem direito.</p></div>
-              <div class="ai"><h4>Planejamento</h4><p>Antes de dar entrada, estudamos o que vale mais a pena, para você decidir o momento certo.</p></div>
+              <div class="ai"><h4>Benefício negado</h4><p>Pedido indeferido ou cessado pelo INSS? Avaliamos o motivo e os caminhos para reverter a decisão.</p></div>
             </div>
           </div>
           <div class="area-panel">
@@ -783,6 +772,23 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     </div>
   </div>
 
+  <!-- ===== Documentos úteis (enriquecimento) ===== -->
+  <div class="section bg-paper2">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Primeira conversa</span></div>
+        <div><h2>O que ajuda a agilizar a análise do seu caso.</h2>
+          <p class="lead" style="margin-top:16px">Não se preocupe se faltar algo — reunimos o que for preciso ao longo do caminho. Ter à mão o que você já possui adianta a avaliação.</p></div>
+      </div>
+      <div class="checklist stagger rv">
+        <div class="chk"><span class="chk-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>Documentos pessoais</h4><p>RG, CPF e um comprovante de endereço atualizado.</p></div></div>
+        <div class="chk"><span class="chk-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>Extrato previdenciário (CNIS)</h4><p>Para casos de aposentadoria, revisão ou benefício do INSS. Ajudamos a obter, se você não tiver.</p></div></div>
+        <div class="chk"><span class="chk-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>Carteira de trabalho e contracheques</h4><p>Para causas trabalhistas, ajudam a comprovar vínculo, função e valores.</p></div></div>
+        <div class="chk"><span class="chk-ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><div><h4>Documentos do caso</h4><p>Cartas, decisões, contratos, comprovantes e tudo que se relacione à sua situação.</p></div></div>
+      </div>
+    </div>
+  </div>
+
   <div class="cta"><div class="cta-bg"></div><div class="wrap">
     <span class="eyebrow center">Atendimento</span>
     <h2>Conte o seu caso e mostramos os próximos passos.</h2>
@@ -807,12 +813,12 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
             <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier" onerror="this.style.display='none'"/>
             <div class="ph-fallback">
               <svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-              <span>Foto da sócia fundadora</span>
+              <span>Foto da Dra. Andrea</span>
             </div>
           </div>
           <div class="mc">
             <div class="mname">Dra. Andrea Xavier</div>
-            <div class="mrole">Advogada · Sócia fundadora</div>
+            <div class="mrole">Advogada · Sócia</div>
             <div class="moab">OAB/SP · Previdenciário</div>
             <p class="mbio">Dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atendimento próximo, técnico e em linguagem acessível.</p>
             <a class="mwa" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Dra.%20Andrea." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg><span>Falar com a Dra. Andrea</span></a>
@@ -821,17 +827,18 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         <div class="member">
           <div class="photo">
             <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
-            <img src="socia-foto.jpg" alt="" onerror="this.style.display='none'"/>
+            <img src="socia-ines.jpg" alt="Dra. Inês Ribeiro" onerror="this.style.display='none'"/>
             <div class="ph-fallback">
               <svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-              <span>Foto da segunda sócia</span>
+              <span>Foto da Dra. Inês</span>
             </div>
           </div>
           <div class="mc">
-            <div class="mname">Dra. Ribeiro</div>
+            <div class="mname">Dra. Inês Ribeiro</div>
             <div class="mrole">Advogada · Sócia</div>
-            <div class="moab">OAB/SP</div>
-            <p class="mbio">Espaço reservado para a segunda sócia. Me envie nome completo, número da OAB, área de atuação e uma foto que eu finalizo.</p>
+            <div class="moab">OAB/SP · Cível, Trabalhista e Sucessões</div>
+            <p class="mbio">Atua nas áreas Cível, Trabalhista e de Sucessões, com a mesma proximidade e o cuidado que orientam o escritório. Acompanha cada cliente de perto, em linguagem clara.</p>
+            <a class="mwa" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Dra.%20In%C3%AAs." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg><span>Falar com a Dra. Inês</span></a>
           </div>
         </div>
       </div>
@@ -873,14 +880,14 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           </div>
           <div class="crow">
             <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span><span class="cl">Endereço</span><span class="cv todo">a definir — me envie o endereço</span></span>
+            <span><span class="cl">Atendimento</span><span class="cv">São José dos Campos e região do Vale do Paraíba</span></span>
           </div>
         </div>
         <a class="btn btn-cta" data-magnetic style="margin-top:30px" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
       <div class="rv d1">
         <div class="map"><iframe src="https://www.google.com/maps?q=S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="São José dos Campos"></iframe></div>
-        <p class="map-note">Atendimento em São José dos Campos mediante agendamento. Assim que tivermos o endereço, ele aparece aqui no mapa.</p>
+        <p class="map-note">Atendimento mediante agendamento. Assim que tivermos o endereço, ele aparece aqui no mapa.</p>
       </div>
     </div>
   </div>
@@ -903,7 +910,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           <svg class="mono" viewBox="0 0 120 96" aria-hidden="true"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
           <span class="brand-txt"><span class="brand-name">XAVIER RIBEIRO &amp; RIBEIRO</span><span class="brand-sub">Sociedade de Advogados</span></span>
         </a>
-        <p class="foot-desc">Sociedade de advogados em São José dos Campos, com atuação em Direito Previdenciário, Trabalhista, Inventário e Sucessões e Indenizações.</p>
+        <p class="foot-desc">Sociedade de advogados em São José dos Campos e região do Vale do Paraíba, com atuação em Direito Previdenciário, Trabalhista, Inventário e Sucessões e Indenizações.</p>
       </div>
       <div>
         <h4>Navegação</h4>
@@ -925,7 +932,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </div>
     </div>
     <div class="foot-bottom">
-      <span class="badge"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>São José dos Campos · SP</span></span>
+      <span class="badge"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>São José dos Campos · Vale do Paraíba · SP</span></span>
       <span>© Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados.</span>
     </div>
     <p class="foot-legal">OAB/SP · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento da OAB sobre publicidade na advocacia. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.</p>
@@ -946,6 +953,7 @@ function go(id,ev){
   document.getElementById('page-'+id).classList.add('active');
   document.querySelectorAll('.nav button').forEach(function(b){b.classList.remove('active')});
   var nv=document.getElementById('nav-'+id); if(nv) nv.classList.add('active');
+  hdr.classList.toggle('solid', id!=='inicio');
   window.scrollTo({top:0,behavior:'instant'});
   history.replaceState(null,null,'#'+id);
   requestAnimationFrame(function(){resetReveal();observeReveal()});

@@ -20,7 +20,6 @@
 /* ============================================================
    XAVIER RIBEIRO & RIBEIRO — design autoral ultra-premium
    Petróleo + ouro fosco + off-white · Cinzel / Playfair / Inter
-   Cabeçalho azul · corpo claro · fluido 320–2560px · sem framework
    ============================================================ */
 :root{
   --ink:#14252e;--petrol:#1c3a47;--petrol-2:#274c5b;--petrol-deep:#0f1c24;
@@ -41,8 +40,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--text);
-  line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  max-width:100vw;overflow-x:hidden}
+  line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;max-width:100vw;overflow-x:hidden}
 img,svg,video{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
@@ -122,7 +120,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   .hdr-cta{order:3;margin-left:0}
 }
 
-/* ============ PÁGINAS / reveal em cascata ============ */
+/* ============ PÁGINAS / reveal ============ */
 .page{display:none}
 .page.active{display:block;animation:pageIn .5s var(--ease) both}
 @keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -135,7 +133,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .stagger.in>*:nth-child(3){transition-delay:.20s}.stagger.in>*:nth-child(4){transition-delay:.28s}
 .stagger.in>*:nth-child(5){transition-delay:.36s}.stagger.in>*:nth-child(6){transition-delay:.44s}
 
-/* ============ HERO HIGH-IMPACT ============ */
+/* ============ HERO ============ */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;
   background:var(--petrol-deep);color:var(--paper);overflow:hidden;isolation:isolate;margin-top:-78px;padding-top:78px}
 .hero-skyline{position:absolute;inset:0;width:100%;height:100%;z-index:0}
@@ -170,7 +168,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 @media(min-width:820px){.sec-head{grid-template-columns:.36fr .64fr;gap:48px;align-items:end}
   .sec-head.solo{grid-template-columns:1fr;max-width:48rem}}
 
-/* ============ DECLARAÇÃO INSTITUCIONAL + retrato ============ */
+/* ============ DECLARAÇÃO INSTITUCIONAL + emblema ============ */
 .statement{display:grid;gap:clamp(40px,5vw,72px);align-items:center}
 @media(min-width:920px){.statement{grid-template-columns:1.06fr .94fr}}
 .statement .st-copy .eyebrow{margin-bottom:24px}
@@ -178,22 +176,22 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .statement h2 .it{font-style:italic;color:var(--gold-deep)}
 .statement .st-support{margin-top:26px;max-width:34rem;font-weight:300;color:var(--text-soft);font-size:var(--fs-lead);line-height:1.7}
 .statement .st-actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-.portrait{position:relative;justify-self:center;width:100%;max-width:440px}
-.portrait .frame{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;
+.emblem-panel{position:relative;justify-self:center;width:100%;max-width:440px}
+.emblem-panel .frame{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;
+  display:flex;align-items:center;justify-content:center;
   background:linear-gradient(160deg,#1b3743,#0f1c24);box-shadow:0 50px 90px -50px rgba(15,28,36,.7)}
-.portrait .frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04) brightness(.99) sepia(.06);transition:transform 1.1s var(--ease),filter .6s var(--ease)}
-.portrait:hover .frame img{transform:scale(1.04);filter:saturate(1) contrast(1.05) brightness(1.01) sepia(0)}
-.portrait .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(15,28,36,.42))}
-.portrait .edge{position:absolute;inset:11px;border:1px solid rgba(231,216,181,.32);border-radius:4px;pointer-events:none;z-index:3}
-.portrait .corner{position:absolute;width:26px;height:26px;border:1px solid var(--gold);z-index:4;pointer-events:none}
-.portrait .corner.tl{top:-1px;left:-1px;border-right:0;border-bottom:0;border-top-left-radius:6px}
-.portrait .corner.br{bottom:-1px;right:-1px;border-left:0;border-top:0;border-bottom-right-radius:6px}
-.portrait .cap{position:absolute;left:22px;bottom:20px;z-index:5}
-.portrait .cap .nm{font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--paper)}
-.portrait .cap .rl{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-top:5px}
-.portrait::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(194,160,90,.34);border-radius:10px;pointer-events:none}
+.emblem-panel .frame::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(194,160,90,.16),transparent 62%)}
+.emblem-art{width:clamp(150px,52%,210px);color:var(--gold-soft);position:relative;z-index:2}
+.emblem-panel .edge{position:absolute;inset:11px;border:1px solid rgba(231,216,181,.32);border-radius:4px;pointer-events:none;z-index:3}
+.emblem-panel .corner{position:absolute;width:26px;height:26px;border:1px solid var(--gold);z-index:4;pointer-events:none}
+.emblem-panel .corner.tl{top:-1px;left:-1px;border-right:0;border-bottom:0;border-top-left-radius:6px}
+.emblem-panel .corner.br{bottom:-1px;right:-1px;border-left:0;border-top:0;border-bottom-right-radius:6px}
+.emblem-panel .cap{position:absolute;left:0;right:0;bottom:22px;z-index:5;text-align:center}
+.emblem-panel .cap .nm{font-family:'Playfair Display',serif;font-size:1.16rem;color:var(--paper)}
+.emblem-panel .cap .rl{display:block;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-top:6px}
+.emblem-panel::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(194,160,90,.34);border-radius:10px;pointer-events:none}
 
-/* ============ SITUAÇÕES — "em que podemos ajudar" (home) ============ */
+/* ============ SITUAÇÕES (home) ============ */
 .situations{display:grid;gap:clamp(14px,1.4vw,20px)}
 @media(min-width:600px){.situations{grid-template-columns:1fr 1fr}}
 @media(min-width:1000px){.situations{grid-template-columns:repeat(3,1fr)}}
@@ -210,7 +208,17 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .sit-go{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);opacity:0;transform:translateX(-8px);transition:.4s var(--ease)}
 .sit:hover .sit-go{opacity:1;transform:none}
 
-/* ============ DIFERENCIAIS ESTRATÉGICOS ============ */
+/* ============ MANIFESTO (editorial) ============ */
+.manifesto{background:var(--paper);text-align:center;position:relative;overflow:hidden}
+.manifesto .wrap{padding:var(--section) var(--gutter)}
+.manifesto .qmark{display:block;font-family:'Playfair Display',serif;font-size:clamp(3.4rem,7vw,5.6rem);line-height:.7;color:var(--gold);opacity:.55;margin-bottom:6px}
+.manifesto blockquote{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1.55rem,1.1rem + 2.4vw,2.85rem);line-height:1.32;color:var(--ink);max-width:24ch;margin:0 auto;letter-spacing:-.01em}
+.manifesto blockquote .hl{color:var(--gold-deep)}
+.manifesto .sig{margin-top:30px;display:inline-flex;align-items:center;gap:14px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.manifesto .sig::before{content:"";width:34px;height:1px;background:var(--gold)}
+
+/* ============ DIFERENCIAIS ============ */
 .pillars{display:grid;gap:0;border-top:1px solid rgba(231,216,181,.16)}
 @media(min-width:680px){.pillars{grid-template-columns:1fr 1fr}}
 @media(min-width:1040px){.pillars{grid-template-columns:repeat(4,1fr)}}
@@ -228,7 +236,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .pillar::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--gold);transition:width .5s var(--ease)}
 .pillar:hover::after{width:64px}
 
-/* ============ MÉTODO — infográfico ============ */
+/* ============ MÉTODO ============ */
 .flow{position:relative;display:grid;gap:clamp(8px,1vw,14px)}
 @media(min-width:860px){.flow{grid-template-columns:repeat(4,1fr);gap:0}}
 .step{position:relative;padding:clamp(24px,2vw,30px) clamp(14px,1.4vw,22px)}
@@ -246,7 +254,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   bottom:-2px;width:1px;background:repeating-linear-gradient(180deg,var(--gold) 0 6px,transparent 6px 12px);opacity:.5}}
 .flow-cta{margin-top:clamp(36px,4vw,56px);text-align:center}
 
-/* ============ CHECKLIST — documentos úteis (página Áreas) ============ */
+/* ============ CHECKLIST (página Áreas) ============ */
 .checklist{display:grid;gap:0;border-top:1px solid var(--line)}
 @media(min-width:680px){.checklist{grid-template-columns:1fr 1fr}}
 .chk{display:flex;gap:16px;padding:clamp(22px,2vw,28px) 0;border-bottom:1px solid var(--line)}
@@ -307,7 +315,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .value h3{font-size:var(--fs-h3);margin:0 0 12px}
 .value p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body)}
 
-/* ============ ÁREAS — dossiê por abas ============ */
+/* ============ ÁREAS — dossiê ============ */
 .areas-shell{display:grid;gap:0;border-top:1px solid var(--line)}
 @media(min-width:880px){.areas-shell{grid-template-columns:.42fr .58fr}}
 .areas-list{display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
@@ -341,9 +349,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .member:hover{transform:translateY(-6px);box-shadow:0 42px 80px -46px rgba(20,37,46,.55);border-color:rgba(194,160,90,.5)}
 .member .photo{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#1b3743,#0f1c24);overflow:hidden}
 .member .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;filter:saturate(.94) contrast(1.03)}
-.member .photo .ph-fallback{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px}
-.member .photo .ph-fallback .mono{width:60px;height:60px;opacity:.85}
-.member .photo .ph-fallback span{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.14em;color:rgba(231,216,181,.65);text-transform:uppercase}
+.member .photo .ph-fallback{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px}
+.member .photo .ph-fallback .mono{width:64px;height:64px;opacity:.9}
+.member .photo .ph-fallback span{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:rgba(231,216,181,.6);text-transform:uppercase}
+.member .photo .ph-fallback .glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(194,160,90,.14),transparent 60%)}
 .member .photo .edge{position:absolute;inset:12px;border:1px solid rgba(231,216,181,.28);border-radius:4px;z-index:3;pointer-events:none}
 .member .photo .corner{position:absolute;width:20px;height:20px;border:1px solid var(--gold);opacity:.8;z-index:4}
 .member .photo .corner.tl{top:14px;left:14px;border-right:0;border-bottom:0}
@@ -353,9 +362,6 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .member .mrole{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep);margin-top:8px}
 .member .moab{font-size:12px;color:var(--text-soft);margin-top:5px}
 .member .mbio{font-size:var(--fs-body);color:var(--text-soft);font-weight:300;margin-top:15px;line-height:1.62}
-.member .mwa{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-deep);border-bottom:1px solid rgba(154,124,62,.4);padding-bottom:3px;transition:.3s}
-.member .mwa:hover{color:var(--ink);border-color:var(--ink)}
-.member .mwa svg{width:14px;height:14px;fill:currentColor}
 
 /* ============ CONTATO ============ */
 .contact-grid{display:grid;gap:clamp(36px,4vw,62px)}
@@ -410,7 +416,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 </head>
 <body>
 
-<!-- ====== HEADER (azul · somente abas) ====== -->
+<!-- ====== HEADER ====== -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
     <a class="brand" href="#inicio" onclick="go('inicio',event)" aria-label="Xavier Ribeiro &amp; Ribeiro">
@@ -473,7 +479,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </g>
       <rect x="0" y="608" width="1440" height="1" fill="#c2a05a" opacity=".18"/>
     </svg>
-    <!-- Vídeo de fundo · Pexels (Sora Shimazaki) · uso livre. O skyline acima é fallback automático. -->
+    <!-- Vídeo de fundo · Pexels (Sora Shimazaki) · uso livre. Skyline acima = fallback automático. -->
     <video class="hero-video" autoplay muted loop playsinline preload="metadata"
       poster="https://images.pexels.com/videos/5636977/pexels-photo-5636977.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920">
       <source src="https://videos.pexels.com/video-files/5636977/5636977-uhd_2560_1440_24fps.mp4" type="video/mp4"/>
@@ -495,7 +501,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     <span class="scroll-cue"><span class="bar"></span></span>
   </div>
 
-  <!-- ===== DECLARAÇÃO INSTITUCIONAL + RETRATO ===== -->
+  <!-- ===== DECLARAÇÃO INSTITUCIONAL + EMBLEMA ===== -->
   <div class="section bg-paper">
     <div class="wrap statement">
       <div class="st-copy rv">
@@ -507,19 +513,30 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           <button class="link-gold" onclick="go('equipe')">Quem conduz →</button>
         </div>
       </div>
-      <div class="portrait rv d2">
+      <div class="emblem-panel rv d2">
         <span class="corner tl"></span><span class="corner br"></span>
         <div class="frame">
-          <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier — sócia" onerror="this.style.display='none'"/>
-          <span class="veil"></span>
+          <svg class="emblem-art" viewBox="0 0 200 232" fill="none" aria-hidden="true">
+            <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="100" cy="40" r="4.5" fill="currentColor" stroke="none"/>
+              <line x1="100" y1="44" x2="100" y2="178"/>
+              <path d="M72 186 Q100 173 128 186"/>
+              <line x1="81" y1="194" x2="119" y2="194"/>
+              <line x1="50" y1="64" x2="150" y2="64"/>
+              <line x1="50" y1="64" x2="42" y2="86"/><line x1="50" y1="64" x2="58" y2="86"/>
+              <line x1="150" y1="64" x2="142" y2="86"/><line x1="150" y1="64" x2="158" y2="86"/>
+              <path d="M32 86 Q50 112 68 86"/>
+              <path d="M132 86 Q150 112 168 86"/>
+            </g>
+          </svg>
           <span class="edge"></span>
-          <span class="cap"><span class="nm">Dra. Andrea Xavier</span><span class="rl">Advogada · Sócia</span></span>
+          <span class="cap"><span class="nm">Xavier Ribeiro &amp; Ribeiro</span><span class="rl">Sociedade de Advogados · SJC</span></span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ===== SITUAÇÕES — em que podemos ajudar ===== -->
+  <!-- ===== SITUAÇÕES ===== -->
   <div class="section bg-paper2">
     <div class="wrap">
       <div class="sec-head rv">
@@ -528,48 +545,57 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           <p class="lead" style="margin-top:16px">Se algum desses momentos é o seu, podemos orientar com clareza o melhor caminho. A primeira conversa é sem compromisso.</p></div>
       </div>
       <div class="situations stagger rv">
-        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Estou%20perto%20de%20me%20aposentar%20e%20gostaria%20de%20entender%20as%20minhas%20op%C3%A7%C3%B5es." target="_blank" rel="noopener">
+        <button class="sit" onclick="go('contato')">
           <span class="sit-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg></span>
           <h3>Está perto de se aposentar</h3>
           <p>e quer entender qual a melhor opção e o momento certo de dar entrada no INSS.</p>
-          <span class="sit-go">Conversar →</span>
-        </a>
-        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Tive%20um%20benef%C3%ADcio%20do%20INSS%20negado%20e%20gostaria%20de%20avaliar%20o%20que%20fazer." target="_blank" rel="noopener">
+          <span class="sit-go">Saber mais →</span>
+        </button>
+        <button class="sit" onclick="go('contato')">
           <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="m12 3 7 4v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V7l7-4Z"/><path d="m9.5 9.5 5 5M14.5 9.5l-5 5"/></svg></span>
           <h3>Teve um benefício negado pelo INSS</h3>
           <p>e quer saber o que ainda pode ser feito para reverter a decisão.</p>
-          <span class="sit-go">Conversar →</span>
-        </a>
-        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20J%C3%A1%20sou%20aposentado%20e%20gostaria%20de%20saber%20se%20posso%20revisar%20o%20valor." target="_blank" rel="noopener">
+          <span class="sit-go">Saber mais →</span>
+        </button>
+        <button class="sit" onclick="go('contato')">
           <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span>
           <h3>Já é aposentado</h3>
           <p>e quer saber se o valor do seu benefício pode ser revisado dentro do prazo.</p>
-          <span class="sit-go">Conversar →</span>
-        </a>
-        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Sa%C3%AD%20de%20um%20emprego%20e%20tenho%20d%C3%BAvidas%20sobre%20as%20minhas%20verbas." target="_blank" rel="noopener">
+          <span class="sit-go">Saber mais →</span>
+        </button>
+        <button class="sit" onclick="go('contato')">
           <span class="sit-ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
           <h3>Saiu de um emprego</h3>
           <p>com dúvidas se recebeu corretamente todas as verbas a que tinha direito.</p>
-          <span class="sit-go">Conversar →</span>
-        </a>
-        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Preciso%20abrir%20um%20invent%C3%A1rio%20e%20organizar%20a%20partilha." target="_blank" rel="noopener">
+          <span class="sit-go">Saber mais →</span>
+        </button>
+        <button class="sit" onclick="go('contato')">
           <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></span>
           <h3>Precisa abrir um inventário</h3>
           <p>e organizar a partilha do patrimônio entre a família, com cuidado e respeito.</p>
-          <span class="sit-go">Conversar →</span>
-        </a>
-        <a class="sit" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Sofri%20um%20preju%C3%ADzo%20e%20gostaria%20de%20saber%20se%20cabe%20indeniza%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <span class="sit-go">Saber mais →</span>
+        </button>
+        <button class="sit" onclick="go('contato')">
           <span class="sit-ic"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></span>
           <h3>Sofreu um prejuízo ou cobrança indevida</h3>
           <p>e quer saber, com franqueza, se o seu caso cabe um pedido de indenização.</p>
-          <span class="sit-go">Conversar →</span>
-        </a>
+          <span class="sit-go">Saber mais →</span>
+        </button>
       </div>
       <div style="margin-top:clamp(32px,3vw,44px)" class="rv"><button class="link-gold" onclick="go('areas')">Ver todas as áreas de atuação em detalhe →</button></div>
     </div>
   </div>
 
-  <!-- ===== DIFERENCIAIS ESTRATÉGICOS ===== -->
+  <!-- ===== MANIFESTO ===== -->
+  <div class="manifesto">
+    <div class="wrap rv">
+      <span class="qmark" aria-hidden="true">“</span>
+      <blockquote>A boa advocacia não promete resultados — ela constrói, com <span class="hl">técnica e verdade</span>, o melhor caminho possível para cada pessoa.</blockquote>
+      <span class="sig">Xavier Ribeiro &amp; Ribeiro</span>
+    </div>
+  </div>
+
+  <!-- ===== DIFERENCIAIS ===== -->
   <div class="section bg-ink">
     <div class="wrap">
       <div class="sec-head rv" style="margin-bottom:clamp(36px,4vw,52px)">
@@ -593,7 +619,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           <p>Prazos, possibilidades e honorários combinados por escrito antes de qualquer passo. O que combinamos é o que acontece.</p>
         </div>
         <div class="pillar">
-          <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="m5 7-2 6a4 4 0 0 0 8 0L9 7"/></svg></span>
+          <span class="pl-ic"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M4 7h2c2 0 5-1 6-2 1 1 4 2 6 2h2"/><path d="m2 15 3-7 3 7c-.9.7-1.9 1-3 1s-2.1-.3-3-1Z"/><path d="m16 15 3-7 3 7c-.9.7-1.9 1-3 1s-2.1-.3-3-1Z"/></svg></span>
           <h3>Compromisso Ético</h3>
           <p>Atuação pautada pelo Estatuto da Advocacia e pelo Código de Ética da OAB, sempre com franqueza e sem garantia de resultado.</p>
         </div>
@@ -601,7 +627,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     </div>
   </div>
 
-  <!-- ===== POR QUE CONDUZIR SEU CASO CONOSCO — infográfico ===== -->
+  <!-- ===== MÉTODO ===== -->
   <div class="section bg-paper">
     <div class="wrap">
       <div class="sec-head solo rv" style="text-align:center;justify-items:center">
@@ -631,7 +657,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         </div>
       </div>
       <div class="flow-cta rv">
-        <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Começar pela conversa inicial</a>
+        <button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button>
       </div>
     </div>
   </div>
@@ -645,13 +671,13 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </div>
       <div class="faq rv">
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Quando eu posso me aposentar?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Depende do seu tempo de contribuição, da idade e das regras de transição em vigor. Com uma análise do seu histórico (CNIS), conseguimos mostrar as suas opções com clareza.</p></div></div></div>
-        <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Preciso ir até o escritório?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Não necessariamente. Muitos atendimentos começam pelo WhatsApp ou telefone, e boa parte da documentação é enviada de forma digital. Atendemos São José dos Campos e toda a região do Vale do Paraíba.</p></div></div></div>
+        <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Preciso ir até o escritório?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Não necessariamente. Muitos atendimentos começam por telefone ou de forma digital, e boa parte da documentação é enviada online. Atendemos São José dos Campos e toda a região do Vale do Paraíba.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Quanto custa um processo?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Os honorários variam conforme a causa e a complexidade, combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo na primeira conversa, sem surpresas.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>O escritório garante que eu vou ganhar?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Não. Nenhum advogado sério pode garantir resultado — isso é vedado pela OAB. Oferecemos uma análise honesta da viabilidade e trabalho dedicado para o melhor desfecho possível dentro da lei.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Já recebo aposentadoria. Posso revisar o valor?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>Talvez. Existem prazos legais para pedir revisão. Avaliamos os seus documentos para verificar se a revisão é viável, sem promessa de aumento.</p></div></div></div>
         <div class="acc"><button class="acc-head" onclick="toggleAcc(this)"><h3>Em quanto tempo o meu caso é resolvido?</h3><span class="ic" aria-hidden="true"></span></button><div class="acc-body"><div class="acc-inner"><p>O prazo depende do tipo de causa, da via escolhida (administrativa ou judicial) e do andamento dos órgãos envolvidos. Na análise inicial, explicamos o caminho esperado para o seu caso e mantemos você informado a cada etapa.</p></div></div></div>
       </div>
-      <div style="text-align:center;margin-top:clamp(34px,4vw,48px)" class="rv"><a class="btn btn-solid" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Tirar minha dúvida no WhatsApp</a></div>
+      <div style="text-align:center;margin-top:clamp(34px,4vw,48px)" class="rv"><button class="btn btn-solid" onclick="go('contato')">Ainda com dúvidas? Fale com o escritório</button></div>
     </div>
   </div>
 
@@ -659,7 +685,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="cta"><div class="cta-bg"></div><div class="wrap">
     <span class="eyebrow center">Atendimento</span>
     <h2>Agende uma consulta para avaliarmos o seu caso.</h2>
-    <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button>
   </div></div>
 
 </section>
@@ -705,7 +731,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="cta"><div class="cta-bg"></div><div class="wrap">
     <span class="eyebrow center">Atendimento</span>
     <h2>Agende uma consulta para avaliar o seu caso.</h2>
-    <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button>
   </div></div>
 </section>
 
@@ -772,7 +798,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     </div>
   </div>
 
-  <!-- ===== Documentos úteis (enriquecimento) ===== -->
+  <!-- ===== Documentos úteis ===== -->
   <div class="section bg-paper2">
     <div class="wrap">
       <div class="sec-head rv">
@@ -792,7 +818,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="cta"><div class="cta-bg"></div><div class="wrap">
     <span class="eyebrow center">Atendimento</span>
     <h2>Conte o seu caso e mostramos os próximos passos.</h2>
-    <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button>
   </div></div>
 </section>
 
@@ -809,11 +835,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       <div class="team stagger rv">
         <div class="member">
           <div class="photo">
-            <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
-            <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier" onerror="this.style.display='none'"/>
+            <span class="glow"></span><span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
+            <img src="socia-andrea.jpg" alt="Dra. Andrea Xavier" onerror="this.style.display='none'"/>
             <div class="ph-fallback">
               <svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-              <span>Foto da Dra. Andrea</span>
+              <span>Dra. Andrea Xavier</span>
             </div>
           </div>
           <div class="mc">
@@ -821,16 +847,15 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
             <div class="mrole">Advogada · Sócia</div>
             <div class="moab">OAB/SP · Previdenciário</div>
             <p class="mbio">Dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atendimento próximo, técnico e em linguagem acessível.</p>
-            <a class="mwa" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Dra.%20Andrea." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg><span>Falar com a Dra. Andrea</span></a>
           </div>
         </div>
         <div class="member">
           <div class="photo">
-            <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
+            <span class="glow"></span><span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
             <img src="socia-ines.jpg" alt="Dra. Inês Ribeiro" onerror="this.style.display='none'"/>
             <div class="ph-fallback">
               <svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-              <span>Foto da Dra. Inês</span>
+              <span>Dra. Inês Ribeiro</span>
             </div>
           </div>
           <div class="mc">
@@ -838,7 +863,6 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
             <div class="mrole">Advogada · Sócia</div>
             <div class="moab">OAB/SP · Cível, Trabalhista e Sucessões</div>
             <p class="mbio">Atua nas áreas Cível, Trabalhista e de Sucessões, com a mesma proximidade e o cuidado que orientam o escritório. Acompanha cada cliente de perto, em linguagem clara.</p>
-            <a class="mwa" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Dra.%20In%C3%AAs." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg><span>Falar com a Dra. Inês</span></a>
           </div>
         </div>
       </div>
@@ -848,7 +872,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="cta"><div class="cta-bg"></div><div class="wrap">
     <span class="eyebrow center">Atendimento direto</span>
     <h2>Fale com quem vai cuidar do seu caso.</h2>
-    <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button>
   </div></div>
 </section>
 
@@ -891,12 +915,6 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       </div>
     </div>
   </div>
-
-  <div class="cta"><div class="cta-bg"></div><div class="wrap">
-    <span class="eyebrow center">Atendimento</span>
-    <h2>Estamos prontos para avaliar o seu caso.</h2>
-    <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
-  </div></div>
 </section>
 
 </main>

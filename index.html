@@ -85,7 +85,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .mono .x{fill:var(--gold)}.mono .r{fill:var(--champagne)}
 
 /* ============ HEADER ============ */
-.hdr{position:sticky;top:0;z-index:60;background:transparent;border-bottom:1px solid transparent;
+.hdr{position:fixed;top:0;left:0;right:0;z-index:60;background:transparent;border-bottom:1px solid transparent;
   transition:background .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease)}
 .hdr::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(11,24,32,.62),rgba(11,24,32,0));transition:opacity .45s var(--ease)}
@@ -142,7 +142,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 
 /* ============ HERO ============ */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;
-  background:var(--petrol-deep);color:var(--paper);overflow:hidden;isolation:isolate;margin-top:-78px;padding-top:78px}
+  background:var(--petrol-deep);color:var(--paper);overflow:hidden;isolation:isolate;margin-top:0;padding-top:78px}
 .hero-skyline{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 .hero-photo,.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .hero-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;
@@ -264,7 +264,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 
 /* ============ ÁREA — página dedicada ============ */
 .area-hero{position:relative;min-height:clamp(380px,62vh,640px);display:flex;align-items:flex-end;overflow:hidden;
-  background:var(--ink);color:var(--paper);isolation:isolate;margin-top:-78px;padding-top:78px}
+  background:var(--ink);color:var(--paper);isolation:isolate;margin-top:0;padding-top:78px}
 .area-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .area-hero .veil{position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg,rgba(11,24,32,.5) 0%,rgba(11,24,32,.35) 38%,rgba(11,24,32,.9) 100%),linear-gradient(100deg,rgba(11,24,32,.75),transparent 62%)}
@@ -395,10 +395,19 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .crow .ci{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;color:var(--gold-deep);transition:.35s}
 .crow:hover .ci{background:var(--ink);color:var(--gold-soft);border-color:var(--ink)}
 .crow .ci svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5}
-.crow .cl{font-family:'Cinzel',serif;font-size:9.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--text-soft)}
-.crow .cv{font-weight:500;color:var(--ink);font-size:15px;margin-top:2px;line-height:1.45;word-break:break-word}
+.crow .cl{display:block;font-family:'Cinzel',serif;font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-deep);margin-bottom:5px}
+.crow .cv{display:block;font-weight:500;color:var(--ink);font-size:15.5px;line-height:1.45;word-break:break-word}
 .crow .cv small{display:block;font-weight:400;color:var(--text-soft);font-size:12.5px;margin-top:2px}
 .crow .cv.todo{color:var(--gold-deep);font-style:italic;font-weight:400;font-family:'Playfair Display',serif}
+/* princípios (escritório) */
+.principles{display:grid;gap:0;border-top:1px solid var(--line)}
+@media(min-width:760px){.principles{grid-template-columns:repeat(3,1fr)}}
+.principle{padding:clamp(28px,2.6vw,40px) 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.principle{padding:clamp(34px,2.6vw,42px) 30px 40px 0;border-bottom:0;border-right:1px solid var(--line)}
+  .principle:last-child{border-right:0;padding-right:0;padding-left:30px}.principle:first-child{padding-left:0}}
+.principle h3{font-size:var(--fs-h3);margin:0 0 14px;display:flex;align-items:center;gap:11px}
+.principle h3::before{content:"";width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex:none}
+.principle p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body);line-height:1.64}
 .map{margin-top:24px;aspect-ratio:16/11;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .map iframe{width:100%;height:100%;border:0}
 .map-note{font-size:12.5px;color:var(--text-soft);font-weight:300;margin-top:14px}
@@ -690,19 +699,26 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 
   <div class="section bg-paper2">
     <div class="wrap">
-      <div class="values stagger rv">
-        <div class="value">
-          <span class="vi"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 2 1-4a8 8 0 1 1 17-6Z"/></svg></span>
-          <h3>Atenção individual</h3><p>Cada caso é único e recebe análise dedicada. Entender a situação do cliente orienta a melhor estratégia.</p>
-        </div>
-        <div class="value">
-          <span class="vi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span>
-          <h3>Clareza e transparência</h3><p>Explicamos prazos, possibilidades e honorários com transparência, em linguagem acessível.</p>
-        </div>
-        <div class="value">
-          <span class="vi"><svg viewBox="0 0 24 24"><path d="m12 3 7 4v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V7l7-4Z"/></svg></span>
-          <h3>Compromisso ético</h3><p>Atuação pautada pela ética e pelo Estatuto da Advocacia, sem promessas de resultado.</p>
-        </div>
+      <div class="sec-head rv">
+        <div><span class="eyebrow">O que nos move</span></div>
+        <div><h2>Proximidade humana, com a técnica de quem leva cada causa a sério.</h2>
+          <p class="lead" style="margin-top:16px">Somos um escritório de relação próxima: você fala diretamente com a advogada que conduz o seu caso, entende cada etapa e decide com segurança. É essa combinação de cuidado e rigor que orienta tudo o que fazemos.</p></div>
+      </div>
+      <div class="principles stagger rv">
+        <div class="principle"><h3>Atenção individual</h3><p>Cada caso é único e recebe análise dedicada. Entender a história do cliente — e não apenas o processo — orienta a melhor estratégia. Não existe solução de prateleira.</p></div>
+        <div class="principle"><h3>Clareza em cada etapa</h3><p>Explicamos prazos, possibilidades e honorários com transparência, em linguagem acessível. Você sempre sabe em que pé está o seu caso, sem juridiquês.</p></div>
+        <div class="principle"><h3>Compromisso ético</h3><p>Atuação pautada pela ética e pelo Estatuto da Advocacia. Trabalho sério e franqueza sobre o que é possível, sem promessas de resultado.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section bg-paper">
+    <div class="wrap story">
+      <div class="rv"><span class="eyebrow">Foco e dedicação</span><div class="rule" style="margin-top:18px"></div></div>
+      <div class="rv d1">
+        <h2>Por que o <span class="it">Previdenciário</span> é o nosso foco.</h2>
+        <p class="lead" style="margin-top:22px">O Direito Previdenciário é a defesa de quem contribuiu a vida inteira e merece se aposentar com tranquilidade. É um terreno técnico, cheio de regras de transição e prazos — e é justamente por isso que exige um olhar dedicado, atualizado e paciente.</p>
+        <p style="margin-top:18px;color:var(--text-soft);font-weight:300">Concentrar a nossa energia nessa área permite ir além do óbvio: analisar cada CNIS com profundidade, encontrar o melhor enquadramento e orientar o momento certo de agir. E, quando o seu caso pede outras frentes — Trabalhista, Sucessões ou Indenizações —, conduzimos com a mesma proximidade.</p>
       </div>
     </div>
   </div>
@@ -726,22 +742,22 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     <div class="wrap">
       <div class="area-grid stagger rv">
         <button class="acard" onclick="go('area-previdenciario')">
-          <img src="https://images.pexels.com/photos/7781900/pexels-photo-7781900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito Previdenciário" loading="lazy" onerror="this.style.display='none'"/>
+          <img src="https://images.pexels.com/photos/36271771/pexels-photo-36271771/free-photo-of-close-up-of-elderly-hands-with-bag.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito Previdenciário" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Nosso foco principal</span><h3>Previdenciário</h3><span class="go">Ver área →</span></span>
         </button>
         <button class="acard" onclick="go('area-trabalhista')">
-          <img src="https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito do Trabalho" loading="lazy" onerror="this.style.display='none'"/>
+          <img src="https://images.pexels.com/photos/38070/pexels-photo-38070.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito do Trabalho" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Seus direitos no trabalho</span><h3>Trabalhista</h3><span class="go">Ver área →</span></span>
         </button>
         <button class="acard" onclick="go('area-sucessoes')">
-          <img src="https://images.pexels.com/photos/6077861/pexels-photo-6077861.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Inventário e Sucessões" loading="lazy" onerror="this.style.display='none'"/>
+          <img src="https://images.pexels.com/photos/31424880/pexels-photo-31424880/free-photo-of-real-estate-concept-with-key-and-house-models.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Inventário e Sucessões" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Patrimônio e família</span><h3>Inventário &amp; Sucessões</h3><span class="go">Ver área →</span></span>
         </button>
         <button class="acard" onclick="go('area-indenizacoes')">
-          <img src="https://images.pexels.com/photos/8112197/pexels-photo-8112197.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Indenizações" loading="lazy" onerror="this.style.display='none'"/>
+          <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Indenizações" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Reparação de danos</span><h3>Indenizações</h3><span class="go">Ver área →</span></span>
         </button>
@@ -775,7 +791,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ===== ÁREA: Previdenciário ===== -->
 <section class="page" id="page-area-previdenciario">
   <div class="area-hero">
-    <img src="https://images.pexels.com/photos/7781900/pexels-photo-7781900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Direito Previdenciário" loading="lazy"/>
+    <img src="https://images.pexels.com/photos/36271771/pexels-photo-36271771/free-photo-of-close-up-of-elderly-hands-with-bag.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Direito Previdenciário" loading="lazy"/>
     <div class="veil"></div>
     <div class="wrap rv in">
       <button class="back-link" onclick="go('areas')">← Áreas de atuação</button>
@@ -808,7 +824,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ===== ÁREA: Trabalhista ===== -->
 <section class="page" id="page-area-trabalhista">
   <div class="area-hero">
-    <img src="https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Direito do Trabalho" loading="lazy"/>
+    <img src="https://images.pexels.com/photos/38070/pexels-photo-38070.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Direito do Trabalho" loading="lazy"/>
     <div class="veil"></div>
     <div class="wrap rv in">
       <button class="back-link" onclick="go('areas')">← Áreas de atuação</button>
@@ -841,7 +857,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ===== ÁREA: Inventário & Sucessões ===== -->
 <section class="page" id="page-area-sucessoes">
   <div class="area-hero">
-    <img src="https://images.pexels.com/photos/6077861/pexels-photo-6077861.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Inventário e Sucessões" loading="lazy"/>
+    <img src="https://images.pexels.com/photos/31424880/pexels-photo-31424880/free-photo-of-real-estate-concept-with-key-and-house-models.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Inventário e Sucessões" loading="lazy"/>
     <div class="veil"></div>
     <div class="wrap rv in">
       <button class="back-link" onclick="go('areas')">← Áreas de atuação</button>
@@ -874,7 +890,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ===== ÁREA: Indenizações ===== -->
 <section class="page" id="page-area-indenizacoes">
   <div class="area-hero">
-    <img src="https://images.pexels.com/photos/8112197/pexels-photo-8112197.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Indenizações" loading="lazy"/>
+    <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Indenizações" loading="lazy"/>
     <div class="veil"></div>
     <div class="wrap rv in">
       <button class="back-link" onclick="go('areas')">← Áreas de atuação</button>

@@ -94,9 +94,9 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .hdr.scrolled::before,.hdr.solid::before{opacity:0}
 .hdr-inner{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(12px,2vw,28px);min-height:78px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:13px;flex:none}
-.brand-logo{height:clamp(48px,5.5vw,62px);width:auto;display:block}
-@media(max-width:1039px){.brand-logo{height:clamp(44px,12vw,54px)}}
-.foot .brand-logo.foot-logo{height:clamp(56px,7vw,76px)}
+.brand-logo{height:clamp(34px,3.6vw,46px);width:auto;max-width:min(62vw,320px);object-fit:contain;display:block}
+@media(max-width:1039px){.brand-logo{height:clamp(30px,7.5vw,42px)}}
+.foot .brand-logo.foot-logo{height:clamp(42px,5vw,56px);max-width:none}
 .brand .mono{width:42px;height:36px;flex:none}
 .brand-txt{display:flex;flex-direction:column;line-height:1}
 .brand-name{font-family:'Cinzel',serif;font-weight:600;font-size:clamp(12px,1vw,15px);letter-spacing:.1em;color:var(--champagne);white-space:nowrap}
@@ -268,7 +268,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .acard .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,28,36,.25) 0%,rgba(15,28,36,.55) 50%,rgba(11,24,32,.94) 100%)}
 .acard .lbl{position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,2vw,26px);z-index:2}
 .acard .lbl .k{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft)}
-.acard .lbl h3{color:var(--paper);font-size:clamp(1.15rem,1rem + .6vw,1.5rem);margin-top:8px;line-height:1.15}
+.acard .lbl h3{color:var(--paper);font-size:clamp(1.15rem,1rem + .6vw,1.5rem);margin-top:8px;line-height:1.15;min-height:2.3em}
 .acard .lbl .go{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--champagne);opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
 .acard:hover .lbl .go{opacity:1;transform:none}
 .acard::after{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:3;transition:width .55s var(--ease)}
@@ -454,6 +454,20 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .map{margin-top:24px;aspect-ratio:16/11;border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .map iframe{width:100%;height:100%;border:0}
 .map-note{font-size:12.5px;color:var(--text-soft);font-weight:300;margin-top:14px}
+/* unidades (matriz + filial) */
+.unidades{display:grid;gap:clamp(16px,2vw,22px)}
+@media(min-width:560px){.unidades{grid-template-columns:1fr 1fr}}
+.unidade{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.4s var(--ease)}
+.unidade:hover{box-shadow:0 30px 60px -44px rgba(20,37,46,.4);border-color:rgba(194,160,90,.4)}
+.uni-map{aspect-ratio:16/10;background:var(--paper-2)}
+.uni-map iframe{width:100%;height:100%;border:0;display:block}
+.uni-info{padding:clamp(15px,1.6vw,20px)}
+.uni-tag{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block}
+.uni-addr{margin-top:8px;font-size:13.5px;color:var(--text);font-weight:400;line-height:1.5}
+.uni-links{display:flex;gap:10px;margin-top:14px}
+.uni-links a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);border:1px solid rgba(194,160,90,.45);border-radius:6px;padding:10px 8px;transition:.3s}
+.uni-links a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.uni-links a svg{width:13px;height:13px;flex:none}
 
 /* ============ RODAPÉ ============ */
 .foot{background:var(--petrol-deep);color:rgba(246,243,236,.7)}
@@ -487,6 +501,27 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .wa::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(194,160,90,.5);animation:pulse 2.8s var(--ease) infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(194,160,90,.5)}70%{box-shadow:0 0 0 18px rgba(194,160,90,0)}100%{box-shadow:0 0 0 0 rgba(194,160,90,0)}}
 
+/* ===== MOBILE: menos "zoom", mais conteúdo na tela (NÃO afeta o desktop) ===== */
+@media(max-width:600px){
+  :root{
+    --section:clamp(42px,9vw,60px);
+    --fs-h1:clamp(1.95rem,1.2rem + 4.4vw,2.5rem);
+    --fs-h2:clamp(1.45rem,1.05rem + 2.6vw,1.95rem);
+    --fs-h3:clamp(1.1rem,.95rem + 1.8vw,1.32rem);
+    --fs-lead:1.02rem;
+    --fs-body:.94rem;
+  }
+  .hero{min-height:90svh}
+  .hero h1{line-height:1.08}
+  .hero-sub{padding-left:16px}
+  .statement h2{font-size:clamp(1.5rem,5.6vw,2rem)}
+  .manifesto blockquote{font-size:clamp(1.42rem,6.4vw,1.9rem)}
+  .sec-head{margin-bottom:clamp(28px,7vw,40px)}
+}
+/* tablets: leve ajuste de respiro */
+@media(min-width:601px) and (max-width:900px){
+  :root{--section:clamp(56px,8vw,96px)}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.rv,.stagger>*{opacity:1!important;transform:none!important}}
 </style>
 </head>
@@ -720,15 +755,15 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   </div>
 
   <!-- ===== PORTAL DE CONTEÚDO (home) ===== -->
-  <div class="section bg-paper2">
+  <div class="section bg-ink">
     <div class="wrap">
       <div class="sec-head rv">
-        <div><span class="eyebrow">Portal de conteúdo</span></div>
-        <div><h2>Notícias que impactam os seus direitos.</h2>
-          <p class="lead" style="margin-top:16px">As últimas decisões, mudanças na legislação e novidades sobre aposentadorias, benefícios do INSS, direitos trabalhistas e tudo que pode afetar o seu caso — explicado de forma simples.</p></div>
+        <div><span class="eyebrow on-dark">Portal de conteúdo</span></div>
+        <div><h2 style="color:var(--paper)">Notícias que impactam os seus direitos.</h2>
+          <p class="lead" style="margin-top:16px;color:rgba(246,243,236,.72)">As últimas decisões, as mudanças na legislação e as novidades sobre aposentadorias, benefícios do INSS e direitos trabalhistas — explicadas de forma simples, para você entender o que afeta o seu caso.</p></div>
       </div>
       <div class="artigos-grid stagger rv" id="home-artigos"></div>
-      <div style="margin-top:clamp(30px,3vw,44px)" class="rv"><button class="link-gold" onclick="go('conteudo')">Ver todos os artigos →</button></div>
+      <div style="margin-top:clamp(30px,3vw,44px)" class="rv"><button class="link-gold on-dark" onclick="go('conteudo')">Ver todos os artigos →</button></div>
     </div>
   </div>
 
@@ -1126,21 +1161,38 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
             <span class="ci"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
             <span><span class="cl">E-mail</span><span class="cv todo">a definir — me envie o e-mail</span></span>
           </div>
-          <a class="crow" href="https://www.google.com/maps/search/?api=1&query=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP" target="_blank" rel="noopener">
-            <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span><span class="cl">Matriz · São José dos Campos</span><span class="cv">Rua Pascoal Moreira, 48 · Jardim Nova América<small>Em frente à 111 Imóveis · São José dos Campos — SP</small></span></span>
-          </a>
-          <a class="crow" href="https://www.google.com/maps/search/?api=1&query=Av.%20Janu%C3%A1rio%20Miraglia%2C%20659%20-%20Campos%20do%20Jord%C3%A3o%20-%20SP" target="_blank" rel="noopener">
-            <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span><span class="cl">Filial · Campos do Jordão</span><span class="cv">Av. Januário Miraglia, 659 · Sala 13<small>Prédio Pátio Dubieux · Campos do Jordão — SP</small></span></span>
-          </a>
           <div class="crow">
             <span class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
             <span><span class="cl">Horário</span><span class="cv">Segunda a sexta, das nove às dezoito horas</span></span>
           </div>
         </div>
-        <div class="map"><iframe src="https://www.google.com/maps?q=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização — em frente à 111 Imóveis, São José dos Campos"></iframe></div>
-        <p class="map-note">Matriz em frente à 111 Imóveis (São José dos Campos) e filial em Campos do Jordão. Atendimento mediante agendamento.</p>
+
+        <span class="eyebrow" style="margin-top:clamp(30px,3vw,40px);margin-bottom:18px">Nossas unidades</span>
+        <div class="unidades">
+          <div class="unidade">
+            <div class="uni-map"><iframe src="https://www.google.com/maps?q=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Matriz — São José dos Campos"></iframe></div>
+            <div class="uni-info">
+              <span class="uni-tag">Matriz · São José dos Campos</span>
+              <p class="uni-addr">Rua Pascoal Moreira, 48 · Jardim Nova América<br>Em frente à 111 Imóveis — SJC/SP</p>
+              <div class="uni-links">
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Google Maps</a>
+                <a href="https://waze.com/ul?q=Rua%20Pascoal%20Moreira%2048%20Jardim%20Nova%20Am%C3%A9rica%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m3 11 19-9-9 19-2-8-8-2Z"/></svg>Waze</a>
+              </div>
+            </div>
+          </div>
+          <div class="unidade">
+            <div class="uni-map"><iframe src="https://www.google.com/maps?q=Av.%20Janu%C3%A1rio%20Miraglia%2C%20659%20-%20Campos%20do%20Jord%C3%A3o%20-%20SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Filial — Campos do Jordão"></iframe></div>
+            <div class="uni-info">
+              <span class="uni-tag">Filial · Campos do Jordão</span>
+              <p class="uni-addr">Av. Januário Miraglia, 659 · Sala 13<br>Prédio Pátio Dubieux — Campos do Jordão/SP</p>
+              <div class="uni-links">
+                <a href="https://www.google.com/maps/search/?api=1&query=Av.%20Janu%C3%A1rio%20Miraglia%2C%20659%20-%20Campos%20do%20Jord%C3%A3o%20-%20SP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Google Maps</a>
+                <a href="https://waze.com/ul?q=Av.%20Janu%C3%A1rio%20Miraglia%20659%20Campos%20do%20Jord%C3%A3o&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m3 11 19-9-9 19-2-8-8-2Z"/></svg>Waze</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="map-note">Atendimento mediante agendamento, em ambas as unidades.</p>
       </div>
     </div>
   </div>

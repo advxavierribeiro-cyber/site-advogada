@@ -94,6 +94,9 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .hdr.scrolled::before,.hdr.solid::before{opacity:0}
 .hdr-inner{position:relative;z-index:1;display:flex;align-items:center;gap:clamp(12px,2vw,28px);min-height:78px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:13px;flex:none}
+.brand-logo{height:clamp(48px,5.5vw,62px);width:auto;display:block}
+@media(max-width:1039px){.brand-logo{height:clamp(44px,12vw,54px)}}
+.foot .brand-logo.foot-logo{height:clamp(56px,7vw,76px)}
 .brand .mono{width:42px;height:36px;flex:none}
 .brand-txt{display:flex;flex-direction:column;line-height:1}
 .brand-name{font-family:'Cinzel',serif;font-weight:600;font-size:clamp(12px,1vw,15px);letter-spacing:.1em;color:var(--champagne);white-space:nowrap}
@@ -348,6 +351,36 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 
 /* ============ EQUIPE ============ */
 .team{display:grid;gap:clamp(22px,2.4vw,30px);max-width:880px;margin:0 auto}
+.team.team-3{max-width:1080px}
+@media(min-width:720px){.team.team-3{grid-template-columns:repeat(3,1fr)}}
+
+/* ============ PORTAL DE CONTEÚDO (artigos) ============ */
+.artigos-grid{display:grid;gap:clamp(14px,1.4vw,22px)}
+@media(min-width:680px){.artigos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.artigos-grid{grid-template-columns:repeat(3,1fr)}}
+.artigo-card{position:relative;display:flex;flex-direction:column;padding:clamp(24px,2.4vw,32px);background:#fff;border:1px solid var(--line);border-radius:8px;text-align:left;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);overflow:hidden;min-height:clamp(210px,22vw,252px)}
+.artigo-card::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));transition:width .55s var(--ease)}
+.artigo-card:hover{transform:translateY(-7px);box-shadow:0 38px 70px -42px rgba(20,37,46,.42);border-color:rgba(194,160,90,.5)}
+.artigo-card:hover::before{width:100%}
+.artigo-tag{align-self:flex-start;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);border:1px solid rgba(194,160,90,.4);border-radius:30px;padding:5px 13px;margin-bottom:16px}
+.artigo-card h3{font-size:clamp(1.08rem,1rem + .5vw,1.34rem);line-height:1.26;margin-bottom:10px;color:var(--ink)}
+.artigo-card p{font-size:var(--fs-body);color:var(--text-soft);font-weight:300;line-height:1.6;flex:1}
+.artigo-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.artigo-date{font-size:11.5px;color:var(--text-soft);font-weight:300}
+.artigo-go{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep);opacity:0;transform:translateX(-6px);transition:.4s var(--ease)}
+.artigo-card:hover .artigo-go{opacity:1;transform:none}
+@media(hover:none){.artigo-go{opacity:1;transform:none}}
+.artigo-empty{grid-column:1/-1;text-align:center;color:var(--text-soft);font-weight:300;padding:30px 0}
+.artigo-data{margin-top:16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft)}
+.artigo-body{max-width:46rem;margin:0 auto}
+.artigo-conteudo{font-size:clamp(1.02rem,.98rem + .3vw,1.16rem);color:var(--text);font-weight:300;line-height:1.8}
+.artigo-conteudo p{margin-bottom:20px}
+.artigo-conteudo h2,.artigo-conteudo h3{font-family:'Playfair Display',serif;color:var(--ink);margin:32px 0 14px;line-height:1.2;font-weight:500}
+.artigo-conteudo h2{font-size:clamp(1.4rem,1.2rem + 1vw,1.9rem)}.artigo-conteudo h3{font-size:clamp(1.2rem,1.05rem + .6vw,1.5rem)}
+.artigo-conteudo ul,.artigo-conteudo ol{margin:0 0 22px 24px}.artigo-conteudo li{margin-bottom:9px}
+.artigo-conteudo strong{color:var(--ink);font-weight:600}
+.artigo-conteudo a{color:var(--gold-deep);border-bottom:1px solid rgba(194,160,90,.4)}
+.artigo-cta{margin-top:clamp(38px,4vw,56px);text-align:center}
 @media(min-width:720px){.team{grid-template-columns:repeat(2,1fr)}}
 .member{background:#fff;border:1px solid var(--line);border-radius:8px;transition:.45s var(--ease);overflow:hidden}
 .member:hover{transform:translateY(-6px);box-shadow:0 42px 80px -46px rgba(20,37,46,.55);border-color:rgba(194,160,90,.5)}
@@ -452,14 +485,17 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ====== HEADER ====== -->
 <header class="hdr" id="hdr">
   <div class="wrap hdr-inner">
-    <a class="brand" href="#inicio" onclick="go('inicio',event)" aria-label="Xavier Ribeiro &amp; Ribeiro">
-      <svg class="mono" viewBox="0 0 120 96" aria-hidden="true">
-        <text class="x" x="42" y="74" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="600" font-size="92">X</text>
-        <text class="r" x="74" y="74" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="600" font-size="92">R</text>
-      </svg>
-      <span class="brand-txt">
-        <span class="brand-name">XAVIER RIBEIRO <b>&amp;</b> RIBEIRO</span>
-        <span class="brand-sub">Sociedade de Advogados</span>
+    <a class="brand" href="#inicio" onclick="go('inicio',event)" aria-label="Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados">
+      <img class="brand-logo" src="logo-nova.png" alt="Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados" onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb)fb.style.display='flex'"/>
+      <span class="brand-fb" style="display:none;align-items:center;gap:13px">
+        <svg class="mono" viewBox="0 0 120 96" aria-hidden="true">
+          <text class="x" x="42" y="74" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="600" font-size="92">X</text>
+          <text class="r" x="74" y="74" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-weight="600" font-size="92">R</text>
+        </svg>
+        <span class="brand-txt">
+          <span class="brand-name">XAVIER RIBEIRO <b>&amp;</b> RIBEIRO</span>
+          <span class="brand-sub">Sociedade de Advogados</span>
+        </span>
       </span>
     </a>
     <a class="btn btn-ghost on-dark hdr-cta" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
@@ -467,6 +503,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
       <button class="active" id="nav-inicio" onclick="go('inicio',event)">Início</button>
       <button id="nav-escritorio" onclick="go('escritorio',event)">O Escritório</button>
       <button id="nav-areas" onclick="go('areas',event)">Áreas de Atuação</button>
+      <button id="nav-conteudo" onclick="go('conteudo',event)">Conteúdo</button>
       <button id="nav-equipe" onclick="go('equipe',event)">Equipe</button>
       <button id="nav-contato" onclick="go('contato',event)">Contato</button>
     </nav>
@@ -669,6 +706,19 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     </div>
   </div>
 
+  <!-- ===== PORTAL DE CONTEÚDO (home) ===== -->
+  <div class="section bg-paper2">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Portal de conteúdo</span></div>
+        <div><h2>Notícias que impactam os seus direitos.</h2>
+          <p class="lead" style="margin-top:16px">As últimas decisões, mudanças na legislação e novidades sobre aposentadorias, benefícios do INSS, direitos trabalhistas e tudo que pode afetar o seu caso — explicado de forma simples.</p></div>
+      </div>
+      <div class="artigos-grid stagger rv" id="home-artigos"></div>
+      <div style="margin-top:clamp(30px,3vw,44px)" class="rv"><button class="link-gold" onclick="go('conteudo')">Ver todos os artigos →</button></div>
+    </div>
+  </div>
+
   <!-- ===== CTA ===== -->
   <div class="cta"><div class="cta-bg"></div><div class="wrap">
     <span class="eyebrow center">Atendimento</span>
@@ -741,26 +791,26 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="section bg-paper">
     <div class="wrap">
       <div class="area-grid stagger rv">
-        <button class="acard" onclick="go('area-previdenciario')">
+        <a class="acard" href="#area-previdenciario" onclick="go('area-previdenciario',event)">
           <img src="https://images.pexels.com/photos/36271771/pexels-photo-36271771/free-photo-of-close-up-of-elderly-hands-with-bag.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito Previdenciário" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Nosso foco principal</span><h3>Previdenciário</h3><span class="go">Ver área →</span></span>
-        </button>
-        <button class="acard" onclick="go('area-trabalhista')">
+        </a>
+        <a class="acard" href="#area-trabalhista" onclick="go('area-trabalhista',event)">
           <img src="https://images.pexels.com/photos/38070/pexels-photo-38070.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito do Trabalho" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Seus direitos no trabalho</span><h3>Trabalhista</h3><span class="go">Ver área →</span></span>
-        </button>
-        <button class="acard" onclick="go('area-sucessoes')">
+        </a>
+        <a class="acard" href="#area-sucessoes" onclick="go('area-sucessoes',event)">
           <img src="https://images.pexels.com/photos/31424880/pexels-photo-31424880/free-photo-of-real-estate-concept-with-key-and-house-models.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Inventário e Sucessões" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Patrimônio e família</span><h3>Inventário &amp; Sucessões</h3><span class="go">Ver área →</span></span>
-        </button>
-        <button class="acard" onclick="go('area-indenizacoes')">
+        </a>
+        <a class="acard" href="#area-indenizacoes" onclick="go('area-indenizacoes',event)">
           <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Indenizações" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Reparação de danos</span><h3>Indenizações</h3><span class="go">Ver área →</span></span>
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -923,9 +973,9 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 <!-- ============================== EQUIPE ============================== -->
 <section class="page" id="page-equipe">
   <div class="phead"><div class="phead-bg"></div><div class="wrap">
-    <span class="eyebrow on-dark rv">Quem conduz</span>
-    <h1 class="rv d1">As <span class="it">sócias</span></h1>
-    <p class="rv d2">Sociedade formada por mãe e filha. Atendimento pessoal e dedicado, do primeiro contato à decisão final.</p>
+    <span class="eyebrow on-dark rv">Quem conduz o seu caso</span>
+    <h1 class="rv d1">A nossa <span class="it">equipe</span></h1>
+    <p class="rv d2">Duas sócias à frente de cada causa — uma sociedade de mãe e filha — e uma equipe dedicada a cuidar de cada etapa, do primeiro contato à decisão final.</p>
   </div></div>
 
   <div class="section bg-paper">
@@ -934,35 +984,70 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         <div class="member">
           <div class="photo">
             <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
-            <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier" onerror="this.style.display='none'"/>
-            <div class="ph-fallback">
-              <span class="glow"></span>
-              <svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-              <span>Dra. Andrea Xavier</span>
-            </div>
+            <img src="andrea-xavier.jpg" alt="Dra. Andrea Xavier" onerror="this.style.display='none'"/>
+            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>Dra. Andrea Xavier</span></div>
           </div>
           <div class="mc">
             <div class="mname">Dra. Andrea Xavier</div>
-            <div class="mrole">Advogada · Sócia</div>
-            <div class="moab">OAB/SP · Previdenciário</div>
-            <p class="mbio">Dedicada ao Direito Previdenciário e à defesa de quem busca se aposentar com dignidade. Atendimento próximo, técnico e em linguagem acessível.</p>
+            <div class="mrole">Advogada · Sócia fundadora</div>
+            <div class="moab">OAB/SP · Todas as áreas</div>
+            <p class="mbio">À frente do escritório, conduz todas as áreas com foco especial no Direito Previdenciário. Atendimento próximo e técnico, do primeiro contato à decisão final.</p>
           </div>
         </div>
         <div class="member">
           <div class="photo">
             <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
-            <img src="socia-ines.jpg" alt="Dra. Inês Ribeiro" onerror="this.style.display='none'"/>
-            <div class="ph-fallback">
-              <span class="glow"></span>
-              <svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-              <span>Dra. Inês Ribeiro</span>
-            </div>
+            <img src="ines-ribeiro.jpg" alt="Dra. Inês Ribeiro" onerror="this.style.display='none'"/>
+            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>Dra. Inês Ribeiro</span></div>
           </div>
           <div class="mc">
             <div class="mname">Dra. Inês Ribeiro</div>
             <div class="mrole">Advogada · Sócia</div>
-            <div class="moab">OAB/SP · Cível, Trabalhista e Sucessões</div>
-            <p class="mbio">Atua nas áreas Cível, Trabalhista e de Sucessões, com a mesma proximidade e o cuidado que orientam o escritório. Acompanha cada cliente de perto, em linguagem clara.</p>
+            <div class="moab">OAB/SP · Todas as áreas</div>
+            <p class="mbio">Sócia do escritório, atua em todas as áreas com a proximidade e o cuidado que orientam cada caso. Acompanha o cliente de perto, em linguagem clara.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-head solo rv" style="margin:clamp(48px,6vw,84px) auto clamp(26px,3vw,38px)">
+        <span class="eyebrow">Equipe de apoio</span>
+        <h2 style="font-size:clamp(1.5rem,1.2rem + 1.4vw,2.2rem);margin-top:14px">Quem cuida de cada detalhe.</h2>
+      </div>
+      <div class="team team-3 stagger rv">
+        <div class="member">
+          <div class="photo">
+            <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
+            <img src="ana-paula.jpg" alt="Ana Paula" onerror="this.style.display='none'"/>
+            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>Ana Paula</span></div>
+          </div>
+          <div class="mc">
+            <div class="mname">Ana Paula</div>
+            <div class="mrole">Especialista · Benefícios do INSS</div>
+            <p class="mbio">Especialista nos processos administrativos de requerimento de benefícios junto ao INSS. Conduz a via administrativa com agilidade e atenção a cada detalhe.</p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="photo">
+            <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
+            <img src="andre-xavier.jpg" alt="André Xavier" onerror="this.style.display='none'"/>
+            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>André Xavier</span></div>
+          </div>
+          <div class="mc">
+            <div class="mname">André Xavier</div>
+            <div class="mrole">Estagiário de Direito</div>
+            <p class="mbio">Apoia a equipe na pesquisa, no acompanhamento dos processos e na organização de cada caso, sempre com cuidado e atenção.</p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="photo">
+            <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
+            <img src="marli-bernardo.jpg" alt="Marli Bernardo" onerror="this.style.display='none'"/>
+            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>Marli Bernardo</span></div>
+          </div>
+          <div class="mc">
+            <div class="mname">Marli Bernardo</div>
+            <div class="mrole">Assistente Jurídica</div>
+            <p class="mbio">Organiza documentos, prazos e o atendimento do dia a dia, garantindo que cada caso caminhe com ordem e tranquilidade.</p>
           </div>
         </div>
       </div>
@@ -1030,7 +1115,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           </div>
           <a class="crow" href="https://www.google.com/maps/search/?api=1&query=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP" target="_blank" rel="noopener">
             <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span><span class="cl">Endereço</span><span class="cv">Rua Pascoal Moreira, 48 · Jardim Nova América<small>Em frente à 111 Imóveis · São José dos Campos — SP</small></span></span>
+            <span><span class="cl">Matriz · São José dos Campos</span><span class="cv">Rua Pascoal Moreira, 48 · Jardim Nova América<small>Em frente à 111 Imóveis · São José dos Campos — SP</small></span></span>
+          </a>
+          <a class="crow" href="https://www.google.com/maps/search/?api=1&query=Av.%20Janu%C3%A1rio%20Miraglia%2C%20659%20-%20Campos%20do%20Jord%C3%A3o%20-%20SP" target="_blank" rel="noopener">
+            <span class="ci"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><span class="cl">Filial · Campos do Jordão</span><span class="cv">Av. Januário Miraglia, 659 · Sala 13<small>Prédio Pátio Dubieux · Campos do Jordão — SP</small></span></span>
           </a>
           <div class="crow">
             <span class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
@@ -1038,8 +1127,38 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           </div>
         </div>
         <div class="map"><iframe src="https://www.google.com/maps?q=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização — em frente à 111 Imóveis, São José dos Campos"></iframe></div>
-        <p class="map-note">Em frente à 111 Imóveis, em São José dos Campos. Atendimento mediante agendamento.</p>
+        <p class="map-note">Matriz em frente à 111 Imóveis (São José dos Campos) e filial em Campos do Jordão. Atendimento mediante agendamento.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTEÚDO (portal) ============================== -->
+<section class="page" id="page-conteudo">
+  <div class="phead"><div class="phead-bg"></div><div class="wrap">
+    <span class="eyebrow on-dark rv">Portal de conteúdo</span>
+    <h1 class="rv d1">Notícias que impactam os seus <span class="it">direitos</span></h1>
+    <p class="rv d2">As últimas decisões, alterações na legislação e novidades sobre aposentadorias, benefícios do INSS, direitos trabalhistas e tudo que pode impactar o seu caso — em linguagem simples.</p>
+  </div></div>
+  <div class="section bg-paper">
+    <div class="wrap">
+      <div class="artigos-grid stagger rv" id="portal-artigos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARTIGO (visualização) ===== -->
+<section class="page" id="page-artigo">
+  <div class="phead"><div class="phead-bg"></div><div class="wrap">
+    <button class="back-link rv" onclick="go('conteudo')">← Portal de conteúdo</button>
+    <span class="eyebrow on-dark rv d1" id="artigo-area">Conteúdo</span>
+    <h1 class="rv d1" id="artigo-titulo">Artigo</h1>
+    <p class="artigo-data rv d2" id="artigo-data"></p>
+  </div></div>
+  <div class="section bg-paper">
+    <div class="wrap artigo-body">
+      <div class="artigo-conteudo rv" id="artigo-conteudo"></div>
+      <div class="artigo-cta rv"><button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button></div>
     </div>
   </div>
 </section>
@@ -1051,9 +1170,12 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <a class="brand" href="#inicio" onclick="go('inicio',event)">
-          <svg class="mono" viewBox="0 0 120 96" aria-hidden="true"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
-          <span class="brand-txt"><span class="brand-name">XAVIER RIBEIRO &amp; RIBEIRO</span><span class="brand-sub">Sociedade de Advogados</span></span>
+        <a class="brand" href="#inicio" onclick="go('inicio',event)" aria-label="Xavier Ribeiro &amp; Ribeiro">
+          <img class="brand-logo foot-logo" src="logo-nova.png" alt="Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados" onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb)fb.style.display='flex'"/>
+          <span class="brand-fb" style="display:none;align-items:center;gap:13px">
+            <svg class="mono" viewBox="0 0 120 96" aria-hidden="true"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg>
+            <span class="brand-txt"><span class="brand-name">XAVIER RIBEIRO &amp; RIBEIRO</span><span class="brand-sub">Sociedade de Advogados</span></span>
+          </span>
         </a>
         <p class="foot-desc">Sociedade de advogados em São José dos Campos e região do Vale do Paraíba, com atuação em Direito Previdenciário, Trabalhista, Inventário e Sucessões e Indenizações.</p>
       </div>
@@ -1063,6 +1185,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           <button onclick="go('inicio')">Início</button>
           <button onclick="go('escritorio')">O Escritório</button>
           <button onclick="go('areas')">Áreas de Atuação</button>
+          <button onclick="go('conteudo')">Conteúdo</button>
           <button onclick="go('equipe')">Equipe</button>
           <button onclick="go('contato')">Contato</button>
         </div>
@@ -1088,31 +1211,64 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>
 </a>
 
+<script src="artigos.js"></script>
 <script>
-var PAGES=['inicio','escritorio','areas','equipe','contato'];
+var PAGES=['inicio','escritorio','areas','conteudo','equipe','contato'];
 var hdr=document.getElementById('hdr');
+var current='inicio';
 function isArea(id){return id.indexOf('area-')===0}
-function render(id){
-  if(!document.getElementById('page-'+id)) id='inicio';
+function isArtigo(id){return id.indexOf('artigo-')===0}
+function applyState(id,scroll){
+  var pageId = isArtigo(id) ? 'artigo' : (document.getElementById('page-'+id)?id:'inicio');
+  if(isArtigo(id)) renderArtigo(id.slice(7));
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
-  document.getElementById('page-'+id).classList.add('active');
-  var navId=isArea(id)?'areas':id;
+  var pg=document.getElementById('page-'+pageId); if(pg) pg.classList.add('active');
+  var navId = isArea(id)?'areas' : (isArtigo(id)?'conteudo' : pageId);
   document.querySelectorAll('.nav button').forEach(function(b){b.classList.remove('active')});
   var nv=document.getElementById('nav-'+navId); if(nv) nv.classList.add('active');
   hdr.classList.toggle('solid', id!=='inicio' && !isArea(id));
-  window.scrollTo({top:0,behavior:'instant'});
+  window.scrollTo({top:scroll||0,behavior:'instant'});
+  current=id;
   requestAnimationFrame(function(){resetReveal();observeReveal()});
 }
 function go(id,ev){
-  if(ev) ev.preventDefault();
-  if(!document.getElementById('page-'+id)) id='inicio';
-  render(id);
-  history.pushState({page:id},'','#'+id);
+  if(ev){ if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.which===2||ev.button===1) return; ev.preventDefault(); }
+  if(!isArtigo(id) && !document.getElementById('page-'+id)) id='inicio';
+  history.replaceState({page:current,scroll:window.scrollY},'','#'+current);
+  applyState(id,0);
+  history.pushState({page:id,scroll:0},'','#'+id);
 }
+function abrirArtigo(slug,ev){ go('artigo-'+slug,ev); }
 window.addEventListener('popstate',function(e){
-  var id=(e.state&&e.state.page)||'inicio';
-  render(id);
+  var st=e.state||{};
+  applyState(st.page || (location.hash||'').replace('#','') || 'inicio', st.scroll||0);
 });
+/* ---- Portal de Conteúdo (artigos) ---- */
+function fmtData(d){
+  var m=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  var p=(d||'').split('-'); if(p.length!==3) return d||'';
+  return parseInt(p[2],10)+' de '+(m[parseInt(p[1],10)-1]||'')+' de '+p[0];
+}
+function getArtigos(){
+  if(typeof ARTIGOS==='undefined'||!ARTIGOS.length) return [];
+  return ARTIGOS.slice().sort(function(a,b){return (b.data||'').localeCompare(a.data||'')});
+}
+function cardHTML(a){
+  return '<a class="artigo-card" href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)">'+
+    '<span class="artigo-tag">'+a.area+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+
+    '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">Ler artigo &rarr;</span></span></a>';
+}
+function renderPortais(){
+  var arts=getArtigos(),home=document.getElementById('home-artigos'),portal=document.getElementById('portal-artigos');
+  if(home) home.innerHTML = arts.length ? arts.slice(0,3).map(cardHTML).join('') : '<p class="artigo-empty">Em breve, os primeiros artigos.</p>';
+  if(portal) portal.innerHTML = arts.length ? arts.map(cardHTML).join('') : '<p class="artigo-empty">Em breve, publicaremos conteúdos sobre os seus direitos.</p>';
+}
+function renderArtigo(slug){
+  var a=getArtigos().filter(function(x){return x.id===slug})[0];
+  var T=document.getElementById('artigo-titulo'),A=document.getElementById('artigo-area'),D=document.getElementById('artigo-data'),C=document.getElementById('artigo-conteudo');
+  if(!a){ if(T)T.textContent='Artigo não encontrado'; if(A)A.textContent='Conteúdo'; if(D)D.textContent=''; if(C)C.innerHTML='<p>Esse conteúdo não está disponível.</p>'; return; }
+  if(T)T.textContent=a.titulo; if(A)A.textContent=a.area; if(D)D.textContent=fmtData(a.data); if(C)C.innerHTML=a.conteudo;
+}
 function toggleAcc(b){
   var acc=b.closest('.acc'),open=acc.classList.contains('open');
   acc.closest('.faq').querySelectorAll('.acc.open').forEach(function(a){a.classList.remove('open')});
@@ -1123,6 +1279,7 @@ function sendForm(e){
   var f=e.currentTarget,g=function(n){var el=f.elements[n];return el?el.value.trim():''};
   var txt='Olá! Vim pelo site da Xavier Ribeiro & Ribeiro.\n\nNome: '+g('nome')+'\nContato: '+g('contato')+'\nAssunto: '+g('assunto')+'\n\n'+g('mensagem');
   window.open('https://wa.me/5512997434181?text='+encodeURIComponent(txt),'_blank','noopener');
+  f.reset();
 }
 function onScroll(){hdr.classList.toggle('scrolled',window.scrollY>30)}
 window.addEventListener('scroll',onScroll,{passive:true});
@@ -1145,9 +1302,13 @@ if(!reduce&&fine){
 }
 
 window.addEventListener('DOMContentLoaded',function(){
-  history.replaceState({page:'inicio'},'','#inicio');
-  render('inicio');
-  onScroll(); observeReveal();
+  renderPortais();
+  var h=(location.hash||'').replace('#','');
+  var deep=(isArea(h)&&document.getElementById('page-'+h))||isArtigo(h)||h==='conteudo';
+  var id=deep?h:'inicio';
+  history.replaceState({page:id,scroll:0},'','#'+id);
+  applyState(id,0);
+  onScroll();
 });
 </script>
 </body>

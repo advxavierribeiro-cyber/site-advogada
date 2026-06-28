@@ -200,6 +200,16 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .portrait .cap .nm{font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--paper)}
 .portrait .cap .rl{display:block;font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-top:5px}
 .portrait::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(194,160,90,.34);border-radius:10px;pointer-events:none}
+/* duas sócias na home */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,18px);width:100%;max-width:480px;justify-self:center}
+.duo-card{position:relative;margin:0;border-radius:6px;overflow:hidden;aspect-ratio:3/4;background:linear-gradient(160deg,#1b3743,#0f1c24);box-shadow:0 42px 72px -48px rgba(15,28,36,.65);border:1px solid rgba(231,216,181,.16)}
+.duo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.duo-fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 42%,rgba(194,160,90,.14),transparent 60%)}
+.duo-fb .mono{width:54px;height:54px;opacity:.9}
+.duo-card::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 50%,rgba(11,24,32,.92))}
+.duo-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px;z-index:3}
+.duo-card figcaption b{display:block;font-family:'Playfair Display',serif;font-size:clamp(.9rem,.85rem + .3vw,1.06rem);color:var(--paper);font-weight:500;line-height:1.15}
+.duo-card figcaption span{display:block;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-soft);margin-top:4px}
 
 /* ============ SITUAÇÕES ============ */
 .situations{display:grid;gap:clamp(14px,1.4vw,20px)}
@@ -581,14 +591,17 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
           <button class="link-gold" onclick="go('equipe')">Quem conduz →</button>
         </div>
       </div>
-      <div class="portrait rv d2">
-        <span class="corner tl"></span><span class="corner br"></span>
-        <div class="frame">
-          <img src="sobre-advogada.jpeg" alt="Dra. Andrea Xavier" onerror="this.style.display='none'"/>
-          <span class="veil"></span>
-          <span class="edge"></span>
-          <span class="cap"><span class="nm">Dra. Andrea Xavier</span><span class="rl">Sócia · Previdenciário</span></span>
-        </div>
+      <div class="duo rv d2">
+        <figure class="duo-card">
+          <img src="andrea-xavier.jpg" alt="Dra. Andrea Xavier" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="duo-fb"><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg></span>
+          <figcaption><b>Dra. Andrea Xavier</b><span>Sócia · Previdenciário</span></figcaption>
+        </figure>
+        <figure class="duo-card">
+          <img src="ines-ribeiro.jpg" alt="Dra. Inês Ribeiro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="duo-fb"><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg></span>
+          <figcaption><b>Dra. Inês Ribeiro</b><span>Sócia · Cível e Sucessões</span></figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -1029,11 +1042,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         <div class="member">
           <div class="photo">
             <span class="edge"></span><span class="corner tl"></span><span class="corner br"></span>
-            <img src="andre-xavier.jpg" alt="André Xavier" onerror="this.style.display='none'"/>
-            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>André Xavier</span></div>
+            <img src="andre-lucas.jpg" alt="André Lucas" onerror="this.style.display='none'"/>
+            <div class="ph-fallback"><span class="glow"></span><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg><span>André Lucas</span></div>
           </div>
           <div class="mc">
-            <div class="mname">André Xavier</div>
+            <div class="mname">André Lucas</div>
             <div class="mrole">Estagiário de Direito</div>
             <p class="mbio">Apoia a equipe na pesquisa, no acompanhamento dos processos e na organização de cada caso, sempre com cuidado e atenção.</p>
           </div>

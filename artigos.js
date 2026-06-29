@@ -30,6 +30,25 @@
 var ARTIGOS = [
 
   {
+    id: "negativacao-indevida-o-que-fazer",
+    titulo: "Negativação indevida: o que fazer e quando cabe indenização?",
+    area: "Indenizações",
+    data: "2026-06-27",
+    resumo: "Teve o nome incluído no SPC/Serasa por engano ou por dívida já paga? Veja os primeiros passos e quando pode haver reparação.",
+    conteudo:
+      "<p>Descobrir o nome <strong>negativado</strong> (incluído no SPC ou no Serasa) por uma dívida que você não reconhece — ou que já pagou — é mais comum do que parece. A boa notícia é que há caminhos para corrigir e, em alguns casos, buscar reparação.</p>" +
+      "<h3>Primeiros passos</h3>" +
+      "<ul>" +
+      "<li>Reúna provas: extratos, comprovantes de pagamento, contratos e prints;</li>" +
+      "<li>Confirme a origem da cobrança junto ao credor e aos órgãos de proteção ao crédito;</li>" +
+      "<li>Guarde os protocolos de todos os contatos.</li>" +
+      "</ul>" +
+      "<p>Quando a inscrição é <strong>indevida</strong> — sem dívida real, sem aviso prévio ou mesmo depois da quitação — pode caber a retirada do nome e, dependendo do caso, indenização por danos morais. Mas cada situação exige análise individual: nem toda negativação gera reparação, e os detalhes do seu caso fazem diferença.</p>" +
+      "<p>Atenção a um ponto importante: se já existir outra negativação legítima ao mesmo tempo, a análise muda. Por isso vale avaliar os documentos com calma antes de agir.</p>" +
+      "<p>Está passando por isso? Fale com o escritório e avaliamos o seu caso com franqueza — sem promessas, apenas o que é possível.</p>"
+  },
+
+  {
     id: "revisao-da-vida-toda",
     titulo: "Revisão da Vida Toda: quem ainda pode pedir?",
     area: "Previdenciário",

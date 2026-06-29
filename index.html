@@ -1487,7 +1487,7 @@ function fmtData(d){
 }
 function getArtigos(){
   if(typeof ARTIGOS==='undefined'||!ARTIGOS.length) return [];
-  return ARTIGOS.slice().sort(function(a,b){return (b.data||'').localeCompare(a.data||'')});
+  return ARTIGOS.filter(function(a){return a.id!=='modelo-copie-este'}).sort(function(a,b){return (b.data||'').localeCompare(a.data||'')});
 }
 function cardHTML(a,isNew){
   return '<a class="artigo-card" href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)">'+

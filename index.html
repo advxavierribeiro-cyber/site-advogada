@@ -6,10 +6,22 @@
 <title>Xavier Ribeiro &amp; Ribeiro — Advocacia Estratégica em São José dos Campos | Previdenciário, INSS, Trabalhista e Sucessões</title>
 <meta name="description" content="Sociedade de advogados em São José dos Campos e Vale do Paraíba. Advocacia estratégica em Direito Previdenciário (aposentadoria e INSS), Trabalhista, Inventário e Indenizações. Atendimento exclusivo, rigor técnico e transparência."/>
 <link rel="canonical" href="https://www.xavierribeiroribeiro.adv.br/"/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2314252e'/%3E%3Ctext x='38' y='72' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23c2a05a'%3EX%3C/text%3E%3Ctext x='52' y='72' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23e7d8b5'%3ER%3C/text%3E%3C/svg%3E"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Xavier Ribeiro &amp; Ribeiro — Advocacia Estratégica em São José dos Campos"/>
 <meta property="og:description" content="Advocacia estratégica e sob medida em São José dos Campos. Previdenciário, Trabalhista, Sucessões e Indenizações."/>
+<meta property="og:image" content="https://site-advogada-tawny.vercel.app/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:url" content="https://site-advogada-tawny.vercel.app/"/>
+<meta property="og:site_name" content="Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Xavier Ribeiro &amp; Ribeiro — Advocacia Estratégica em São José dos Campos"/>
+<meta name="twitter:description" content="Previdenciário, Trabalhista, Sucessões e Indenizações. Atendimento exclusivo e rigor técnico."/>
+<meta name="twitter:image" content="https://site-advogada-tawny.vercel.app/og-image.jpg"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LegalService","name":"Xavier Ribeiro & Ribeiro – Sociedade de Advogados","url":"https://www.xavierribeiroribeiro.adv.br/","telephone":"+5512997434181","address":{"@type":"PostalAddress","streetAddress":"Rua Pascoal Moreira, 48","addressLocality":"São José dos Campos","addressRegion":"SP","postalCode":"12242-670","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"São José dos Campos"},{"@type":"Place","name":"Vale do Paraíba"}],"knowsAbout":["Direito Previdenciário","Aposentadoria e revisão de benefícios do INSS","Direito do Trabalho","Inventário e Sucessões","Indenizações"],"description":"Sociedade de advogados em São José dos Campos com foco em Direito Previdenciário, Trabalhista, Inventário e Indenizações."}
 </script>
@@ -544,6 +556,21 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));
   border-radius:30px;padding:5px 11px;animation:newBadge 2.6s var(--ease) infinite}
 @keyframes newBadge{0%,100%{box-shadow:0 8px 20px -10px rgba(194,160,90,.7)}50%{box-shadow:0 12px 28px -8px rgba(194,160,90,1)}}
+
+/* ===== Notícias: enquadramento dourado (destaque) ===== */
+.portal-frame{position:absolute;top:clamp(30px,5vw,72px);bottom:clamp(30px,5vw,72px);left:50%;transform:translateX(-50%);
+  width:min(1320px,100% - clamp(24px,7vw,84px));border:1px solid rgba(194,160,90,.22);border-radius:6px;z-index:0;pointer-events:none}
+.portal-frame::before,.portal-frame::after{content:"";position:absolute;width:clamp(24px,3.2vw,44px);height:clamp(24px,3.2vw,44px);border:2px solid var(--gold)}
+.portal-frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0;border-top-left-radius:6px}
+.portal-frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0;border-bottom-right-radius:6px}
+
+/* ===== Conteúdo: filtros ===== */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:clamp(26px,3vw,42px)}
+.filtros .chip{font-family:'Cinzel',serif;font-size:clamp(10px,.72vw,11.5px);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-deep);border:1px solid rgba(194,160,90,.4);border-radius:30px;padding:9px 16px;background:transparent;transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
+.filtros .chip:hover{border-color:var(--gold);background:rgba(194,160,90,.08)}
+.filtros .chip.active{background:var(--gold);color:var(--ink);border-color:var(--gold);box-shadow:0 8px 20px -12px rgba(194,160,90,.7)}
+@media(max-width:600px){.filtros{gap:8px}.filtros .chip{padding:8px 13px}}
 .foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
 .foot-bottom .foot-priv:hover{color:var(--gold-soft)}
 
@@ -807,6 +834,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   <div class="section bg-ink portal-home" id="portal-home">
     <span class="glow-a" aria-hidden="true"></span>
     <span class="edge-shimmer" aria-hidden="true"></span>
+    <span class="portal-frame" aria-hidden="true"></span>
     <div class="wrap">
       <div class="sec-head rv">
         <div><span class="eyebrow on-dark">Portal de conteúdo</span>
@@ -1255,6 +1283,15 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   </div></div>
   <div class="section bg-paper">
     <div class="wrap">
+      <div class="filtros rv" id="filtros" aria-label="Filtrar artigos por tema ou data">
+        <button class="chip active" data-f="todas">Todas</button>
+        <button class="chip" data-f="recentes">Recentes</button>
+        <button class="chip" data-f="antigas">Anteriores</button>
+        <button class="chip" data-f="Previdenciário">Previdenciário</button>
+        <button class="chip" data-f="Trabalhista">Trabalhista</button>
+        <button class="chip" data-f="Inventário &amp; Sucessões">Inventário &amp; Sucessões</button>
+        <button class="chip" data-f="Indenizações">Indenizações</button>
+      </div>
       <div class="artigos-grid stagger rv" id="portal-artigos"></div>
     </div>
   </div>
@@ -1458,10 +1495,32 @@ function cardHTML(a,isNew){
     '<span class="artigo-tag">'+a.area+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+
     '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">Ler artigo &rarr;</span></span></a>';
 }
+var FILTRO_ATUAL='todas';
+function artigosFiltrados(){
+  var arts=getArtigos();
+  if(FILTRO_ATUAL==='todas') return arts;
+  if(FILTRO_ATUAL==='recentes'||FILTRO_ATUAL==='antigas'){
+    var lim=Date.now()-120*86400000;
+    return arts.filter(function(a){var t=Date.parse(a.data||'')||0;return FILTRO_ATUAL==='recentes'?t>=lim:t<lim;});
+  }
+  return arts.filter(function(a){return (a.area||'')===FILTRO_ATUAL;});
+}
+function renderConteudo(){
+  var portal=document.getElementById('portal-artigos'); if(!portal) return;
+  var arts=artigosFiltrados();
+  portal.innerHTML = arts.length ? arts.map(function(a){return cardHTML(a,false)}).join('') : '<p class="artigo-empty">Nenhum artigo nesta seção por enquanto.</p>';
+}
+function setFiltro(f,btn){
+  FILTRO_ATUAL=f;
+  var cs=document.querySelectorAll('#filtros .chip');
+  for(var i=0;i<cs.length;i++) cs[i].classList.remove('active');
+  if(btn) btn.classList.add('active');
+  renderConteudo();
+}
 function renderPortais(){
-  var arts=getArtigos(),home=document.getElementById('home-artigos'),portal=document.getElementById('portal-artigos');
+  var arts=getArtigos(),home=document.getElementById('home-artigos');
   if(home) home.innerHTML = arts.length ? arts.slice(0,3).map(function(a,i){return cardHTML(a,i===0)}).join('') : '<p class="artigo-empty">Em breve, os primeiros artigos.</p>';
-  if(portal) portal.innerHTML = arts.length ? arts.map(function(a){return cardHTML(a,false)}).join('') : '<p class="artigo-empty">Em breve, publicaremos conteúdos sobre os seus direitos.</p>';
+  renderConteudo();
 }
 function renderArtigo(slug){
   var a=getArtigos().filter(function(x){return x.id===slug})[0];
@@ -1503,6 +1562,8 @@ if(!reduce&&fine){
 
 window.addEventListener('DOMContentLoaded',function(){
   renderPortais();
+  var fch=document.querySelectorAll('#filtros .chip');
+  for(var fi=0;fi<fch.length;fi++){(function(b){b.addEventListener('click',function(){setFiltro(b.getAttribute('data-f'),b);});})(fch[fi]);}
   var h=(location.hash||'').replace('#','');
   var deep=(isArea(h)&&document.getElementById('page-'+h))||isArtigo(h)||h==='conteudo';
   var id=deep?h:'inicio';

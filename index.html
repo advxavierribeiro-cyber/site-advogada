@@ -519,6 +519,31 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   background:linear-gradient(90deg,var(--gold),transparent)}
 .portal-home .artigo-card{background:linear-gradient(180deg,#fff,#fbf8f1)}
 .portal-home .artigo-card:hover{box-shadow:0 46px 84px -40px rgba(0,0,0,.62);border-color:rgba(194,160,90,.65)}
+
+/* ===== Notícias: botão do hero (novidade) ===== */
+.news-cta{position:relative;white-space:normal;text-align:left;line-height:1.22;letter-spacing:.1em;
+  max-width:min(90vw,360px);animation:newsGlow 3.4s var(--ease) infinite}
+.news-cta-txt{display:inline-block;text-align:left}
+.news-live{position:relative;width:9px;height:9px;flex:none;border-radius:50%;background:var(--ink)}
+.news-live::after{content:"";position:absolute;inset:0;border-radius:50%;animation:liveRingDark 2s var(--ease) infinite}
+@keyframes liveRingDark{0%{box-shadow:0 0 0 0 rgba(20,37,46,.6)}70%{box-shadow:0 0 0 9px rgba(20,37,46,0)}100%{box-shadow:0 0 0 0 rgba(20,37,46,0)}}
+@keyframes newsGlow{0%,100%{box-shadow:0 12px 34px -14px rgba(194,160,90,.55)}50%{box-shadow:0 18px 50px -12px rgba(194,160,90,.95)}}
+@media(min-width:560px){.news-cta{white-space:nowrap;max-width:none}}
+
+/* ===== Notícias: destaque dinâmico da seção ===== */
+.portal-live{display:inline-flex;align-items:center;gap:9px;margin-top:16px;
+  font-family:'Cinzel',serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);
+  border:1px solid rgba(194,160,90,.4);border-radius:30px;padding:6px 14px;background:rgba(194,160,90,.07)}
+.portal-live .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);position:relative;flex:none}
+.portal-live .dot::after{content:"";position:absolute;inset:0;border-radius:50%;animation:liveRingGold 2.2s var(--ease) infinite}
+@keyframes liveRingGold{0%{box-shadow:0 0 0 0 rgba(194,160,90,.65)}70%{box-shadow:0 0 0 9px rgba(194,160,90,0)}100%{box-shadow:0 0 0 0 rgba(194,160,90,0)}}
+.portal-home .edge-shimmer{position:absolute;top:0;left:0;height:2px;width:34%;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);animation:edgeRun 6s linear infinite}
+@keyframes edgeRun{0%{transform:translateX(-60%)}100%{transform:translateX(360%)}}
+.artigo-new{position:absolute;top:13px;right:13px;z-index:4;font-family:'Cinzel',serif;font-size:8.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+  border-radius:30px;padding:5px 11px;animation:newBadge 2.6s var(--ease) infinite}
+@keyframes newBadge{0%,100%{box-shadow:0 8px 20px -10px rgba(194,160,90,.7)}50%{box-shadow:0 12px 28px -8px rgba(194,160,90,1)}}
 .foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
 .foot-bottom .foot-priv:hover{color:var(--gold-soft)}
 
@@ -626,7 +651,10 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
         <h1>Advocacia <span class="it">estratégica</span> e sob medida em São José dos Campos.</h1>
         <p class="hero-sub">Direito Previdenciário, Trabalhista, Sucessões e Indenizações conduzidos com rigor técnico e acompanhamento próximo — do primeiro contato à decisão final.</p>
         <div class="hero-cta">
-          <a class="btn btn-cta" data-magnetic href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar Consulta</a>
+          <a class="btn btn-cta news-cta" data-magnetic href="#portal-home" onclick="verNoticias(event)" aria-label="Ver as notícias que impactam seus direitos">
+            <span class="news-live" aria-hidden="true"></span>
+            <span class="news-cta-txt">Notícias que impactam seus direitos</span>
+          </a>
           <button class="link-gold on-dark" onclick="go('areas')">Conhecer as áreas →</button>
         </div>
       </div>
@@ -776,11 +804,13 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   </div>
 
   <!-- ===== PORTAL DE CONTEÚDO (home) ===== -->
-  <div class="section bg-ink portal-home">
+  <div class="section bg-ink portal-home" id="portal-home">
     <span class="glow-a" aria-hidden="true"></span>
+    <span class="edge-shimmer" aria-hidden="true"></span>
     <div class="wrap">
       <div class="sec-head rv">
-        <div><span class="eyebrow on-dark">Portal de conteúdo</span></div>
+        <div><span class="eyebrow on-dark">Portal de conteúdo</span>
+          <span class="portal-live"><span class="dot" aria-hidden="true"></span>Novidades</span></div>
         <div><h2 style="color:var(--paper)">Notícias que impactam os seus direitos.</h2>
           <p class="lead" style="margin-top:16px;color:rgba(246,243,236,.72)">As últimas decisões, as mudanças na legislação e as novidades sobre aposentadorias, benefícios do INSS e direitos trabalhistas — explicadas de forma simples, para você entender o que afeta o seu caso.</p></div>
       </div>
@@ -1398,6 +1428,16 @@ function go(id,ev){
   history.pushState({page:id,scroll:0},'','#'+id);
 }
 function abrirArtigo(slug,ev){ go('artigo-'+slug,ev); }
+function verNoticias(ev){
+  if(ev) ev.preventDefault();
+  var doScroll=function(){
+    var el=document.getElementById('portal-home'); if(!el) return;
+    var y=el.getBoundingClientRect().top+window.scrollY-64;
+    window.scrollTo({top:y,behavior:'smooth'});
+  };
+  if(current!=='inicio'){ go('inicio'); requestAnimationFrame(doScroll); }
+  else doScroll();
+}
 window.addEventListener('popstate',function(e){
   var st=e.state||{};
   applyState(st.page || (location.hash||'').replace('#','') || 'inicio', st.scroll||0);
@@ -1412,15 +1452,16 @@ function getArtigos(){
   if(typeof ARTIGOS==='undefined'||!ARTIGOS.length) return [];
   return ARTIGOS.slice().sort(function(a,b){return (b.data||'').localeCompare(a.data||'')});
 }
-function cardHTML(a){
+function cardHTML(a,isNew){
   return '<a class="artigo-card" href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)">'+
+    (isNew?'<span class="artigo-new">Novo</span>':'')+
     '<span class="artigo-tag">'+a.area+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+
     '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">Ler artigo &rarr;</span></span></a>';
 }
 function renderPortais(){
   var arts=getArtigos(),home=document.getElementById('home-artigos'),portal=document.getElementById('portal-artigos');
-  if(home) home.innerHTML = arts.length ? arts.slice(0,3).map(cardHTML).join('') : '<p class="artigo-empty">Em breve, os primeiros artigos.</p>';
-  if(portal) portal.innerHTML = arts.length ? arts.map(cardHTML).join('') : '<p class="artigo-empty">Em breve, publicaremos conteúdos sobre os seus direitos.</p>';
+  if(home) home.innerHTML = arts.length ? arts.slice(0,3).map(function(a,i){return cardHTML(a,i===0)}).join('') : '<p class="artigo-empty">Em breve, os primeiros artigos.</p>';
+  if(portal) portal.innerHTML = arts.length ? arts.map(function(a){return cardHTML(a,false)}).join('') : '<p class="artigo-empty">Em breve, publicaremos conteúdos sobre os seus direitos.</p>';
 }
 function renderArtigo(slug){
   var a=getArtigos().filter(function(x){return x.id===slug})[0];

@@ -501,6 +501,27 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .wa::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(194,160,90,.5);animation:pulse 2.8s var(--ease) infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(194,160,90,.5)}70%{box-shadow:0 0 0 18px rgba(194,160,90,0)}100%{box-shadow:0 0 0 0 rgba(194,160,90,0)}}
 
+/* ===== Tipografia: evitar palavras órfãs nos títulos ===== */
+h1,h2,h3,h4,blockquote{text-wrap:balance}
+.hero-sub,.lead,.phead p,.area-hero p,.story p,.statement .st-support,.artigo-card p{text-wrap:pretty}
+
+/* ===== Destaque especial: Portal de Conteúdo (home) ===== */
+.portal-home{position:relative;overflow:hidden;background:linear-gradient(180deg,#16282f,#0f1f27 55%,#14252e)}
+.portal-home::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;z-index:2;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.75}
+.portal-home::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;z-index:2;
+  background:linear-gradient(90deg,transparent,rgba(194,160,90,.45),transparent)}
+.portal-home .glow-a{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(55% 70% at 84% -10%,rgba(194,160,90,.22),transparent 60%),radial-gradient(46% 64% at 6% 112%,rgba(39,76,91,.55),transparent 60%)}
+.portal-home .wrap{position:relative;z-index:1}
+.portal-home .sec-head h2{position:relative;display:inline-block}
+.portal-home .sec-head h2::after{content:"";position:absolute;left:0;bottom:-12px;width:64px;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent)}
+.portal-home .artigo-card{background:linear-gradient(180deg,#fff,#fbf8f1)}
+.portal-home .artigo-card:hover{box-shadow:0 46px 84px -40px rgba(0,0,0,.62);border-color:rgba(194,160,90,.65)}
+.foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
+.foot-bottom .foot-priv:hover{color:var(--gold-soft)}
+
 /* ===== MOBILE: menos "zoom", mais conteúdo na tela (NÃO afeta o desktop) ===== */
 @media(max-width:600px){
   :root{
@@ -630,12 +651,12 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
         <figure class="duo-card">
           <img src="andrea-xavier.jpg" alt="Dra. Andrea Xavier" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
           <span class="duo-fb"><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg></span>
-          <figcaption><b>Dra. Andrea Xavier</b><span>Sócia · Previdenciário</span></figcaption>
+          <figcaption><b>Dra. Andrea Xavier</b></figcaption>
         </figure>
         <figure class="duo-card">
           <img src="ines-ribeiro.jpg" alt="Dra. Inês Ribeiro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
           <span class="duo-fb"><svg class="mono" viewBox="0 0 120 96"><text x="42" y="74" text-anchor="middle" fill="#c2a05a" font-family="'Playfair Display',serif" font-weight="600" font-size="92">X</text><text x="74" y="74" text-anchor="middle" fill="#e7d8b5" font-family="'Playfair Display',serif" font-weight="600" font-size="92">R</text></svg></span>
-          <figcaption><b>Dra. Inês Ribeiro</b><span>Sócia · Cível e Sucessões</span></figcaption>
+          <figcaption><b>Dra. Inês Ribeiro</b></figcaption>
         </figure>
       </div>
     </div>
@@ -755,7 +776,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   </div>
 
   <!-- ===== PORTAL DE CONTEÚDO (home) ===== -->
-  <div class="section bg-ink">
+  <div class="section bg-ink portal-home">
+    <span class="glow-a" aria-hidden="true"></span>
     <div class="wrap">
       <div class="sec-head rv">
         <div><span class="eyebrow on-dark">Portal de conteúdo</span></div>
@@ -1224,6 +1246,81 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   </div>
 </section>
 
+<!-- ============================== POLÍTICA DE PRIVACIDADE E COOKIES (LGPD) ============================== -->
+<section class="page" id="page-privacidade">
+  <div class="phead"><div class="phead-bg"></div><div class="wrap">
+    <button class="back-link rv" onclick="go('inicio')">← Início</button>
+    <span class="eyebrow on-dark rv">Transparência e proteção de dados</span>
+    <h1 class="rv d1">Política de Privacidade <span class="it">e Cookies</span></h1>
+    <p class="rv d2">Como o escritório Xavier Ribeiro &amp; Ribeiro coleta, utiliza e protege os seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+  </div></div>
+
+  <div class="section bg-paper">
+    <div class="wrap artigo-body">
+      <p class="artigo-data rv">Última atualização: junho de 2026</p>
+      <div class="artigo-conteudo rv d1">
+        <p>A sua privacidade é levada a sério. A <strong>Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados</strong> (“escritório”, “nós”) está comprometida com a proteção dos dados pessoais de clientes, potenciais clientes e visitantes deste site. Esta Política explica, de forma transparente, quais dados coletamos, como e por que os utilizamos, com quem os compartilhamos e quais são os seus direitos, em conformidade com a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong> e demais normas aplicáveis.</p>
+
+        <h2>1. Quem é o controlador dos dados</h2>
+        <p>O controlador dos dados pessoais tratados por meio deste site é o escritório <strong>Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados</strong>, com atuação em São José dos Campos e região do Vale do Paraíba/SP. Para qualquer questão relativa à proteção de dados, utilize os canais indicados ao final desta Política.</p>
+
+        <h2>2. Quais dados pessoais coletamos</h2>
+        <p><strong>Dados que você nos fornece:</strong> ao preencher o formulário de contato ou nos chamar pelo WhatsApp, podemos coletar nome, telefone, e-mail, a área jurídica de interesse e as informações que você decidir compartilhar sobre a sua situação.</p>
+        <p><strong>Dados coletados automaticamente:</strong> ao navegar no site, podem ser coletados dados técnicos como endereço IP, tipo de dispositivo e navegador, páginas visitadas e data/hora de acesso, por meio de cookies e tecnologias semelhantes.</p>
+        <p>Recomendamos que você <strong>evite enviar dados sensíveis ou detalhes sigilosos</strong> do seu caso por formulário ou mensagem antes de estabelecida a relação profissional.</p>
+
+        <h2>3. Para que utilizamos os dados e com qual base legal</h2>
+        <p>Tratamos os seus dados pessoais apenas para finalidades legítimas e específicas, com fundamento nas bases legais da LGPD:</p>
+        <ul>
+          <li>responder a contatos, agendar consultas e prestar as informações solicitadas (procedimentos preliminares a contrato e legítimo interesse);</li>
+          <li>prestar os serviços advocatícios contratados e acompanhar o andamento do caso (execução de contrato);</li>
+          <li>cumprir obrigações legais, fiscais e perante a OAB (cumprimento de obrigação legal);</li>
+          <li>aprimorar o site, a segurança e a experiência de navegação (legítimo interesse);</li>
+          <li>quando aplicável, nas hipóteses em que você manifestar o seu consentimento.</li>
+        </ul>
+
+        <h2>4. Cookies e tecnologias semelhantes</h2>
+        <p>Cookies são pequenos arquivos armazenados no seu dispositivo que permitem o funcionamento do site e a melhoria da sua experiência. Podemos utilizar:</p>
+        <ul>
+          <li><strong>Cookies necessários:</strong> essenciais para o funcionamento básico do site;</li>
+          <li><strong>Cookies de desempenho e análise:</strong> ajudam a entender, de forma agregada, como o site é utilizado;</li>
+          <li><strong>Cookies de funcionalidade:</strong> lembram preferências de navegação.</li>
+        </ul>
+        <p>Você pode gerenciar ou desativar cookies nas configurações do seu navegador. A desativação de alguns cookies pode afetar o funcionamento de partes do site.</p>
+
+        <h2>5. Compartilhamento de dados</h2>
+        <p>Nós <strong>não vendemos</strong> os seus dados pessoais. O compartilhamento ocorre apenas quando necessário: com prestadores de serviço que operam o site e as ferramentas de comunicação (sob obrigações de confidencialidade); para cumprimento de obrigação legal, regulatória ou de ordem judicial; e para o exercício regular de direitos em processos.</p>
+
+        <h2>6. Sigilo profissional</h2>
+        <p>As informações relacionadas a casos e clientes são protegidas pelo <strong>sigilo profissional do advogado</strong>, garantido pelo Estatuto da Advocacia (Lei nº 8.906/1994) e pelo Código de Ética e Disciplina da OAB, além das proteções previstas na LGPD.</p>
+
+        <h2>7. Armazenamento, segurança e retenção</h2>
+        <p>Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados contra acessos não autorizados, perda ou alteração. Os dados são mantidos apenas pelo tempo necessário às finalidades informadas e ao cumprimento de obrigações legais e prazos prescricionais.</p>
+
+        <h2>8. Os seus direitos como titular</h2>
+        <p>Nos termos do art. 18 da LGPD, você pode, a qualquer momento, solicitar:</p>
+        <ul>
+          <li>a confirmação da existência de tratamento e o acesso aos seus dados;</li>
+          <li>a correção de dados incompletos, inexatos ou desatualizados;</li>
+          <li>a anonimização, o bloqueio ou a eliminação de dados desnecessários ou tratados em desconformidade com a lei;</li>
+          <li>a portabilidade dos dados e a informação sobre o compartilhamento;</li>
+          <li>a revogação do consentimento e a oposição a tratamento, nas hipóteses cabíveis.</li>
+        </ul>
+
+        <h2>9. Como exercer os seus direitos</h2>
+        <p>Para exercer os seus direitos ou esclarecer dúvidas sobre esta Política, fale com o escritório pelo <strong>WhatsApp (12) 99743-4181</strong> ou pelo e-mail oficial do escritório. Responderemos no menor prazo possível, observada a legislação aplicável.</p>
+
+        <h2>10. Alterações desta Política</h2>
+        <p>Esta Política poderá ser atualizada periodicamente para refletir mudanças legais ou operacionais. A versão vigente estará sempre disponível nesta página, com a respectiva data de atualização.</p>
+
+        <h2>11. Legislação e foro</h2>
+        <p>Esta Política é regida pela legislação brasileira. Fica eleito o foro da comarca de São José dos Campos/SP para dirimir eventuais questões, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
+      </div>
+      <div class="artigo-cta rv"><button class="btn btn-cta" data-magnetic onclick="go('contato')">Falar com o escritório</button></div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- ============================== RODAPÉ ============================== -->
@@ -1262,6 +1359,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
     </div>
     <div class="foot-bottom">
       <span class="badge"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>São José dos Campos · Vale do Paraíba · SP</span></span>
+      <button class="foot-priv" onclick="go('privacidade')">Política de Privacidade e Cookies</button>
       <span>© Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados.</span>
     </div>
     <p class="foot-legal">OAB/SP · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento da OAB sobre publicidade na advocacia. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.</p>
@@ -1269,12 +1367,12 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 </footer>
 
 <a class="wa" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script src="artigos.js"></script>
 <script>
-var PAGES=['inicio','escritorio','areas','conteudo','equipe','contato'];
+var PAGES=['inicio','escritorio','areas','conteudo','equipe','contato','privacidade'];
 var hdr=document.getElementById('hdr');
 var current='inicio';
 function isArea(id){return id.indexOf('area-')===0}

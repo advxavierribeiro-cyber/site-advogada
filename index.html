@@ -598,6 +598,31 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   :root{--section:clamp(56px,8vw,96px)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.rv,.stagger>*{opacity:1!important;transform:none!important}}
+/* ===== O Escritório: Propósito/Visão + Onde estamos ===== */
+.pv-grid{display:grid;gap:clamp(20px,3vw,38px);margin-top:clamp(30px,3.5vw,46px)}
+@media(min-width:760px){.pv-grid{grid-template-columns:1fr 1fr}}
+.pv-item{border-left:2px solid var(--gold);padding-left:22px}
+.pv-item .pv-k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:10px}
+.pv-item p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body);line-height:1.7}
+.locais{display:grid;gap:clamp(14px,1.6vw,20px);margin-top:8px}
+@media(min-width:680px){.locais{grid-template-columns:1fr 1fr}}
+.local{border:1px solid var(--line);border-radius:10px;padding:clamp(20px,2.2vw,28px);background:#fff}
+.local .lc-tag{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.local h3{font-size:var(--fs-h3);margin:8px 0 6px}
+.local p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body);line-height:1.6}
+/* ===== Conteúdo: destaque + fonte ===== */
+.destaque{position:relative;display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#fff,#fbf8f1);margin-bottom:clamp(20px,2.4vw,32px);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease)}
+@media(min-width:760px){.destaque{grid-template-columns:.95fr 1.05fr}}
+.destaque:hover{box-shadow:0 40px 80px -48px rgba(20,37,46,.5);border-color:rgba(194,160,90,.55)}
+.destaque .dq-media{position:relative;min-height:210px;background:linear-gradient(160deg,#1b3743,#0f1c24);overflow:hidden}
+.destaque .dq-media::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 70% 10%,rgba(194,160,90,.18),transparent 60%)}
+.destaque .dq-media .mono{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96px;height:78px;opacity:.9;z-index:1}
+.destaque .dq-body{padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:center}
+.destaque .dq-flag{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));border-radius:30px;padding:5px 12px;margin-bottom:14px}
+.destaque .dq-body h3{font-size:clamp(1.3rem,1.1rem + 1vw,1.95rem);line-height:1.2;color:var(--ink)}
+.destaque .dq-body p{margin-top:12px;color:var(--text-soft);font-weight:300;line-height:1.7}
+.destaque .dq-go{margin-top:18px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep)}
+.artigo-fonte{display:block;margin-top:10px;font-size:11.5px;color:var(--text-soft);font-weight:300;font-style:italic}
 </style>
 </head>
 <body>
@@ -880,9 +905,13 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   <div class="section bg-paper2">
     <div class="wrap">
       <div class="sec-head rv">
-        <div><span class="eyebrow">O que nos move</span></div>
+        <div><span class="eyebrow">Propósito · Visão · Valores</span></div>
         <div><h2>Proximidade humana, com a técnica de quem leva cada causa a sério.</h2>
           <p class="lead" style="margin-top:16px">Somos um escritório de relação próxima: você fala diretamente com a advogada que conduz o seu caso, entende cada etapa e decide com segurança. É essa combinação de cuidado e rigor que orienta tudo o que fazemos.</p></div>
+      </div>
+      <div class="pv-grid rv">
+        <div class="pv-item"><span class="pv-k">Propósito</span><p>Tornar o Direito acessível e próximo — traduzir o que é técnico em decisões claras, para que cada cliente entenda exatamente o que está em jogo e decida com segurança.</p></div>
+        <div class="pv-item"><span class="pv-k">Visão</span><p>Ser, no Vale do Paraíba, um escritório-boutique de referência em Direito Previdenciário e de família, reconhecido pela proximidade, pela ética e pelo rigor técnico.</p></div>
       </div>
       <div class="principles stagger rv">
         <div class="principle"><h3>Atenção individual</h3><p>Cada caso é único e recebe análise dedicada. Entender a história do cliente — e não apenas o processo — orienta a melhor estratégia. Não existe solução de prateleira.</p></div>
@@ -899,6 +928,20 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
         <h2>Por que o <span class="it">Previdenciário</span> é o nosso foco.</h2>
         <p class="lead" style="margin-top:22px">O Direito Previdenciário é a defesa de quem contribuiu a vida inteira e merece se aposentar com tranquilidade. É um terreno técnico, cheio de regras de transição e prazos — e é justamente por isso que exige um olhar dedicado, atualizado e paciente.</p>
         <p style="margin-top:18px;color:var(--text-soft);font-weight:300">Concentrar a nossa energia nessa área permite ir além do óbvio: analisar cada CNIS com profundidade, encontrar o melhor enquadramento e orientar o momento certo de agir. E, quando o seu caso pede outras frentes — Trabalhista, Sucessões ou Indenizações —, conduzimos com a mesma proximidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section bg-paper2">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><span class="eyebrow">Onde estamos</span></div>
+        <div><h2>Presença no Vale do Paraíba.</h2>
+          <p class="lead" style="margin-top:16px">Atendemos São José dos Campos e toda a região, com unidade também em Campos do Jordão — sempre mediante agendamento.</p></div>
+      </div>
+      <div class="locais rv">
+        <div class="local"><span class="lc-tag">Matriz</span><h3>São José dos Campos</h3><p>Rua Pascoal Moreira, 48 · Jardim Nova América — em frente à 111 Imóveis · SJC/SP.</p></div>
+        <div class="local"><span class="lc-tag">Filial</span><h3>Campos do Jordão</h3><p>Av. Januário Miraglia, 659 · Sala 13 — Prédio Pátio Dubieux · Campos do Jordão/SP.</p></div>
       </div>
     </div>
   </div>
@@ -1285,15 +1328,16 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   </div></div>
   <div class="section bg-paper">
     <div class="wrap">
-      <div class="filtros rv" id="filtros" aria-label="Filtrar artigos por tema ou data">
+      <div class="filtros rv" id="filtros" aria-label="Filtrar conteúdo">
         <button class="chip active" data-f="todas">Todas</button>
-        <button class="chip" data-f="recentes">Recentes</button>
-        <button class="chip" data-f="antigas">Anteriores</button>
+        <button class="chip" data-f="artigos">Artigos</button>
+        <button class="chip" data-f="imprensa">Imprensa</button>
         <button class="chip" data-f="Previdenciário">Previdenciário</button>
         <button class="chip" data-f="Trabalhista">Trabalhista</button>
         <button class="chip" data-f="Inventário &amp; Sucessões">Inventário &amp; Sucessões</button>
         <button class="chip" data-f="Indenizações">Indenizações</button>
       </div>
+      <div class="rv" id="conteudo-destaque"></div>
       <div class="artigos-grid stagger rv" id="portal-artigos"></div>
     </div>
   </div>
@@ -1492,25 +1536,41 @@ function getArtigos(){
   return ARTIGOS.filter(function(a){return a.id!=='modelo-copie-este'}).sort(function(a,b){return (b.data||'').localeCompare(a.data||'')});
 }
 function cardHTML(a,isNew){
-  return '<a class="artigo-card" href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)">'+
-    (isNew?'<span class="artigo-new">Novo</span>':'')+
-    '<span class="artigo-tag">'+a.area+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+
-    '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">Ler artigo &rarr;</span></span></a>';
+  var imp=(a.categoria==='Imprensa'), ext=imp&&a.link;
+  var open=ext?(' href="'+a.link+'" target="_blank" rel="noopener"'):(' href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)"');
+  var tag=imp?'Imprensa':(a.area||'');
+  var go=imp?'Ver na fonte &rarr;':'Ler mais &rarr;';
+  var fonte=(imp&&a.fonte)?('<span class="artigo-fonte">Fonte: '+a.fonte+'</span>'):'';
+  return '<a class="artigo-card"'+open+'>'+(isNew?'<span class="artigo-new">Novo</span>':'')+
+    '<span class="artigo-tag">'+tag+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+
+    '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">'+go+'</span></span></a>';
 }
 var FILTRO_ATUAL='todas';
 function artigosFiltrados(){
   var arts=getArtigos();
   if(FILTRO_ATUAL==='todas') return arts;
-  if(FILTRO_ATUAL==='recentes'||FILTRO_ATUAL==='antigas'){
-    var lim=Date.now()-120*86400000;
-    return arts.filter(function(a){var t=Date.parse(a.data||'')||0;return FILTRO_ATUAL==='recentes'?t>=lim:t<lim;});
+  if(FILTRO_ATUAL==='artigos'||FILTRO_ATUAL==='imprensa'){
+    var cat=(FILTRO_ATUAL==='imprensa')?'Imprensa':'Artigos';
+    return arts.filter(function(a){return (a.categoria||'Artigos')===cat;});
   }
   return arts.filter(function(a){return (a.area||'')===FILTRO_ATUAL;});
 }
+function destaqueHTML(a){
+  var imp=(a.categoria==='Imprensa'), ext=imp&&a.link;
+  var open=ext?(' href="'+a.link+'" target="_blank" rel="noopener"'):(' href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)"');
+  var go=imp?'Ver na fonte &rarr;':'Ler mais &rarr;';
+  var fonte=(imp&&a.fonte)?('<span class="artigo-fonte">Fonte: '+a.fonte+'</span>'):'';
+  return '<a class="destaque"'+open+'>'+
+    '<span class="dq-media"><svg class="mono" viewBox="0 0 120 96" aria-hidden="true"><text class="x" x="42" y="74" text-anchor="middle" font-family="Playfair Display,serif" font-weight="600" font-size="92">X</text><text class="r" x="74" y="74" text-anchor="middle" font-family="Playfair Display,serif" font-weight="600" font-size="92">R</text></svg></span>'+
+    '<span class="dq-body"><span class="dq-flag">Em destaque · '+(imp?'Imprensa':(a.area||''))+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+'<span class="dq-go">'+go+'</span></span></a>';
+}
 function renderConteudo(){
   var portal=document.getElementById('portal-artigos'); if(!portal) return;
+  var dq=document.getElementById('conteudo-destaque');
   var arts=artigosFiltrados();
-  portal.innerHTML = arts.length ? arts.map(function(a){return cardHTML(a,false)}).join('') : '<p class="artigo-empty">Nenhum artigo nesta seção por enquanto.</p>';
+  if(!arts.length){ if(dq) dq.innerHTML=''; portal.innerHTML='<p class="artigo-empty">Nenhum conteúdo nesta seção por enquanto.</p>'; return; }
+  if(dq) dq.innerHTML=destaqueHTML(arts[0]);
+  portal.innerHTML = arts.slice(1).map(function(a){return cardHTML(a,false)}).join('');
 }
 function setFiltro(f,btn){
   FILTRO_ATUAL=f;

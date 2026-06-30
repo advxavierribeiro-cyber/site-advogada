@@ -575,6 +575,9 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .uni-links a svg{flex:none}
 .foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
 .foot-bottom .foot-priv:hover{color:var(--gold-soft)}
+.lang-toggle{order:1;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.12em;color:var(--champagne);border:1px solid rgba(231,216,181,.45);border-radius:30px;padding:7px 13px;background:transparent;transition:.3s var(--ease);flex:none}
+.lang-toggle:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+@media(max-width:1039px){.lang-toggle{margin-left:auto}}
 
 /* ===== MOBILE: menos "zoom", mais conteúdo na tela (NÃO afeta o desktop) ===== */
 @media(max-width:600px){
@@ -654,6 +657,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
         </span>
       </span>
     </a>
+    <button id="lang-toggle" class="lang-toggle" type="button" onclick="toggleLang()" aria-label="Português / English" translate="no">EN</button>
     <a class="btn btn-ghost on-dark hdr-cta" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
     <nav class="nav" aria-label="Principal">
       <button class="active" id="nav-inicio" onclick="go('inicio',event)">Início</button>
@@ -1653,7 +1657,46 @@ window.addEventListener('DOMContentLoaded',function(){
   history.replaceState({page:id,scroll:0},'','#'+id);
   applyState(id,0);
   onScroll();
+  try{ if(localStorage.getItem('xrr_lang')==='en') setLang('en'); }catch(e){}
 });
+
+/* ===== Bilíngue PT/EN — aditivo e seguro (PT é o padrão; EN é aplicado por cima) ===== */
+var XRR_DICT={
+ "Início":"Home","O Escritório":"The Firm","Áreas de Atuação":"Practice Areas","Conteúdo":"Insights","Equipe":"Team","Contato":"Contact","Agendar consulta":"Book a consultation","Agendar Consulta":"Book a Consultation",
+ "Sociedade de Advogados · São José dos Campos":"Law Firm · São José dos Campos",
+ "Advocacia estratégica e sob medida em São José dos Campos.":"<span class=\"it\">Strategic</span>, tailored advocacy in São José dos Campos.",
+ "Direito Previdenciário, Trabalhista, Sucessões e Indenizações conduzidos com rigor técnico e acompanhamento próximo — do primeiro contato à decisão final.":"Social Security, Labor, Estate and Compensation law, conducted with technical rigor and close support — from first contact to the final decision.",
+ "Notícias que impactam seus direitos":"News that impacts your rights",
+ "Conhecer as áreas →":"Explore our areas →","Conhecer o escritório":"About the firm","Quem conduz →":"Who leads →",
+ "Portal de conteúdo":"Content Hub","Notícias que impactam os seus direitos.":"News that impacts your rights.",
+ "As últimas decisões, as mudanças na legislação e as novidades sobre aposentadorias, benefícios do INSS e direitos trabalhistas — explicadas de forma simples, para você entender o que afeta o seu caso.":"The latest court decisions, changes in legislation and updates on retirement, INSS benefits and labor rights — explained in plain language, so you understand what affects your case.",
+ "Novidades":"New","Ver todos os artigos →":"See all articles →",
+ "Atendimento":"Get in touch","Agende uma consulta para avaliarmos o seu caso.":"Book a consultation so we can assess your case.","Agende uma consulta para avaliar o seu caso.":"Book a consultation to assess your case.","Falar com o escritório":"Talk to the firm",
+ "Todas":"All","Artigos":"Articles","Imprensa":"Press","Buscar por palavra-chave…":"Search by keyword…","Área de atuação":"Practice area","Categoria":"Category","Data":"Date","Limpar ✕":"Clear ✕",
+ "Previdenciário":"Social Security","Trabalhista":"Labor","Inventário & Sucessões":"Estate & Succession","Indenizações":"Compensation",
+ "Canal direto":"Direct channel","Fale com o escritório.":"Get in touch.","Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês.":"Tell us what is going on and we will show you the next steps. Close support, no legal jargon.",
+ "Envie uma mensagem.":"Send a message.","Conte a sua situação em poucas linhas. Retornamos com os próximos passos, com clareza e sem compromisso.":"Tell us your situation in a few lines. We will reply with the next steps, clearly and with no obligation.",
+ "Nome completo":"Full name","Telefone ou e-mail":"Phone or e-mail","Assunto":"Subject","Mensagem":"Message","Enviar mensagem":"Send message","Horário":"Hours","Nossas unidades":"Our offices",
+ "Matriz · São José dos Campos":"Headquarters · São José dos Campos","Filial · Campos do Jordão":"Branch · Campos do Jordão","Atendimento mediante agendamento, em ambas as unidades.":"By appointment only, at both offices.",
+ "Navegação":"Navigation","Endereço":"Address","Política de Privacidade e Cookies":"Privacy & Cookies Policy",
+ "Quem somos":"About us","Nossa história":"Our story","Onde estamos":"Where we are","Propósito · Visão · Valores":"Purpose · Vision · Values","Propósito":"Purpose","Visão":"Vision","O que nos move":"What drives us",
+ "Um escritório feito de proximidade e técnica.":"A firm built on <span class=\"it\">closeness</span> and technique.",
+ "Presença no Vale do Paraíba.":"Presence across the Vale do Paraíba.","Matriz":"Headquarters","Filial":"Branch",
+ "Foco e dedicação":"Focus and dedication","Atenção individual":"Individual attention","Clareza em cada etapa":"Clarity at every step","Compromisso ético":"Ethical commitment",
+ "Áreas de atuação":"Practice areas","Como podemos ajudar":"How we can help","Ler mais →":"Read more →","Ler artigo →":"Read article →","Ver na fonte →":"View source →"
+};
+function _xn(t){return (t||'').replace(/\s+/g,' ').trim();}
+function setLang(lang){
+ var els=document.querySelectorAll('h1,h2,h3,h4,p,li,button,a,span,blockquote,label,option');
+ for(var i=0;i<els.length;i++){var el=els[i];var ok=true;
+  for(var j=0;j<el.children.length;j++){if(!/^(SPAN|B|I|EM|STRONG|BR|A|SVG|SMALL)$/.test(el.children[j].tagName)){ok=false;break;}}
+  if(!ok)continue; var k=_xn(el.textContent); if(!Object.prototype.hasOwnProperty.call(XRR_DICT,k))continue;
+  if(!el.hasAttribute('data-pt'))el.setAttribute('data-pt',el.innerHTML);
+  el.innerHTML=(lang==='en')?XRR_DICT[k]:el.getAttribute('data-pt');}
+ document.documentElement.lang=(lang==='en')?'en':'pt-BR';
+ var t=document.getElementById('lang-toggle');if(t)t.textContent=(lang==='en')?'PT':'EN';
+ window._XRRLANG=lang;try{localStorage.setItem('xrr_lang',lang);}catch(e){}}
+function toggleLang(){setLang((window._XRRLANG==='en')?'pt':'en');}
 </script>
 </body>
 </html>

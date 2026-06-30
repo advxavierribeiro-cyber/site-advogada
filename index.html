@@ -623,6 +623,17 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .destaque .dq-body p{margin-top:12px;color:var(--text-soft);font-weight:300;line-height:1.7}
 .destaque .dq-go{margin-top:18px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep)}
 .artigo-fonte{display:block;margin-top:10px;font-size:11.5px;color:var(--text-soft);font-weight:300;font-style:italic}
+/* ===== Conteúdo: filtro estilo NW (busca + selects) ===== */
+.cfiltro{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:clamp(26px,3vw,42px)}
+.cf-busca{position:relative;flex:1 1 240px;display:flex;align-items:center}
+.cf-busca svg{position:absolute;left:14px;width:17px;height:17px;color:var(--gold-deep);pointer-events:none}
+.cf-busca input{width:100%;font-family:'Inter',sans-serif;font-size:14.5px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px 12px 40px;transition:.3s}
+.cf-busca input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,160,90,.18)}
+.cf-select{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 38px 12px 14px;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a7c3e' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:15px}
+.cf-select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(194,160,90,.18)}
+.cf-limpar{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);border:1px solid rgba(194,160,90,.4);border-radius:8px;padding:12px 16px;background:transparent;transition:.3s;cursor:pointer}
+.cf-limpar:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+@media(max-width:560px){.cf-select,.cf-busca{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -1328,14 +1339,12 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
   </div></div>
   <div class="section bg-paper">
     <div class="wrap">
-      <div class="filtros rv" id="filtros" aria-label="Filtrar conteúdo">
-        <button class="chip active" data-f="todas">Todas</button>
-        <button class="chip" data-f="artigos">Artigos</button>
-        <button class="chip" data-f="imprensa">Imprensa</button>
-        <button class="chip" data-f="Previdenciário">Previdenciário</button>
-        <button class="chip" data-f="Trabalhista">Trabalhista</button>
-        <button class="chip" data-f="Inventário &amp; Sucessões">Inventário &amp; Sucessões</button>
-        <button class="chip" data-f="Indenizações">Indenizações</button>
+      <div class="cfiltro rv" id="filtros" aria-label="Filtrar conteúdo">
+        <div class="cf-busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg><input type="search" id="f-busca" placeholder="Buscar por palavra-chave…" aria-label="Buscar conteúdo"/></div>
+        <select id="f-area" class="cf-select" aria-label="Área de atuação"><option value="">Área de atuação</option><option>Previdenciário</option><option>Trabalhista</option><option>Inventário &amp; Sucessões</option><option>Indenizações</option></select>
+        <select id="f-cat" class="cf-select" aria-label="Categoria"><option value="">Categoria</option><option value="Artigos">Artigos</option><option value="Imprensa">Imprensa</option></select>
+        <select id="f-data" class="cf-select" aria-label="Data"><option value="">Data</option></select>
+        <button type="button" id="f-limpar" class="cf-limpar">Limpar ✕</button>
       </div>
       <div class="rv" id="conteudo-destaque"></div>
       <div class="artigos-grid stagger rv" id="portal-artigos"></div>
@@ -1545,16 +1554,25 @@ function cardHTML(a,isNew){
     '<span class="artigo-tag">'+tag+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+
     '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">'+go+'</span></span></a>';
 }
-var FILTRO_ATUAL='todas';
-function artigosFiltrados(){
+function filtroConteudo(){
   var arts=getArtigos();
-  if(FILTRO_ATUAL==='todas') return arts;
-  if(FILTRO_ATUAL==='artigos'||FILTRO_ATUAL==='imprensa'){
-    var cat=(FILTRO_ATUAL==='imprensa')?'Imprensa':'Artigos';
-    return arts.filter(function(a){return (a.categoria||'Artigos')===cat;});
-  }
-  return arts.filter(function(a){return (a.area||'')===FILTRO_ATUAL;});
+  var g=function(id){var e=document.getElementById(id);return e?(e.value||'').trim():'';};
+  var q=g('f-busca').toLowerCase(), ar=g('f-area'), ca=g('f-cat'), dt=g('f-data');
+  return arts.filter(function(a){
+    if(ar && (a.area||'')!==ar) return false;
+    if(ca && (a.categoria||'Artigos')!==ca) return false;
+    if(dt && (a.data||'').slice(0,7)!==dt) return false;
+    if(q){ var hay=((a.titulo||'')+' '+(a.resumo||'')+' '+(a.area||'')+' '+(a.conteudo||'')).toLowerCase(); if(hay.indexOf(q)<0) return false; }
+    return true;
+  });
 }
+function popularDataFiltro(){
+  var sel=document.getElementById('f-data'); if(!sel) return;
+  var m=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  var seen={}; getArtigos().forEach(function(a){var ym=(a.data||'').slice(0,7); if(ym) seen[ym]=1;});
+  Object.keys(seen).sort().reverse().forEach(function(ym){var p=ym.split('-'); var o=document.createElement('option'); o.value=ym; o.textContent=(m[parseInt(p[1],10)-1]||'')+' '+p[0]; sel.appendChild(o);});
+}
+function limparFiltros(){ ['f-busca','f-area','f-cat','f-data'].forEach(function(id){var e=document.getElementById(id); if(e) e.value='';}); renderConteudo(); }
 function destaqueHTML(a){
   var imp=(a.categoria==='Imprensa'), ext=imp&&a.link;
   var open=ext?(' href="'+a.link+'" target="_blank" rel="noopener"'):(' href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)"');
@@ -1567,17 +1585,14 @@ function destaqueHTML(a){
 function renderConteudo(){
   var portal=document.getElementById('portal-artigos'); if(!portal) return;
   var dq=document.getElementById('conteudo-destaque');
-  var arts=artigosFiltrados();
-  if(!arts.length){ if(dq) dq.innerHTML=''; portal.innerHTML='<p class="artigo-empty">Nenhum conteúdo nesta seção por enquanto.</p>'; return; }
+  var arts=filtroConteudo();
+  if(!arts.length){ if(dq) dq.innerHTML=''; portal.innerHTML='<p class="artigo-empty">Nenhum conteúdo encontrado. Tente outra busca ou clique em Limpar.</p>'; return; }
   if(dq) dq.innerHTML=destaqueHTML(arts[0]);
   portal.innerHTML = arts.slice(1).map(function(a){return cardHTML(a,false)}).join('');
 }
-function setFiltro(f,btn){
-  FILTRO_ATUAL=f;
-  var cs=document.querySelectorAll('#filtros .chip');
-  for(var i=0;i<cs.length;i++) cs[i].classList.remove('active');
-  if(btn) btn.classList.add('active');
-  renderConteudo();
+function ligarFiltrosConteudo(){
+  ['f-busca','f-area','f-cat','f-data'].forEach(function(id){var e=document.getElementById(id); if(e) e.addEventListener('input',renderConteudo);});
+  var lp=document.getElementById('f-limpar'); if(lp) lp.addEventListener('click',limparFiltros);
 }
 function renderPortais(){
   var arts=getArtigos(),home=document.getElementById('home-artigos');
@@ -1624,8 +1639,7 @@ if(!reduce&&fine){
 
 window.addEventListener('DOMContentLoaded',function(){
   renderPortais();
-  var fch=document.querySelectorAll('#filtros .chip');
-  for(var fi=0;fi<fch.length;fi++){(function(b){b.addEventListener('click',function(){setFiltro(b.getAttribute('data-f'),b);});})(fch[fi]);}
+  popularDataFiltro(); ligarFiltrosConteudo();
   var h=(location.hash||'').replace('#','');
   var deep=(isArea(h)&&document.getElementById('page-'+h))||isArtigo(h)||h==='conteudo';
   var id=deep?h:'inicio';

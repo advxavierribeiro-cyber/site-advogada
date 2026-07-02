@@ -133,6 +133,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   .nav{flex:1 1 auto;order:2;justify-content:center;overflow:visible;-webkit-mask-image:none;mask-image:none;padding:0;margin:0}
   .nav button{flex:0 0 auto}
   .hdr-cta{order:3;margin-left:0}
+  .lang-switch{order:4;margin-left:6px}
 }
 /* mobile: cabeçalho azul sólido, bem enquadrado (sem cinza) */
 @media(max-width:1039px){
@@ -576,9 +577,12 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .uni-links a svg{flex:none}
 .foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
 .foot-bottom .foot-priv:hover{color:var(--gold-soft)}
-.lang-toggle{order:1;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.12em;color:var(--champagne);border:1px solid rgba(231,216,181,.45);border-radius:30px;padding:7px 13px;background:transparent;transition:.3s var(--ease);flex:none}
-.lang-toggle:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-@media(max-width:1039px){.lang-toggle{margin-left:auto}}
+.lang-switch{order:1;display:flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.1em;border:1px solid rgba(231,216,181,.45);border-radius:30px;padding:6px 12px;background:transparent;flex:none}
+.lang-opt{background:none;border:0;padding:2px 1px;color:rgba(231,216,181,.5);cursor:pointer;transition:.3s var(--ease)}
+.lang-opt:hover{color:var(--gold-soft)}
+.lang-opt.active{color:var(--champagne);font-weight:700}
+.lang-sep{color:rgba(231,216,181,.32)}
+@media(max-width:1039px){.lang-switch{margin-left:auto}}
 
 /* ===== MOBILE: menos "zoom", mais conteúdo na tela (NÃO afeta o desktop) ===== */
 @media(max-width:600px){
@@ -620,7 +624,9 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .destaque:hover{box-shadow:0 40px 80px -48px rgba(20,37,46,.5);border-color:rgba(194,160,90,.55)}
 .destaque .dq-media{position:relative;min-height:210px;background:linear-gradient(160deg,#1b3743,#0f1c24);overflow:hidden}
 .destaque .dq-media::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 70% 10%,rgba(194,160,90,.18),transparent 60%)}
-.destaque .dq-media .mono{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96px;height:78px;opacity:.9;z-index:1}
+.destaque .dq-media::before{content:"";position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(194,160,90,.18) 1px,transparent 1px);background-size:16px 16px}
+.destaque .dq-media .dq-ic{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;border:1px solid rgba(194,160,90,.42);display:flex;align-items:center;justify-content:center;z-index:1;background:rgba(15,28,36,.35)}
+.destaque .dq-media .dq-ic svg{width:38px;height:38px;stroke:var(--gold-soft);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
 .destaque .dq-body{padding:clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:center}
 .destaque .dq-flag{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));border-radius:30px;padding:5px 12px;margin-bottom:14px}
 .destaque .dq-body h3{font-size:clamp(1.3rem,1.1rem + 1vw,1.95rem);line-height:1.2;color:var(--ink)}
@@ -658,8 +664,12 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
         </span>
       </span>
     </a>
-    <button id="lang-toggle" class="lang-toggle" type="button" onclick="toggleLang()" aria-label="Português / English" translate="no">EN</button>
     <a class="btn btn-ghost on-dark hdr-cta" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
+    <div class="lang-switch" role="group" aria-label="Português / English" translate="no">
+      <button id="lang-pt" class="lang-opt active" type="button" onclick="setLang('pt')">PT</button>
+      <span class="lang-sep" aria-hidden="true">/</span>
+      <button id="lang-en" class="lang-opt" type="button" onclick="setLang('en')">EN</button>
+    </div>
     <nav class="nav" aria-label="Principal">
       <button class="active" id="nav-inicio" onclick="go('inicio',event)">Início</button>
       <button id="nav-escritorio" onclick="go('escritorio',event)">O Escritório</button>
@@ -1249,7 +1259,6 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Dra. Andrea Xavier</div>
             <div class="mrole">Advogada · Sócia Fundadora</div>
-            <div class="moab">OAB/SP · Todas as áreas</div>
             <p class="mbio">Há mais de três décadas atuando na defesa de trabalhadores, aposentados, empresas e proprietários de imóveis, com atendimento personalizado e foco na solução jurídica mais segura.</p>
           </div>
         </div>
@@ -1262,7 +1271,6 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Dra. Inês Ribeiro</div>
             <div class="mrole">Advogada · Sócia</div>
-            <div class="moab">OAB/SP · Todas as áreas</div>
             <div class="moab">Atuação em Direito Previdenciário, Trabalhista e Cível.</div>
             <p class="mbio">Sócia do escritório, atua na condução de processos judiciais e consultivos, oferecendo atendimento próximo, linguagem clara e acompanhamento constante de cada cliente. Participa diretamente das estratégias processuais e da condução dos casos nas diversas áreas de atuação do escritório.</p>
           </div>
@@ -1656,8 +1664,8 @@ function destaqueHTML(a){
   var go=imp?'Ver na fonte &rarr;':'Ler mais &rarr;';
   var fonte=(imp&&a.fonte)?('<span class="artigo-fonte">Fonte: '+a.fonte+'</span>'):'';
   return '<a class="destaque"'+open+'>'+
-    '<span class="dq-media"><svg class="mono" viewBox="0 0 120 96" aria-hidden="true"><text class="x" x="42" y="74" text-anchor="middle" font-family="Playfair Display,serif" font-weight="600" font-size="92">X</text><text class="r" x="74" y="74" text-anchor="middle" font-family="Playfair Display,serif" font-weight="600" font-size="92">R</text></svg></span>'+
-    '<span class="dq-body"><span class="dq-flag">Em destaque · '+(imp?'Imprensa':(a.area||''))+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+'<span class="dq-go">'+go+'</span></span></a>';
+    '<span class="dq-media"><span class="dq-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7 2.5 12a2.5 2.5 0 0 0 5 0L5 7Z"/><path d="M19 7l-2.5 5a2.5 2.5 0 0 0 5 0L19 7Z"/><path d="M8 21h8"/></svg></span></span>'+
+    '<span class="dq-body"><span class="dq-flag"><span>Último post</span> · <span>'+(imp?'Imprensa':(a.area||''))+'</span></span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+'<span class="dq-go">'+go+'</span></span></a>';
 }
 function renderConteudo(){
   var portal=document.getElementById('portal-artigos'); if(!portal) return;
@@ -1730,37 +1738,267 @@ window.addEventListener('DOMContentLoaded',function(){
 var XRR_DICT={
  "Início":"Home","O Escritório":"The Firm","Áreas de Atuação":"Practice Areas","Conteúdo":"Insights","Equipe":"Team","Contato":"Contact","Agendar consulta":"Book a consultation","Agendar Consulta":"Book a Consultation",
  "Sociedade de Advogados · São José dos Campos":"Law Firm · São José dos Campos",
- "Advocacia estratégica e sob medida em São José dos Campos.":"<span class=\"it\">Strategic</span>, tailored advocacy in São José dos Campos.",
- "Direito Previdenciário, Trabalhista, Sucessões e Indenizações conduzidos com rigor técnico e acompanhamento próximo — do primeiro contato à decisão final.":"Social Security, Labor, Estate and Compensation law, conducted with technical rigor and close support — from first contact to the final decision.",
+
+ "Soluções jurídicas com experiência, estratégia e atendimento personalizado.":"Legal solutions with <span class=\"it\">experience</span>, strategy and personalized service.",
+ "Direito Previdenciário, Trabalhista, Imobiliário, Sucessões e Indenizações conduzidos com rigor técnico e acompanhamento próximo — do primeiro contato à decisão final.":"Social Security, Labor, Real Estate, Estate and Compensation law, conducted with technical rigor and close support — from first contact to the final decision.",
  "Notícias que impactam seus direitos":"News that impacts your rights",
- "Conhecer as áreas →":"Explore our areas →","Conhecer o escritório":"About the firm","Quem conduz →":"Who leads →",
- "Portal de conteúdo":"Content Hub","Notícias que impactam os seus direitos.":"News that impacts your rights.",
- "As últimas decisões, as mudanças na legislação e as novidades sobre aposentadorias, benefícios do INSS e direitos trabalhistas — explicadas de forma simples, para você entender o que afeta o seu caso.":"The latest court decisions, changes in legislation and updates on retirement, INSS benefits and labor rights — explained in plain language, so you understand what affects your case.",
- "Novidades":"New","Ver todos os artigos →":"See all articles →",
- "Atendimento":"Get in touch","Agende uma consulta para avaliarmos o seu caso.":"Book a consultation so we can assess your case.","Agende uma consulta para avaliar o seu caso.":"Book a consultation to assess your case.","Falar com o escritório":"Talk to the firm",
- "Todas":"All","Artigos":"Articles","Imprensa":"Press","Buscar por palavra-chave…":"Search by keyword…","Área de atuação":"Practice area","Categoria":"Category","Data":"Date","Limpar ✕":"Clear ✕",
- "Previdenciário":"Social Security","Trabalhista":"Labor","Inventário & Sucessões":"Estate & Succession","Indenizações":"Compensation",
- "Canal direto":"Direct channel","Fale com o escritório.":"Get in touch.","Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês.":"Tell us what is going on and we will show you the next steps. Close support, no legal jargon.",
- "Envie uma mensagem.":"Send a message.","Conte a sua situação em poucas linhas. Retornamos com os próximos passos, com clareza e sem compromisso.":"Tell us your situation in a few lines. We will reply with the next steps, clearly and with no obligation.",
- "Nome completo":"Full name","Telefone ou e-mail":"Phone or e-mail","Assunto":"Subject","Mensagem":"Message","Enviar mensagem":"Send message","Horário":"Hours","Nossas unidades":"Our offices",
- "Matriz · São José dos Campos":"Headquarters · São José dos Campos","Filial · Campos do Jordão":"Branch · Campos do Jordão","Atendimento mediante agendamento, em ambas as unidades.":"By appointment only, at both offices.",
- "Navegação":"Navigation","Endereço":"Address","Política de Privacidade e Cookies":"Privacy & Cookies Policy",
- "Quem somos":"About us","Nossa história":"Our story","Onde estamos":"Where we are","Propósito · Visão · Valores":"Purpose · Vision · Values","Propósito":"Purpose","Visão":"Vision","O que nos move":"What drives us",
+ "Conhecer as áreas →":"Explore our areas →",
+
+ "Cada caso é conduzido com estratégia, técnica e a discrição de quem entende exatamente o que está em jogo.":"Every case is handled with strategy, technique and the discretion of someone who truly understands what is <span class=\"it\">at stake</span>.",
+ "A Xavier Ribeiro & Ribeiro nasceu de um princípio simples: causa séria não admite improviso. Só assumimos o que conduzimos com excelência — e cada cliente fala diretamente com quem cuida do seu caso.":"Xavier Ribeiro & Ribeiro was founded on a simple principle: a serious case leaves no room for improvisation. We only take on what we can handle with excellence — and every client speaks directly with whoever is handling their case.",
+ "Conhecer o escritório":"About the firm","Quem conduz →":"Who leads →",
+
+ "Mais de 30 anos de experiência":"More than 30 years of experience",
+ "Mais de 30 anos transformando conhecimento jurídico em segurança para nossos clientes.":"More than 30 years transforming legal knowledge into security for our clients.",
+ "Atendimento personalizado em Direito Previdenciário, Trabalhista e Imobiliário para pessoas físicas e empresas.":"Personalized service in Social Security, Labor and Real Estate law for individuals and businesses.",
+
+ "Em que podemos ajudar":"How we can help",
+ "Reconhece a sua situação?":"Does this sound like you?",
+ "Se algum desses momentos é o seu, podemos orientar com clareza o melhor caminho. A primeira conversa é sem compromisso.":"If any of these situations sounds like yours, we can clearly guide you on the best path. The first conversation is free of charge, with no obligation.",
+ "Está perto de se aposentar":"Getting close to retirement",
+ "e quer entender qual a melhor opção e o momento certo de dar entrada no INSS.":"and want to understand the best option and the right time to file with INSS.",
+ "Teve um benefício negado pelo INSS":"Had a benefit denied by INSS",
+ "e quer saber o que ainda pode ser feito para reverter a decisão.":"and want to know what can still be done to reverse the decision.",
+ "Já é aposentado":"Already retired",
+ "e quer saber se o valor do seu benefício pode ser revisado dentro do prazo.":"and want to know if your benefit amount can be reviewed within the legal deadline.",
+ "Saiu de um emprego":"Left a job",
+ "com dúvidas se recebeu corretamente todas as verbas a que tinha direito.":"and are unsure whether you received everything you were entitled to.",
+ "Precisa abrir um inventário":"Need to open an estate inventory",
+ "e organizar a partilha do patrimônio entre a família, com cuidado e respeito.":"and organize the division of assets among family members, with care and respect.",
+ "Sofreu um prejuízo ou cobrança indevida":"Suffered a loss or wrongful charge",
+ "e quer saber, com franqueza, se o seu caso cabe um pedido de indenização.":"and want an honest answer on whether your case supports a compensation claim.",
+ "Saber mais →":"Learn more →",
+ "Ver todas as áreas de atuação →":"See all practice areas →",
+
+ "Por que nos escolher":"Why choose us",
+ "Por que escolher a Xavier Ribeiro & Ribeiro?":"Why choose Xavier Ribeiro & Ribeiro?",
+ "Atendimento personalizado do início ao fim":"Personalized service from start to finish",
+ "Estratégia jurídica individualizada":"Individualized legal strategy",
+ "Transparência em todas as etapas":"Transparency at every step",
+ "Atuação judicial e consultiva":"Litigation and advisory services",
+ "Atendimento presencial e online":"In-person and online service",
+
+ "A boa advocacia não promete resultados — ela constrói, com técnica e verdade, o melhor caminho possível para cada pessoa.":"Good legal practice does not promise outcomes — it builds, with <span class=\"hl\">skill and truth</span>, the best possible path for each person.",
+
+ "Por que conduzir o seu caso conosco":"Why work with us on your case",
+ "Um caminho claro, do primeiro contato à decisão.":"A clear path, from first contact to decision.",
+ "Conversa inicial":"Initial conversation",
+ "Entendemos a sua situação e as suas dúvidas, sem compromisso e em linguagem simples.":"We understand your situation and questions, free of charge and in plain language.",
+ "Análise técnica":"Technical analysis",
+ "Estudamos os seus documentos e avaliamos com franqueza o que é viável dentro da lei.":"We study your documents and honestly assess what is viable under the law.",
+ "Estratégia transparente":"Transparent strategy",
+ "Apresentamos caminhos, prazos e honorários com clareza, para você decidir com segurança.":"We clearly present paths, timelines and fees, so you can decide with confidence.",
+ "Acompanhamento próximo":"Close support",
+ "Conduzimos o caso com atenção a cada prazo e mantemos você informado até a decisão final.":"We handle the case with attention to every deadline and keep you informed until the final decision.",
+ "Falar com o escritório":"Talk to the firm",
+
+ "Perguntas frequentes":"Frequently asked questions",
+ "Dúvidas comuns de quem nos procura.":"Common questions from those who reach out to us.",
+ "Quando eu posso me aposentar?":"When can I retire?",
+ "Depende do seu tempo de contribuição, da idade e das regras de transição em vigor. Com uma análise do seu histórico (CNIS), conseguimos mostrar as suas opções com clareza.":"It depends on your contribution time, age and the transition rules in effect. By analyzing your contribution history (CNIS), we can clearly show you your options.",
+ "Preciso ir até o escritório?":"Do I need to come to the office?",
+ "Não necessariamente. Muitos atendimentos começam por telefone ou de forma digital, e boa parte da documentação é enviada online. Atendemos São José dos Campos e toda a região do Vale do Paraíba.":"Not necessarily. Many consultations start by phone or online, and most documents are sent digitally. We serve São José dos Campos and the whole Vale do Paraíba region.",
+ "Quanto custa um processo?":"How much does a case cost?",
+ "Os honorários variam conforme a causa e a complexidade, combinados de forma transparente antes de qualquer passo, seguindo a tabela da OAB. Explicamos tudo na primeira conversa, sem surpresas.":"Fees vary depending on the case and its complexity, and are agreed transparently before any step is taken, following the OAB fee table. We explain everything in the first conversation, with no surprises.",
+ "O escritório garante que eu vou ganhar?":"Does the firm guarantee I will win?",
+ "Não. Nenhum advogado sério pode garantir resultado — isso é vedado pela OAB. Oferecemos uma análise honesta da viabilidade e trabalho dedicado para o melhor desfecho possível dentro da lei.":"No. No serious lawyer can guarantee an outcome — this is prohibited by the Brazilian Bar Association (OAB). We offer an honest assessment of viability and dedicated work toward the best possible outcome within the law.",
+ "Já recebo aposentadoria. Posso revisar o valor?":"I already receive a pension. Can I have the amount reviewed?",
+ "Talvez. Existem prazos legais para pedir revisão. Avaliamos os seus documentos para verificar se a revisão é viável, sem promessa de aumento.":"Possibly. There are legal deadlines to request a review. We assess your documents to check whether a review is viable, with no promise of an increase.",
+ "Em quanto tempo o meu caso é resolvido?":"How long does it take to resolve my case?",
+ "O prazo depende do tipo de causa, da via escolhida (administrativa ou judicial) e do andamento dos órgãos envolvidos. Na análise inicial, explicamos o caminho esperado para o seu caso e mantemos você informado a cada etapa.":"The timeline depends on the type of case, the path chosen (administrative or judicial) and the pace of the relevant authorities. In our initial assessment, we explain the expected path for your case and keep you informed at every stage.",
+ "Ainda com dúvidas? Fale com o escritório":"Still have questions? Talk to the firm",
+
+ "Portal de conteúdo":"Content Hub",
+ "Novidades":"New",
+ "Atualizações Jurídicas":"Legal Updates",
+ "Decisões importantes, mudanças na legislação e informações relevantes para proteger seus direitos.":"Important rulings, legislative changes and relevant information to protect your rights.",
+ "Ver todos os artigos →":"See all articles →",
+
+ "Atendimento":"Get in touch",
+ "Agende uma consulta para avaliarmos o seu caso.":"Book a consultation so we can assess your case.",
+ "Agende uma consulta para avaliar o seu caso.":"Book a consultation to assess your case.",
+
+ "Quem somos":"About us",
+ "Sociedade de advogados formada por mãe e filha, com atuação em Direito Previdenciário, Trabalhista, Imobiliário, Sucessório e Inventários e Indenizações e Responsabilidade Civil, em São José dos Campos e região do Vale do Paraíba.":"A law firm formed by mother and daughter, with practice in Social Security, Labor, Real Estate, Estate & Probate and Compensation & Civil Liability law, in São José dos Campos and the Vale do Paraíba region.",
+ "Nossa história":"Our story",
  "Um escritório feito de proximidade e técnica.":"A firm built on <span class=\"it\">closeness</span> and technique.",
- "Presença no Vale do Paraíba.":"Presence across the Vale do Paraíba.","Matriz":"Headquarters","Filial":"Branch",
- "Foco e dedicação":"Focus and dedication","Atenção individual":"Individual attention","Clareza em cada etapa":"Clarity at every step","Compromisso ético":"Ethical commitment",
- "Áreas de atuação":"Practice areas","Como podemos ajudar":"How we can help","Ler mais →":"Read more →","Ler artigo →":"Read article →","Ver na fonte →":"View source →"
+ "A Xavier Ribeiro & Ribeiro nasceu da união de mãe e filha em torno de um princípio simples: causa séria não admite improviso. É uma sociedade-boutique de advogados em São José dos Campos, com atuação em todo o Vale do Paraíba e unidade também em Campos do Jordão.":"Xavier Ribeiro & Ribeiro was born from the union of mother and daughter around a simple principle: a serious case leaves no room for improvisation. It is a boutique law firm in São José dos Campos, serving the entire Vale do Paraíba region, with an additional office in Campos do Jordão.",
+ "Atuamos em Direito Previdenciário — o direito de quem trabalhou a vida toda e quer se aposentar com tranquilidade —, Trabalhista, Imobiliário, Sucessório e Inventários e Indenizações e Responsabilidade Civil. Cada caso começa por uma análise cuidadosa e uma conversa honesta sobre o que é possível, sem promessas.":"We practice Social Security law — the right of those who worked their whole lives and want to retire with peace of mind —, Labor, Real Estate, Estate & Probate and Compensation & Civil Liability law. Every case begins with a careful review and an honest conversation about what is possible, with no promises.",
+ "Acreditamos que advocacia de verdade se faz com informação clara e acompanhamento próximo. Aqui, você entende cada etapa, conhece os prazos e fala diretamente com a advogada que conduz o seu caso — do primeiro contato à decisão final.":"We believe real legal practice is built on clear information and close support. Here, you understand every step, know the deadlines and speak directly with the lawyer handling your case — from first contact to the final decision.",
+ "Aqui, cada cliente fala diretamente com quem cuida do seu caso.":"Here, every client speaks directly with whoever is <span class=\"hl\">handling their case</span>.",
+ "Propósito · Visão · Valores":"Purpose · Vision · Values","Propósito":"Purpose","Visão":"Vision",
+ "Proximidade humana, com a técnica de quem leva cada causa a sério.":"Human closeness, with the technical rigor of someone who takes every case seriously.",
+ "Somos um escritório de relação próxima: você fala diretamente com a advogada que conduz o seu caso, entende cada etapa e decide com segurança. É essa combinação de cuidado e rigor que orienta tudo o que fazemos.":"We are a close-relationship firm: you speak directly with the lawyer handling your case, understand every step and decide with confidence. It's this combination of care and rigor that guides everything we do.",
+ "Tornar o Direito acessível e próximo — traduzir o que é técnico em decisões claras, para que cada cliente entenda exatamente o que está em jogo e decida com segurança.":"Making the law accessible and close — translating what is technical into clear decisions, so every client understands exactly what is at stake and can decide with confidence.",
+ "Ser, no Vale do Paraíba, um escritório-boutique de referência em advocacia previdenciária, trabalhista, imobiliária e de família, reconhecido pela proximidade, pela ética e pelo rigor técnico.":"To be, in the Vale do Paraíba, a leading boutique law firm in social security, labor, real estate and family law, recognized for closeness, ethics and technical rigor.",
+ "Atenção individual":"Individual attention",
+ "Cada caso é único e recebe análise dedicada. Entender a história do cliente — e não apenas o processo — orienta a melhor estratégia. Não existe solução de prateleira.":"Every case is unique and receives dedicated review. Understanding the client's story — not just the case file — guides the best strategy. There is no one-size-fits-all solution.",
+ "Clareza em cada etapa":"Clarity at every step",
+ "Explicamos prazos, possibilidades e honorários com transparência, em linguagem acessível. Você sempre sabe em que pé está o seu caso, sem juridiquês.":"We explain deadlines, options and fees transparently, in plain language. You always know exactly where your case stands, with no legal jargon.",
+ "Compromisso ético":"Ethical commitment",
+ "Atuação pautada pela ética e pelo Estatuto da Advocacia. Trabalho sério e franqueza sobre o que é possível, sem promessas de resultado.":"Practice guided by ethics and the Brazilian Bar Statute. Serious work and honesty about what is possible, with no promise of outcome.",
+ "Áreas em que atuamos":"Areas we practice in",
+ "Um escritório completo, com técnica em cada área.":"A <span class=\"it\">complete</span> firm, with technical skill in every area.",
+ "Atuamos de forma técnica e dedicada em Direito Previdenciário, Trabalhista, Imobiliário, Sucessório e Inventários e Indenizações e Responsabilidade Civil. Cada área recebe o mesmo cuidado: análise aprofundada, estratégia clara e acompanhamento próximo, do início ao fim.":"We practice with technical rigor and dedication in Social Security, Labor, Real Estate, Estate & Probate and Compensation & Civil Liability law. Every area receives the same care: in-depth analysis, clear strategy and close support, from start to finish.",
+ "O Direito Previdenciário segue sendo uma das nossas maiores especialidades — analisamos cada CNIS com profundidade e orientamos o momento certo de agir. E, seja qual for a sua área, conduzimos o seu caso com a mesma proximidade e o mesmo rigor técnico.":"Social Security law remains one of our greatest specialties — we analyze every contribution record (CNIS) in depth and advise on the right time to act. And whatever your area, we handle your case with the same closeness and the same technical rigor.",
+ "Onde estamos":"Where we are",
+ "Presença no Vale do Paraíba.":"Presence across the Vale do Paraíba.",
+ "Atendemos São José dos Campos e toda a região, com unidade também em Campos do Jordão — sempre mediante agendamento.":"We serve São José dos Campos and the entire region, with an additional office in Campos do Jordão — always by appointment.",
+ "Matriz":"Headquarters","Filial":"Branch",
+
+ "Áreas de atuação":"Practice areas",
+ "O que fazemos":"What we do",
+ "Atuação especializada nas áreas que mais impactam a vida, o patrimônio e os direitos das pessoas. Escolha uma área para conhecer nossa forma de atuação.":"Specialized practice in the areas that most impact people's lives, assets and rights. Choose an area to learn about how we work.",
+ "Aposentadoria e benefícios do INSS":"Retirement and INSS benefits",
+ "Direito Previdenciário":"Social Security Law",
+ "Aposentadorias, revisão de benefícios, auxílios e defesa de direitos junto ao INSS.":"Retirement claims, benefit reviews, allowances and defense of rights before INSS.",
+ "Seus direitos no trabalho":"Your rights at work",
+ "Direito Trabalhista":"Labor Law",
+ "Verbas rescisórias, horas extras, reconhecimento de vínculo e demais direitos trabalhistas.":"Severance pay, overtime, employment recognition and other labor rights.",
+ "Contratos e patrimônio imóvel":"Contracts and real estate assets",
+ "Direito Imobiliário":"Real Estate Law",
+ "Contratos, regularização de imóveis, locação e questões relacionadas ao seu patrimônio.":"Contracts, property regularization, leases and matters related to your real estate assets.",
+ "Patrimônio e família":"Assets and family",
+ "Direito Sucessório e Inventários":"Estate & Probate Law",
+ "Inventários, partilhas, testamentos e planejamento sucessório.":"Estate inventories, asset division, wills and succession planning.",
+ "Reparação de danos":"Damage compensation",
+ "Indenizações e Responsabilidade Civil":"Compensation & Civil Liability",
+ "Danos materiais, morais e estéticos, acidentes e falhas na prestação de serviços.":"Material, moral and aesthetic damages, accidents and service failures.",
+ "Ver área →":"View area →",
+ "Primeira conversa":"First conversation",
+ "O que ajuda a agilizar a análise do seu caso.":"What helps speed up the review of your case.",
+ "Não se preocupe se faltar algo — reunimos o que for preciso ao longo do caminho. Ter à mão o que você já possui adianta a avaliação.":"Don't worry if something is missing — we'll gather what's needed along the way. Having what you already have on hand speeds up the assessment.",
+ "Documentos pessoais":"Personal documents",
+ "RG, CPF e um comprovante de endereço atualizado.":"ID, tax ID (CPF) and a recent proof of address.",
+ "Extrato previdenciário (CNIS)":"Social Security record (CNIS)",
+ "Para casos de aposentadoria, revisão ou benefício do INSS. Ajudamos a obter, se você não tiver.":"For retirement, review or INSS benefit cases. We can help you obtain it if you don't have it.",
+ "Carteira de trabalho e contracheques":"Work card and pay stubs",
+ "Para causas trabalhistas, ajudam a comprovar vínculo, função e valores.":"For labor cases, these help prove employment, role and amounts.",
+ "Documentos do caso":"Case documents",
+ "Cartas, decisões, contratos, comprovantes e tudo que se relacione à sua situação.":"Letters, rulings, contracts, receipts and anything related to your situation.",
+ "Conte o seu caso e mostramos os próximos passos.":"Tell us about your case and we'll show you the next steps.",
+
+ "O direito de quem contribuiu a vida toda. Ajudamos você a entender se já pode se aposentar, qual a melhor opção e como buscar revisões e benefícios junto ao INSS, na via administrativa ou judicial.":"The right of those who contributed their whole working life. We help you understand whether you can already retire, the best option, and how to pursue reviews and benefits with INSS, administratively or judicially.",
+ "Cuidado com o direito de quem trabalhou a vida toda.":"Caring for the rights of those who <span class=\"it\">worked their whole lives</span>.",
+ "Analisamos o seu histórico (CNIS) com critério, mostramos as suas opções com clareza e conduzimos cada etapa de perto — sem promessas, com estratégia.":"We carefully analyze your contribution history (CNIS), clearly present your options, and handle every step closely — no promises, just strategy.",
+ "Aposentadorias":"Retirement Benefits",
+ "Por idade, tempo de contribuição, especial ou por invalidez. Analisamos o seu CNIS e orientamos o melhor caminho.":"By age, contribution time, special conditions or disability. We analyze your CNIS and advise on the best path.",
+ "Revisão de Benefício":"Benefit Review",
+ "Quem já se aposentou pode ter direito a um valor maior. Avaliamos a viabilidade dentro dos prazos legais.":"Those already retired may be entitled to a higher amount. We assess viability within the legal deadlines.",
+ "Auxílios e BPC/LOAS":"Allowances and BPC/LOAS",
+ "Auxílio-doença, auxílio-acidente e o Benefício de Prestação Continuada para quem tem direito.":"Sickness benefit, accident benefit and the Continuous Cash Benefit (BPC) for those entitled to it.",
+ "Benefício negado":"Denied Benefit",
+ "Pedido indeferido ou cessado pelo INSS? Avaliamos o motivo e os caminhos para reverter a decisão.":"Application denied or benefit stopped by INSS? We assess the reason and the paths to reverse the decision.",
+ "Vamos avaliar o seu caso previdenciário.":"Let's assess your Social Security case.",
+
+ "Seus direitos durante e depois do contrato de trabalho, com análise da sua situação e dos seus documentos — para receber o que é devido.":"Your rights during and after your employment, with a review of your situation and documents — to make sure you receive what you're owed.",
+ "O que é seu, por direito.":"What's rightfully <span class=\"it\">yours</span>.",
+ "Verificamos contracheques, carteira e o histórico do contrato para identificar verbas e direitos que podem não ter sido pagos corretamente.":"We review pay stubs, work records and employment history to identify payments and rights that may not have been correctly paid.",
+ "Verbas Rescisórias":"Severance Pay",
+ "Aviso prévio, férias, gratificação natalina, FGTS e multa. Verificamos se você recebeu tudo o que era devido.":"Notice period, vacation, 13th salary, FGTS and severance fine. We check whether you received everything you were owed.",
+ "Horas Extras e Jornada":"Overtime and Working Hours",
+ "Horas extras não pagas, intervalos suprimidos e jornada irregular.":"Unpaid overtime, skipped breaks and irregular working hours.",
+ "Reconhecimento de Vínculo":"Employment Recognition",
+ "Trabalho sem registro, pejotização indevida ou função diferente da anotada.":"Undocumented work, improper contractor arrangements, or a role different from what was registered.",
+ "Assédio e Rescisão Indireta":"Harassment and Constructive Dismissal",
+ "Assédio moral, condições abusivas ou descumprimento do contrato pelo empregador.":"Workplace harassment, abusive conditions or breach of contract by the employer.",
+ "Vamos analisar os seus direitos trabalhistas.":"Let's review your labor rights.",
+
+ "Orientação em contratos de compra, venda e locação de imóveis, regularização de bens, usucapião e questões condominiais, com segurança jurídica em cada etapa.":"Guidance on purchase, sale and lease contracts, property regularization, adverse possession (usucapião) and condominium matters, with legal certainty at every step.",
+ "Segurança jurídica para o seu patrimônio imóvel.":"Legal certainty for your <span class=\"it\">real estate assets</span>.",
+ "Analisamos contratos e documentos com atenção aos detalhes, para que a compra, a venda ou a locação do seu imóvel aconteça com clareza e sem surpresas.":"We review contracts and documents with attention to detail, so that buying, selling or leasing your property happens with clarity and no surprises.",
+ "Contratos de Compra e Venda":"Purchase and Sale Contracts",
+ "Elaboração e análise de contratos, due diligence imobiliária e acompanhamento até a escritura.":"Drafting and review of contracts, real estate due diligence and support through to the deed.",
+ "Locação de Imóveis":"Property Leasing",
+ "Contratos de locação, despejo e questões entre locador e locatário, residenciais ou comerciais.":"Lease agreements, eviction and landlord-tenant matters, residential or commercial.",
+ "Regularização e Usucapião":"Regularization and Adverse Possession",
+ "Regularização de imóveis, escrituras e ações de usucapião para consolidar a propriedade.":"Property regularization, deeds and adverse possession claims to consolidate ownership.",
+ "Questões Condominiais":"Condominium Matters",
+ "Orientação em conflitos e obrigações relacionadas a condomínios e áreas comuns.":"Guidance on disputes and obligations related to condominiums and common areas.",
+ "Vamos avaliar o seu caso imobiliário.":"Let's assess your real estate case.",
+
+ "Orientação em inventários judiciais e extrajudiciais, partilhas, testamentos, planejamento sucessório, regularização de bens e prevenção de conflitos familiares.":"Guidance on judicial and extrajudicial estate inventories, asset division, wills, succession planning, asset regularization and prevention of family conflicts.",
+ "Organizar o patrimônio com serenidade.":"Organizing assets <span class=\"it\">with peace of mind</span>.",
+ "Conduzimos cada etapa com sensibilidade e técnica, buscando o caminho mais rápido e menos custoso para a família, dentro da lei.":"We handle every step with sensitivity and technical skill, seeking the fastest and least costly path for the family, within the law.",
+ "Inventário Judicial e Extrajudicial":"Judicial and Extrajudicial Estate Inventory",
+ "Havendo consenso, o inventário pode ser feito em cartório, de forma mais rápida.":"Where there is agreement, the inventory can be handled at a notary office, more quickly.",
+ "Partilha de Bens":"Asset Division",
+ "Divisão de imóveis, contas e outros bens entre os herdeiros, conforme a lei.":"Division of property, accounts and other assets among heirs, according to the law.",
+ "Testamento e Planejamento":"Wills and Planning",
+ "Organizar em vida a destinação do patrimônio, evitando conflitos futuros.":"Arranging the destination of assets during one's lifetime, avoiding future conflicts.",
+ "Regularização de Heranças":"Inheritance Regularization",
+ "Bens em nome de quem já faleceu e inventários parados. Documentação em ordem.":"Assets still in the name of someone deceased and stalled inventories. Getting documentation in order.",
+ "Vamos cuidar do inventário com você.":"Let's handle the estate inventory together.",
+
+ "Atuação em pedidos de indenização por danos materiais, morais e estéticos, acidentes, falhas na prestação de serviços, problemas contratuais e situações que gerem prejuízos ao cliente.":"Handling claims for material, moral and aesthetic damages, accidents, service failures, contractual issues and situations that cause harm to the client.",
+ "Reparar o que não deveria ter acontecido.":"Repairing what <span class=\"it\">should never have happened</span>.",
+ "Analisamos com honestidade se há fundamento para indenização e qual o melhor caminho — judicial ou por acordo — para o seu caso.":"We honestly assess whether there are grounds for compensation and the best path — litigation or settlement — for your case.",
+ "Danos Morais e Materiais":"Moral and Material Damages",
+ "Situações que causaram dor, constrangimento ou prejuízo financeiro.":"Situations that caused pain, embarrassment or financial loss.",
+ "Acidentes":"Accidents",
+ "Acidentes de trânsito, no trabalho ou por falha de terceiros.":"Traffic accidents, workplace accidents or accidents caused by third-party negligence.",
+ "Direito do Consumidor":"Consumer Law",
+ "Cobranças indevidas, produto ou serviço defeituoso e problemas com empresas.":"Improper charges, defective products or services, and disputes with companies.",
+ "Negativação Indevida":"Wrongful Credit Blacklisting",
+ "Nome inscrito sem motivo, dívida já paga ou registro irregular.":"Name listed without cause, debt already paid, or an irregular record.",
+ "Vamos avaliar o seu direito à reparação.":"Let's assess your right to compensation.",
+
+ "Quem conduz o seu caso":"Who handles your case",
+ "A nossa equipe":"Our <span class=\"it\">team</span>",
+ "Duas sócias à frente de cada causa — uma sociedade de mãe e filha — e uma equipe dedicada a cuidar de cada etapa, do primeiro contato à decisão final.":"Two partners leading every case — a mother-and-daughter firm — and a dedicated team taking care of every step, from first contact to the final decision.",
+ "Equipe de apoio":"Support team",
+ "Quem cuida de cada detalhe.":"Who takes care of every detail.",
+ "Há mais de três décadas atuando na defesa de trabalhadores, aposentados, empresas e proprietários de imóveis, com atendimento personalizado e foco na solução jurídica mais segura.":"For more than three decades defending workers, retirees, companies and property owners, with personalized service and a focus on the safest legal solution.",
+ "Sócia do escritório, atua na condução de processos judiciais e consultivos, oferecendo atendimento próximo, linguagem clara e acompanhamento constante de cada cliente. Participa diretamente das estratégias processuais e da condução dos casos nas diversas áreas de atuação do escritório.":"Partner at the firm, handling litigation and advisory matters, offering close support, clear communication and ongoing follow-up with every client. Directly involved in case strategy and the handling of cases across the firm's practice areas.",
+ "Especialista nos processos administrativos de requerimento de benefícios junto ao INSS. Conduz a via administrativa com agilidade e atenção a cada detalhe.":"Specialist in administrative benefit request procedures with INSS. Handles the administrative process with speed and attention to detail.",
+ "Apoia a equipe na pesquisa, no acompanhamento dos processos e na organização de cada caso, sempre com cuidado e atenção.":"Supports the team with research, case tracking and organization, always with care and attention.",
+ "Organiza documentos, prazos e o atendimento do dia a dia, garantindo que cada caso caminhe com ordem e tranquilidade.":"Organizes documents, deadlines and day-to-day client care, ensuring every case moves forward smoothly and calmly.",
+ "Atendimento direto":"Direct service",
+ "Fale com quem vai cuidar do seu caso.":"Talk to whoever will handle your case.",
+
+ "Canal direto":"Direct channel","Fale com o escritório.":"Get in touch.",
+ "Conte o que está acontecendo e mostramos os próximos passos. Atendimento próximo e sem juridiquês.":"Tell us what is going on and we will show you the next steps. Close support, no legal jargon.",
+ "Envie uma mensagem.":"Send a message.",
+ "Conte a sua situação em poucas linhas. Retornamos com os próximos passos, com clareza e sem compromisso.":"Tell us your situation in a few lines. We will reply with the next steps, clearly and with no obligation.",
+ "Nome completo":"Full name","Telefone ou e-mail":"Phone or e-mail","Assunto":"Subject","Mensagem":"Message","Enviar mensagem":"Send message",
+ "Previdenciário / INSS":"Social Security / INSS","Imobiliário":"Real Estate","Sucessório e Inventários":"Estate & Probate","Outro assunto":"Other subject",
+ "Ao enviar, você será direcionado ao nosso WhatsApp com os dados preenchidos. Atendimento seguro e sem compromisso.":"After sending, you'll be redirected to our WhatsApp with your information filled in. Secure service, no obligation.",
+ "Horário":"Hours","Segunda a sexta, das nove às dezoito horas":"Monday to Friday, 9am to 6pm","Nossas unidades":"Our offices",
+ "Matriz · São José dos Campos":"Headquarters · São José dos Campos","Filial · Campos do Jordão":"Branch · Campos do Jordão",
+ "Atendimento mediante agendamento, em ambas as unidades.":"By appointment only, at both offices.",
+
+ "Notícias que impactam os seus direitos":"News that impacts your rights",
+ "As últimas decisões, alterações na legislação e novidades sobre aposentadorias, benefícios do INSS, direitos trabalhistas e tudo que pode impactar o seu caso — em linguagem simples.":"The latest rulings, legislative changes and updates on retirement, INSS benefits, labor rights and anything that may affect your case — explained in plain language.",
+ "Todas":"All","Artigos":"Articles","Imprensa":"Press","Buscar por palavra-chave…":"Search by keyword…","Área de atuação":"Practice area","Categoria":"Category","Data":"Date","Limpar ✕":"Clear ✕",
+ "Ler mais →":"Read more →","Ler artigo →":"Read article →","Ver na fonte →":"View source →","Novo":"New","Último post":"Latest post",
+ "Artigo":"Article","← Portal de conteúdo":"← Content Hub","← Áreas de atuação":"← Practice areas","← Início":"← Home",
+
+ "Transparência e proteção de dados":"Transparency and data protection",
+ "Política de Privacidade e Cookies":"Privacy <span class=\"it\">& Cookies</span> Policy",
+ "Como o escritório Xavier Ribeiro & Ribeiro coleta, utiliza e protege os seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).":"How the Xavier Ribeiro & Ribeiro law firm collects, uses and protects your personal data, in accordance with Brazil's General Data Protection Law (LGPD, Law No. 13,709/2018).",
+
+ "Navegação":"Navigation",
+ "Sociedade de advogados em São José dos Campos e região do Vale do Paraíba, com atuação em Direito Previdenciário, Trabalhista, Imobiliário, Sucessório e Inventários e Indenizações e Responsabilidade Civil.":"A law firm based in São José dos Campos, serving the Vale do Paraíba region, with practice in Social Security, Labor, Real Estate, Estate & Probate and Compensation & Civil Liability law.",
+ "OAB/SP · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento da OAB sobre publicidade na advocacia. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.":"OAB/SP · Content is for informational purposes only, with no client solicitation, in accordance with the Code of Ethics and Discipline and OAB regulations on legal advertising. Each case is unique; results depend on specific circumstances and no outcome is guaranteed."
 };
 function _xn(t){return (t||'').replace(/\s+/g,' ').trim();}
 function setLang(lang){
  var els=document.querySelectorAll('h1,h2,h3,h4,p,li,button,a,span,blockquote,label,option');
- for(var i=0;i<els.length;i++){var el=els[i];var ok=true;
-  for(var j=0;j<el.children.length;j++){if(!/^(SPAN|B|I|EM|STRONG|BR|A|SVG|SMALL)$/.test(el.children[j].tagName)){ok=false;break;}}
-  if(!ok)continue; var k=_xn(el.textContent); if(!Object.prototype.hasOwnProperty.call(XRR_DICT,k))continue;
-  if(!el.hasAttribute('data-pt'))el.setAttribute('data-pt',el.innerHTML);
-  el.innerHTML=(lang==='en')?XRR_DICT[k]:el.getAttribute('data-pt');}
+ for(var i=0;i<els.length;i++){var el=els[i];
+  var key=el.getAttribute('data-key');
+  if(!key){
+   var ok=true;
+   for(var j=0;j<el.children.length;j++){if(!/^(SPAN|B|I|EM|STRONG|BR|A|SVG|SMALL)$/.test(el.children[j].tagName)){ok=false;break;}}
+   if(!ok)continue;
+   var k=_xn(el.textContent); if(!Object.prototype.hasOwnProperty.call(XRR_DICT,k))continue;
+   el.setAttribute('data-key',k);
+   el.setAttribute('data-pt',el.innerHTML);
+   key=k;
+  }
+  el.innerHTML=(lang==='en')?XRR_DICT[key]:el.getAttribute('data-pt');}
  document.documentElement.lang=(lang==='en')?'en':'pt-BR';
- var t=document.getElementById('lang-toggle');if(t)t.textContent=(lang==='en')?'PT':'EN';
+ var bp=document.getElementById('lang-pt'),be=document.getElementById('lang-en');
+ if(bp)bp.classList.toggle('active',lang!=='en'); if(be)be.classList.toggle('active',lang==='en');
  window._XRRLANG=lang;try{localStorage.setItem('xrr_lang',lang);}catch(e){}}
 function toggleLang(){setLang((window._XRRLANG==='en')?'pt':'en');}
 </script>

@@ -12,8 +12,8 @@
    - id      : um "apelido" curto, sem espaços e sem acentos (ex.: "revisao-da-vida-toda").
                Cada artigo precisa de um id DIFERENTE de todos os outros.
    - titulo  : o título do artigo.
-   - area    : escolha uma — Previdenciário · Trabalhista · Inventário & Sucessões ·
-               Indenizações · Geral
+   - area    : escolha uma — Previdenciário · Trabalhista · Imobiliário ·
+               Sucessório e Inventários · Indenizações e Responsabilidade Civil · Geral
    - data    : no formato ANO-MES-DIA (ex.: "2026-06-28"). É por ela que o site ordena.
    - resumo  : 1 ou 2 frases curtas, que aparecem no card do portal.
    - conteudo: o texto completo. Use estas "etiquetas" simples:
@@ -32,7 +32,7 @@ var ARTIGOS = [
   {
     id: "negativacao-indevida-o-que-fazer",
     titulo: "Negativação indevida: o que fazer e quando cabe indenização?",
-    area: "Indenizações",
+    area: "Indenizações e Responsabilidade Civil",
     data: "2026-06-27",
     resumo: "Teve o nome incluído no SPC/Serasa por engano ou por dívida já paga? Veja os primeiros passos e quando pode haver reparação.",
     conteudo:
@@ -82,7 +82,7 @@ var ARTIGOS = [
   {
     id: "inventario-judicial-ou-extrajudicial",
     titulo: "Inventário em cartório ou na Justiça: qual é o seu caso?",
-    area: "Inventário & Sucessões",
+    area: "Sucessório e Inventários",
     data: "2026-06-08",
     resumo: "Havendo consenso entre os herdeiros, o inventário pode ser mais rápido. Entenda quando isso é possível.",
     conteudo:

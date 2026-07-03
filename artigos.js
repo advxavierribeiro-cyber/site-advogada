@@ -4,7 +4,8 @@
    COMO POSTAR UM ARTIGO (passo a passo simples):
 
    1) Copie um bloco inteiro, da chave de abertura  {  até a  },  (com a vírgula).
-   2) Cole logo abaixo da linha  "var ARTIGOS = ["  (para o artigo novo aparecer no topo).
+   2) Cole logo abaixo da linha  "var ARTIGOS = ["  (não precisa se preocupar com a
+      ordem — o site sempre coloca o artigo de data mais recente no topo sozinho).
    3) Troque APENAS o texto que está entre as aspas. NÃO apague as aspas nem as vírgulas.
    4) Salve e suba este arquivo (artigos.js) no GitHub — o site publica sozinho.
 
@@ -14,7 +15,15 @@
    - titulo  : o título do artigo.
    - area    : escolha uma — Previdenciário · Trabalhista · Imobiliário ·
                Sucessório e Inventários · Indenizações e Responsabilidade Civil · Geral
-   - data    : no formato ANO-MES-DIA (ex.: "2026-06-28"). É por ela que o site ordena.
+   - data    : no formato ANO-MES-DIA (ex.: "2026-06-28"). O artigo com a data mais
+               recente vira automaticamente o "destaque" no topo do Portal — não
+               precisa mexer em mais nada, nem reordenar o arquivo.
+   - autor   : nome de quem assina o artigo (ex.: "Andrea Xavier"). O site gera
+               sozinho um círculo com as iniciais (ex.: "AX") ao lado do nome, em
+               todo card e na página do artigo. Campo opcional: se deixar em
+               branco, o círculo simplesmente não aparece.
+   - cargo   : o cargo de quem assina (ex.: "Advogada · Sócia Fundadora"). Aparece
+               junto do nome, pequeno, abaixo. Também opcional.
    - resumo  : 1 ou 2 frases curtas, que aparecem no card do portal.
    - conteudo: o texto completo. Use estas "etiquetas" simples:
                  parágrafo .......  <p>seu texto</p>
@@ -34,6 +43,8 @@ var ARTIGOS = [
     titulo: "Negativação indevida: o que fazer e quando cabe indenização?",
     area: "Indenizações e Responsabilidade Civil",
     data: "2026-06-27",
+    autor: "Andrea Xavier",
+    cargo: "Advogada · Sócia Fundadora",
     resumo: "Teve o nome incluído no SPC/Serasa por engano ou por dívida já paga? Veja os primeiros passos e quando pode haver reparação.",
     conteudo:
       "<p>Descobrir o nome <strong>negativado</strong> (incluído no SPC ou no Serasa) por uma dívida que você não reconhece — ou que já pagou — é mais comum do que parece. A boa notícia é que há caminhos para corrigir e, em alguns casos, buscar reparação.</p>" +
@@ -53,6 +64,8 @@ var ARTIGOS = [
     titulo: "Revisão da Vida Toda: quem ainda pode pedir?",
     area: "Previdenciário",
     data: "2026-06-22",
+    autor: "Andrea Xavier",
+    cargo: "Advogada · Sócia Fundadora",
     resumo: "Entenda em poucos minutos se a revisão pode aumentar o seu benefício e quais são os prazos.",
     conteudo:
       "<p>A chamada <strong>Revisão da Vida Toda</strong> permite que parte dos aposentados inclua no cálculo do benefício as contribuições feitas antes de julho de 1994 — período que, em algumas regras, ficava de fora.</p>" +
@@ -67,6 +80,8 @@ var ARTIGOS = [
     titulo: "Saí do emprego: quais verbas eu devo conferir?",
     area: "Trabalhista",
     data: "2026-06-15",
+    autor: "Inês Ribeiro",
+    cargo: "Advogada · Sócia",
     resumo: "Aviso prévio, férias, 13º, FGTS e multa — um guia rápido do que checar na hora da rescisão.",
     conteudo:
       "<p>Ao fim de um contrato de trabalho, é comum restar a dúvida: <strong>recebi tudo o que era meu?</strong> Vale a pena conferir cada verba com atenção.</p>" +
@@ -84,6 +99,8 @@ var ARTIGOS = [
     titulo: "Inventário em cartório ou na Justiça: qual é o seu caso?",
     area: "Sucessório e Inventários",
     data: "2026-06-08",
+    autor: "Inês Ribeiro",
+    cargo: "Advogada · Sócia",
     resumo: "Havendo consenso entre os herdeiros, o inventário pode ser mais rápido. Entenda quando isso é possível.",
     conteudo:
       "<p>Organizar o patrimônio de quem partiu é um momento delicado — e o caminho escolhido faz diferença no tempo e no custo.</p>" +
@@ -98,6 +115,8 @@ var ARTIGOS = [
     titulo: "Título do artigo aqui",
     area: "Geral",
     data: "2026-01-01",
+    autor: "Nome do autor aqui",
+    cargo: "Cargo aqui (ex.: Advogada · Sócia)",
     resumo: "Um resumo curto, de uma ou duas frases, que aparece no card do portal.",
     conteudo:
       "<p>Primeiro parágrafo do artigo. Escreva de forma simples e direta, como se estivesse explicando para um cliente.</p>" +

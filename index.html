@@ -394,6 +394,16 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .artigo-card:hover .artigo-go{opacity:1;transform:none}
 @media(hover:none){.artigo-go{opacity:1;transform:none}}
 .artigo-empty{grid-column:1/-1;text-align:center;color:var(--text-soft);font-weight:300;padding:30px 0}
+.artigo-byline{display:flex;align-items:center;gap:10px;margin-top:16px}
+.artigo-avatar{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:10.5px;font-weight:700;color:var(--ink);background:linear-gradient(160deg,var(--gold-soft),var(--gold))}
+.artigo-byline-info{display:flex;flex-direction:column;line-height:1.32;min-width:0}
+.artigo-autor{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.artigo-cargo{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);font-family:'Cinzel',serif}
+.destaque .artigo-autor,.phead .artigo-autor{color:var(--paper)}
+.destaque .artigo-cargo,.phead .artigo-cargo{color:rgba(246,243,236,.55)}
+.artigo-byline-lg .artigo-avatar{width:42px;height:42px;font-size:13px}
+.artigo-byline-lg .artigo-autor{font-size:13.5px}
+.artigo-byline-lg .artigo-cargo{font-size:10.5px}
 .artigo-data{margin-top:16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft)}
 .artigo-body{max-width:46rem;margin:0 auto}
 .artigo-conteudo{font-size:clamp(1.02rem,.98rem + .3vw,1.16rem);color:var(--text);font-weight:300;line-height:1.8}
@@ -471,11 +481,9 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .unidades{display:grid;gap:clamp(16px,2vw,22px)}
 @media(min-width:560px){.unidades{grid-template-columns:1fr 1fr}}
 .unidade{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.4s var(--ease)}
-.unidade:hover{box-shadow:0 34px 64px -38px rgba(20,37,46,.4);border-color:rgba(194,160,90,.45);transform:translateY(-3px)}
 .unidade:hover{box-shadow:0 30px 60px -44px rgba(20,37,46,.4);border-color:rgba(194,160,90,.4)}
-.uni-map{position:relative;aspect-ratio:4/3;background:var(--paper-2);overflow:hidden}
+.uni-map{position:relative;aspect-ratio:16/10;background:var(--paper-2);overflow:hidden}
 .uni-map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.9) contrast(1.02)}
-.uni-map::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(194,160,90,.18)}
 .uni-info{padding:clamp(16px,1.8vw,22px)}
 .uni-tag{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block}
 .uni-addr{margin-top:8px;font-size:13.5px;color:var(--text);font-weight:400;line-height:1.5}
@@ -574,8 +582,6 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .filtros .chip:hover{border-color:var(--gold);background:rgba(194,160,90,.08)}
 .filtros .chip.active{background:var(--gold);color:var(--ink);border-color:var(--gold);box-shadow:0 8px 20px -12px rgba(194,160,90,.7)}
 @media(max-width:600px){.filtros{gap:8px}.filtros .chip{padding:8px 13px}}
-/* Botões Maps/Waze: ícone da marca em cor, botão mantém o padrão dourado */
-.uni-links a svg{flex:none}
 .foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
 .foot-bottom .foot-priv:hover{color:var(--gold-soft)}
 .lang-switch{position:relative;order:1;display:flex;align-items:center;width:78px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(231,216,181,.4);border-radius:30px;padding:3px;background:rgba(255,255,255,.04);flex:none}
@@ -1051,7 +1057,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <span class="lbl"><span class="k">Contratos e patrimônio imóvel</span><h3>Direito Imobiliário</h3><p>Contratos, regularização de imóveis, locação e questões relacionadas ao seu patrimônio.</p><span class="go">Ver área →</span></span>
         </a>
         <a class="acard" href="#area-sucessoes" onclick="go('area-sucessoes',event)">
-          <img src="https://images.pexels.com/photos/8847451/pexels-photo-8847451.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito Sucessório e Inventários" loading="lazy" onerror="this.style.display='none'"/>
+          <img src="https://images.pexels.com/photos/618158/pexels-photo-618158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Direito Sucessório e Inventários" loading="lazy" onerror="this.style.display='none'"/>
           <span class="veil"></span>
           <span class="lbl"><span class="k">Patrimônio e família</span><h3>Direito Sucessório e Inventários</h3><p>Inventários, partilhas, testamentos e planejamento sucessório.</p><span class="go">Ver área →</span></span>
         </a>
@@ -1189,7 +1195,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 <!-- ===== ÁREA: Inventário & Sucessões ===== -->
 <section class="page" id="page-area-sucessoes">
   <div class="area-hero">
-    <img src="https://images.pexels.com/photos/8847451/pexels-photo-8847451.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Direito Sucessório e Inventários" loading="lazy"/>
+    <img src="https://images.pexels.com/photos/618158/pexels-photo-618158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800" alt="Direito Sucessório e Inventários" loading="lazy"/>
     <div class="veil"></div>
     <div class="wrap rv in">
       <button class="back-link" onclick="go('areas')">← Áreas de atuação</button>
@@ -1284,7 +1290,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Dra. Inês Ribeiro</div>
             <div class="mrole">Advogada · Sócia</div>
-            <p class="mbio">Sócia do escritório, conduz processos judiciais e consultivos com proximidade, clareza e atenção constante a cada cliente.</p>
+            <p class="mbio">Sócia do escritório, atua na condução estratégica de processos judiciais e consultivos, com rigor técnico e atendimento próximo a cada cliente.</p>
           </div>
         </div>
       </div>
@@ -1404,7 +1410,8 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
               <span class="uni-tag">Matriz · São José dos Campos</span>
               <p class="uni-addr">Rua Pascoal Moreira, 48 · Jardim Nova América<br>Em frente à 111 Imóveis — SJC/SP</p>
               <div class="uni-links">
-                <a href="https://waze.com/ul?q=Rua%20Pascoal%20Moreira%2048%20Jardim%20Nova%20Am%C3%A9rica%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Como chegar (Waze)</a>
+                <a href="https://www.google.com/maps?q=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>Maps</a>
+                <a href="https://waze.com/ul?q=Rua%20Pascoal%20Moreira%2048%20Jardim%20Nova%20Am%C3%A9rica%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Waze</a>
               </div>
             </div>
           </div>
@@ -1414,7 +1421,8 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
               <span class="uni-tag">Filial · Campos do Jordão</span>
               <p class="uni-addr">Av. Januário Miraglia, 659 · Sala 13<br>Prédio Pátio Dubieux — Campos do Jordão/SP</p>
               <div class="uni-links">
-                <a href="https://waze.com/ul?q=Av.%20Janu%C3%A1rio%20Miraglia%20659%20Campos%20do%20Jord%C3%A3o&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Como chegar (Waze)</a>
+                <a href="https://www.google.com/maps?q=Av.%20Janu%C3%A1rio%20Miraglia%2C%20659%20-%20Campos%20do%20Jord%C3%A3o%20-%20SP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8Z"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>Maps</a>
+                <a href="https://waze.com/ul?q=Av.%20Janu%C3%A1rio%20Miraglia%20659%20Campos%20do%20Jord%C3%A3o&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Waze</a>
               </div>
             </div>
           </div>
@@ -1454,6 +1462,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
     <span class="eyebrow on-dark rv d1" id="artigo-area">Conteúdo</span>
     <h1 class="rv d1" id="artigo-titulo">Artigo</h1>
     <p class="artigo-data rv d2" id="artigo-data"></p>
+    <div class="rv d2" id="artigo-byline" style="margin-top:18px"></div>
   </div></div>
   <div class="section bg-paper">
     <div class="wrap artigo-body">
@@ -1639,6 +1648,16 @@ function getArtigos(){
   if(typeof ARTIGOS==='undefined'||!ARTIGOS.length) return [];
   return ARTIGOS.filter(function(a){return a.id!=='modelo-copie-este'}).sort(function(a,b){return (b.data||'').localeCompare(a.data||'')});
 }
+function iniciais(nome){
+  var p=(nome||'').trim().split(/\s+/).filter(Boolean);
+  if(!p.length) return '';
+  return (p[0].charAt(0)+(p.length>1?p[p.length-1].charAt(0):'')).toUpperCase();
+}
+function bylineHTML(a,big){
+  if(!a||!a.autor) return '';
+  return '<span class="artigo-byline'+(big?' artigo-byline-lg':'')+'"><span class="artigo-avatar" aria-hidden="true">'+iniciais(a.autor)+'</span>'+
+    '<span class="artigo-byline-info"><span class="artigo-autor">'+a.autor+'</span>'+(a.cargo?'<span class="artigo-cargo">'+a.cargo+'</span>':'')+'</span></span>';
+}
 function cardHTML(a,isNew){
   var imp=(a.categoria==='Imprensa'), ext=imp&&a.link;
   var open=ext?(' href="'+a.link+'" target="_blank" rel="noopener"'):(' href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)"');
@@ -1646,7 +1665,7 @@ function cardHTML(a,isNew){
   var go=imp?'Ver na fonte &rarr;':'Ler mais &rarr;';
   var fonte=(imp&&a.fonte)?('<span class="artigo-fonte">Fonte: '+a.fonte+'</span>'):'';
   return '<a class="artigo-card"'+open+'>'+(isNew?'<span class="artigo-new">Novo</span>':'')+
-    '<span class="artigo-tag">'+tag+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+
+    '<span class="artigo-tag">'+tag+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+bylineHTML(a)+
     '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">'+go+'</span></span></a>';
 }
 function filtroConteudo(){
@@ -1676,7 +1695,7 @@ function destaqueHTML(a){
   return '<span class="destaque-flag"><span class="df-dot" aria-hidden="true"></span>Novidade</span>'+
     '<a class="destaque"'+open+'>'+
     '<span class="dq-corner tl" aria-hidden="true"></span><span class="dq-corner br" aria-hidden="true"></span>'+
-    '<span class="artigo-tag">'+(imp?'Imprensa':(a.area||''))+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+
+    '<span class="artigo-tag">'+(imp?'Imprensa':(a.area||''))+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+bylineHTML(a)+
     '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="dq-cta">'+go+'</span></span></a>';
 }
 function renderConteudo(){
@@ -1698,9 +1717,9 @@ function renderPortais(){
 }
 function renderArtigo(slug){
   var a=getArtigos().filter(function(x){return x.id===slug})[0];
-  var T=document.getElementById('artigo-titulo'),A=document.getElementById('artigo-area'),D=document.getElementById('artigo-data'),C=document.getElementById('artigo-conteudo');
-  if(!a){ if(T)T.textContent='Artigo não encontrado'; if(A)A.textContent='Conteúdo'; if(D)D.textContent=''; if(C)C.innerHTML='<p>Esse conteúdo não está disponível.</p>'; return; }
-  if(T)T.textContent=a.titulo; if(A)A.textContent=a.area; if(D)D.textContent=fmtData(a.data); if(C)C.innerHTML=a.conteudo;
+  var T=document.getElementById('artigo-titulo'),A=document.getElementById('artigo-area'),D=document.getElementById('artigo-data'),C=document.getElementById('artigo-conteudo'),B=document.getElementById('artigo-byline');
+  if(!a){ if(T)T.textContent='Artigo não encontrado'; if(A)A.textContent='Conteúdo'; if(D)D.textContent=''; if(C)C.innerHTML='<p>Esse conteúdo não está disponível.</p>'; if(B)B.innerHTML=''; return; }
+  if(T)T.textContent=a.titulo; if(A)A.textContent=a.area; if(D)D.textContent=fmtData(a.data); if(C)C.innerHTML=a.conteudo; if(B)B.innerHTML=bylineHTML(a,true);
 }
 function toggleAcc(b){
   var acc=b.closest('.acc'),open=acc.classList.contains('open');
@@ -1961,7 +1980,7 @@ var XRR_DICT={
  "Equipe de apoio":"Support team",
  "Quem cuida de cada detalhe.":"Who takes care of every detail.",
  "Há mais de três décadas atuando na defesa de trabalhadores, aposentados, empresas e proprietários de imóveis, com atendimento personalizado e foco na solução jurídica mais segura.":"For more than three decades defending workers, retirees, companies and property owners, with personalized service and a focus on the safest legal solution.",
- "Sócia do escritório, conduz processos judiciais e consultivos com proximidade, clareza e atenção constante a cada cliente.":"Partner at the firm, handling litigation and advisory matters with closeness, clarity and constant attention to every client.",
+ "Sócia do escritório, atua na condução estratégica de processos judiciais e consultivos, com rigor técnico e atendimento próximo a cada cliente.":"Partner at the firm, she leads litigation and advisory matters strategically, combining technical rigor with close attention to every client.",
  "Especialista em processos administrativos junto ao INSS, conduz cada requerimento de benefício com agilidade, precisão técnica e atenção a cada detalhe.":"Specialist in administrative procedures with INSS, handling every benefit request with speed, technical precision and attention to detail.",
  "Atua na pesquisa jurídica, no acompanhamento processual e na organização de cada caso, contribuindo com rigor técnico e dedicação em cada etapa.":"Works on legal research, case tracking and organization, contributing technical rigor and dedication at every stage.",
  "Responsável pela organização de documentos, prazos e pelo atendimento diário, assegurando que cada caso avance com ordem, agilidade e tranquilidade para o cliente.":"Responsible for organizing documents, deadlines and daily client care, ensuring every case moves forward with order, efficiency and peace of mind for the client.",
@@ -1978,7 +1997,6 @@ var XRR_DICT={
  "Horário":"Hours","Segunda a sexta, das nove às dezoito horas":"Monday to Friday, 9am to 6pm","Nossas unidades":"Our offices",
  "Matriz · São José dos Campos":"Headquarters · São José dos Campos","Filial · Campos do Jordão":"Branch · Campos do Jordão",
  "Atendimento mediante agendamento, em ambas as unidades.":"By appointment only, at both offices.",
- "Como chegar (Waze)":"Get directions (Waze)",
 
  "Notícias que impactam os seus direitos":"News that impacts your rights",
  "As últimas decisões, alterações na legislação e novidades sobre aposentadorias, benefícios do INSS, direitos trabalhistas e tudo que pode impactar o seu caso — em linguagem simples.":"The latest rulings, legislative changes and updates on retirement, INSS benefits, labor rights and anything that may affect your case — explained in plain language.",

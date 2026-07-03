@@ -120,18 +120,18 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 16px),transparent);
   padding:4px 2px 8px;margin-top:2px;scroll-snap-type:x proximity}
 .nav::-webkit-scrollbar{display:none}
-.nav button{position:relative;font-family:'Cinzel',serif;font-weight:500;font-size:clamp(11px,.78vw,12.5px);
+.nav a,.nav button{position:relative;font-family:'Cinzel',serif;font-weight:500;font-size:clamp(11px,.78vw,12.5px);
   letter-spacing:.07em;color:rgba(246,243,236,.85);padding:7px 0;text-transform:uppercase;white-space:nowrap;
-  transition:.3s;scroll-snap-align:center;flex:none}
-.nav button::after{content:"";position:absolute;left:0;bottom:1px;height:1px;width:0;background:var(--gold);transition:width .35s var(--ease)}
-.nav button:hover{color:var(--gold-soft)}
-.nav button.active{color:var(--gold-soft)}
-.nav button.active::after,.nav button:hover::after{width:100%}
+  transition:.3s;scroll-snap-align:center;flex:none;display:inline-block}
+.nav a::after,.nav button::after{content:"";position:absolute;left:0;bottom:1px;height:1px;width:0;background:var(--gold);transition:width .35s var(--ease)}
+.nav a:hover,.nav button:hover{color:var(--gold-soft)}
+.nav a.active,.nav button.active{color:var(--gold-soft)}
+.nav a.active::after,.nav button.active::after,.nav a:hover::after,.nav button:hover::after{width:100%}
 .hdr-cta{order:2;margin-left:auto;display:inline-flex;flex:none;padding:11px 18px}
 @media(min-width:1040px){
   .hdr-inner{flex-wrap:nowrap}
   .nav{flex:1 1 auto;order:2;justify-content:center;overflow:visible;-webkit-mask-image:none;mask-image:none;padding:0;margin:0}
-  .nav button{flex:0 0 auto}
+  .nav a,.nav button{flex:0 0 auto}
   .hdr-cta{order:3;margin-left:0}
 }
 /* mobile: cabeçalho azul sólido, bem enquadrado (sem cinza) */
@@ -696,12 +696,12 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
       <button id="lang-en" class="lang-opt" type="button" onclick="setLang('en')">EN</button>
     </div>
     <nav class="nav" aria-label="Principal">
-      <button class="active" id="nav-inicio" onclick="go('inicio',event)">Início</button>
-      <button id="nav-escritorio" onclick="go('escritorio',event)">O Escritório</button>
-      <button id="nav-areas" onclick="go('areas',event)">Áreas de Atuação</button>
-      <button id="nav-conteudo" onclick="go('conteudo',event)">Conteúdo</button>
-      <button id="nav-equipe" onclick="go('equipe',event)">Equipe</button>
-      <button id="nav-contato" onclick="go('contato',event)">Contato</button>
+      <a class="active" id="nav-inicio" href="#inicio" onclick="go('inicio',event)">Início</a>
+      <a id="nav-escritorio" href="#escritorio" onclick="go('escritorio',event)">O Escritório</a>
+      <a id="nav-areas" href="#areas" onclick="go('areas',event)">Áreas de Atuação</a>
+      <a id="nav-conteudo" href="#conteudo" onclick="go('conteudo',event)">Conteúdo</a>
+      <a id="nav-equipe" href="#equipe" onclick="go('equipe',event)">Equipe</a>
+      <a id="nav-contato" href="#contato" onclick="go('contato',event)">Contato</a>
     </nav>
   </div>
 </header>
@@ -800,6 +800,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
     <span class="eyebrow center">Mais de 30 anos de experiência</span>
     <h2>Mais de 30 anos transformando conhecimento jurídico em segurança para nossos clientes.</h2>
     <p class="lead" style="color:rgba(246,243,236,.72);max-width:42rem;margin:0 auto">Atendimento personalizado em Direito Previdenciário, Trabalhista e Imobiliário para pessoas físicas e empresas.</p>
+    <p style="color:rgba(246,243,236,.55);max-width:46rem;margin:16px auto 0;font-size:.92rem;letter-spacing:.02em;line-height:1.7">Atendimento personalizado do início ao fim · Estratégia jurídica individualizada · Transparência em todas as etapas · Atuação judicial e consultiva · Atendimento presencial e online</p>
   </div></div>
 
   <!-- ===== SITUAÇÕES ===== -->
@@ -1404,7 +1405,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           </a>
           <div class="crow">
             <span class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <span><span class="cl">Horário</span><span class="cv">Segunda a sexta, das nove às dezoito horas</span></span>
+            <span><span class="cl">Horário</span><span class="cv">Segunda a sexta, das 09:00 às 18:00</span></span>
           </div>
         </div>
 
@@ -1572,12 +1573,12 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
       <div>
         <h4>Navegação</h4>
         <div class="foot-links">
-          <button onclick="go('inicio')">Início</button>
-          <button onclick="go('escritorio')">O Escritório</button>
-          <button onclick="go('areas')">Áreas de Atuação</button>
-          <button onclick="go('conteudo')">Conteúdo</button>
-          <button onclick="go('equipe')">Equipe</button>
-          <button onclick="go('contato')">Contato</button>
+          <a href="#inicio" onclick="go('inicio',event)">Início</a>
+          <a href="#escritorio" onclick="go('escritorio',event)">O Escritório</a>
+          <a href="#areas" onclick="go('areas',event)">Áreas de Atuação</a>
+          <a href="#conteudo" onclick="go('conteudo',event)">Conteúdo</a>
+          <a href="#equipe" onclick="go('equipe',event)">Equipe</a>
+          <a href="#contato" onclick="go('contato',event)">Contato</a>
         </div>
       </div>
       <div>
@@ -1585,13 +1586,13 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
         <div class="foot-contact">
           <div><div class="fl">WhatsApp</div><a class="fv" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">(12) 99743-4181</a></div>
           <div><div class="fl">Endereço</div><div class="fv">Rua Pascoal Moreira, 48 · Jardim Nova América<br>Em frente à 111 Imóveis · São José dos Campos — SP</div></div>
-          <div><div class="fl">Horário</div><div class="fv">Segunda a sexta · das nove às dezoito horas</div></div>
+          <div><div class="fl">Horário</div><div class="fv">Segunda a sexta · das 09:00 às 18:00</div></div>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
       <span class="badge"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>São José dos Campos · Vale do Paraíba · SP</span></span>
-      <button class="foot-priv" onclick="go('privacidade')">Política de Privacidade e Cookies</button>
+      <a class="foot-priv" href="#privacidade" onclick="go('privacidade',event)">Política de Privacidade e Cookies</a>
       <span>© Xavier Ribeiro &amp; Ribeiro — Sociedade de Advogados.</span>
     </div>
     <p class="foot-legal">OAB/SP · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento da OAB sobre publicidade na advocacia. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.</p>
@@ -1615,7 +1616,7 @@ function applyState(id,scroll){
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
   var pg=document.getElementById('page-'+pageId); if(pg) pg.classList.add('active');
   var navId = isArea(id)?'areas' : (isArtigo(id)?'conteudo' : pageId);
-  document.querySelectorAll('.nav button').forEach(function(b){b.classList.remove('active')});
+  document.querySelectorAll('.nav a,.nav button').forEach(function(b){b.classList.remove('active')});
   var nv=document.getElementById('nav-'+navId); if(nv) nv.classList.add('active');
   hdr.classList.toggle('solid', id!=='inicio' && !isArea(id));
   window.scrollTo({top:scroll||0,behavior:'instant'});
@@ -1810,6 +1811,7 @@ var XRR_DICT={
  "Mais de 30 anos de experiência":"More than 30 years of experience",
  "Mais de 30 anos transformando conhecimento jurídico em segurança para nossos clientes.":"More than 30 years transforming legal knowledge into security for our clients.",
  "Atendimento personalizado em Direito Previdenciário, Trabalhista e Imobiliário para pessoas físicas e empresas.":"Personalized service in Social Security, Labor and Real Estate law for individuals and businesses.",
+ "Atendimento personalizado do início ao fim · Estratégia jurídica individualizada · Transparência em todas as etapas · Atuação judicial e consultiva · Atendimento presencial e online":"Personalized service from start to finish · Individualized legal strategy · Transparency at every stage · Litigation and advisory practice · In-person and online service",
 
  "Em que podemos ajudar":"How we can help",
  "Reconhece a sua situação?":"Does this sound like you?",
@@ -2022,7 +2024,7 @@ var XRR_DICT={
  "Nome completo":"Full name","Telefone ou e-mail":"Phone or e-mail","Assunto":"Subject","Mensagem":"Message","Enviar mensagem":"Send message",
  "Previdenciário / INSS":"Social Security / INSS","Imobiliário":"Real Estate","Sucessório e Inventários":"Estate & Probate","Outro assunto":"Other subject",
  "Ao enviar, você será direcionado ao nosso WhatsApp com os dados preenchidos. Atendimento seguro e sem compromisso.":"After sending, you'll be redirected to our WhatsApp with your information filled in. Secure service, no obligation.",
- "Horário":"Hours","Segunda a sexta, das nove às dezoito horas":"Monday to Friday, 9am to 6pm","Nossas unidades":"Our offices",
+ "Horário":"Hours","Segunda a sexta, das 09:00 às 18:00":"Monday to Friday, 09:00 to 18:00","Segunda a sexta · das 09:00 às 18:00":"Monday to Friday · 09:00 to 18:00","Nossas unidades":"Our offices",
  "Matriz · São José dos Campos":"Headquarters · São José dos Campos","Filial · Campos do Jordão":"Branch · Campos do Jordão",
  "Atendimento mediante agendamento, em ambas as unidades.":"By appointment only, at both offices.",
 

@@ -1721,11 +1721,33 @@ function renderPortais(){
   if(home) home.innerHTML = arts.length ? arts.slice(0,3).map(function(a,i){return cardHTML(a,i===0)}).join('') : '<p class="artigo-empty">Em breve, os primeiros artigos.</p>';
   renderConteudo();
 }
+/* Converte texto simples (escrito como no Word, sem tags) em HTML.
+   Regras: parágrafo = linha normal; pule uma linha em branco entre parágrafos.
+   ## Subtítulo   |   **negrito**   |   - item de lista (uma linha por item).
+   Se o texto já vier com tags HTML (artigos antigos), usa direto, sem mexer. */
+function md2html(txt){
+  if(!txt) return '';
+  var s=String(txt).replace(/\r\n/g,'\n').trim();
+  if(/<(p|h3|h2|ul|ol|li|strong)[ >]/i.test(s)) return s;
+  var out='', list=[];
+  function flushList(){ if(list.length){ out+='<ul>'+list.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul>'; list=[]; } }
+  s.split(/\n\s*\n/).forEach(function(block){
+    block.split('\n').map(function(l){return l.trim()}).filter(Boolean).forEach(function(line){
+      var b=line.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+      if(/^##\s+/.test(line)){ flushList(); out+='<h3>'+b.replace(/^##\s+/,'')+'</h3>'; }
+      else if(/^-\s+/.test(line)){ list.push(b.replace(/^-\s+/,'')); }
+      else { flushList(); out+='<p>'+b+'</p>'; }
+    });
+    flushList();
+  });
+  flushList();
+  return out;
+}
 function renderArtigo(slug){
   var a=getArtigos().filter(function(x){return x.id===slug})[0];
   var T=document.getElementById('artigo-titulo'),A=document.getElementById('artigo-area'),D=document.getElementById('artigo-data'),C=document.getElementById('artigo-conteudo'),B=document.getElementById('artigo-byline');
   if(!a){ if(T)T.textContent='Artigo não encontrado'; if(A)A.textContent='Conteúdo'; if(D)D.textContent=''; if(C)C.innerHTML='<p>Esse conteúdo não está disponível.</p>'; if(B)B.innerHTML=''; return; }
-  if(T)T.textContent=a.titulo; if(A)A.textContent=a.area; if(D)D.textContent=fmtData(a.data); if(C)C.innerHTML=a.conteudo; if(B)B.innerHTML=bylineHTML(a,true);
+  if(T)T.textContent=a.titulo; if(A)A.textContent=a.area; if(D)D.textContent=fmtData(a.data); if(C)C.innerHTML=md2html(a.conteudo); if(B)B.innerHTML=bylineHTML(a,true);
 }
 function toggleAcc(b){
   var acc=b.closest('.acc'),open=acc.classList.contains('open');

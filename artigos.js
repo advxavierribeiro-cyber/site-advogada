@@ -25,15 +25,21 @@
    - cargo   : o cargo de quem assina (ex.: "Advogada · Sócia Fundadora"). Aparece
                junto do nome, pequeno, abaixo. Também opcional.
    - resumo  : 1 ou 2 frases curtas, que aparecem no card do portal.
-   - conteudo: o texto completo. Use estas "etiquetas" simples:
-                 parágrafo .......  <p>seu texto</p>
-                 subtítulo .......  <h3>seu subtítulo</h3>
-                 negrito .........  <strong>texto em destaque</strong>
-                 lista ...........  <ul><li>item 1</li><li>item 2</li></ul>
-               Para textos longos, junte vários trechos com  +  (veja os exemplos abaixo).
+   - conteudo: o texto completo do artigo, escrito NORMALMENTE (igual você escreveria
+               no Word) — o site lê sozinho e formata. Nada de tags, nada de "+".
+               Repare que o texto começa e termina com um acento grave (`), não com
+               aspas (") — é só isso que muda.
+                 parágrafo .......  escreva normal; pule UMA linha em branco entre
+                                     um parágrafo e outro.
+                 subtítulo .......  comece a linha com ##  (ex.: ## Quem pode pedir)
+                 negrito .........  coloque ** dos dois lados  (ex.: **atenção**)
+                 lista ...........  comece cada linha com um traço -  (uma por linha)
 
    DICA: mantenha sempre o bloco "modelo-copie-este" no final como referência —
-   é só copiá-lo de novo a cada novo artigo.
+   é só copiá-lo de novo a cada novo artigo. O modelo mostra o formato certo.
+   Os artigos mais antigos deste arquivo ainda usam tags HTML (<p>, <h3>...) —
+   tudo bem, o site reconhece os dois formatos. Só o texto NOVO precisa ser no
+   formato simples acima.
    ============================================================================ */
 
 var ARTIGOS = [
@@ -118,12 +124,16 @@ var ARTIGOS = [
     autor: "Nome do autor aqui",
     cargo: "Cargo aqui (ex.: Advogada · Sócia)",
     resumo: "Um resumo curto, de uma ou duas frases, que aparece no card do portal.",
-    conteudo:
-      "<p>Primeiro parágrafo do artigo. Escreva de forma simples e direta, como se estivesse explicando para um cliente.</p>" +
-      "<h3>Um subtítulo, se quiser</h3>" +
-      "<p>Outro parágrafo. Use <strong>negrito</strong> para destacar o que mais importa.</p>" +
-      "<ul><li>Um ponto importante.</li><li>Outro ponto.</li></ul>" +
-      "<p>Parágrafo final, sempre com uma orientação clara: convide o leitor a falar com o escritório.</p>"
+    conteudo: `Primeiro parágrafo do artigo. Escreva de forma simples e direta, como se estivesse explicando para um cliente.
+
+## Um subtítulo, se quiser
+
+Outro parágrafo. Use **negrito** para destacar o que mais importa.
+
+- Um ponto importante
+- Outro ponto
+
+Parágrafo final, sempre com uma orientação clara: convide o leitor a falar com o escritório.`
   }
 
 ];

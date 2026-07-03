@@ -140,6 +140,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
   .hdr::before{display:none}
   .hdr-cta{display:none}
   .nav{justify-content:flex-start}
+  .hdr-inner{min-height:0;padding-top:max(16px,env(safe-area-inset-top));padding-bottom:10px}
+}
+@media(max-width:600px){
+  .hdr-inner{padding-top:max(14px,env(safe-area-inset-top));padding-bottom:8px;gap:10px}
+  .brand{gap:10px}
 }
 
 /* ============ PÁGINAS / reveal ============ */
@@ -395,10 +400,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 @media(hover:none){.artigo-go{opacity:1;transform:none}}
 .artigo-empty{grid-column:1/-1;text-align:center;color:var(--text-soft);font-weight:300;padding:30px 0}
 .artigo-byline{display:flex;align-items:center;gap:10px;margin-top:16px}
-.artigo-avatar{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:10.5px;font-weight:700;color:var(--ink);background:linear-gradient(160deg,var(--gold-soft),var(--gold))}
+.artigo-avatar{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:.01em;color:var(--gold-deep);background:rgba(194,160,90,.08);border:1px solid rgba(194,160,90,.4)}
 .artigo-byline-info{display:flex;flex-direction:column;line-height:1.32;min-width:0}
 .artigo-autor{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .artigo-cargo{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);font-family:'Cinzel',serif}
+.destaque .artigo-avatar,.phead .artigo-avatar{color:var(--gold-soft);background:rgba(231,216,181,.06);border-color:rgba(231,216,181,.35)}
 .destaque .artigo-autor,.phead .artigo-autor{color:var(--paper)}
 .destaque .artigo-cargo,.phead .artigo-cargo{color:rgba(246,243,236,.55)}
 .artigo-byline-lg .artigo-avatar{width:42px;height:42px;font-size:13px}
@@ -488,8 +494,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .uni-tag{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block}
 .uni-addr{margin-top:8px;font-size:13.5px;color:var(--text);font-weight:400;line-height:1.5}
 .uni-links{display:flex;gap:10px;margin-top:16px}
-.uni-links a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));border:0;border-radius:7px;padding:12px 10px;transition:.3s var(--ease)}
-.uni-links a:hover{box-shadow:0 14px 28px -12px rgba(194,160,90,.6);transform:translateY(-1px)}
+.uni-links a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#1a56db;background:#fff;border:1px solid #d7e3fb;border-radius:7px;padding:12px 10px;transition:.3s var(--ease)}
+.uni-links a:hover{box-shadow:0 14px 28px -12px rgba(26,86,219,.3);transform:translateY(-1px);border-color:#1a56db}
 .uni-links a svg{width:14px;height:14px;flex:none}
 
 /* ============ RODAPÉ ============ */

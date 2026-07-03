@@ -1731,14 +1731,14 @@ function md2html(txt){
   if(/<(p|h3|h2|ul|ol|li|strong)[ >]/i.test(s)) return s;
   var out='', list=[];
   function flushList(){ if(list.length){ out+='<ul>'+list.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul>'; list=[]; } }
-  s.split(/\n\s*\n/).forEach(function(block){
-    block.split('\n').map(function(l){return l.trim()}).filter(Boolean).forEach(function(line){
-      var b=line.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
-      if(/^##\s+/.test(line)){ flushList(); out+='<h3>'+b.replace(/^##\s+/,'')+'</h3>'; }
-      else if(/^-\s+/.test(line)){ list.push(b.replace(/^-\s+/,'')); }
-      else { flushList(); out+='<p>'+b+'</p>'; }
-    });
-    flushList();
+  /* Cada LINHA vira um parágrafo (ou item de lista/subtítulo); linhas em
+     branco são só cosméticas e ignoradas — assim, tanto faz se o Word colar
+     com uma ou duas quebras de linha entre os parágrafos, sempre funciona. */
+  s.split('\n').map(function(l){return l.trim()}).filter(Boolean).forEach(function(line){
+    var b=line.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+    if(/^##\s+/.test(line)){ flushList(); out+='<h3>'+b.replace(/^##\s+/,'')+'</h3>'; }
+    else if(/^-\s+/.test(line)){ list.push(b.replace(/^-\s+/,'')); }
+    else { flushList(); out+='<p>'+b+'</p>'; }
   });
   flushList();
   return out;

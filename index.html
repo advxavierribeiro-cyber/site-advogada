@@ -471,16 +471,18 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .unidades{display:grid;gap:clamp(16px,2vw,22px)}
 @media(min-width:560px){.unidades{grid-template-columns:1fr 1fr}}
 .unidade{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:.4s var(--ease)}
+.unidade:hover{box-shadow:0 34px 64px -38px rgba(20,37,46,.4);border-color:rgba(194,160,90,.45);transform:translateY(-3px)}
 .unidade:hover{box-shadow:0 30px 60px -44px rgba(20,37,46,.4);border-color:rgba(194,160,90,.4)}
-.uni-map{aspect-ratio:16/10;background:var(--paper-2)}
-.uni-map iframe{width:100%;height:100%;border:0;display:block}
-.uni-info{padding:clamp(15px,1.6vw,20px)}
+.uni-map{position:relative;aspect-ratio:4/3;background:var(--paper-2);overflow:hidden}
+.uni-map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.9) contrast(1.02)}
+.uni-map::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(194,160,90,.18)}
+.uni-info{padding:clamp(16px,1.8vw,22px)}
 .uni-tag{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block}
 .uni-addr{margin-top:8px;font-size:13.5px;color:var(--text);font-weight:400;line-height:1.5}
-.uni-links{display:flex;gap:10px;margin-top:14px}
-.uni-links a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);border:1px solid rgba(194,160,90,.45);border-radius:6px;padding:10px 8px;transition:.3s}
-.uni-links a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
-.uni-links a svg{width:13px;height:13px;flex:none}
+.uni-links{display:flex;gap:10px;margin-top:16px}
+.uni-links a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));border:0;border-radius:7px;padding:12px 10px;transition:.3s var(--ease)}
+.uni-links a:hover{box-shadow:0 14px 28px -12px rgba(194,160,90,.6);transform:translateY(-1px)}
+.uni-links a svg{width:14px;height:14px;flex:none}
 
 /* ============ RODAPÉ ============ */
 .foot{background:var(--petrol-deep);color:rgba(246,243,236,.7)}
@@ -576,11 +578,12 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .uni-links a svg{flex:none}
 .foot-bottom .foot-priv{color:rgba(246,243,236,.5);transition:.3s}
 .foot-bottom .foot-priv:hover{color:var(--gold-soft)}
-.lang-switch{order:1;display:flex;align-items:center;gap:6px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.1em;border:1px solid rgba(231,216,181,.45);border-radius:30px;padding:6px 12px;background:transparent;flex:none}
-.lang-opt{background:none;border:0;padding:2px 1px;color:rgba(231,216,181,.5);cursor:pointer;transition:.3s var(--ease)}
-.lang-opt:hover{color:var(--gold-soft)}
-.lang-opt.active{color:var(--champagne);font-weight:700}
-.lang-sep{color:rgba(231,216,181,.32)}
+.lang-switch{position:relative;order:1;display:flex;align-items:center;width:78px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(231,216,181,.4);border-radius:30px;padding:3px;background:rgba(255,255,255,.04);flex:none}
+.lang-thumb{position:absolute;top:3px;left:3px;width:calc(50% - 3px);height:calc(100% - 6px);border-radius:30px;background:linear-gradient(180deg,var(--gold-soft),var(--gold));transition:transform .38s cubic-bezier(.65,0,.35,1);z-index:0;box-shadow:0 4px 12px -4px rgba(194,160,90,.6)}
+.lang-switch.is-en .lang-thumb{transform:translateX(100%)}
+.lang-opt{position:relative;z-index:1;flex:1;background:none;border:0;padding:7px 0;color:rgba(231,216,181,.55);cursor:pointer;transition:color .3s var(--ease);text-align:center}
+.lang-opt:hover{color:var(--champagne)}
+.lang-opt.active{color:var(--ink);font-weight:700}
 @media(max-width:1039px){.lang-switch{margin-left:auto}}
 @media(min-width:1040px){.lang-switch{order:4;margin-left:10px}}
 
@@ -676,8 +679,8 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
     </a>
     <a class="btn btn-ghost on-dark hdr-cta" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
     <div class="lang-switch" role="group" aria-label="Português / English" translate="no">
+      <span class="lang-thumb" aria-hidden="true"></span>
       <button id="lang-pt" class="lang-opt active" type="button" onclick="setLang('pt')">PT</button>
-      <span class="lang-sep" aria-hidden="true">/</span>
       <button id="lang-en" class="lang-opt" type="button" onclick="setLang('en')">EN</button>
     </div>
     <nav class="nav" aria-label="Principal">
@@ -1281,7 +1284,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Dra. Inês Ribeiro</div>
             <div class="mrole">Advogada · Sócia</div>
-            <p class="mbio">Sócia do escritório, atua na condução de processos judiciais e consultivos, oferecendo atendimento próximo, linguagem clara e acompanhamento constante de cada cliente. Participa diretamente das estratégias processuais e da condução dos casos nas diversas áreas de atuação do escritório.</p>
+            <p class="mbio">Sócia do escritório, conduz processos judiciais e consultivos com proximidade, clareza e atenção constante a cada cliente.</p>
           </div>
         </div>
       </div>
@@ -1401,8 +1404,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
               <span class="uni-tag">Matriz · São José dos Campos</span>
               <p class="uni-addr">Rua Pascoal Moreira, 48 · Jardim Nova América<br>Em frente à 111 Imóveis — SJC/SP</p>
               <div class="uni-links">
-                <a href="https://www.google.com/maps/search/?api=1&query=Rua%20Pascoal%20Moreira%2C%2048%20-%20Jardim%20Nova%20Am%C3%A9rica%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>Google Maps</a>
-                <a href="https://waze.com/ul?q=Rua%20Pascoal%20Moreira%2048%20Jardim%20Nova%20Am%C3%A9rica%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Waze</a>
+                <a href="https://waze.com/ul?q=Rua%20Pascoal%20Moreira%2048%20Jardim%20Nova%20Am%C3%A9rica%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Como chegar (Waze)</a>
               </div>
             </div>
           </div>
@@ -1412,8 +1414,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
               <span class="uni-tag">Filial · Campos do Jordão</span>
               <p class="uni-addr">Av. Januário Miraglia, 659 · Sala 13<br>Prédio Pátio Dubieux — Campos do Jordão/SP</p>
               <div class="uni-links">
-                <a href="https://www.google.com/maps/search/?api=1&query=Av.%20Janu%C3%A1rio%20Miraglia%2C%20659%20-%20Campos%20do%20Jord%C3%A3o%20-%20SP" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>Google Maps</a>
-                <a href="https://waze.com/ul?q=Av.%20Janu%C3%A1rio%20Miraglia%20659%20Campos%20do%20Jord%C3%A3o&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Waze</a>
+                <a href="https://waze.com/ul?q=Av.%20Janu%C3%A1rio%20Miraglia%20659%20Campos%20do%20Jord%C3%A3o&navigate=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#33CCFF" d="M20.6 11.1c0-4.2-3.9-7.1-8.6-7.1S3.4 6.9 3.4 11.1c0 .8.1 1.5.4 2.2-.1 1.6-.9 2.3-1.6 2.8-.3.2-.2.7.2.8 1.7.3 3.4-.1 4.6-1 .9.3 1.9.5 3 .5 4.7 0 8.6-2.9 8.6-7.1Z"/><circle cx="9.4" cy="11" r="1.1" fill="#0b2b36"/><circle cx="14.6" cy="11" r="1.1" fill="#0b2b36"/><path d="M9 13.6c.8.9 1.9 1.3 3 1.3s2.2-.4 3-1.3" fill="none" stroke="#0b2b36" stroke-width="1.2" stroke-linecap="round"/></svg>Como chegar (Waze)</a>
               </div>
             </div>
           </div>
@@ -1960,7 +1961,7 @@ var XRR_DICT={
  "Equipe de apoio":"Support team",
  "Quem cuida de cada detalhe.":"Who takes care of every detail.",
  "Há mais de três décadas atuando na defesa de trabalhadores, aposentados, empresas e proprietários de imóveis, com atendimento personalizado e foco na solução jurídica mais segura.":"For more than three decades defending workers, retirees, companies and property owners, with personalized service and a focus on the safest legal solution.",
- "Sócia do escritório, atua na condução de processos judiciais e consultivos, oferecendo atendimento próximo, linguagem clara e acompanhamento constante de cada cliente. Participa diretamente das estratégias processuais e da condução dos casos nas diversas áreas de atuação do escritório.":"Partner at the firm, handling litigation and advisory matters, offering close support, clear communication and ongoing follow-up with every client. Directly involved in case strategy and the handling of cases across the firm's practice areas.",
+ "Sócia do escritório, conduz processos judiciais e consultivos com proximidade, clareza e atenção constante a cada cliente.":"Partner at the firm, handling litigation and advisory matters with closeness, clarity and constant attention to every client.",
  "Especialista em processos administrativos junto ao INSS, conduz cada requerimento de benefício com agilidade, precisão técnica e atenção a cada detalhe.":"Specialist in administrative procedures with INSS, handling every benefit request with speed, technical precision and attention to detail.",
  "Atua na pesquisa jurídica, no acompanhamento processual e na organização de cada caso, contribuindo com rigor técnico e dedicação em cada etapa.":"Works on legal research, case tracking and organization, contributing technical rigor and dedication at every stage.",
  "Responsável pela organização de documentos, prazos e pelo atendimento diário, assegurando que cada caso avance com ordem, agilidade e tranquilidade para o cliente.":"Responsible for organizing documents, deadlines and daily client care, ensuring every case moves forward with order, efficiency and peace of mind for the client.",
@@ -1977,6 +1978,7 @@ var XRR_DICT={
  "Horário":"Hours","Segunda a sexta, das nove às dezoito horas":"Monday to Friday, 9am to 6pm","Nossas unidades":"Our offices",
  "Matriz · São José dos Campos":"Headquarters · São José dos Campos","Filial · Campos do Jordão":"Branch · Campos do Jordão",
  "Atendimento mediante agendamento, em ambas as unidades.":"By appointment only, at both offices.",
+ "Como chegar (Waze)":"Get directions (Waze)",
 
  "Notícias que impactam os seus direitos":"News that impacts your rights",
  "As últimas decisões, alterações na legislação e novidades sobre aposentadorias, benefícios do INSS, direitos trabalhistas e tudo que pode impactar o seu caso — em linguagem simples.":"The latest rulings, legislative changes and updates on retirement, INSS benefits, labor rights and anything that may affect your case — explained in plain language.",
@@ -2008,8 +2010,9 @@ function setLang(lang){
   }
   el.innerHTML=(lang==='en')?XRR_DICT[key]:el.getAttribute('data-pt');}
  document.documentElement.lang=(lang==='en')?'en':'pt-BR';
- var bp=document.getElementById('lang-pt'),be=document.getElementById('lang-en');
+ var bp=document.getElementById('lang-pt'),be=document.getElementById('lang-en'),sw=document.querySelector('.lang-switch');
  if(bp)bp.classList.toggle('active',lang!=='en'); if(be)be.classList.toggle('active',lang==='en');
+ if(sw)sw.classList.toggle('is-en',lang==='en');
  window._XRRLANG=lang;try{localStorage.setItem('xrr_lang',lang);}catch(e){}}
 function toggleLang(){setLang((window._XRRLANG==='en')?'pt':'en');}
 </script>

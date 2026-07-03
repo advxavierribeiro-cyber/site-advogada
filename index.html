@@ -619,12 +619,29 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 .local h3{font-size:var(--fs-h3);margin:8px 0 6px}
 .local p{color:var(--text-soft);font-weight:300;font-size:var(--fs-body);line-height:1.6}
 /* ===== Conteúdo: destaque + fonte ===== */
-.destaque-flag{display:flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px}
-.destaque-flag::before,.destaque-flag::after{content:"";flex:none;width:22px;height:1px;background:var(--gold)}
-.destaque{position:relative;display:flex;flex-direction:column;text-align:left;padding:clamp(28px,3.4vw,46px);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#fff,#fbf8f1);margin-bottom:clamp(20px,2.4vw,32px);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease)}
-.destaque:hover{box-shadow:0 40px 80px -48px rgba(20,37,46,.5);border-color:rgba(194,160,90,.55)}
-.destaque h3{font-size:clamp(1.3rem,1.1rem + 1vw,1.95rem);line-height:1.2;color:var(--ink)}
-.destaque p{margin-top:12px;color:var(--text-soft);font-weight:300;line-height:1.7;max-width:48rem}
+.destaque-flag{display:inline-flex;align-items:center;gap:9px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px;border:1px solid rgba(194,160,90,.4);border-radius:30px;padding:8px 16px 8px 13px;background:rgba(194,160,90,.07)}
+.destaque-flag .df-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);position:relative;flex:none}
+.destaque-flag .df-dot::after{content:"";position:absolute;inset:0;border-radius:50%;animation:liveRingGold 2.2s var(--ease) infinite}
+@keyframes destaqueGlow{0%,100%{box-shadow:0 30px 70px -40px rgba(15,28,36,.6),0 0 0 0 rgba(194,160,90,.16)}50%{box-shadow:0 34px 84px -36px rgba(15,28,36,.7),0 0 50px 8px rgba(194,160,90,.14)}}
+.destaque{position:relative;display:flex;flex-direction:column;text-align:left;padding:clamp(32px,4vw,56px);border-radius:16px;overflow:hidden;
+  background:linear-gradient(150deg,#1c3945 0%,#0f1c24 58%,#0a151c 100%);
+  border:1px solid rgba(194,160,90,.4);margin-bottom:clamp(20px,2.4vw,32px);
+  animation:destaqueGlow 4s ease-in-out infinite;
+  transition:transform .5s var(--ease),border-color .4s var(--ease)}
+.destaque:hover{transform:translateY(-5px);border-color:rgba(194,160,90,.75)}
+.destaque::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(65% 90% at 88% 0%,rgba(194,160,90,.22),transparent 60%)}
+.destaque::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(194,160,90,.14) 1px,transparent 1px);background-size:18px 18px}
+.dq-corner{position:absolute;width:clamp(22px,2.6vw,32px);height:clamp(22px,2.6vw,32px);border:2px solid var(--gold);z-index:2;opacity:.85;pointer-events:none}
+.dq-corner.tl{top:16px;left:16px;border-right:0;border-bottom:0;border-top-left-radius:6px}
+.dq-corner.br{bottom:16px;right:16px;border-left:0;border-top:0;border-bottom-right-radius:6px}
+.destaque .artigo-tag{position:relative;z-index:1;border:0;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--ink);font-weight:600}
+.destaque h3{position:relative;z-index:1;font-size:clamp(1.55rem,1.2rem + 1.6vw,2.4rem);line-height:1.16;color:var(--paper);margin-top:16px}
+.destaque p{position:relative;z-index:1;margin-top:14px;color:rgba(246,243,236,.72);font-weight:300;line-height:1.75;max-width:44rem;font-size:clamp(15px,1vw,17px)}
+.destaque .artigo-meta{position:relative;z-index:1;margin-top:clamp(22px,2.6vw,32px)}
+.destaque .artigo-date{color:rgba(246,243,236,.5)}
+.destaque .dq-cta{display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);background:linear-gradient(180deg,var(--gold-soft),var(--gold));border-radius:30px;padding:12px 22px;transition:.35s var(--ease)}
+.destaque:hover .dq-cta{padding-left:28px;padding-right:26px;box-shadow:0 16px 34px -12px rgba(194,160,90,.65)}
+@media(prefers-reduced-motion:reduce){.destaque{animation:none}}
 .artigo-fonte{display:block;margin-top:10px;font-size:11.5px;color:var(--text-soft);font-weight:300;font-style:italic}
 /* ===== Conteúdo: filtro estilo NW (busca + selects) ===== */
 .cfiltro{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:clamp(26px,3vw,42px)}
@@ -1264,7 +1281,6 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Dra. Inês Ribeiro</div>
             <div class="mrole">Advogada · Sócia</div>
-            <div class="moab">Atuação em Direito Previdenciário, Trabalhista e Cível.</div>
             <p class="mbio">Sócia do escritório, atua na condução de processos judiciais e consultivos, oferecendo atendimento próximo, linguagem clara e acompanhamento constante de cada cliente. Participa diretamente das estratégias processuais e da condução dos casos nas diversas áreas de atuação do escritório.</p>
           </div>
         </div>
@@ -1284,7 +1300,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Ana Paula</div>
             <div class="mrole">Especialista · Benefícios do INSS</div>
-            <p class="mbio">Especialista nos processos administrativos de requerimento de benefícios junto ao INSS. Conduz a via administrativa com agilidade e atenção a cada detalhe.</p>
+            <p class="mbio">Especialista em processos administrativos junto ao INSS, conduz cada requerimento de benefício com agilidade, precisão técnica e atenção a cada detalhe.</p>
           </div>
         </div>
         <div class="member">
@@ -1296,7 +1312,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">André Lucas</div>
             <div class="mrole">Estagiário de Direito</div>
-            <p class="mbio">Apoia a equipe na pesquisa, no acompanhamento dos processos e na organização de cada caso, sempre com cuidado e atenção.</p>
+            <p class="mbio">Atua na pesquisa jurídica, no acompanhamento processual e na organização de cada caso, contribuindo com rigor técnico e dedicação em cada etapa.</p>
           </div>
         </div>
         <div class="member">
@@ -1308,7 +1324,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <div class="mc">
             <div class="mname">Marli Bernardo</div>
             <div class="mrole">Assistente Jurídica</div>
-            <p class="mbio">Organiza documentos, prazos e o atendimento do dia a dia, garantindo que cada caso caminhe com ordem e tranquilidade.</p>
+            <p class="mbio">Responsável pela organização de documentos, prazos e pelo atendimento diário, assegurando que cada caso avance com ordem, agilidade e tranquilidade para o cliente.</p>
           </div>
         </div>
       </div>
@@ -1656,10 +1672,11 @@ function destaqueHTML(a){
   var open=ext?(' href="'+a.link+'" target="_blank" rel="noopener"'):(' href="#artigo-'+a.id+'" onclick="abrirArtigo(\''+a.id+'\',event)"');
   var go=imp?'Ver na fonte &rarr;':'Ler mais &rarr;';
   var fonte=(imp&&a.fonte)?('<span class="artigo-fonte">Fonte: '+a.fonte+'</span>'):'';
-  return '<span class="destaque-flag">Novidade</span>'+
+  return '<span class="destaque-flag"><span class="df-dot" aria-hidden="true"></span>Novidade</span>'+
     '<a class="destaque"'+open+'>'+
+    '<span class="dq-corner tl" aria-hidden="true"></span><span class="dq-corner br" aria-hidden="true"></span>'+
     '<span class="artigo-tag">'+(imp?'Imprensa':(a.area||''))+'</span><h3>'+a.titulo+'</h3><p>'+a.resumo+'</p>'+fonte+
-    '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="artigo-go">'+go+'</span></span></a>';
+    '<span class="artigo-meta"><span class="artigo-date">'+fmtData(a.data)+'</span><span class="dq-cta">'+go+'</span></span></a>';
 }
 function renderConteudo(){
   var portal=document.getElementById('portal-artigos'); if(!portal) return;
@@ -1944,9 +1961,9 @@ var XRR_DICT={
  "Quem cuida de cada detalhe.":"Who takes care of every detail.",
  "Há mais de três décadas atuando na defesa de trabalhadores, aposentados, empresas e proprietários de imóveis, com atendimento personalizado e foco na solução jurídica mais segura.":"For more than three decades defending workers, retirees, companies and property owners, with personalized service and a focus on the safest legal solution.",
  "Sócia do escritório, atua na condução de processos judiciais e consultivos, oferecendo atendimento próximo, linguagem clara e acompanhamento constante de cada cliente. Participa diretamente das estratégias processuais e da condução dos casos nas diversas áreas de atuação do escritório.":"Partner at the firm, handling litigation and advisory matters, offering close support, clear communication and ongoing follow-up with every client. Directly involved in case strategy and the handling of cases across the firm's practice areas.",
- "Especialista nos processos administrativos de requerimento de benefícios junto ao INSS. Conduz a via administrativa com agilidade e atenção a cada detalhe.":"Specialist in administrative benefit request procedures with INSS. Handles the administrative process with speed and attention to detail.",
- "Apoia a equipe na pesquisa, no acompanhamento dos processos e na organização de cada caso, sempre com cuidado e atenção.":"Supports the team with research, case tracking and organization, always with care and attention.",
- "Organiza documentos, prazos e o atendimento do dia a dia, garantindo que cada caso caminhe com ordem e tranquilidade.":"Organizes documents, deadlines and day-to-day client care, ensuring every case moves forward smoothly and calmly.",
+ "Especialista em processos administrativos junto ao INSS, conduz cada requerimento de benefício com agilidade, precisão técnica e atenção a cada detalhe.":"Specialist in administrative procedures with INSS, handling every benefit request with speed, technical precision and attention to detail.",
+ "Atua na pesquisa jurídica, no acompanhamento processual e na organização de cada caso, contribuindo com rigor técnico e dedicação em cada etapa.":"Works on legal research, case tracking and organization, contributing technical rigor and dedication at every stage.",
+ "Responsável pela organização de documentos, prazos e pelo atendimento diário, assegurando que cada caso avance com ordem, agilidade e tranquilidade para o cliente.":"Responsible for organizing documents, deadlines and daily client care, ensuring every case moves forward with order, efficiency and peace of mind for the client.",
  "Atendimento direto":"Direct service",
  "Fale com quem vai cuidar do seu caso.":"Talk to whoever will handle your case.",
 

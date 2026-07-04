@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xavier Ribeiro & Ribeiro — Cartão de Visitas Digital</title>
+<meta name="description" content="Cartão de visitas digital da Xavier Ribeiro & Ribeiro — Sociedade de Advogados. Salve nosso contato ou fale conosco.">
+<link rel="icon" href="favicon-32.png">
+<style>
+  :root{
+    --ink:#14252e;
+    --ink2:#1c343f;
+    --gold:#c2a05a;
+    --gold-l:#d9c089;
+    --paper:#faf8f4;
+    --soft:#96a5ac;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Georgia,'Times New Roman',serif;
+    background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 60%,#0e1a20 100%);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 18px;
+  }
+  .card{
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(194,160,90,0.35);
+    border-radius:18px;
+    padding:38px 30px 30px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,0.45);
+  }
+  .logo{
+    width:86px;
+    height:86px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--gold);
+    margin-bottom:18px;
+  }
+  h1{
+    color:var(--paper);
+    font-size:26px;
+    font-weight:400;
+    letter-spacing:0.3px;
+    margin:0 0 4px;
+  }
+  .tag{
+    color:var(--gold-l);
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .divider{
+    width:44px;
+    height:2px;
+    background:var(--gold);
+    margin:0 auto 24px;
+  }
+  .socia{
+    text-align:left;
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--soft);
+    font-size:13px;
+    line-height:1.5;
+    margin-bottom:20px;
+    padding:0 4px;
+  }
+  .socia b{color:var(--paper);font-weight:600;}
+  .info{
+    text-align:left;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:14.5px;
+    color:#dbe2e5;
+    margin:24px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:9px 4px;
+    border-bottom:1px solid rgba(194,160,90,0.15);
+  }
+  .info-row:last-child{border-bottom:none;}
+  .info-ic{
+    color:var(--gold);
+    font-size:16px;
+    line-height:1.3;
+    width:20px;
+    flex-shrink:0;
+  }
+  .info-row a{color:#dbe2e5;text-decoration:none;}
+  .info-row a:hover{color:var(--gold-l);}
+  .btns{display:flex;flex-direction:column;gap:12px;margin-top:26px;}
+  .btn{
+    display:block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:0.3px;
+    text-decoration:none;
+    padding:14px 18px;
+    border-radius:10px;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:active{transform:scale(0.98);}
+  .btn-primary{
+    background:var(--gold);
+    color:var(--ink);
+  }
+  .btn-secondary{
+    background:transparent;
+    border:1.5px solid var(--gold);
+    color:var(--gold-l);
+  }
+  .footer{
+    margin-top:26px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:11px;
+    color:var(--soft);
+    letter-spacing:0.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="logo-nova.png" alt="Xavier Ribeiro & Ribeiro">
+    <h1>Xavier Ribeiro &amp; Ribeiro</h1>
+    <div class="tag">Sociedade de Advogados</div>
+    <div class="divider"></div>
+
+    <div class="socia">
+      <b>Dra. Andrea Xavier</b> · Advogada · Sócia Fundadora<br>
+      <b>Dra. Inês Ribeiro</b> · Advogada · Sócia
+    </div>
+
+    <div class="info">
+      <div class="info-row"><span class="info-ic">☎</span><a href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Encontrei%20seu%20cart%C3%A3o%20digital%20e%20gostaria%20de%20falar." target="_blank" rel="noopener">(12) 99743-4181 — WhatsApp</a></div>
+      <div class="info-row"><span class="info-ic">✉</span><a href="mailto:adv.xavierribeiro@gmail.com">adv.xavierribeiro@gmail.com</a></div>
+      <div class="info-row"><span class="info-ic">⚑</span><span>Rua Pascoal Moreira, 48 · Jardim Nova América<br>São José dos Campos — SP</span></div>
+      <div class="info-row"><span class="info-ic">◎</span><a href="https://www.instagram.com/xavierribeiroadvogados" target="_blank" rel="noopener">@xavierribeiroadvogados</a></div>
+      <div class="info-row"><span class="info-ic">⌂</span><a href="https://site-advogada-tawny.vercel.app/" target="_blank" rel="noopener">site-advogada-tawny.vercel.app</a></div>
+    </div>
+
+    <div class="btns">
+      <a class="btn btn-primary" href="contato-xavier-ribeiro.vcf" download>＋ Salvar Contato</a>
+      <a class="btn btn-secondary" href="https://wa.me/5512997434181?text=Ol%C3%A1%21%20Encontrei%20seu%20cart%C3%A3o%20digital%20e%20gostaria%20de%20falar." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-secondary" href="https://site-advogada-tawny.vercel.app/" target="_blank" rel="noopener">Visitar o Site</a>
+    </div>
+
+    <div class="footer">PREVIDENCIÁRIO · TRABALHISTA · IMOBILIÁRIO · SUCESSÕES · INDENIZAÇÕES</div>
+  </div>
+</body>
+</html>

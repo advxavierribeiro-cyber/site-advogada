@@ -43,27 +43,7 @@
    ============================================================================ */
 
 var ARTIGOS = [
-{
-  id: `id-curto-sem-espaco-sem-acento`,
-  titulo: `Título do artigo aqui`,
-  area: `Previdenciário / Trabalhista / Imobiliário / Sucessório e Inventários / Indenizações e Responsabilidade Civil`,
-  data: `ano-mes-dia, exemplo: 2026-07-15`,
-  autor: `nome de quem assina, exemplo: Andrea Xavier`,
-  cargo: `cargo de quem assina, exemplo: Advogada · Sócia Fundadora`,
-  resumo: `resumo curto, de 1 a 2 frases, que aparece no card`,
-  conteudo: `
-Escreva o primeiro parágrafo aqui, normal, como neste documento. Pule uma linha em branco (aperte Enter duas vezes) para começar um parágrafo novo.
 
-## Se quiser um subtítulo no meio do texto, comece a linha assim, com dois jogos-da-velha
-
-Para destacar uma palavra em **negrito**, coloque dois asteriscos dos dois lados dela, assim.
-
-- Para fazer uma lista, comece cada linha com um traço, assim
-- Escreva um item por linha, sem pular linha entre um item e outro
-
-Parágrafo final: sempre convide o leitor a falar com o escritório.
-`
-},	
 
   {
     id: "negativacao-indevida-o-que-fazer",

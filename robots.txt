@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://site-advogada-tawny.vercel.app/sitemap.xml
+Sitemap: https://www.xavier-ribeiroadvogados.com.br/sitemap.xml

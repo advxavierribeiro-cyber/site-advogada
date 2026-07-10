@@ -2046,4 +2046,33 @@ var XRR_DICT={
 
  "Transparência e proteção de dados":"Transparency and data protection",
  "Política de Privacidade e Cookies":"Privacy <span class=\"it\">& Cookies</span> Policy",
- "Como o escritório Xavier Ribeiro & Ribeiro coleta, utiliza e protege os seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).":"How the Xavier Ribeiro & Ribeiro law firm collects, uses and protects your personal data, in accordance with Brazil's General Data Protection Law (LGPD, 
+ "Como o escritório Xavier Ribeiro & Ribeiro coleta, utiliza e protege os seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).":"How the Xavier Ribeiro & Ribeiro law firm collects, uses and protects your personal data, in accordance with Brazil's General Data Protection Law (LGPD, Law No. 13,709/2018).",
+
+ "Navegação":"Navigation",
+ "Sociedade de advogados em São José dos Campos e região do Vale do Paraíba, com atuação em Direito Previdenciário, Trabalhista, Imobiliário, Sucessório e Inventários e Indenizações e Responsabilidade Civil.":"A law firm based in São José dos Campos, serving the Vale do Paraíba region, with practice in Social Security, Labor, Real Estate, Estate & Probate and Compensation & Civil Liability law.",
+ "OAB/SP · Conteúdo de caráter meramente informativo, sem captação de clientela, em conformidade com o Código de Ética e Disciplina e o Provimento da OAB sobre publicidade na advocacia. Cada caso é único; os resultados dependem das circunstâncias específicas e não há garantia de êxito.":"OAB/SP · Content is for informational purposes only, with no client solicitation, in accordance with the Code of Ethics and Discipline and OAB regulations on legal advertising. Each case is unique; results depend on specific circumstances and no outcome is guaranteed."
+};
+function _xn(t){return (t||'').replace(/\s+/g,' ').trim();}
+function setLang(lang){
+ var els=document.querySelectorAll('h1,h2,h3,h4,p,li,button,a,span,blockquote,label,option');
+ for(var i=0;i<els.length;i++){var el=els[i];
+  var key=el.getAttribute('data-key');
+  if(!key){
+   var ok=true;
+   for(var j=0;j<el.children.length;j++){if(!/^(SPAN|B|I|EM|STRONG|BR|A|SVG|SMALL)$/.test(el.children[j].tagName)){ok=false;break;}}
+   if(!ok)continue;
+   var k=_xn(el.textContent); if(!Object.prototype.hasOwnProperty.call(XRR_DICT,k))continue;
+   el.setAttribute('data-key',k);
+   el.setAttribute('data-pt',el.innerHTML);
+   key=k;
+  }
+  el.innerHTML=(lang==='en')?XRR_DICT[key]:el.getAttribute('data-pt');}
+ document.documentElement.lang=(lang==='en')?'en':'pt-BR';
+ var bp=document.getElementById('lang-pt'),be=document.getElementById('lang-en'),sw=document.querySelector('.lang-switch');
+ if(bp)bp.classList.toggle('active',lang!=='en'); if(be)be.classList.toggle('active',lang==='en');
+ if(sw)sw.classList.toggle('is-en',lang==='en');
+ window._XRRLANG=lang;try{localStorage.setItem('xrr_lang',lang);}catch(e){}}
+function toggleLang(){setLang((window._XRRLANG==='en')?'pt':'en');}
+</script>
+</body>
+</html>

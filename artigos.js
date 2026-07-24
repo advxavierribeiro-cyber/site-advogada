@@ -1,6 +1,16 @@
 /* ↓↓↓ COLE O ARTIGO NOVO AQUI ↓↓↓ */
 
-var TEXTO_NOVOS_ARTIGOS = `
+var TEXTO_NOVOS_ARTIGOS = `=== NOVO ARTIGO ===
+id: teste-modelo-novo
+titulo: Teste Modelo Novo
+area: Previdenciário
+data: 2026-07-24
+autor: Pedro Frois
+cargo: Advogada · Sócia Fundadora
+resumo: xxxxxxx
+conteudo:
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+=== FIM ===
 
 
 

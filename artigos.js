@@ -1,17 +1,5 @@
 var TEXTO_NOVOS_ARTIGOS = `
-=== NOVO ARTIGO ===
-id: teste-som
-titulo: TESTE SOM
-area: Previdenciário
-data: 2026-07-24
-autor: Andrea Xavier
-cargo: Advogada · Sócia Fundadora
-resumo: SDFSDFDSFSDFSD
-conteudo:
-ASFASFAFSAFSASFASFAS
-FAFAFASFASFASFSAF
-FDSFSDFSDFSDF
-=== FIM ===
+
 ↑ COLE O ARTIGO NOVO AQUI EM CIMA ↑
 `;
 

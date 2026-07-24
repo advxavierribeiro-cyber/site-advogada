@@ -1,49 +1,14 @@
-/* ============================================================================
-   ARTIGOS — Portal de Conteúdo · Xavier Ribeiro & Ribeiro
-   ----------------------------------------------------------------------------
-   COMO POSTAR UM ARTIGO (passo a passo simples):
+/* ↓↓↓ COLE O ARTIGO NOVO AQUI ↓↓↓ */
 
-   1) Copie um bloco inteiro, da chave de abertura  {  até a  },  (com a vírgula).
-   2) Cole logo abaixo da linha  "var ARTIGOS = ["  (não precisa se preocupar com a
-      ordem — o site sempre coloca o artigo de data mais recente no topo sozinho).
-   3) Troque APENAS o texto que está entre as aspas. NÃO apague as aspas nem as vírgulas.
-   4) Salve e suba este arquivo (artigos.js) no GitHub — o site publica sozinho.
+var TEXTO_NOVOS_ARTIGOS = `
 
-   CAMPOS DE CADA ARTIGO:
-   - id      : um "apelido" curto, sem espaços e sem acentos (ex.: "revisao-da-vida-toda").
-               Cada artigo precisa de um id DIFERENTE de todos os outros.
-   - titulo  : o título do artigo.
-   - area    : escolha uma — Previdenciário · Trabalhista · Imobiliário ·
-               Sucessório e Inventários · Indenizações e Responsabilidade Civil · Geral
-   - data    : no formato ANO-MES-DIA (ex.: "2026-06-28"). O artigo com a data mais
-               recente vira automaticamente o "destaque" no topo do Portal — não
-               precisa mexer em mais nada, nem reordenar o arquivo.
-   - autor   : nome de quem assina o artigo (ex.: "Andrea Xavier"). O site gera
-               sozinho um círculo com as iniciais (ex.: "AX") ao lado do nome, em
-               todo card e na página do artigo. Campo opcional: se deixar em
-               branco, o círculo simplesmente não aparece.
-   - cargo   : o cargo de quem assina (ex.: "Advogada · Sócia Fundadora"). Aparece
-               junto do nome, pequeno, abaixo. Também opcional.
-   - resumo  : 1 ou 2 frases curtas, que aparecem no card do portal.
-   - conteudo: o texto completo do artigo, escrito NORMALMENTE (igual você escreveria
-               no Word) — o site lê sozinho e formata. Nada de tags, nada de "+".
-               Repare que o texto começa e termina com um acento grave (`), não com
-               aspas (") — é só isso que muda.
-                 parágrafo .......  escreva normal; pule UMA linha em branco entre
-                                     um parágrafo e outro.
-                 subtítulo .......  comece a linha com ##  (ex.: ## Quem pode pedir)
-                 negrito .........  coloque ** dos dois lados  (ex.: **atenção**)
-                 lista ...........  comece cada linha com um traço -  (uma por linha)
 
-   DICA: mantenha sempre o bloco "modelo-copie-este" no final como referência —
-   é só copiá-lo de novo a cada novo artigo. O modelo mostra o formato certo.
-   Os artigos mais antigos deste arquivo ainda usam tags HTML (<p>, <h3>...) —
-   tudo bem, o site reconhece os dois formatos. Só o texto NOVO precisa ser no
-   formato simples acima.
-   ============================================================================ */
+
+`;
+
+/* ↑↑↑ FIM ↑↑↑ */
 
 var ARTIGOS = [
-
 
   {
     id: "negativacao-indevida-o-que-fazer",
@@ -115,26 +80,50 @@ var ARTIGOS = [
       "<p>O inventário <strong>extrajudicial</strong> (em cartório) costuma ser possível quando há acordo entre todos os herdeiros, todos são maiores e capazes e há um advogado acompanhando. Tende a ser mais rápido.</p>" +
       "<p>Já o inventário <strong>judicial</strong> é o caminho quando há divergência, herdeiro menor ou questões que precisam da decisão de um juiz.</p>" +
       "<p>Não sabe por onde começar? Conte a sua situação e mostramos os próximos passos, com cuidado e respeito.</p>"
-  },
-
-  {
-    id: "modelo-copie-este",
-    titulo: "Título do artigo aqui",
-    area: "Geral",
-    data: "2026-01-01",
-    autor: "Nome do autor aqui",
-    cargo: "Cargo aqui (ex.: Advogada · Sócia)",
-    resumo: "Um resumo curto, de uma ou duas frases, que aparece no card do portal.",
-    conteudo: `Primeiro parágrafo do artigo. Escreva de forma simples e direta, como se estivesse explicando para um cliente.
-
-## Um subtítulo, se quiser
-
-Outro parágrafo. Use **negrito** para destacar o que mais importa.
-
-- Um ponto importante
-- Outro ponto
-
-Parágrafo final, sempre com uma orientação clara: convide o leitor a falar com o escritório.`
   }
 
 ];
+
+(function(){
+  function slugify(s){
+    return String(s || '')
+      .toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+  var texto = String(typeof TEXTO_NOVOS_ARTIGOS !== 'undefined' ? TEXTO_NOVOS_ARTIGOS : '');
+  var blocos = texto.split(/===\s*NOVO ARTIGO\s*===/i).slice(1);
+  blocos.forEach(function(bloco){
+    bloco = bloco.split(/===\s*FIM\s*===/i)[0];
+    var linhas = bloco.replace(/\r\n/g, '\n').split('\n');
+    var campos = {};
+    var conteudoLinhas = [];
+    var emConteudo = false;
+    linhas.forEach(function(linha){
+      if(!emConteudo){
+        var m = linha.match(/^\s*(id|titulo|area|data|autor|cargo|resumo|conteudo)\s*:\s*(.*)$/i);
+        if(m){
+          var campo = m[1].toLowerCase();
+          if(campo === 'conteudo'){
+            emConteudo = true;
+            if(m[2]) conteudoLinhas.push(m[2]);
+          } else {
+            campos[campo] = m[2].trim();
+          }
+          return;
+        }
+      } else {
+        conteudoLinhas.push(linha);
+      }
+    });
+    campos.conteudo = conteudoLinhas.join('\n').trim();
+    if(!campos.titulo) return;
+    if(!campos.id) campos.id = slugify(campos.titulo);
+    if(ARTIGOS.some(function(a){ return a.id === campos.id; })){
+      console.warn('[artigos.js] id repetido, artigo ignorado: ' + campos.id);
+      return;
+    }
+    ARTIGOS.push(campos);
+  });
+})();

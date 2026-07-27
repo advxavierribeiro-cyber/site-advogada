@@ -1,5 +1,7 @@
 var TEXTO_NOVOS_ARTIGOS = `
 
+↑ COLE O ARTIGO NOVO AQUI EM CIMA ↑
+
 === NOVO ARTIGO ===
 id: negativacao-indevida-o-que-fazer
 titulo: Negativação indevida: o que fazer e quando cabe indenização?
@@ -82,8 +84,6 @@ Já o inventário **judicial** é o caminho quando há divergência, herdeiro me
 
 Não sabe por onde começar? Conte a sua situação e mostramos os próximos passos, com cuidado e respeito.
 === FIM ===
-
-↑ COLE O ARTIGO NOVO AQUI EM CIMA ↑
 `;
 
 var ARTIGOS = [];

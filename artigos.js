@@ -1,4 +1,25 @@
 var TEXTO_NOVOS_ARTIGOS = `
+{
+  id: `titulo-do-artigo`,
+  titulo: `Título completo do artigo`,
+  area: `Previdenciário`,
+  data: `2026-07-15`,
+  autor: `Andrea Xavier`,
+  cargo: `Advogada · Sócia Fundadora`,
+  resumo: `Resumo de 1 a 2 frases.`,
+  conteudo: `
+ 
+Primeiro parágrafo do artigo.
+ 
+## Subtítulo (opcional)
+ 
+- Item de lista
+- Item de lista
+ 
+Parágrafo final com convite para contato.
+ 
+  `
+},
 
 ↑ COLE O ARTIGO NOVO AQUI EM CIMA ↑
 

@@ -1,5 +1,17 @@
 {
   "rewrites": [
-    { "source": "/cartao", "destination": "/cartao.html" }
+    { "source": "/cartao", "destination": "/cartao.html" },
+    { "source": "/planejamento-de-aposentadoria", "destination": "/planejamento-de-aposentadoria.html" },
+    { "source": "/auxilio-acidente", "destination": "/auxilio-acidente.html" },
+    { "source": "/beneficio-negado-inss", "destination": "/beneficio-negado-inss.html" },
+    { "source": "/beneficios-por-incapacidade", "destination": "/beneficios-por-incapacidade.html" },
+    { "source": "/ppp-aposentadoria-especial", "destination": "/ppp-aposentadoria-especial.html" },
+    { "source": "/limbo-previdenciario", "destination": "/limbo-previdenciario.html" },
+    { "source": "/acidente-de-trabalho", "destination": "/acidente-de-trabalho.html" },
+    { "source": "/rescisao-indireta", "destination": "/rescisao-indireta.html" },
+    { "source": "/verbas-rescisorias", "destination": "/verbas-rescisorias.html" },
+    { "source": "/horas-extras", "destination": "/horas-extras.html" },
+    { "source": "/reconhecimento-de-vinculo", "destination": "/reconhecimento-de-vinculo.html" },
+    { "source": "/doenca-ocupacional", "destination": "/doenca-ocupacional.html" }
   ]
 }

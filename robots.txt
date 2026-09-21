@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# Modelos de IA e assistentes de busca — leitura liberada
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://www.xavier-ribeiroadvogados.com.br/sitemap.xml

@@ -84,7 +84,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .artigo-body{max-width:46rem;margin:0 auto}
 .artigo-conteudo{font-size:1.06rem;color:var(--text);font-weight:300;line-height:1.85}
 .artigo-conteudo p{margin-bottom:20px}
-.artigo-conteudo h2,.artigo-conteudo h3{font-family:'Playfair Display',serif;color:var(--ink);margin:34px 0 14px;line-height:1.25;font-weight:500}
+.artigo-conteudo h2,.artigo-conteudo h3{font-family:'Playfair Display',serif;color:var(--ink);margin:34px 0 14px;line-height:1.25;font-weight:500;scroll-margin-top:90px}
 .artigo-conteudo h2{font-size:clamp(1.35rem,1.2rem + .8vw,1.7rem)}
 .artigo-conteudo h3{font-size:clamp(1.15rem,1.05rem + .4vw,1.35rem)}
 .artigo-conteudo ul,.artigo-conteudo ol{margin:0 0 22px 24px}

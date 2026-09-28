@@ -12,6 +12,12 @@
     { "source": "/verbas-rescisorias", "destination": "/verbas-rescisorias.html" },
     { "source": "/horas-extras", "destination": "/horas-extras.html" },
     { "source": "/reconhecimento-de-vinculo", "destination": "/reconhecimento-de-vinculo.html" },
-    { "source": "/doenca-ocupacional", "destination": "/doenca-ocupacional.html" }
+    { "source": "/doenca-ocupacional", "destination": "/doenca-ocupacional.html" },
+    { "source": "/advogado-previdenciario-sao-jose-dos-campos", "destination": "/advogado-previdenciario-sao-jose-dos-campos.html" },
+    { "source": "/advogado-trabalhista-sao-jose-dos-campos", "destination": "/advogado-trabalhista-sao-jose-dos-campos.html" },
+    { "source": "/advogado-previdenciario-campos-do-jordao", "destination": "/advogado-previdenciario-campos-do-jordao.html" },
+    { "source": "/advogado-trabalhista-campos-do-jordao", "destination": "/advogado-trabalhista-campos-do-jordao.html" },
+    { "source": "/andrea-marcia-xavier-ribeiro", "destination": "/andrea-marcia-xavier-ribeiro.html" },
+    { "source": "/xavier-ribeiro-campos-do-jordao", "destination": "/xavier-ribeiro-campos-do-jordao.html" }
   ]
 }

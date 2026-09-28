@@ -718,7 +718,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
       <a class="active" id="nav-inicio" href="#inicio" onclick="go('inicio',event)">Início</a>
       <a id="nav-escritorio" href="#escritorio" onclick="go('escritorio',event)">O Escritório</a>
       <a id="nav-areas" href="#areas" onclick="go('areas',event)">Áreas de Atuação</a>
-      <a id="nav-conteudo" href="#conteudo" onclick="go('conteudo',event)">Entenda seus Direitos</a>
+      <a id="nav-entenda-seus-direitos" href="#entenda-seus-direitos" onclick="go('entenda-seus-direitos',event)">Entenda seus Direitos</a>
       <a id="nav-equipe" href="#equipe" onclick="go('equipe',event)">Equipe</a>
       <a id="nav-contato" href="#contato" onclick="go('contato',event)">Contato</a>
     </nav>
@@ -953,7 +953,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <p class="lead" style="margin-top:16px;color:rgba(246,243,236,.72)">Decisões importantes, mudanças na legislação e informações relevantes para proteger seus direitos.</p></div>
       </div>
       <div class="artigos-grid stagger rv" id="home-artigos"></div>
-      <div style="margin-top:clamp(30px,3vw,44px)" class="rv"><button class="link-gold on-dark" onclick="go('conteudo')">Ver todos os artigos →</button></div>
+      <div style="margin-top:clamp(30px,3vw,44px)" class="rv"><button class="link-gold on-dark" onclick="go('entenda-seus-direitos')">Ver todos os artigos →</button></div>
     </div>
   </div>
 
@@ -1467,7 +1467,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 </section>
 
 <!-- ============================== CONTEÚDO (portal) ============================== -->
-<section class="page" id="page-conteudo">
+<section class="page" id="page-entenda-seus-direitos">
   <div class="phead"><div class="phead-bg"></div><div class="wrap">
     <span class="eyebrow on-dark rv">Entenda seus direitos</span>
     <h1 class="rv d1">Notícias que impactam os seus <span class="it">direitos</span></h1>
@@ -1491,7 +1491,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 <!-- ===== ARTIGO (visualização) ===== -->
 <section class="page" id="page-artigo">
   <div class="phead"><div class="phead-bg"></div><div class="wrap">
-    <button class="back-link rv" onclick="go('conteudo')">← Entenda seus direitos</button>
+    <button class="back-link rv" onclick="go('entenda-seus-direitos')">← Entenda seus direitos</button>
     <span class="eyebrow on-dark rv d1" id="artigo-area">Conteúdo</span>
     <h1 class="rv d1" id="artigo-titulo">Artigo</h1>
     <p class="artigo-data rv d2" id="artigo-data"></p>
@@ -1602,7 +1602,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
           <a href="#inicio" onclick="go('inicio',event)">Início</a>
           <a href="#escritorio" onclick="go('escritorio',event)">O Escritório</a>
           <a href="#areas" onclick="go('areas',event)">Áreas de Atuação</a>
-          <a href="#conteudo" onclick="go('conteudo',event)">Entenda seus Direitos</a>
+          <a href="#entenda-seus-direitos" onclick="go('entenda-seus-direitos',event)">Entenda seus Direitos</a>
           <a href="#equipe" onclick="go('equipe',event)">Equipe</a>
           <a href="#contato" onclick="go('contato',event)">Contato</a>
         </div>
@@ -1632,7 +1632,7 @@ h1,h2,h3,h4,blockquote{text-wrap:balance}
 
 <script>
 var ARTIGOS=[];
-var PAGES=['inicio','escritorio','areas','conteudo','equipe','contato','privacidade'];
+var PAGES=['inicio','escritorio','areas','entenda-seus-direitos','equipe','contato','privacidade'];
 var hdr=document.getElementById('hdr');
 var current='inicio';
 function isArea(id){return id.indexOf('area-')===0}
@@ -1642,7 +1642,7 @@ function applyState(id,scroll){
   if(isArtigo(id)) renderArtigo(id.slice(7));
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
   var pg=document.getElementById('page-'+pageId); if(pg) pg.classList.add('active');
-  var navId = isArea(id)?'areas' : (isArtigo(id)?'conteudo' : pageId);
+  var navId = isArea(id)?'areas' : (isArtigo(id)?'entenda-seus-direitos' : pageId);
   document.querySelectorAll('.nav a,.nav button').forEach(function(b){b.classList.remove('active')});
   var nv=document.getElementById('nav-'+navId); if(nv) nv.classList.add('active');
   hdr.classList.toggle('solid', id!=='inicio' && !isArea(id));
@@ -1813,7 +1813,7 @@ function initSite(){
   renderPortais();
   popularDataFiltro(); ligarFiltrosConteudo();
   var h=(location.hash||'').replace('#','');
-  var deep=(isArea(h)&&document.getElementById('page-'+h))||isArtigo(h)||h==='conteudo';
+  var deep=(isArea(h)&&document.getElementById('page-'+h))||isArtigo(h)||h==='entenda-seus-direitos';
   var id=deep?h:'inicio';
   history.replaceState({page:id,scroll:0},'','#'+id);
   applyState(id,0);

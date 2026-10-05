@@ -1,28 +1,108 @@
 {
   "rewrites": [
-    { "source": "/cartao", "destination": "/cartao.html" },
-    { "source": "/planejamento-de-aposentadoria", "destination": "/planejamento-de-aposentadoria.html" },
-    { "source": "/auxilio-acidente", "destination": "/auxilio-acidente.html" },
-    { "source": "/beneficio-negado-inss", "destination": "/beneficio-negado-inss.html" },
-    { "source": "/beneficios-por-incapacidade", "destination": "/beneficios-por-incapacidade.html" },
-    { "source": "/ppp-aposentadoria-especial", "destination": "/ppp-aposentadoria-especial.html" },
-    { "source": "/limbo-previdenciario", "destination": "/limbo-previdenciario.html" },
-    { "source": "/acidente-de-trabalho", "destination": "/acidente-de-trabalho.html" },
-    { "source": "/rescisao-indireta", "destination": "/rescisao-indireta.html" },
-    { "source": "/verbas-rescisorias", "destination": "/verbas-rescisorias.html" },
-    { "source": "/horas-extras", "destination": "/horas-extras.html" },
-    { "source": "/reconhecimento-de-vinculo", "destination": "/reconhecimento-de-vinculo.html" },
-    { "source": "/doenca-ocupacional", "destination": "/doenca-ocupacional.html" },
-    { "source": "/advogado-previdenciario-sao-jose-dos-campos", "destination": "/advogado-previdenciario-sao-jose-dos-campos.html" },
-    { "source": "/advogado-trabalhista-sao-jose-dos-campos", "destination": "/advogado-trabalhista-sao-jose-dos-campos.html" },
-    { "source": "/advogado-previdenciario-campos-do-jordao", "destination": "/advogado-previdenciario-campos-do-jordao.html" },
-    { "source": "/advogado-trabalhista-campos-do-jordao", "destination": "/advogado-trabalhista-campos-do-jordao.html" },
-    { "source": "/andrea-marcia-xavier-ribeiro", "destination": "/andrea-marcia-xavier-ribeiro.html" },
-    { "source": "/xavier-ribeiro-campos-do-jordao", "destination": "/xavier-ribeiro-campos-do-jordao.html" },
-    { "source": "/revisao-de-beneficio-inss", "destination": "/revisao-de-beneficio-inss.html" },
-    { "source": "/advogado-imobiliario-sao-jose-dos-campos", "destination": "/advogado-imobiliario-sao-jose-dos-campos.html" },
-    { "source": "/direito-sucessorio-inventario-sao-jose-dos-campos", "destination": "/direito-sucessorio-inventario-sao-jose-dos-campos.html" },
-    { "source": "/indenizacoes-responsabilidade-civil-sao-jose-dos-campos", "destination": "/indenizacoes-responsabilidade-civil-sao-jose-dos-campos.html" },
-    { "source": "/advogados-perto-de-mim-sao-jose-dos-campos", "destination": "/advogados-perto-de-mim-sao-jose-dos-campos.html" }
+    {
+      "source": "/cartao",
+      "destination": "/cartao.html"
+    },
+    {
+      "source": "/planejamento-de-aposentadoria",
+      "destination": "/planejamento-de-aposentadoria.html"
+    },
+    {
+      "source": "/auxilio-acidente",
+      "destination": "/auxilio-acidente.html"
+    },
+    {
+      "source": "/beneficio-negado-inss",
+      "destination": "/beneficio-negado-inss.html"
+    },
+    {
+      "source": "/beneficios-por-incapacidade",
+      "destination": "/beneficios-por-incapacidade.html"
+    },
+    {
+      "source": "/ppp-aposentadoria-especial",
+      "destination": "/ppp-aposentadoria-especial.html"
+    },
+    {
+      "source": "/limbo-previdenciario",
+      "destination": "/limbo-previdenciario.html"
+    },
+    {
+      "source": "/acidente-de-trabalho",
+      "destination": "/acidente-de-trabalho.html"
+    },
+    {
+      "source": "/rescisao-indireta",
+      "destination": "/rescisao-indireta.html"
+    },
+    {
+      "source": "/verbas-rescisorias",
+      "destination": "/verbas-rescisorias.html"
+    },
+    {
+      "source": "/horas-extras",
+      "destination": "/horas-extras.html"
+    },
+    {
+      "source": "/reconhecimento-de-vinculo",
+      "destination": "/reconhecimento-de-vinculo.html"
+    },
+    {
+      "source": "/doenca-ocupacional",
+      "destination": "/doenca-ocupacional.html"
+    },
+    {
+      "source": "/advogado-previdenciario-sao-jose-dos-campos",
+      "destination": "/advogado-previdenciario-sao-jose-dos-campos.html"
+    },
+    {
+      "source": "/advogado-trabalhista-sao-jose-dos-campos",
+      "destination": "/advogado-trabalhista-sao-jose-dos-campos.html"
+    },
+    {
+      "source": "/advogado-previdenciario-campos-do-jordao",
+      "destination": "/advogado-previdenciario-campos-do-jordao.html"
+    },
+    {
+      "source": "/advogado-trabalhista-campos-do-jordao",
+      "destination": "/advogado-trabalhista-campos-do-jordao.html"
+    },
+    {
+      "source": "/andrea-marcia-xavier-ribeiro",
+      "destination": "/andrea-marcia-xavier-ribeiro.html"
+    },
+    {
+      "source": "/xavier-ribeiro-campos-do-jordao",
+      "destination": "/xavier-ribeiro-campos-do-jordao.html"
+    },
+    {
+      "source": "/revisao-de-beneficio-inss",
+      "destination": "/revisao-de-beneficio-inss.html"
+    },
+    {
+      "source": "/advogado-imobiliario-sao-jose-dos-campos",
+      "destination": "/advogado-imobiliario-sao-jose-dos-campos.html"
+    },
+    {
+      "source": "/direito-sucessorio-inventario-sao-jose-dos-campos",
+      "destination": "/direito-sucessorio-inventario-sao-jose-dos-campos.html"
+    },
+    {
+      "source": "/indenizacoes-responsabilidade-civil-sao-jose-dos-campos",
+      "destination": "/indenizacoes-responsabilidade-civil-sao-jose-dos-campos.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/advogados-perto-de-mim-sao-jose-dos-campos",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/advogados-perto-de-mim-sao-jose-dos-campos.html",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }

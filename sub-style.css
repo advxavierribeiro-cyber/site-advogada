@@ -167,3 +167,4 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.1
 .alerta .al-mais{flex:none;color:var(--gold-soft);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
 .alerta .al-curto{display:none}
 @media(max-width:980px){.alerta{font-size:11.5px;gap:7px}.alerta .al-longo{display:none}.alerta .al-curto{display:inline}}
+.alerta b,.nowrap{white-space:nowrap}
